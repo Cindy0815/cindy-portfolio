@@ -68,11 +68,11 @@ function App() {
 
   const projects = [
     {
-      title: "HealthFlow - Medical App Redesign",
+      title: "Expeida Redesign",
       description:
         "Complete UX/UI redesign of a telemedicine platform, improving user satisfaction by 85% and reducing task completion time by 40%.",
       image:
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop",
+        "expedia_header_img.png",
       technologies: [
         "User Research",
         "Figma",
