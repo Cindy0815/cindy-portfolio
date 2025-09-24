@@ -68,7 +68,7 @@ function App() {
 
   const projects = [
     {
-      title: "Expeida Redesign",
+      title: "Expedia Redesign",
       description:
         "Complete UX/UI redesign of a telemedicine platform, improving user satisfaction by 85% and reducing task completion time by 40%.",
       image:
@@ -172,27 +172,6 @@ function App() {
       duration: "5 months",
       role: "Lead UX Designer",
     },
-    {
-      title: "MindfulMoments - Wellness App",
-      description:
-        "Meditation and wellness app design emphasizing calm, accessible interfaces and personalized user experiences.",
-      image:
-        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=250&fit=crop",
-      technologies: [
-        "Emotional Design",
-        "Mindfulness UX",
-        "Motion Design",
-        "User Psychology",
-      ],
-      github: "#",
-      live: "#",
-      behance: "#",
-      featured: false,
-      gradient: "from-green-400 to-blue-400",
-      type: "Mobile App",
-      duration: "3 months",
-      role: "UX/UI Designer",
-    },
   ];
 
   return (
@@ -210,12 +189,12 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Cindy Wu
+              Cindy C.
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              {["home", "about", "skills", "projects", "contact"].map(
+              {["home", "projects", "about", "contact"].map(
                 (section) => (
                   <button
                     key={section}
@@ -270,7 +249,7 @@ function App() {
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div className="md:hidden pb-4 animate-fadeIn">
-              {["home", "about", "skills", "projects", "contact"].map(
+              {["home", "projects", "about", "contact"].map(
                 (section, index) => (
                   <button
                     key={section}
@@ -319,7 +298,7 @@ function App() {
               <h1 className="text-5xl md:text-7xl font-bold text-gray-800 leading-tight">
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Cindy Chen
+                  Cindy
                 </span>
               </h1>
 
@@ -375,311 +354,6 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section id="about" className="py-24 bg-white relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 opacity-30"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-100 to-transparent rounded-full translate-y-1/2 -translate-x-1/2 opacity-30"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl mx-auto text-center mb-20">
-            <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 relative">
-                About Me
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-              </h2>
-            </div>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              I'm a passionate UI/UX designer with over 4 years of experience
-              creating human-centered digital experiences. I believe great
-              design is invisible – it just works, feels natural, and solves
-              real problems.
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-              <img
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=500&fit=crop"
-                alt="Working"
-                className="relative rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
-              />
-            </div>
-
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <div className="group p-6 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 hover:shadow-lg transition-all duration-300">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
-                    <span className="text-2xl mr-3">🚀</span>
-                    My Journey
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Started as a graphic designer, I discovered my passion for
-                    user experience design through watching how people interact
-                    with digital products. Now I focus on creating inclusive,
-                    accessible designs that make technology more human.
-                  </p>
-                </div>
-
-                <div className="group p-6 rounded-xl bg-gradient-to-r from-green-50 to-blue-50 hover:shadow-lg transition-all duration-300">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
-                    <span className="text-2xl mr-3">💡</span>
-                    What I Do
-                  </h3>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                      <span className="text-gray-600">User Research</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
-                      <span className="text-gray-600">Interface Design</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
-                      <span className="text-gray-600">Design Systems</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"></div>
-                      <span className="text-gray-600">Usability Testing</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-4">
-                <div className="px-6 py-3 bg-white rounded-full shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                  <span className="text-sm font-medium text-gray-700">
-                    🏆 UX Design Awards 2023
-                  </span>
-                </div>
-                <div className="px-6 py-3 bg-white rounded-full shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                  <span className="text-sm font-medium text-gray-700">
-                    � Mobile Design Expert
-                  </span>
-                </div>
-                <div className="px-6 py-3 bg-white rounded-full shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
-                  <span className="text-sm font-medium text-gray-700">
-                    ♿ Accessibility Advocate
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section
-        id="skills"
-        className="py-24 bg-gradient-to-br from-gray-50 to-blue-50 relative"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-20">
-            <div className="inline-block">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 relative">
-                Skills & Expertise
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-              </h2>
-            </div>
-            <p className="text-xl text-gray-600">
-              Technologies and tools I use to bring ideas to life
-            </p>
-          </div>
-
-          <div className="max-w-5xl mx-auto">
-            {/* Skills by category */}
-            <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-800 mb-6">
-                  🎨 Design Skills
-                </h3>
-                <div className="space-y-4">
-                  {skills
-                    .filter((skill) => skill.category === "Design")
-                    .map((skill, index) => (
-                      <div
-                        key={index}
-                        className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                      >
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center space-x-3">
-                            <span className="text-2xl">{skill.icon}</span>
-                            <span className="font-medium text-gray-800">
-                              {skill.name}
-                            </span>
-                          </div>
-                          <span className="text-lg font-bold text-blue-600">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-800 mb-6">
-                  🔍 Research Skills
-                </h3>
-                <div className="space-y-4">
-                  {skills
-                    .filter((skill) => skill.category === "Research")
-                    .map((skill, index) => (
-                      <div
-                        key={index}
-                        className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                      >
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center space-x-3">
-                            <span className="text-2xl">{skill.icon}</span>
-                            <span className="font-medium text-gray-800">
-                              {skill.name}
-                            </span>
-                          </div>
-                          <span className="text-lg font-bold text-green-600">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            className="bg-gradient-to-r from-green-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-800 mb-6">
-                  🛠️ Tools
-                </h3>
-                <div className="space-y-4">
-                  {skills
-                    .filter((skill) => skill.category === "Tools")
-                    .map((skill, index) => (
-                      <div
-                        key={index}
-                        className="bg-white/80 backdrop-blur-sm p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                      >
-                        <div className="flex items-center justify-between mb-3">
-                          <div className="flex items-center space-x-3">
-                            <span className="text-2xl">{skill.icon}</span>
-                            <span className="font-medium text-gray-800">
-                              {skill.name}
-                            </span>
-                          </div>
-                          <span className="text-lg font-bold text-purple-600">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-gray-200 rounded-full h-2">
-                          <div
-                            className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full transition-all duration-1000 ease-out"
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Design Process */}
-            <div className="mt-16 text-center">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-8">
-                My Design Process
-              </h3>
-              <div className="grid md:grid-cols-5 gap-6">
-                {[
-                  {
-                    step: "01",
-                    title: "Research",
-                    icon: "🔍",
-                    desc: "User interviews, competitive analysis",
-                  },
-                  {
-                    step: "02",
-                    title: "Define",
-                    icon: "🎯",
-                    desc: "Problem definition, user personas",
-                  },
-                  {
-                    step: "03",
-                    title: "Ideate",
-                    icon: "💡",
-                    desc: "Brainstorming, concept development",
-                  },
-                  {
-                    step: "04",
-                    title: "Prototype",
-                    icon: "🔧",
-                    desc: "Wireframes, interactive prototypes",
-                  },
-                  {
-                    step: "05",
-                    title: "Test",
-                    icon: "🧪",
-                    desc: "Usability testing, iteration",
-                  },
-                ].map((process, index) => (
-                  <div
-                    key={index}
-                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
-                  >
-                    <div className="text-4xl mb-4">{process.icon}</div>
-                    <div className="text-sm font-bold text-blue-600 mb-2">
-                      {process.step}
-                    </div>
-                    <h4 className="font-semibold text-gray-800 mb-2">
-                      {process.title}
-                    </h4>
-                    <p className="text-sm text-gray-600">{process.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Additional tools showcase */}
-            <div className="mt-16 text-center">
-              <h3 className="text-2xl font-semibold text-gray-800 mb-8">
-                Design Tools & Software
-              </h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                {[
-                  "Figma",
-                  "Adobe XD",
-                  "Sketch",
-                  "Framer",
-                  "Principle",
-                  "InVision",
-                  "Miro",
-                  "Notion",
-                  "Maze",
-                  "Hotjar",
-                ].map((tool, index) => (
-                  <div
-                    key={index}
-                    className="px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 border border-gray-100"
-                  >
-                    <span className="text-gray-700 font-medium">{tool}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Projects Section */}
       <section
         id="projects"
@@ -693,7 +367,7 @@ function App() {
           <div className="max-w-4xl mx-auto text-center mb-20">
             <div className="inline-block">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 relative">
-                Featured Projects
+                Recent Works
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
               </h2>
             </div>
@@ -718,7 +392,7 @@ function App() {
                   >
                     <div className="relative overflow-hidden rounded-t-3xl">
                       <div
-                        className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}
+                        className={`absolute inset-0 bg-gradient-to-br opacity-20 group-hover:opacity-30 transition-opacity duration-300`}
                       ></div>
                       <img
                         src={project.image}
@@ -913,6 +587,166 @@ function App() {
         </div>
       </section>
 
+
+      {/* About Section */}
+      <section id="about" className="py-24 bg-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100 to-transparent rounded-full -translate-y-1/2 translate-x-1/2 opacity-30"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-100 to-transparent rounded-full translate-y-1/2 -translate-x-1/2 opacity-30"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <div className="inline-block">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6 relative">
+                About Me
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+              </h2>
+            </div>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              I'm a passionate UI/UX designer with over 4 years of experience
+              creating human-centered digital experiences. I believe great
+              design is invisible – it just works, feels natural, and solves
+              real problems.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <img
+                src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=500&fit=crop"
+                alt="Working"
+                className="relative rounded-2xl shadow-2xl transform group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="group p-6 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 hover:shadow-lg transition-all duration-300">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span className="text-2xl mr-3">🚀</span>
+                    My Journey
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Started as a graphic designer, I discovered my passion for
+                    user experience design through watching how people interact
+                    with digital products. Now I focus on creating inclusive,
+                    accessible designs that make technology more human.
+                  </p>
+                </div>
+
+                <div className="group p-6 rounded-xl bg-gradient-to-r from-green-50 to-blue-50 hover:shadow-lg transition-all duration-300">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span className="text-2xl mr-3">💡</span>
+                    What I Do
+                  </h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                      <span className="text-gray-600">User Research</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"></div>
+                      <span className="text-gray-600">Interface Design</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                      <span className="text-gray-600">Design Systems</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"></div>
+                      <span className="text-gray-600">Usability Testing</span>
+                    </div>
+                  </div>
+                </div>
+
+                     {/* Additional tools showcase */}
+            <div className="mt-16 text-center">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-8">
+                Design Tools & Software
+              </h3>
+              <div className="flex flex-wrap justify-center gap-4">
+                {[
+                  "Figma",
+                  "Illustrator",
+                  "InDesign",
+                  "Photoshop",
+                  "Miro",
+                  "HTML/CSS",
+                ].map((tool, index) => (
+                  <div
+                    key={index}
+                    className="px-6 py-3 bg-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200 border border-gray-100"
+                  >
+                    <span className="text-gray-700 font-medium">{tool}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+              </div>
+
+           
+            </div>
+          </div>
+          {/* Design Process */}
+          <div className="mt-16 text-center">
+              <h3 className="text-2xl font-semibold text-gray-800 mb-8">
+                My Design Process
+              </h3>
+              <div className="grid md:grid-cols-5 gap-6">
+                {[
+                  {
+                    step: "01",
+                    title: "Research",
+                    icon: "🔍",
+                    desc: "User interviews, competitive analysis",
+                  },
+                  {
+                    step: "02",
+                    title: "Define",
+                    icon: "🎯",
+                    desc: "Problem definition, user personas",
+                  },
+                  {
+                    step: "03",
+                    title: "Ideate",
+                    icon: "💡",
+                    desc: "Brainstorming, concept development",
+                  },
+                  {
+                    step: "04",
+                    title: "Prototype",
+                    icon: "🔧",
+                    desc: "Wireframes, interactive prototypes",
+                  },
+                  {
+                    step: "05",
+                    title: "Test",
+                    icon: "🧪",
+                    desc: "Usability testing, iteration",
+                  },
+                ].map((process, index) => (
+                  <div
+                    key={index}
+                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300"
+                  >
+                    <div className="text-4xl mb-4">{process.icon}</div>
+                    <div className="text-sm font-bold text-blue-600 mb-2">
+                      {process.step}
+                    </div>
+                    <h4 className="font-semibold text-gray-800 mb-2">
+                      {process.title}
+                    </h4>
+                    <p className="text-sm text-gray-600">{process.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+        </div>
+
+        
+      </section>
+
       {/* Contact Section */}
       <section
         id="contact"
@@ -966,7 +800,7 @@ function App() {
                   Email Me
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  cindy.wu.design@email.com
+                  cindychenc9@gmail.com
                 </p>
               </div>
 
@@ -989,7 +823,7 @@ function App() {
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">
                   Call Me
                 </h3>
-                <p className="text-gray-600 text-sm">+1 (555) 123-4567</p>
+                <p className="text-gray-600 text-sm">+1 (718) 508-2218</p>
               </div>
 
               <div className="group text-center p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -1015,113 +849,12 @@ function App() {
                   </svg>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  Visit Me
+                  Let's Connect!
                 </h3>
-                <p className="text-gray-600 text-sm">San Francisco, CA</p>
+                <p className="text-gray-600 text-sm">Visit LinkedIn Page</p>
               </div>
             </div>
           </div>
-
-          {/* Contact Form */}
-          <div className="max-w-2xl mx-auto">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-12 border border-white/50">
-              <form className="space-y-8">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="group">
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-semibold text-gray-700 mb-3"
-                    >
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm group-hover:shadow-lg"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div className="group">
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-semibold text-gray-700 mb-3"
-                    >
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm group-hover:shadow-lg"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div className="group">
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-semibold text-gray-700 mb-3"
-                  >
-                    Project Type
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm group-hover:shadow-lg"
-                  >
-                    <option>UI/UX Design</option>
-                    <option>Web Development</option>
-                    <option>Mobile App Design</option>
-                    <option>Branding & Identity</option>
-                    <option>Consultation</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-
-                <div className="group">
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-semibold text-gray-700 mb-3"
-                  >
-                    Project Details
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    className="w-full px-6 py-4 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white/50 backdrop-blur-sm group-hover:shadow-lg resize-none"
-                    placeholder="Tell me about your project, goals, and how I can help..."
-                  ></textarea>
-                </div>
-
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    className="group relative px-12 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 font-semibold text-lg"
-                  >
-                    <span className="relative z-10 flex items-center space-x-2">
-                      <span>Send Message</span>
-                      <svg
-                        className="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                        />
-                      </svg>
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </button>
-                </div>
-              </form>
-            </div>
 
             {/* Response time note */}
             <div className="text-center mt-8">
@@ -1142,7 +875,6 @@ function App() {
                 <span>I typically respond within 24 hours</span>
               </p>
             </div>
-          </div>
         </div>
       </section>
 
@@ -1159,8 +891,7 @@ function App() {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-gray-400 text-sm">
                 <p>
-                  &copy; {new Date().getFullYear()} Cindy Chen. All rights
-                  reserved.
+                  &copy; {new Date().getFullYear()} Cindy Chen. Made with ☕
                 </p>
               </div>
             </div>
