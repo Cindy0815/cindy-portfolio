@@ -313,18 +313,14 @@ function App() {
               style={{ transform: `translateY(${scrollY * 0.1}px)` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-              <img
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face"
-                alt="Profile"
-                className="relative w-32 h-32 rounded-full mx-auto object-cover shadow-2xl border-4 border-white"
-              />
+            
             </div>
 
             <div className="space-y-6 animate-slideUp">
               <h1 className="text-5xl md:text-7xl font-bold text-gray-800 leading-tight">
                 Hi, I'm{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-pulse">
-                  Cindy Wu
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Cindy Chen
                 </span>
               </h1>
 
@@ -349,9 +345,7 @@ function App() {
               </div>
 
               <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed">
-                I design meaningful digital experiences that solve real problems
-                and delight users. Specializing in user research, interface
-                design, and creating design systems that scale.
+              I create digital experiences that are simple, thoughtful, and human centered, making technology feel approachable and meaningful!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
