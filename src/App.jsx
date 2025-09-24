@@ -265,7 +265,7 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="relative pt-20 pb-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden"
+        className="relative pt-45 pb-45 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden"
       >
         {/* Floating elements */}
         <div
@@ -303,14 +303,14 @@ function App() {
                   className="inline-block animate-typewriter"
                   style={{ animationDelay: "0.3s" }}
                 >
-                  Product Designer
+                  Product Designer 
                 </span>
+
+             
               </div>
 
               <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed">
-                I create digital experiences that are simple, thoughtful, and
-                human centered, making technology feel approachable and
-                meaningful!
+              Human centered, approachable, and impactful technology, one interface at a time.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
