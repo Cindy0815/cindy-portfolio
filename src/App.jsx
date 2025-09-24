@@ -325,22 +325,8 @@ function App() {
               </h1>
 
               <div className="text-xl md:text-3xl text-gray-600 mb-8 font-light">
-                <span className="inline-block animate-typewriter">
+                <span className="inline-block animate-typewriter" style={{ animationDelay: "0.3s" }}>
                   UI/UX Designer
-                </span>
-                <span className="mx-4 text-gray-400">•</span>
-                <span
-                  className="inline-block animate-typewriter"
-                  style={{ animationDelay: "1s" }}
-                >
-                  Design Systems Expert
-                </span>
-                <span className="mx-4 text-gray-400">•</span>
-                <span
-                  className="inline-block animate-typewriter"
-                  style={{ animationDelay: "2s" }}
-                >
-                  User Advocate
                 </span>
               </div>
 
