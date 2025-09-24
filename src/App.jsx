@@ -113,7 +113,7 @@ function App() {
       description:
         "Comprehensive learning management system design focusing on student engagement and teacher efficiency.",
       image:
-        "public/hershey_header_img.png",
+        "hershey_header_img.png",
       technologies: [
         "Information Architecture",
         "Wireframing",
@@ -134,7 +134,7 @@ function App() {
       description:
         "Mobile-first design for a personal finance app with focus on accessibility and financial literacy.",
       image:
-        "public/cysana_header_img.png",
+        "cysana_header_img.png",
       technologies: [
         "Accessibility",
         "Design Systems",
@@ -153,7 +153,7 @@ function App() {
       description:
         "Simplifying printing workflows and improve usability for students.",
       image:
-        "public/nyu_header_img.png",
+        "nyu_header_img.png",
       technologies: [
         "🏆 Hackathon Win",
         "User Journey Mapping",
