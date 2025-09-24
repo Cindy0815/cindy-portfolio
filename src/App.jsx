@@ -313,7 +313,6 @@ function App() {
               style={{ transform: `translateY(${scrollY * 0.1}px)` }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-            
             </div>
 
             <div className="space-y-6 animate-slideUp">
@@ -325,13 +324,18 @@ function App() {
               </h1>
 
               <div className="text-xl md:text-3xl text-gray-600 mb-8 font-light">
-                <span className="inline-block animate-typewriter" style={{ animationDelay: "0.3s" }}>
+                <span
+                  className="inline-block animate-typewriter"
+                  style={{ animationDelay: "0.3s" }}
+                >
                   UI/UX Designer
                 </span>
               </div>
 
               <p className="text-lg md:text-xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed">
-              I create digital experiences that are simple, thoughtful, and human centered, making technology feel approachable and meaningful!
+                I create digital experiences that are simple, thoughtful, and
+                human centered, making technology feel approachable and
+                meaningful!
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -1150,111 +1154,14 @@ function App() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            {/* Brand section */}
-            <div className="md:col-span-2">
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-                Cindy Wu
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed max-w-md">
-                Crafting meaningful digital experiences through human-centered
-                design. Always curious, always learning, always designing with
-                purpose.
-              </p>
-              <div className="flex space-x-4">
-                {[
-                  { icon: "behance", href: "#" },
-                  { icon: "dribbble", href: "#" },
-                  { icon: "linkedin", href: "#" },
-                  { icon: "medium", href: "#" },
-                ].map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className="group p-3 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 hover:-translate-y-1"
-                  >
-                    <svg
-                      className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      {social.icon === "behance" && (
-                        <path d="M6.938 4.503c.702 0 1.34.06 1.92.188.577.13 1.07.33 1.485.61.41.28.733.65.96 1.12.225.47.34 1.05.34 1.73 0 .74-.17 1.36-.507 1.86-.338.5-.837.9-1.498 1.22.906.26 1.576.72 2.022 1.37.448.66.672 1.45.672 2.36 0 .75-.13 1.39-.41 1.93-.28.55-.67 1-1.16 1.35-.48.348-1.05.6-1.67.76-.62.16-1.25.24-1.85.24H0V4.51h6.938v-.007zM3.495 8.88h2.77c.89 0 1.55-.18 2.003-.54.448-.36.673-.87.673-1.54 0-.55-.18-.95-.54-1.26-.36-.31-.84-.47-1.44-.47H3.495V8.88zm0 9.64h3.25c.58 0 1.09-.08 1.53-.25s.8-.38 1.06-.66c.26-.28.45-.6.58-.95.13-.35.19-.72.19-1.1 0-.68-.23-1.18-.69-1.53-.46-.35-1.12-.53-1.98-.53H3.495v5.02zm14.98-8.435c.3.13.57.32.81.58.24.26.43.58.56.95.13.37.2.79.2 1.26h-4.87c0-.57.15-1.03.44-1.38.29-.35.68-.53 1.17-.53.51 0 .93.18 1.26.53.33.35.49.82.49 1.42h1.4c0-.48-.1-.91-.29-1.29s-.45-.69-.78-.93c-.33-.24-.71-.42-1.14-.54s-.88-.18-1.35-.18c-.65 0-1.23.11-1.74.34-.51.23-.94.55-1.3.96-.36.41-.63.9-.82 1.46-.19.56-.28 1.17-.28 1.83 0 .65.1 1.26.29 1.82.19.56.47 1.05.84 1.46.37.41.82.73 1.34.96.52.23 1.1.34 1.75.34.75 0 1.4-.17 1.94-.52.54-.35.95-.85 1.23-1.51h-1.44c-.09.26-.26.46-.51.61-.25.15-.54.22-.87.22-.57 0-1.02-.19-1.35-.56-.33-.37-.5-.88-.5-1.53h4.87c0-.48-.07-.91-.2-1.29s-.32-.69-.57-.93c-.25-.24-.55-.42-.9-.54s-.73-.18-1.14-.18c-.41 0-.8.06-1.17.18zm-2.95-8.08h5.31v.71h-5.31v-.71z" />
-                      )}
-                      {social.icon === "dribbble" && (
-                        <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm9.568 5.302c.846 1.353 1.336 2.947 1.336 4.653 0 .496-.047.98-.136 1.453-.273-.061-.6-.138-.988-.233-1.739-.425-3.88-.955-6.136-.955-.571 0-1.123.037-1.665.109-.154-.354-.308-.706-.473-1.058.565-.232 1.124-.473 1.667-.723 2.139-.984 3.751-2.076 4.395-2.246zM12 2.259c1.804 0 3.45.62 4.759 1.656-.571.143-2.081 1.178-4.133 2.101-.533.24-1.075.462-1.618.67C9.671 4.337 8.168 2.673 6.743 1.656 8.204 1.84 10.05 2.259 12 2.259zm-5.61.756c1.378.984 2.845 2.584 4.147 4.823-2.634.994-5.547 1.538-7.352 1.696C3.503 7.015 4.887 4.688 6.39 3.015zM2.259 12c0-.137.006-.273.016-.409 1.943-.178 5.188-.756 8.067-1.842.136.283.266.572.39.866-3.185 1.322-5.998 3.679-7.332 5.660C2.756 15.188 2.259 13.657 2.259 12zm1.742 7.725c1.198-1.817 3.85-4.054 6.895-5.291.904-.367 1.832-.691 2.78-.962.667 1.691 1.167 3.527 1.391 5.528-1.354.585-2.853.916-4.439.916-2.311 0-4.429-.809-6.127-2.191zm8.877-.423c-.218-1.883-.698-3.64-1.331-5.252.506-.071 1.025-.108 1.553-.108 2.048 0 4.018.479 5.648.878.103.378.157.773.157 1.18 0 2.588-.994 4.946-2.625 6.702-.437-1.178-.896-2.301-1.402-3.4z" />
-                      )}
-                      {social.icon === "linkedin" && (
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                      )}
-                      {social.icon === "medium" && (
-                        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75S24 8.83 24 12z" />
-                      )}
-                    </svg>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Quick links */}
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-              <ul className="space-y-3">
-                {["About", "Skills", "Projects", "Contact"].map(
-                  (link, index) => (
-                    <li key={index}>
-                      <button
-                        onClick={() => scrollToSection(link.toLowerCase())}
-                        className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center space-x-2 group"
-                      >
-                        <span className="w-1 h-1 bg-blue-400 rounded-full group-hover:w-2 transition-all duration-200"></span>
-                        <span>{link}</span>
-                      </button>
-                    </li>
-                  )
-                )}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="text-lg font-semibold mb-6">Services</h4>
-              <ul className="space-y-3">
-                {[
-                  "UX Research & Strategy",
-                  "UI Design & Prototyping",
-                  "Design Systems",
-                  "User Testing & Validation",
-                ].map((service, index) => (
-                  <li key={index}>
-                    <span className="text-gray-400 flex items-center space-x-2 group hover:text-white transition-colors">
-                      <span className="w-1 h-1 bg-purple-400 rounded-full group-hover:w-2 transition-all duration-200"></span>
-                      <span>{service}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
           {/* Bottom footer */}
           <div className="border-t border-gray-700 pt-8 mt-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-gray-400 text-sm">
                 <p>
-                  &copy; 2024 Cindy Wu. All rights reserved. Made with ❤️ and ☕
+                  &copy; {new Date().getFullYear()} Cindy Chen. All rights
+                  reserved.
                 </p>
-              </div>
-              <div className="flex items-center space-x-6 text-sm text-gray-400">
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  Sitemap
-                </a>
               </div>
             </div>
           </div>
