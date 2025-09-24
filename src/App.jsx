@@ -68,9 +68,9 @@ function App() {
 
   const projects = [
     {
-      title: "Expedia Redesign",
+      title: "Expedia Save and Compare",
       description:
-        "Complete UX/UI redesign of a telemedicine platform, improving user satisfaction by 85% and reducing task completion time by 40%.",
+        "Designed flight comparison and saving workflows, improving discoverability and helping users make faster, informed booking decisions.",
       image:
         "expedia_header_img.png",
       technologies: [
@@ -82,20 +82,19 @@ function App() {
       github: "#",
       live: "#",
       behance: "#",
-      featured: true,
+      featured: false,
       gradient: "from-blue-500 to-teal-500",
-      type: "Mobile App",
-      duration: "3 months",
-      role: "Lead UX/UI Designer",
+      type: "Web Platform",
+      duration: "",
+      role: "UX Designer",
     },
     {
-      title: "EcoCommerce - Sustainable Shopping",
+      title: "Tiktok Shop Rewards",
       description:
-        "End-to-end design of an eco-friendly e-commerce platform with innovative sustainability tracking features.",
+        "End-to-end design of a social commerce rewards program to boost customer loyalty and streamline the shopping experience.",
       image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=250&fit=crop",
+        "tiktok_header_img.png",
       technologies: [
-        "Design Systems",
         "User Journey Mapping",
         "A/B Testing",
         "Figma",
@@ -103,18 +102,18 @@ function App() {
       github: "#",
       live: "#",
       behance: "#",
-      featured: true,
+      featured: false,
       gradient: "from-green-500 to-emerald-500",
-      type: "Web Platform",
-      duration: "4 months",
-      role: "Senior UX Designer",
+      type: "Mobile App",
+      duration: "",
+      role: "UX/UI Designer",
     },
     {
-      title: "LearningPath - EdTech Dashboard",
+      title: "Hershey's - Personalized E-Commerce Flow",
       description:
         "Comprehensive learning management system design focusing on student engagement and teacher efficiency.",
       image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=250&fit=crop",
+        "public/hershey_header_img.png",
       technologies: [
         "Information Architecture",
         "Wireframing",
@@ -124,52 +123,49 @@ function App() {
       github: "#",
       live: "#",
       behance: "#",
-      featured: false,
+      featured: true,
       gradient: "from-purple-500 to-pink-500",
-      type: "Web App",
-      duration: "6 months",
-      role: "UX Designer",
+      type: "Web Platform",
+      duration: "",
+      role: "UX/UI Design Intern",
     },
     {
-      title: "FinanceTracker - Personal Banking",
+      title: "Cysana - Malware Dectection Dashboard",
       description:
         "Mobile-first design for a personal finance app with focus on accessibility and financial literacy.",
       image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
+        "public/cysana_header_img.png",
       technologies: [
-        "Mobile Design",
         "Accessibility",
-        "Micro-interactions",
         "Design Systems",
       ],
       github: "#",
       live: "#",
       behance: "#",
-      featured: false,
+      featured: true,
       gradient: "from-indigo-500 to-purple-500",
-      type: "Mobile App",
-      duration: "2 months",
-      role: "UI Designer",
+      type: "Web Platform",
+      duration: "",
+      role: "Product Designer Intern",
     },
     {
-      title: "WorkSpace - Collaboration Tool",
+      title: "NYU Mobile Print",
       description:
-        "Enterprise collaboration platform design with focus on remote team productivity and seamless communication.",
+        "Simplifying printing workflows and improve usability for students.",
       image:
-        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=250&fit=crop",
+        "public/nyu_header_img.png",
       technologies: [
-        "Enterprise UX",
-        "Collaboration Design",
-        "Design Tokens",
-        "Prototyping",
+        "🏆 Hackathon Win",
+        "User Journey Mapping",
+        "Usuability Testing",
       ],
       github: "#",
       live: "#",
       behance: "#",
       featured: false,
       gradient: "from-blue-600 to-cyan-500",
-      type: "Web Platform",
-      duration: "5 months",
+      type: "Moblie App",
+      duration: "",
       role: "Lead UX Designer",
     },
   ];
@@ -307,7 +303,7 @@ function App() {
                   className="inline-block animate-typewriter"
                   style={{ animationDelay: "0.3s" }}
                 >
-                  UI/UX Designer
+                  Product Designer
                 </span>
               </div>
 
