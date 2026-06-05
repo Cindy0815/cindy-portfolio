@@ -4,7 +4,7 @@ import { caseStudies } from '../data/portfolioData';
 
 const CaseStudiesIndex = () => {
   return (
-    <div className="container section">
+    <div className="container page-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

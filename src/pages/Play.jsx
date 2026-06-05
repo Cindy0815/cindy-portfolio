@@ -3,7 +3,7 @@ import { playWorks } from '../data/portfolioData';
 
 const Play = () => {
   return (
-    <div className="container section">
+    <div className="container page-container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
