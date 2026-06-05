@@ -30,10 +30,10 @@ const DesignerHero = () => {
   // Trailing ripple tracking (slower, softer follow to create a snake-like trail)
   const rippleX1 = useSpring(mouseX, { damping: 15, stiffness: 100, mass: 0.8 });
   const rippleY1 = useSpring(mouseY, { damping: 15, stiffness: 100, mass: 0.8 });
-  
+
   const rippleX2 = useSpring(mouseX, { damping: 20, stiffness: 60, mass: 1.2 });
   const rippleY2 = useSpring(mouseY, { damping: 20, stiffness: 60, mass: 1.2 });
-  
+
   const rippleX3 = useSpring(mouseX, { damping: 25, stiffness: 30, mass: 1.8 });
   const rippleY3 = useSpring(mouseY, { damping: 25, stiffness: 30, mass: 1.8 });
 
@@ -50,11 +50,11 @@ const DesignerHero = () => {
       const rect = e.currentTarget.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       const shapeTypes = [shapePurple, shapeGreen, shapePink];
       const randomShape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
       const randomRotate = Math.random() * 360;
-      
+
       setTinyShapes(prev => [...prev, { id: Date.now() + Math.random(), x, y, img: randomShape, rotate: randomRotate }]);
     }
   };
@@ -101,7 +101,7 @@ const DesignerHero = () => {
   const positions = {
     purple: { cx: "14vw", cy: "45vh" },
     green: { cx: "50%", cy: "20%" }, // Centered to the header text
-    pink: { cx: "80vw", cy: "50vh" }
+    pink: { cx: "75vw", cy: "50vh" }
   };
 
   // Helper to calculate Top-Left and Bottom-Right for the cursor
@@ -160,7 +160,7 @@ const DesignerHero = () => {
   );
 
   return (
-    <div 
+    <div
       className={`designer-hero ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
@@ -168,7 +168,7 @@ const DesignerHero = () => {
       onClick={handleCanvasClick}
     >
       {/* Refresh Button */}
-      <motion.button 
+      <motion.button
         className="refresh-btn"
         onClick={handleRefresh}
         whileHover={{ rotate: 180 }}
@@ -197,11 +197,11 @@ const DesignerHero = () => {
 
         <AnimatePresence>
           {step >= 3 && (
-            <motion.div 
-              className="shape-container interactive-shape" 
-              style={{ left: positions.purple.cx, top: positions.purple.cy }} 
-              initial={{ opacity: 0, scale: 0.8 }} 
-              animate={{ opacity: 1, scale: 1 }} 
+            <motion.div
+              className="shape-container interactive-shape"
+              style={{ left: positions.purple.cx, top: positions.purple.cy }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ type: "spring", bounce: 0.5 }}
               drag={step >= 13}
               dragConstraints={constraintsRef}
@@ -221,11 +221,11 @@ const DesignerHero = () => {
           )}
 
           {step >= 7 && (
-            <motion.div 
-              className="shape-container interactive-shape" 
-              style={{ left: positions.green.cx, top: positions.green.cy }} 
-              initial={{ opacity: 0, scale: 0.8 }} 
-              animate={{ opacity: 1, scale: 1 }} 
+            <motion.div
+              className="shape-container interactive-shape"
+              style={{ left: positions.green.cx, top: positions.green.cy }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ type: "spring", bounce: 0.5 }}
               drag={step >= 13}
               dragConstraints={constraintsRef}
@@ -245,11 +245,11 @@ const DesignerHero = () => {
           )}
 
           {step >= 11 && (
-            <motion.div 
-              className="shape-container interactive-shape" 
-              style={{ left: positions.pink.cx, top: positions.pink.cy }} 
-              initial={{ opacity: 0, scale: 0.8 }} 
-              animate={{ opacity: 1, scale: 1 }} 
+            <motion.div
+              className="shape-container interactive-shape"
+              style={{ left: positions.pink.cx, top: positions.pink.cy }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ type: "spring", bounce: 0.5 }}
               drag={step >= 13}
               dragConstraints={constraintsRef}
@@ -446,7 +446,7 @@ const DesignerHero = () => {
             people navigate complexity with confidence
           </p>
 
-          <div 
+          <div
             className="hero-buttons"
             onClick={(e) => e.stopPropagation()}
             onPointerDown={(e) => e.stopPropagation()}
@@ -460,7 +460,7 @@ const DesignerHero = () => {
       {/* Scroll Indicator at the very bottom */}
       <AnimatePresence>
         {step >= 13 && (
-          <motion.div 
+          <motion.div
             className="scroll-indicator"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

@@ -1,7 +1,7 @@
 .designer-hero {
   position: relative;
-  width: calc(100% - 2rem);
-  max-width: 1400px;
+  width: calc(100% - 4rem);
+  max-width: 1350px;
   height: 83vh;
   /* Decreased from 90vh */
   display: flex;
@@ -352,8 +352,8 @@
     height: 70vh;
     /* slightly shorter on mobile */
     border-radius: 1.8rem;
-    width: calc(100% - 1rem);
-    /* slightly wider relative to edge */
+    width: calc(100% - 4rem);
+    /* matches container 2rem padding */
   }
 
   .scaled-shape-img {

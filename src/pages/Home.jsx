@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { caseStudies, playWorks } from '../data/portfolioData';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Mail, Phone } from 'lucide-react';
 import DesignerHero from '../components/DesignerHero';
 import './Home.css';
 
@@ -17,12 +17,12 @@ const Home = () => {
             <h2>Featured Works</h2>
             <p className="section-subtext">A look into my latest design case studies.</p>
           </div>
-          <Link to="/case-studies" className="view-all-link">View all <ArrowRight size={16}/></Link>
+          <Link to="/case-studies" className="view-all-link">View all <ArrowRight size={16} /></Link>
         </div>
-        
+
         <div className="work-grid">
           {caseStudies.map((study, index) => (
-            <motion.div 
+            <motion.div
               key={study.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ const Home = () => {
                   <h3>{study.title}</h3>
                   <p>{study.shortDescription}</p>
                   <div className="card-action">
-                    <span className="view-project-btn">View Project <ArrowRight size={16}/></span>
+                    <span className="view-project-btn">View Project <ArrowRight size={16} /></span>
                   </div>
                 </div>
               </Link>
@@ -61,12 +61,12 @@ const Home = () => {
             <h2>Play</h2>
             <p className="section-subtext">Here’s a peek at what I’ve been up to in 3D, AR/VR, and motion graphics!</p>
           </div>
-          <Link to="/play" className="view-all-link">View all <ArrowRight size={16}/></Link>
+          <Link to="/play" className="view-all-link">View all <ArrowRight size={16} /></Link>
         </div>
-        
+
         <div className="work-grid">
           {playWorks.map((work, index) => (
-            <motion.div 
+            <motion.div
               key={work.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -88,14 +88,64 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Footer */}
-      <section className="cta-footer container section">
-        <div className="cta-content">
-          <h2>Interested in working together?</h2>
-          <p className="section-subtext">Feel free to reach out for collaborations or just a friendly hello!</p>
-          <div className="cta-buttons">
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn-primary-hero">View Resume</a>
-            <a href="mailto:hello@example.com" className="btn-secondary-hero">Let's Connect!</a>
+      {/* Contact Section */}
+      <section className="contact-section container section">
+        <div className="contact-grid">
+          {/* Left Column */}
+          <div className="contact-info-col">
+            <h2 className="contact-heading">Send a message</h2>
+            <p className="contact-subtext">
+              Have a project, a question, or a cool idea? I'm all ears and excited to connect!
+            </p>
+
+            <div className="contact-details">
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <Mail size={20} />
+                </div>
+                <span>cindychenc9@gmail.com</span>
+              </div>
+              <div className="contact-item">
+                <div className="contact-icon">
+                  <Phone size={20} />
+                </div>
+                <span>718-508-2218</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column - Form */}
+          <div className="contact-form-col">
+            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Name</label>
+                  <input type="text" placeholder="Enter your name" />
+                </div>
+                <div className="form-group">
+                  <label>Email</label>
+                  <input type="email" placeholder="Enter your email" />
+                </div>
+              </div>
+
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Phone</label>
+                  <input type="tel" placeholder="(xxx) xxx xxx" />
+                </div>
+                <div className="form-group">
+                  <label>Subject</label>
+                  <input type="text" placeholder="Enter subject" />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label>Message</label>
+                <textarea placeholder="Type your message..." rows="5"></textarea>
+              </div>
+
+              <button type="submit" className="submit-btn">Submit</button>
+            </form>
           </div>
         </div>
       </section>
