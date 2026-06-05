@@ -2,7 +2,7 @@
   position: relative;
   width: calc(100% - 2rem);
   max-width: 1400px;
-  height: 80vh;
+  height: 83vh;
   /* Decreased from 90vh */
   display: flex;
   align-items: center;
@@ -19,7 +19,8 @@
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  z-index: 200; /* Above everything */
+  z-index: 200;
+  /* Above everything */
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: var(--text-primary);
@@ -31,7 +32,8 @@
   justify-content: center;
   cursor: pointer;
   backdrop-filter: blur(4px);
-  pointer-events: auto; /* Required because it is absolutely positioned on top */
+  pointer-events: auto;
+  /* Required because it is absolutely positioned on top */
   transition: background 0.2s ease;
 }
 
@@ -106,12 +108,14 @@
   /* The cursor arrow tip should point exactly at the coordinates. */
   transform-origin: top left;
   transform: rotate(-10deg) translate(-2px, -2px);
-  color: #ffffff; /* White in dark mode */
+  color: #ffffff;
+  /* White in dark mode */
   pointer-events: none;
 }
 
 [data-theme='light'] .custom-cursor {
-  color: #18181b; /* Black in light mode */
+  color: #18181b;
+  /* Black in light mode */
 }
 
 /* Interactive Canvas */
@@ -120,8 +124,10 @@
 }
 
 .interactive-shape {
-  touch-action: none; /* Required for dragging to work well on touch devices */
-  pointer-events: auto; /* Re-enable pointer events so it can be dragged */
+  touch-action: none;
+  /* Required for dragging to work well on touch devices */
+  pointer-events: auto;
+  /* Re-enable pointer events so it can be dragged */
 }
 
 .interactive-shape img {
@@ -150,7 +156,8 @@
   opacity: 0.7;
   filter: blur(8px);
   pointer-events: none;
-  z-index: 99; /* Just underneath the actual cursor */
+  z-index: 99;
+  /* Just underneath the actual cursor */
 }
 
 /* Typography */
@@ -260,22 +267,28 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   :root {
-    --cursor-offset: 8vw; /* Matches the scaled down 50vw shape */
+    --cursor-offset: 8vw;
+    /* Matches the scaled down 50vw shape */
   }
 
   .designer-hero {
-    height: 70vh; /* slightly shorter on mobile */
+    height: 70vh;
+    /* slightly shorter on mobile */
     border-radius: 1rem;
-    width: calc(100% - 1rem); /* slightly wider relative to edge */
+    width: calc(100% - 1rem);
+    /* slightly wider relative to edge */
   }
 
   .scaled-shape-img {
-    width: 50vw; /* larger relative percentage on mobile */
-    min-width: 0; /* remove the massive 250px hard limit */
+    width: 50vw;
+    /* larger relative percentage on mobile */
+    min-width: 0;
+    /* remove the massive 250px hard limit */
   }
 
   .hero-sequence-title {
-    margin-top: 12px; /* reduced from desktop value to fit nicely */
+    margin-top: 12px;
+    /* reduced from desktop value to fit nicely */
     font-size: clamp(1rem, 4vw, 1.2rem);
   }
 
@@ -283,15 +296,17 @@
     font-size: clamp(1.8rem, 8vw, 2.5rem);
     margin-top: 0;
   }
-  
+
   .hero-final-content {
-    gap: 1.5rem; /* tighten spacing on smaller screens */
+    gap: 1.5rem;
+    /* tighten spacing on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   :root {
-    --cursor-offset: 10vw; /* for a 60vw shape */
+    --cursor-offset: 10vw;
+    /* for a 60vw shape */
   }
 
   .scaled-shape-img {

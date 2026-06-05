@@ -2,14 +2,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import logoImg from '../assets/logo2.png';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
   const location = useLocation();
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
     setTheme(savedTheme);
     document.documentElement.setAttribute('data-theme', savedTheme);
   }, []);
@@ -31,27 +32,27 @@ const NavigationBar = () => {
   return (
     <nav className="navbar container">
       <Link to="/" className="logo">
-        Cindy<span className="text-gradient">.</span>
+        <img src={logoImg} alt="Cindy" className="nav-logo-img" />
       </Link>
       <div className="nav-links">
         {navLinks.map((link) => (
-          <Link 
-            key={link.path} 
+          <Link
+            key={link.path}
             to={link.path}
             className={`nav-item ${location.pathname === link.path ? 'active' : ''}`}
           >
             {link.label}
             {location.pathname === link.path && (
-              <motion.div 
-                layoutId="nav-underline" 
-                className="nav-underline" 
+              <motion.div
+                layoutId="nav-underline"
+                className="nav-underline"
               />
             )}
           </Link>
         ))}
-        
-        <button 
-          onClick={toggleTheme} 
+
+        <button
+          onClick={toggleTheme}
           className="theme-toggle-btn"
           aria-label="Toggle theme"
         >
