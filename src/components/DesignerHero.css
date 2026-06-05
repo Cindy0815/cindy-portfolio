@@ -1,0 +1,142 @@
+.designer-hero {
+  position: relative;
+  width: 100vw;
+  height: 90vh; /* Adjust as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%); /* Full bleed trick */
+}
+
+/* Background Gradients */
+.gradient-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.6;
+  animation: breathe 10s infinite alternate ease-in-out;
+}
+
+[data-theme='light'] .gradient-blur {
+  opacity: 0.8; /* Brighter in light mode */
+}
+
+.blur-blue {
+  width: 40vw;
+  height: 40vw;
+  background: rgba(99, 102, 241, 0.3);
+  top: -10%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.blur-pink {
+  width: 50vw;
+  height: 30vw;
+  background: rgba(244, 114, 182, 0.3);
+  top: -5%;
+  right: -10%;
+  animation-delay: -2s;
+}
+
+.blur-green {
+  width: 35vw;
+  height: 35vw;
+  background: rgba(163, 230, 53, 0.2);
+  bottom: -10%;
+  left: 20%;
+  animation-delay: -4s;
+}
+
+.blur-yellow {
+  width: 40vw;
+  height: 40vw;
+  background: rgba(250, 204, 21, 0.2);
+  bottom: -20%;
+  right: 10%;
+  animation-delay: -6s;
+}
+
+@keyframes breathe {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.1) translate(5%, 5%); }
+  100% { transform: scale(0.9) translate(-5%, -5%); }
+}
+
+/* Shapes Layer */
+.shapes-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.absolute-shape {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Figma Bounding Box Effect */
+.figma-box {
+  position: relative;
+  padding: 10px;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.figma-box.active {
+  border-color: #a0a0a0; /* Thin grey bounding box */
+}
+
+.figma-box.active::before,
+.figma-box.active::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border: 1px solid #a0a0a0;
+  border-radius: 50%; /* Image has circular corner handles */
+}
+
+.figma-box.active::before { top: -4px; left: -4px; }
+.figma-box.active::after { bottom: -4px; right: -4px; }
+
+/* Custom Cursor */
+.custom-cursor {
+  position: absolute;
+  z-index: 100;
+  /* Rotate slightly to look like a standard cursor */
+  transform-origin: top left;
+}
+
+/* Typography */
+.hero-content-centered {
+  text-align: center;
+  z-index: 20;
+}
+
+.hero-sequence-title {
+  font-family: var(--font-sans);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-subtext {
+  font-size: 0.9rem;
+  color: #4a4a4a;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
