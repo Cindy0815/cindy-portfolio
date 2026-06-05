@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MousePointer2, ArrowDown } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import { MousePointer2, ArrowDown, RefreshCcw } from 'lucide-react';
 import './DesignerHero.css';
 
 // Background
@@ -14,7 +14,57 @@ import gridImg from '../assets/grid.png';
 
 const DesignerHero = () => {
   const [step, setStep] = useState(0);
+  const [refreshKey, setRefreshKey] = useState(0);
   const [offsetVw, setOffsetVw] = useState(4);
+  const [isHovering, setIsHovering] = useState(false);
+  const [tinyShapes, setTinyShapes] = useState([]);
+  const constraintsRef = useRef(null);
+
+  // Mouse tracking for interactive cursor
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
+  const springConfig = { damping: 25, stiffness: 300, mass: 0.5 }; // Snappy follow
+  const cursorX = useSpring(mouseX, springConfig);
+  const cursorY = useSpring(mouseY, springConfig);
+
+  // Trailing ripple tracking (slower, softer follow to create a snake-like trail)
+  const rippleX1 = useSpring(mouseX, { damping: 15, stiffness: 100, mass: 0.8 });
+  const rippleY1 = useSpring(mouseY, { damping: 15, stiffness: 100, mass: 0.8 });
+  
+  const rippleX2 = useSpring(mouseX, { damping: 20, stiffness: 60, mass: 1.2 });
+  const rippleY2 = useSpring(mouseY, { damping: 20, stiffness: 60, mass: 1.2 });
+  
+  const rippleX3 = useSpring(mouseX, { damping: 25, stiffness: 30, mass: 1.8 });
+  const rippleY3 = useSpring(mouseY, { damping: 25, stiffness: 30, mass: 1.8 });
+
+  const handleMouseMove = (e) => {
+    if (step >= 13) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      mouseX.set(e.clientX - rect.left);
+      mouseY.set(e.clientY - rect.top);
+    }
+  };
+
+  const handleCanvasClick = (e) => {
+    if (step >= 13) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const shapeTypes = [shapePurple, shapeGreen, shapePink];
+      const randomShape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+      const randomRotate = Math.random() * 360;
+      
+      setTinyShapes(prev => [...prev, { id: Date.now() + Math.random(), x, y, img: randomShape, rotate: randomRotate }]);
+    }
+  };
+
+  const handleRefresh = (e) => {
+    e.stopPropagation();
+    setStep(0);
+    setTinyShapes([]);
+    setRefreshKey(prev => prev + 1);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -45,7 +95,7 @@ const DesignerHero = () => {
       setTimeout(() => setStep(13), 6200), // 13: Subtext
     ];
     return () => sequence.forEach(clearTimeout);
-  }, []);
+  }, [refreshKey]);
 
   // Exact center coordinates for the shapes
   const positions = {
@@ -110,7 +160,23 @@ const DesignerHero = () => {
   );
 
   return (
-    <div className="designer-hero">
+    <div 
+      className={`designer-hero ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      onClick={handleCanvasClick}
+    >
+      {/* Refresh Button */}
+      <motion.button 
+        className="refresh-btn"
+        onClick={handleRefresh}
+        whileHover={{ rotate: 180 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+      >
+        <RefreshCcw size={20} />
+      </motion.button>
+
       {/* Background Gradients */}
       <motion.img
         initial={{ opacity: 0 }}
@@ -122,7 +188,7 @@ const DesignerHero = () => {
       />
 
       {/* Shapes Layer */}
-      <div className="shapes-layer">
+      <div className="shapes-layer" ref={constraintsRef}>
 
         {/* Grids */}
         <GridBox currentStep={step} triggerStep={2} pos={positions.purple} />
@@ -131,7 +197,19 @@ const DesignerHero = () => {
 
         <AnimatePresence>
           {step >= 3 && (
-            <motion.div className="shape-container" style={{ left: positions.purple.cx, top: positions.purple.cy }} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", bounce: 0.5 }}>
+            <motion.div 
+              className="shape-container interactive-shape" 
+              style={{ left: positions.purple.cx, top: positions.purple.cy }} 
+              initial={{ opacity: 0, scale: 0.8 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              transition={{ type: "spring", bounce: 0.5 }}
+              drag={step >= 13}
+              dragConstraints={constraintsRef}
+              dragElastic={0.2}
+              whileDrag={{ scale: 1.1, zIndex: 50 }}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+            >
               <motion.div
                 animate={{ y: [0, -15, 0], scale: [1, 1.05, 1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
@@ -143,7 +221,19 @@ const DesignerHero = () => {
           )}
 
           {step >= 7 && (
-            <motion.div className="shape-container" style={{ left: positions.green.cx, top: positions.green.cy }} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", bounce: 0.5 }}>
+            <motion.div 
+              className="shape-container interactive-shape" 
+              style={{ left: positions.green.cx, top: positions.green.cy }} 
+              initial={{ opacity: 0, scale: 0.8 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              transition={{ type: "spring", bounce: 0.5 }}
+              drag={step >= 13}
+              dragConstraints={constraintsRef}
+              dragElastic={0.2}
+              whileDrag={{ scale: 1.1, zIndex: 50 }}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+            >
               <motion.div
                 animate={{ y: [0, -12, 0], scale: [1, 1.03, 1] }}
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
@@ -155,7 +245,19 @@ const DesignerHero = () => {
           )}
 
           {step >= 11 && (
-            <motion.div className="shape-container" style={{ left: positions.pink.cx, top: positions.pink.cy }} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", bounce: 0.5 }}>
+            <motion.div 
+              className="shape-container interactive-shape" 
+              style={{ left: positions.pink.cx, top: positions.pink.cy }} 
+              initial={{ opacity: 0, scale: 0.8 }} 
+              animate={{ opacity: 1, scale: 1 }} 
+              transition={{ type: "spring", bounce: 0.5 }}
+              drag={step >= 13}
+              dragConstraints={constraintsRef}
+              dragElastic={0.2}
+              whileDrag={{ scale: 1.1, zIndex: 50 }}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+            >
               <motion.div
                 animate={{ y: [0, -18, 0], scale: [1, 1.06, 1] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
@@ -167,17 +269,92 @@ const DesignerHero = () => {
           )}
         </AnimatePresence>
 
-        {/* Custom Animated Cursor */}
-        <motion.div
-          className="custom-cursor"
-          variants={cursorVariants}
-          initial="0"
-          animate={step.toString()}
-          // Default transition applied when variant doesn't specify one
-          transition={defaultSpring}
-        >
-          <MousePointer2 size={32} color="currentColor" fill="currentColor" />
-        </motion.div>
+        {/* Trailing Ripple Effect Layers */}
+        <AnimatePresence>
+          {step >= 13 && isHovering && (
+            <>
+              <motion.div
+                className="mouse-ripple-trail"
+                style={{ x: rippleX1, y: rippleY1, background: '#e76f80' }} /* Pink */
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.5, scale: [0.8, 1, 0.8] }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" } }}
+              />
+              <motion.div
+                className="mouse-ripple-trail"
+                style={{ x: rippleX2, y: rippleY2, background: '#bccb3e' }} /* Green */
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.6, scale: [1, 1.2, 1] }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 } }}
+              />
+              <motion.div
+                className="mouse-ripple-trail"
+                style={{ x: rippleX3, y: rippleY3, background: '#5b65f0' }} /* Purple */
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 0.7, scale: [1.2, 1.4, 1.2] }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.4 } }}
+              />
+            </>
+          )}
+        </AnimatePresence>
+
+        {/* Interactive User Cursor (Only visible after sequence completes and user hovers) */}
+        <AnimatePresence>
+          {step >= 13 && isHovering && (
+            <motion.div
+              className="custom-cursor interactive-user-cursor"
+              style={{ x: cursorX, y: cursorY, rotate: -10 }}
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.15 }}
+            >
+              <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {tinyShapes.map((shape) => (
+            <motion.img
+              key={shape.id}
+              src={shape.img}
+              alt=""
+              style={{
+                position: 'absolute',
+                left: shape.x,
+                top: shape.y,
+                width: '120px', /* Makes the physical inner shape ~35px due to image padding */
+                pointerEvents: 'none', /* Don't block future clicks */
+                zIndex: 15,
+                transformOrigin: 'center center'
+              }}
+              initial={{ scale: 0, rotate: shape.rotate - 60, opacity: 0, x: '-50%', y: '-50%' }}
+              animate={{ scale: 1, rotate: shape.rotate, opacity: 1, x: '-50%', y: '-50%' }}
+              transition={{ type: "spring", bounce: 0.6 }}
+            />
+          ))}
+        </AnimatePresence>
+
+        {/* Custom Animated Cursor (Sequence) */}
+        <AnimatePresence>
+          {step < 13 && (
+            <motion.div
+              className="custom-cursor"
+              variants={cursorVariants}
+              initial="0"
+              animate={step.toString()}
+              exit={{ opacity: 0 }}
+              // Default transition applied when variant doesn't specify one
+              transition={defaultSpring}
+            >
+              <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Main Content */}

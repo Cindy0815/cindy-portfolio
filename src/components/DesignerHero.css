@@ -14,6 +14,40 @@
   /* Fallback */
 }
 
+/* Refresh Button */
+.refresh-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 200; /* Above everything */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  pointer-events: auto; /* Required because it is absolutely positioned on top */
+  transition: background 0.2s ease;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='light'] .refresh-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .refresh-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 /* Background Image */
 .full-header-bg {
   position: absolute;
@@ -73,10 +107,50 @@
   transform-origin: top left;
   transform: rotate(-10deg) translate(-2px, -2px);
   color: #ffffff; /* White in dark mode */
+  pointer-events: none;
 }
 
 [data-theme='light'] .custom-cursor {
   color: #18181b; /* Black in light mode */
+}
+
+/* Interactive Canvas */
+.interactive-canvas {
+  cursor: none !important;
+}
+
+.interactive-shape {
+  touch-action: none; /* Required for dragging to work well on touch devices */
+  pointer-events: auto; /* Re-enable pointer events so it can be dragged */
+}
+
+.interactive-shape img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.interactive-user-cursor {
+  top: 0;
+  left: 0;
+  /* Transform origin overridden by inline Framer Motion style */
+}
+
+/* Trailing Mouse Ripple */
+.mouse-ripple-trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  /* Shift it by exactly half its size to center it perfectly on the mouse coordinates */
+  margin-left: -12px;
+  margin-top: -12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5b65f0, #bccb3e, #e76f80);
+  opacity: 0.7;
+  filter: blur(8px);
+  pointer-events: none;
+  z-index: 99; /* Just underneath the actual cursor */
 }
 
 /* Typography */
