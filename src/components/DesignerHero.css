@@ -252,6 +252,9 @@
 }
 
 .btn-primary-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #e6f691;
   color: #1a1a1a;
   padding: 0.8rem 2rem;
@@ -268,6 +271,9 @@
 }
 
 .btn-secondary-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: var(--text-primary);
   border: 1.5px solid var(--text-secondary);
@@ -277,11 +283,38 @@
   font-size: 1rem;
   transition: transform var(--transition-fast), border-color var(--transition-fast);
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-secondary-hero::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 100px;
+  padding: 1.5px;
+  background: linear-gradient(90deg, #5b65f0, #bccb3e, #e76f80);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .btn-secondary-hero:hover {
   transform: translateY(-2px);
-  border-color: var(--text-primary);
+  border-color: transparent;
+  background: linear-gradient(90deg, #5b65f0, #bccb3e, #e76f80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-secondary-hero:hover::before {
+  opacity: 1;
 }
 
 .scroll-indicator {

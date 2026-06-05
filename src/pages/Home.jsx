@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { caseStudies } from '../data/portfolioData';
+import { caseStudies, playWorks } from '../data/portfolioData';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import DesignerHero from '../components/DesignerHero';
@@ -51,6 +51,52 @@ const Home = () => {
               </Link>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Play Section */}
+      <section className="play-works container section">
+        <div className="section-header flex justify-between items-end">
+          <div>
+            <h2>Play</h2>
+            <p className="section-subtext">Here’s a peek at what I’ve been up to in 3D, AR/VR, and motion graphics!</p>
+          </div>
+          <Link to="/play" className="view-all-link">View all <ArrowRight size={16}/></Link>
+        </div>
+        
+        <div className="work-grid">
+          {playWorks.map((work, index) => (
+            <motion.div 
+              key={work.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              className="play-card"
+            >
+              <Link to={`/play/${work.id}`}>
+                <div className="play-card-image">
+                  <img src={work.image} alt={work.title} />
+                  <div className="play-card-overlay">
+                    <h3>{work.title}</h3>
+                    <p>{work.category}</p>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Footer */}
+      <section className="cta-footer container section">
+        <div className="cta-content">
+          <h2>Interested in working together?</h2>
+          <p className="section-subtext">Feel free to reach out for collaborations or just a friendly hello!</p>
+          <div className="cta-buttons">
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn-primary-hero">View Resume</a>
+            <a href="mailto:hello@example.com" className="btn-secondary-hero">Let's Connect!</a>
+          </div>
         </div>
       </section>
     </div>

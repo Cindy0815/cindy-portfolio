@@ -52,7 +52,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--accent-gradient);
+  background: linear-gradient(90deg, #5b65f0, #bccb3e, #e76f80);
   border-radius: 2px;
 }
 
