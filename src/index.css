@@ -10,7 +10,7 @@
   --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   --border-color: rgba(255, 255, 255, 0.1);
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-display: 'Inter', sans-serif;
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -46,7 +46,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 

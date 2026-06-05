@@ -52,11 +52,10 @@
   height: 40px;
   border-radius: 50%;
   color: var(--text-primary);
-  background: var(--surface-color);
-  transition: transform var(--transition-fast), background var(--transition-fast);
+  transition: transform var(--transition-fast), color var(--transition-fast);
 }
 
 .theme-toggle-btn:hover {
   transform: scale(1.1);
-  background: var(--surface-color-hover);
+  color: var(--accent-color);
 }

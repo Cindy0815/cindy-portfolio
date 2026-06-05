@@ -1,68 +1,38 @@
 .designer-hero {
   position: relative;
-  width: 100vw;
-  height: 90vh; /* Adjust as needed */
+  width: calc(100% - 2rem);
+  max-width: 1400px;
+  height: 80vh;
+  /* Decreased from 90vh */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-left: calc(-50vw + 50%); /* Full bleed trick */
+  margin: 0 auto;
+  border-radius: 1.5rem;
+  background-color: var(--bg-color);
+  /* Fallback */
 }
 
-/* Background Gradients */
-.gradient-blur {
+/* Background Image */
+.full-header-bg {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: normal;
+}
+
+.object-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+[data-theme='dark'] .full-header-bg {
   opacity: 0.6;
-  animation: breathe 10s infinite alternate ease-in-out;
-}
-
-[data-theme='light'] .gradient-blur {
-  opacity: 0.8; /* Brighter in light mode */
-}
-
-.blur-blue {
-  width: 40vw;
-  height: 40vw;
-  background: rgba(99, 102, 241, 0.3);
-  top: -10%;
-  left: -10%;
-  animation-delay: 0s;
-}
-
-.blur-pink {
-  width: 50vw;
-  height: 30vw;
-  background: rgba(244, 114, 182, 0.3);
-  top: -5%;
-  right: -10%;
-  animation-delay: -2s;
-}
-
-.blur-green {
-  width: 35vw;
-  height: 35vw;
-  background: rgba(163, 230, 53, 0.2);
-  bottom: -10%;
-  left: 20%;
-  animation-delay: -4s;
-}
-
-.blur-yellow {
-  width: 40vw;
-  height: 40vw;
-  background: rgba(250, 204, 21, 0.2);
-  bottom: -20%;
-  right: 10%;
-  animation-delay: -6s;
-}
-
-@keyframes breathe {
-  0% { transform: scale(1) translate(0, 0); }
-  50% { transform: scale(1.1) translate(5%, 5%); }
-  100% { transform: scale(0.9) translate(-5%, -5%); }
 }
 
 /* Shapes Layer */
@@ -73,59 +43,72 @@
   z-index: 10;
 }
 
-.absolute-shape {
+/* Each shape container is positioned exactly at the cursor coordinates */
+.shape-container {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 0;
+  height: 0;
 }
 
-/* Figma Bounding Box Effect */
-.figma-box {
-  position: relative;
-  padding: 10px;
-  border: 1px solid transparent;
-  transition: border-color 0.3s;
-}
-
-.figma-box.active {
-  border-color: #a0a0a0; /* Thin grey bounding box */
-}
-
-.figma-box.active::before,
-.figma-box.active::after {
-  content: "";
+/* We render the massive 6912x3456 images scaled down.
+   Since the shape inside them is centered, translating by -50% -50% perfectly
+   places the physical shape exactly at the parent shape-container's coordinates! */
+.scaled-shape-img {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border: 1px solid #a0a0a0;
-  border-radius: 50%; /* Image has circular corner handles */
+  /* Reduced from 40vw to 25vw to scale down the shapes as requested */
+  width: 25vw;
+  min-width: 250px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }
-
-.figma-box.active::before { top: -4px; left: -4px; }
-.figma-box.active::after { bottom: -4px; right: -4px; }
 
 /* Custom Cursor */
 .custom-cursor {
   position: absolute;
   z-index: 100;
-  /* Rotate slightly to look like a standard cursor */
+  /* The cursor arrow tip should point exactly at the coordinates. */
   transform-origin: top left;
+  transform: rotate(-10deg) translate(-2px, -2px);
+  color: #ffffff; /* White in dark mode */
+}
+
+[data-theme='light'] .custom-cursor {
+  color: #18181b; /* Black in light mode */
 }
 
 /* Typography */
 .hero-content-centered {
   text-align: center;
   z-index: 20;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Grid wrapper allows exiting and entering text to overlap perfectly */
+.title-wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 80px;
+  /* Prevent layout shift */
 }
 
 .hero-sequence-title {
+  grid-area: 1 / 1;
   font-family: var(--font-sans);
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  /* Responsive scaling */
+  font-weight: 600;
   letter-spacing: -0.01em;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
+  margin-top: 100px;
+  /* Optically push down a few pixels to align with center */
+  /* Handled by wrapper */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,10 +116,111 @@
   flex-wrap: wrap;
 }
 
+.name-gradient {
+  background: linear-gradient(90deg, #5b65f0, #bccb3e, #e76f80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  /* Name is slightly larger */
+  margin-top: 0;
+}
+
+.word {
+  display: inline-block;
+}
+
+.arrow {
+  display: inline-block;
+}
+
+.sequence-arrow {
+  color: #ffffff;
+}
+
+[data-theme='light'] .sequence-arrow {
+  color: #9da388;
+}
+
+/* Final Subtext and Arrow */
+.hero-final-content {
+  margin-top: 0.5rem;
+  /* Reduced from 1.5rem to decrease gap */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
 .hero-subtext {
-  font-size: 0.9rem;
-  color: #4a4a4a;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: var(--text-secondary);
   letter-spacing: 0.02em;
-  font-weight: 500;
+  font-weight: 400;
   font-family: var(--font-sans);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.view-work-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.view-work-text {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.view-work-arrow {
+  color: var(--text-primary);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  :root {
+    --cursor-offset: 8vw; /* Matches the scaled down 50vw shape */
+  }
+
+  .designer-hero {
+    height: 70vh; /* slightly shorter on mobile */
+    border-radius: 1rem;
+    width: calc(100% - 1rem); /* slightly wider relative to edge */
+  }
+
+  .scaled-shape-img {
+    width: 50vw; /* larger relative percentage on mobile */
+    min-width: 0; /* remove the massive 250px hard limit */
+  }
+
+  .hero-sequence-title {
+    margin-top: 12px; /* reduced from desktop value to fit nicely */
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+
+  .name-gradient {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    margin-top: 0;
+  }
+  
+  .hero-final-content {
+    gap: 1.5rem; /* tighten spacing on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --cursor-offset: 10vw; /* for a 60vw shape */
+  }
+
+  .scaled-shape-img {
+    width: 60vw;
+  }
 }
