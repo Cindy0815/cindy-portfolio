@@ -446,17 +446,36 @@ const DesignerHero = () => {
             people navigate complexity with confidence
           </p>
 
-          <div className="view-work-container">
-            <span className="view-work-text">View Work</span>
+          <div 
+            className="hero-buttons"
+            onClick={(e) => e.stopPropagation()}
+            onPointerDown={(e) => e.stopPropagation()}
+          >
+            <button className="btn-primary-hero">View Work</button>
+            <button className="btn-secondary-hero">Let's Connect!</button>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator at the very bottom */}
+      <AnimatePresence>
+        {step >= 13 && (
+          <motion.div 
+            className="scroll-indicator"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <span className="scroll-text">scroll to view work</span>
             <motion.div
               animate={{ y: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
             >
-              <ArrowDown size={20} className="view-work-arrow" />
+              <ArrowDown size={16} className="view-work-arrow" />
             </motion.div>
-          </div>
-        </motion.div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

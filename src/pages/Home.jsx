@@ -12,8 +12,11 @@ const Home = () => {
 
       {/* Featured Case Studies */}
       <section className="featured-work container section">
-        <div className="section-header flex justify-between items-center">
-          <h2>Featured Works</h2>
+        <div className="section-header flex justify-between items-end">
+          <div>
+            <h2>Featured Works</h2>
+            <p className="section-subtext">A look into my latest design case studies.</p>
+          </div>
           <Link to="/case-studies" className="view-all-link">View all <ArrowRight size={16}/></Link>
         </div>
         
@@ -30,10 +33,20 @@ const Home = () => {
               <Link to={`/case-studies/${study.id}`}>
                 <div className="card-image">
                   <img src={study.coverImage} alt={study.title} />
+                  {study.tags && (
+                    <div className="card-tags">
+                      {study.tags.map(tag => (
+                        <span key={tag} className="tag-pill">{tag}</span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="card-content">
                   <h3>{study.title}</h3>
                   <p>{study.shortDescription}</p>
+                  <div className="card-action">
+                    <span className="view-project-btn">View Project <ArrowRight size={16}/></span>
+                  </div>
                 </div>
               </Link>
             </motion.div>
