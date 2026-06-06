@@ -162,6 +162,31 @@
   will-change: transform;
 }
 
+.click-me-prompt {
+  position: absolute;
+  top: -32px;
+  left: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  pointer-events: none;
+  background: var(--bg-secondary);
+  padding: 4px 10px;
+  border-radius: 100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  /* The cursor parent is rotated -10deg. We counter-rotate the prompt so it's upright. */
+  transform: rotate(10deg);
+}
+
+[data-theme='light'] .click-me-prompt {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
 /* Typography */
 .hero-content-centered {
   text-align: center;

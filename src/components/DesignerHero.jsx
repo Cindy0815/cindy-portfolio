@@ -48,6 +48,7 @@ const DesignerHero = () => {
   const [offsetVw, setOffsetVw] = useState(4);
   const [isHovering, setIsHovering] = useState(false);
   const [tinyShapes, setTinyShapes] = useState([]);
+  const [hasClicked, setHasClicked] = useState(false);
   const constraintsRef = useRef(null);
 
   // Mouse tracking for interactive cursor
@@ -77,6 +78,8 @@ const DesignerHero = () => {
 
   const handleCanvasClick = (e) => {
     if (step >= 13) {
+      if (!hasClicked) setHasClicked(true);
+
       const rect = e.currentTarget.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -93,6 +96,7 @@ const DesignerHero = () => {
     e.stopPropagation();
     setStep(0);
     setTinyShapes([]);
+    setHasClicked(false);
     setRefreshKey(prev => prev + 1);
   };
 
@@ -314,6 +318,22 @@ const DesignerHero = () => {
               exit={{ opacity: 0, scale: 0.5 }}
               transition={{ duration: 0.15 }}
             >
+              <AnimatePresence>
+                {!hasClicked && (
+                  <motion.div
+                    className="click-me-prompt"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: [1, 1.1, 1] }}
+                    exit={{ opacity: 0, scale: 0.5 }}
+                    transition={{ 
+                      opacity: { duration: 0.2 },
+                      scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
+                    }}
+                  >
+                    click me!
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <MousePointer2 size={32} color="currentColor" fill="currentColor" />
             </motion.div>
           )}

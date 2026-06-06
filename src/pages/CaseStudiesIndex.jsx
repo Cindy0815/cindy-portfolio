@@ -1,10 +1,41 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { caseStudies } from '../data/portfolioData';
+import { useState, useEffect } from 'react';
+import './Home.css';
 
 const CaseStudiesIndex = () => {
+  const [cursorText, setCursorText] = useState("");
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
+  const cursorX = useSpring(mouseX, { stiffness: 400, damping: 30 });
+  const cursorY = useSpring(mouseY, { stiffness: 400, damping: 30 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
   return (
     <div className="container page-container">
+      <AnimatePresence>
+        {cursorText && (
+          <motion.div
+            className="home-custom-cursor"
+            style={{ x: cursorX, y: cursorY }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {cursorText}
+          </motion.div>
+        )}
+      </AnimatePresence>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,6 +56,8 @@ const CaseStudiesIndex = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="work-card"
+            onMouseEnter={() => setCursorText("View Project")}
+            onMouseLeave={() => setCursorText("")}
           >
             <Link to={`/case-studies/${study.id}`}>
               <div className="card-image">

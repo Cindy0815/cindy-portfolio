@@ -2,11 +2,48 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { caseStudies } from '../data/portfolioData';
+import { useState, useEffect } from 'react';
 import './CaseStudyTemplate.css';
 
 const CaseStudyTemplate = () => {
   const { id } = useParams();
   const study = caseStudies.find(s => s.id === id);
+  const [activeSection, setActiveSection] = useState(null);
+
+  useEffect(() => {
+    if (!study || !study.sections) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -70% 0px', // Trigger when section is near the top
+        threshold: 0
+      }
+    );
+
+    study.sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [study]);
+
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const yOffset = -120; // Account for the sticky progress bar height
+      const y = targetElement.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
 
   if (!study) {
     return (
@@ -25,6 +62,28 @@ const CaseStudyTemplate = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      {/* Sticky Progress Bar */}
+      {study.sections && study.sections.length > 0 && (
+        <nav className="cs-progress-bar">
+          <div className="container progress-container">
+            <ul className="progress-nav-list">
+              {study.sections.map((section) => (
+                <li key={section.id}>
+                  <a 
+                    href={`#${section.id}`} 
+                    className={`progress-link ${activeSection === section.id ? 'active' : ''}`}
+                    onClick={(e) => handleNavClick(e, section.id)}
+                  >
+                    <span className="progress-indicator"></span>
+                    <span className="progress-text">{section.subtitle.split(' / ')[1] || section.subtitle}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      )}
+
       {/* Hero Section */}
       <header className="cs-hero container section">
         <Link to="/case-studies" className="back-link">
@@ -67,35 +126,33 @@ const CaseStudyTemplate = () => {
 
       {/* Content Body */}
       <div className="cs-body container">
-        <section className="cs-section">
-          <h2>Overview</h2>
-          <p>{study.overview}</p>
-        </section>
+        {study.sections && study.sections.map((section) => (
+          <section key={section.id} id={section.id} className="cs-dynamic-section">
+            <div className="section-subtitle">{section.subtitle}</div>
+            
+            <div className="section-content-blocks">
+              {section.content && section.content.map((block, index) => (
+                <div key={index} className="content-block">
+                  {block.heading && <h2 className="section-heading">{block.heading}</h2>}
+                  
+                  {block.paragraphs && block.paragraphs.length > 0 && (
+                    <div className="section-paragraphs">
+                      {block.paragraphs.map((text, i) => (
+                        <p key={i}>{text}</p>
+                      ))}
+                    </div>
+                  )}
 
-        <section className="cs-section">
-          <h2>The Problem</h2>
-          <p className="highlight-text">{study.problemStatement}</p>
-        </section>
-
-        <section className="cs-section">
-          <h2>Design Process</h2>
-          <div className="process-list">
-            {study.process.map((step, index) => (
-              <div key={index} className="process-step">
-                <div className="step-number">0{index + 1}</div>
-                <div className="step-content">
-                  <h3>{step.phase}</h3>
-                  <p>{step.description}</p>
+                  {block.image && (
+                    <div className="section-image-wrapper">
+                      <img src={block.image} alt={block.heading || `section image ${index}`} className="section-image" />
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="cs-section">
-          <h2>Outcomes & Learnings</h2>
-          <p>{study.outcomes}</p>
-        </section>
+              ))}
+            </div>
+          </section>
+        ))}
       </div>
 
       <div className="cs-footer container section text-center">

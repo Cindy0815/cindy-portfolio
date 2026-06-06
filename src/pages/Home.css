@@ -85,6 +85,48 @@
   gap: 3rem;
 }
 
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding-bottom: 6rem;
+}
+
+.home-custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 90px;
+  background-color: var(--text-primary);
+  color: var(--bg-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+  pointer-events: none;
+  z-index: 9999;
+  margin-left: -45px;
+  margin-top: -45px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+[data-theme='light'] .home-custom-cursor {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.work-card:hover,
+.work-card:hover * {
+  cursor: none !important;
+}
+
 .work-card {
   background: var(--surface-color);
   border-radius: 24px;
