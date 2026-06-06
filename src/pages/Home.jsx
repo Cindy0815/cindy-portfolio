@@ -21,7 +21,7 @@ const Home = () => {
         </div>
 
         <div className="work-grid">
-          {caseStudies.map((study, index) => (
+          {caseStudies.slice(0, 4).map((study, index) => (
             <motion.div
               key={study.id}
               initial={{ opacity: 0, y: 50 }}

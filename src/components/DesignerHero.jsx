@@ -23,7 +23,7 @@ const GridBox = ({ currentStep, triggerStep, pos }) => (
     {(currentStep >= triggerStep - 1 && currentStep <= triggerStep) && (
       <motion.div
         className="shape-container"
-        style={{ left: pos.cx, top: pos.cy }}
+        style={{ left: `${pos.cx}%`, top: `${pos.cy}%` }}
         exit={{ opacity: 0, transition: { duration: 0.2 } }}
       >
         <motion.img
@@ -129,17 +129,17 @@ const DesignerHero = () => {
 
   // Exact center coordinates for the shapes
   const positions = {
-    purple: { cx: "14vw", cy: "45vh" },
-    green: { cx: "50%", cy: "20%" }, // Centered to the header text
-    pink: { cx: "75vw", cy: "50vh" }
+    purple: { cx: 15, cy: 54 },
+    green: { cx: 50, cy: 20 }, // Centered to the header text
+    pink: { cx: 80, cy: 60 }
   };
 
   // Helper to calculate Top-Left and Bottom-Right for the cursor
   // The shapes are roughly 8vw by 8vw on screen, so +/- 4vw from center
-  const getTL = (pos) => ({ left: `calc(${pos.cx} + -${offsetVw}vw)`, top: `calc(${pos.cy} + -${offsetVw}vw)` });
-  const getBR = (pos) => ({ left: `calc(${pos.cx} + ${offsetVw}vw)`, top: `calc(${pos.cy} + ${offsetVw}vw)` });
+  const getTL = (pos) => ({ left: `calc(${pos.cx}% + ${-offsetVw}vw)`, top: `calc(${pos.cy}% + ${-offsetVw}vw)` });
+  const getBR = (pos) => ({ left: `calc(${pos.cx}% + ${offsetVw}vw)`, top: `calc(${pos.cy}% + ${offsetVw}vw)` });
 
-  const defaultSpring = { type: "spring", stiffness: 50, damping: 20 };
+  const moveEase = { type: "tween", ease: "easeInOut", duration: 0.5 };
   const dragEase = { duration: 0.4, ease: "easeOut" };
 
   const cursorVariants = {
@@ -147,11 +147,11 @@ const DesignerHero = () => {
     1: { ...getTL(positions.purple), opacity: 1, transition: { duration: 0.2 } },
     2: { ...getBR(positions.purple), opacity: 1, transition: dragEase },
     3: { ...getBR(positions.purple), opacity: 1 },
-    4: { ...getTL(positions.green), opacity: 1, transition: defaultSpring },
+    4: { ...getTL(positions.green), opacity: 1, transition: moveEase },
     5: { ...getTL(positions.green), opacity: 1 },
     6: { ...getBR(positions.green), opacity: 1, transition: dragEase },
     7: { ...getBR(positions.green), opacity: 1 },
-    8: { ...getTL(positions.pink), opacity: 1, transition: defaultSpring },
+    8: { ...getTL(positions.pink), opacity: 1, transition: moveEase },
     9: { ...getTL(positions.pink), opacity: 1 },
     10: { ...getBR(positions.pink), opacity: 1, transition: dragEase },
     11: { ...getBR(positions.pink), opacity: 1 },
@@ -201,7 +201,7 @@ const DesignerHero = () => {
           {step >= 3 && (
             <motion.div
               className="shape-container interactive-shape"
-              style={{ left: positions.purple.cx, top: positions.purple.cy }}
+              style={{ left: `${positions.purple.cx}%`, top: `${positions.purple.cy}%` }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ type: "spring", bounce: 0.5 }}
@@ -225,7 +225,7 @@ const DesignerHero = () => {
           {step >= 7 && (
             <motion.div
               className="shape-container interactive-shape"
-              style={{ left: positions.green.cx, top: positions.green.cy }}
+              style={{ left: `${positions.green.cx}%`, top: `${positions.green.cy}%` }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ type: "spring", bounce: 0.5 }}
@@ -249,7 +249,7 @@ const DesignerHero = () => {
           {step >= 11 && (
             <motion.div
               className="shape-container interactive-shape"
-              style={{ left: positions.pink.cx, top: positions.pink.cy }}
+              style={{ left: `${positions.pink.cx}%`, top: `${positions.pink.cy}%` }}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ type: "spring", bounce: 0.5 }}
@@ -352,7 +352,7 @@ const DesignerHero = () => {
               animate={step.toString()}
               exit={{ opacity: 0 }}
               // Default transition applied when variant doesn't specify one
-              transition={defaultSpring}
+              transition={moveEase}
             >
               <MousePointer2 size={32} color="currentColor" fill="currentColor" />
             </motion.div>
