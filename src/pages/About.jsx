@@ -65,7 +65,7 @@ const About = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 className="about-header">About Me</h1>
-        
+
         <div className="about-grid">
           {/* Left Column: Text */}
           <div className="about-text">
@@ -73,10 +73,11 @@ const About = () => {
               Hello! I'm Cindy, a multidisciplinary designer specializing in UX/UI design. I bridge the gap between human needs and business goals to create intuitive, delightful digital experiences.
             </p>
             <p>
-              My background in psychology combined with my passion for visual design allows me to craft products that not only look stunning but feel completely natural to use.
+              I'm a New York native and a designer who loves turning messy ideas into interactive and intuitive designs. As a product designer, I'm always figuring out how users think, whether it’s mapping out flows, testing prototypes, or asking one too many questions. From dashboards to online shops, I focus on creating experiences that balance visual appeal with functionality.
+
             </p>
-            
-            <div>
+
+            <div className="skills-section">
               <h2 className="skills-heading">Skills</h2>
               <ul className="skills-list">
                 {['UX Design', 'UI Design', 'Prototyping', 'User Research', 'Design Systems', 'Framer', 'Webflow'].map(skill => (
@@ -86,12 +87,74 @@ const About = () => {
                 ))}
               </ul>
             </div>
-            
+
+            <div className="education-experience-grid">
+              <div className="education-column">
+                <h2 className="education-heading">Education</h2>
+                <div className="education-timeline">
+                  <div className="education-item">
+                    <div className="education-meta">
+                      <span className="education-date">August 2026 - Present</span>
+                    </div>
+                    <div className="education-info">
+                      <h3 className="education-degree">MS in Information Science</h3>
+                      <p className="education-school">Cornell University</p>
+                    </div>
+                  </div>
+
+                  <div className="education-item">
+                    <div className="education-meta">
+                      <span className="education-date">August 2022 - May 2026</span>
+                    </div>
+                    <div className="education-info">
+                      <h3 className="education-degree">BS in Integrated Design and Media</h3>
+                      <p className="education-school">New York University</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="experience-column">
+                <h2 className="experience-heading">Experience</h2>
+                <div className="experience-timeline">
+                  <div className="experience-item">
+                    <div className="experience-meta">
+                      <span className="experience-date">2026</span>
+                    </div>
+                    <div className="experience-info">
+                      <h3 className="experience-role">Design Engineer Intern</h3>
+                      <p className="experience-company">Prelight</p>
+                    </div>
+                  </div>
+
+                  <div className="experience-item">
+                    <div className="experience-meta">
+                      <span className="experience-date">2025</span>
+                    </div>
+                    <div className="experience-info">
+                      <h3 className="experience-role">UX/UI Design Intern</h3>
+                      <p className="experience-company">Dentsu</p>
+                    </div>
+                  </div>
+
+                  <div className="experience-item">
+                    <div className="experience-meta">
+                      <span className="experience-date">2024</span>
+                    </div>
+                    <div className="experience-info">
+                      <h3 className="experience-role">Product Designer Intern</h3>
+                      <p className="experience-company">Conatix</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="contact-cta">
               <h2>Let's talk!</h2>
               <p>I'm currently looking for new opportunities.</p>
-              <a href="mailto:hello@example.com" className="btn-primary-hero" style={{ display: 'inline-flex' }}>
-                hello@example.com
+              <a href="mailto:cindychenc9@gmail.com" className="btn-primary-hero" style={{ display: 'inline-flex' }}>
+                cindychenc9@gmail.com
               </a>
             </div>
           </div>
@@ -100,9 +163,9 @@ const About = () => {
           <div className="about-image-col">
             <div className="carousel-container">
               <div className="about-image-wrapper" style={{ perspective: 'none', background: 'transparent', boxShadow: 'none' }}>
-                
+
                 {/* Persistent Background Peek Preview */}
-                <div 
+                <div
                   className="about-img"
                   style={{
                     backgroundImage: `url(${images[(currentIndex + 1) % images.length].src})`,
@@ -158,7 +221,7 @@ const About = () => {
                   </motion.p>
                 </AnimatePresence>
               </div>
-              
+
               <div className="carousel-controls">
                 <button className="carousel-btn" onClick={() => paginate(-1)} aria-label="Previous image">
                   <ChevronLeft size={24} />
