@@ -26,8 +26,19 @@ const Play = () => {
             className="work-card"
             style={{ borderRadius: '16px' }}
           >
-            <div className="card-image" style={{ height: '400px' }}>
-              <img src={work.image} alt={work.title} />
+            <div className="card-image" style={{ height: '400px', overflow: 'hidden' }}>
+              {work.video ? (
+                <video
+                  src={work.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
+              ) : (
+                <img src={work.image} alt={work.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              )}
             </div>
             <div className="card-content" style={{ padding: '1.5rem' }}>
               <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>{work.title}</h3>

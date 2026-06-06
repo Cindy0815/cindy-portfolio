@@ -224,6 +224,15 @@
   padding: 2rem;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: white;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.play-card:hover .play-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .play-card-overlay h3 {

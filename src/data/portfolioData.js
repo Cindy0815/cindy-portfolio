@@ -1,13 +1,19 @@
+import petalsTeaserVid from '../assets/Play_assets/petals_teaser_vid.mp4';
+import hatVid from '../assets/Play_assets/hatvid.mp4';
+import underwaterVR from '../assets/Play_assets/underwater_VR.mov';
+import logoAssignment from '../assets/Play_assets/Cindy_Chen_Logo_Assignment.mp4';
+import penniesThumbnail from '../assets/case_studies/Pennies/pennies_thumbnail.png';
+
 export const caseStudies = [
   {
     id: "fintech-dashboard",
-    title: "Fintech Dashboard Redesign",
-    shortDescription: "A complete overhaul of a financial analytics dashboard focusing on clarity and ease of use.",
-    tags: ["Fintech", "Dashboard", "UX/UI"],
-    role: "Lead Product Designer",
-    timeline: "8 Weeks",
-    tools: ["Figma", "Protopie", "Miro"],
-    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070",
+    title: "Pennies - AI-Powered Budget Management",
+    shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
+    tags: ["Fintech", "End-to-End UX/UI", "AI Integration"],
+    role: "Sole Product Designer",
+    timeline: "12 Weeks",
+    tools: ["Figma", "FigmaMake", "Miro"],
+    coverImage: penniesThumbnail,
     overview: "The existing dashboard was cluttered and difficult for users to extract meaningful insights. Our goal was to simplify the data visualization and improve the overall information architecture.",
     problemStatement: "Users were overwhelmed by data density and struggling to find key financial metrics quickly, leading to decreased engagement and increased support tickets.",
     process: [
@@ -53,15 +59,27 @@ export const caseStudies = [
 
 export const playWorks = [
   {
-    id: "3d-icons",
-    title: "3D Icon Set",
-    category: "3D Modeling",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2064"
+    id: "petals-teaser",
+    title: "A Petal's Worth Teaser",
+    category: "Motion Graphics",
+    video: petalsTeaserVid
   },
   {
-    id: "daily-ui",
-    title: "Daily UI Challenge",
-    category: "UI Design",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=2000"
+    id: "3d-hat",
+    title: "3D Hat Animation",
+    category: "3D Motion Design",
+    video: hatVid
+  },
+  {
+    id: "underwater-vr",
+    title: "Underwater VR Experience",
+    category: "AR/VR Design",
+    video: underwaterVR
+  },
+  {
+    id: "logo-animation",
+    title: "Logo Motion Design",
+    category: "Motion Graphics",
+    video: logoAssignment
   }
 ];

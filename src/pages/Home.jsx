@@ -76,7 +76,18 @@ const Home = () => {
             >
               <Link to={`/play/${work.id}`}>
                 <div className="play-card-image">
-                  <img src={work.image} alt={work.title} />
+                  {work.video ? (
+                    <video
+                      src={work.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                  ) : (
+                    <img src={work.image} alt={work.title} />
+                  )}
                   <div className="play-card-overlay">
                     <h3>{work.title}</h3>
                     <p>{work.category}</p>
