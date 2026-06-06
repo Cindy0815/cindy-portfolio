@@ -12,6 +12,36 @@ import shapeGreen from '../assets/green_shape.png';
 import shapePink from '../assets/pink_shape.png';
 import gridImg from '../assets/grid.png';
 
+const imageSizeClass = "scaled-shape-img";
+
+// Clip path animating from top-left (empty) to full bounding box
+const gridClipEmpty = "inset(18% 66% 82% 34%)";
+const gridClipFull = "inset(18% 34% 18% 34%)";
+
+const GridBox = ({ currentStep, triggerStep, pos }) => (
+  <AnimatePresence>
+    {(currentStep >= triggerStep - 1 && currentStep <= triggerStep) && (
+      <motion.div
+        className="shape-container"
+        style={{ left: pos.cx, top: pos.cy }}
+        exit={{ opacity: 0, transition: { duration: 0.2 } }}
+      >
+        <motion.img
+          src={gridImg}
+          className={`${imageSizeClass} grid-img-asset`}
+          initial={{ clipPath: gridClipEmpty, opacity: 0 }}
+          animate={{
+            clipPath: currentStep >= triggerStep ? gridClipFull : gridClipEmpty,
+            opacity: 1
+          }}
+          transition={{ duration: 0.4, ease: "easeOut" }} // Sped up from 0.6
+          alt=""
+        />
+      </motion.div>
+    )}
+  </AnimatePresence>
+);
+
 const DesignerHero = () => {
   const [step, setStep] = useState(0);
   const [refreshKey, setRefreshKey] = useState(0);
@@ -129,35 +159,7 @@ const DesignerHero = () => {
     13: { ...getBR(positions.pink), opacity: 0 }
   };
 
-  const imageSizeClass = "scaled-shape-img";
 
-  // Clip path animating from top-left (empty) to full bounding box
-  const gridClipEmpty = "inset(18% 66% 82% 34%)";
-  const gridClipFull = "inset(18% 34% 18% 34%)";
-
-  const GridBox = ({ currentStep, triggerStep, pos }) => (
-    <AnimatePresence>
-      {(currentStep >= triggerStep - 1 && currentStep <= triggerStep) && (
-        <motion.div
-          className="shape-container"
-          style={{ left: pos.cx, top: pos.cy }}
-          exit={{ opacity: 0, transition: { duration: 0.2 } }}
-        >
-          <motion.img
-            src={gridImg}
-            className={imageSizeClass}
-            initial={{ clipPath: gridClipEmpty, opacity: 0 }}
-            animate={{
-              clipPath: currentStep >= triggerStep ? gridClipFull : gridClipEmpty,
-              opacity: 1
-            }}
-            transition={{ duration: 0.4, ease: "easeOut" }} // Sped up from 0.6
-            alt=""
-          />
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
 
   return (
     <div
@@ -306,7 +308,7 @@ const DesignerHero = () => {
           {step >= 13 && isHovering && (
             <motion.div
               className="custom-cursor interactive-user-cursor"
-              style={{ x: cursorX, y: cursorY, rotate: -10 }}
+              style={{ x: cursorX, y: cursorY, rotate: -10, transformOrigin: 'top left', willChange: 'transform' }}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
@@ -344,6 +346,7 @@ const DesignerHero = () => {
           {step < 13 && (
             <motion.div
               className="custom-cursor"
+              style={{ willChange: 'left, top' }}
               variants={cursorVariants}
               initial="0"
               animate={step.toString()}
@@ -468,6 +471,7 @@ const DesignerHero = () => {
           >
             <span className="scroll-text">scroll to view work</span>
             <motion.div
+              style={{ willChange: 'transform' }}
               animate={{ y: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
             >

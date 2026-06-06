@@ -7,19 +7,18 @@ import './NavigationBar.css';
 
 const NavigationBar = () => {
   const location = useLocation();
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('portfolio-theme') || 'light';
+  });
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('portfolio-theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
   const navLinks = [

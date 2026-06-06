@@ -111,6 +111,7 @@
   color: #ffffff;
   /* White in dark mode */
   pointer-events: none;
+  will-change: left, top;
 }
 
 [data-theme='light'] .custom-cursor {
@@ -158,6 +159,7 @@
   pointer-events: none;
   z-index: 99;
   /* Just underneath the actual cursor */
+  will-change: transform;
 }
 
 /* Typography */
@@ -389,4 +391,9 @@
   .scaled-shape-img {
     width: 60vw;
   }
+}
+
+/* Invert grid lines color in dark mode */
+[data-theme='dark'] .grid-img-asset {
+  filter: brightness(0) invert(1);
 }

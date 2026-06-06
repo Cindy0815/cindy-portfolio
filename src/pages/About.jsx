@@ -48,7 +48,7 @@ const About = () => {
     })
   };
 
-  const handleDragEnd = (e, { offset, velocity }) => {
+  const handleDragEnd = (e, { offset }) => {
     const swipe = offset.x;
     if (swipe < -50) {
       paginate(1);
