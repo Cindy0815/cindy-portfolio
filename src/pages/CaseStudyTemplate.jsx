@@ -121,7 +121,7 @@ const CaseStudyTemplate = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        <img src={study.coverImage} alt={`${study.title} cover`} />
+        <img src={study.headerImage || study.coverImage} alt={`${study.title} cover`} />
       </motion.div>
 
       {/* Content Body */}

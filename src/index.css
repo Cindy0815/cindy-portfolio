@@ -17,7 +17,7 @@
 }
 
 [data-theme='light'] {
-  --bg-color: #ffffff;
+  --bg-color: rgb(255, 255, 255);
   --surface-color: #f4f4f5;
   --surface-color-hover: #e4e4e7;
   --text-primary: #18181b;

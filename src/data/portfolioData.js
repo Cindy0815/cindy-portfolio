@@ -1,8 +1,15 @@
-import petalsTeaserVid from '../assets/Play_assets/petals_teaser_vid.mp4';
-import hatVid from '../assets/Play_assets/hatvid.mp4';
-import underwaterVR from '../assets/Play_assets/underwater_VR.mov';
-import logoAssignment from '../assets/Play_assets/Cindy_Chen_Logo_Assignment.mp4';
-import penniesThumbnail from '../assets/case_studies/Pennies/pennies_thumbnail.png';
+const assetsGlob = import.meta.glob('../assets/**/*.{png,jpg,jpeg,gif,svg,mp4,mov}', { eager: true, query: '?url', import: 'default' });
+
+export const getAssetUrl = (path) => {
+  if (!path) return '';
+  if (path.startsWith('http') || path.startsWith('data:')) return path;
+  const resolvedPath = `../assets/${path}`;
+  if (assetsGlob[resolvedPath]) {
+    return assetsGlob[resolvedPath];
+  }
+  console.warn(`Asset not found: ${resolvedPath}`);
+  return path;
+};
 
 export const caseStudies = [
   {
@@ -13,7 +20,7 @@ export const caseStudies = [
     role: "Lead Product Designer",
     timeline: "12 Weeks",
     tools: ["Figma", "FigmaMake", "Miro"],
-    coverImage: penniesThumbnail,
+    coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.png"),
     sections: [
       {
         id: "overview",
@@ -75,7 +82,8 @@ export const caseStudies = [
     role: "Lead Product Designer",
     timeline: "12 Weeks",
     tools: ["Figma", "FigmaMake", "Miro"],
-    coverImage: penniesThumbnail,
+    coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.png"),
+    headerImage: getAssetUrl("case_studies/Pennies/p_thumbnail2.png"),
     sections: [
       {
         id: "overview",
@@ -85,13 +93,16 @@ export const caseStudies = [
             heading: "The Challenge",
             paragraphs: [
               "Teens lack real-world financial literacy, but parental oversight often crosses into micro-management, causing friction and abandonment of traditional banking apps."
-            ]
+            ],
+            image: getAssetUrl("case_studies/Pennies/info1_1.png")
           },
+
           {
             heading: "The Solution",
             paragraphs: [
               "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
-            ]
+            ],
+            image: getAssetUrl("case_studies/Pennies/info1.png")
           },
           {
             heading: "Impact & Validation",
@@ -106,22 +117,32 @@ export const caseStudies = [
         subtitle: "02 / Final Features",
         content: [
           {
-            heading: "The Challenge",
+            heading: "Onboarding",
             paragraphs: [
-              "Teens lack real-world financial literacy, but parental oversight often crosses into micro-management, causing friction and abandonment of traditional banking apps."
-            ]
+              "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info3.png")
           },
           {
-            heading: "The Solution",
+            heading: "Home Page",
             paragraphs: [
-              "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
-            ]
+              "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
+            ],
+            image: getAssetUrl("case_studies/Pennies/info3.png")
           },
           {
-            heading: "Impact & Validation",
+            heading: "Customize, Ask, And Apply",
             paragraphs: [
-              "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
-            ]
+              "Teen users can customize, ask questions, and apply goals."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info2.png")
+          },
+          {
+            heading: "Budget",
+            paragraphs: [
+              "Budget tracking for teens, with parental spending controls."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info3.png")
           }
         ]
       },
@@ -130,10 +151,31 @@ export const caseStudies = [
         subtitle: "03 / Research",
         content: [
           {
-            heading: "Understanding the Pain Points",
+            heading: "Understanding The Problem",
             paragraphs: [
-              "Users were overwhelmed by data density and struggling to find key financial metrics quickly, leading to decreased engagement and increased support tickets."
+              "I spoke with five parent-teen pairs to understand where financial learning breaks down. What emerged was a shared sense of uncertainty:"
             ]
+          },
+          {
+            heading: "Market Insight",
+            paragraphs: [
+              "Next, I analyzed competitors in the market to identify gaps that had not yet been addressed."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info2.png")
+          },
+          {
+            heading: "Defining The User Journey",
+            paragraphs: [
+              "Before designing screens, I mapped the ideal journey: a teen making everyday purchases, receiving gentle guidance, and gradually gaining autonomy while parents stay informed through lightweight oversight."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info3.png")
+          },
+          {
+            heading: "Secure Payment Method",
+            paragraphs: [
+              "To support this, I chose a prepaid card system. It’s widely used, secure, and gives parents the structure they need while giving teens the freedom they want."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info4.png")
           }
         ]
       },
@@ -142,12 +184,50 @@ export const caseStudies = [
         subtitle: "04 / Process",
         content: [
           {
-            heading: "Design Methodology",
+            heading: "1. Pivoting Toward Long Term Behavior Change",
             paragraphs: [
-              "Research: Conducted 15 user interviews with financial analysts and surveyed 200+ users to identify pain points.",
-              "Ideation & Wireframing: Explored multiple layout structures focusing on modular widgets and customizable views.",
-              "Prototyping & Testing: Tested high-fidelity prototypes with 10 users, resulting in a 40% improvement in task completion speed."
-            ]
+              "My first concept focused on real‑time “out of budget” alerts. Teens users ignored them. They felt punitive, not supportive.",
+              "This was a turning point. Instead of reacting to mistakes, the solution needed to guide teens users before the moment of purchase. This insight shifted the entire product toward proactive, goal‑driven learning.",
+            ],
+            image: getAssetUrl("case_studies/Pennies/info5_1.png"),
+
+          },
+          {
+            image: getAssetUrl("case_studies/Pennies/info5_2.png")
+          },
+          {
+            heading: "2. Making Financial Insights Approachable",
+            paragraphs: [
+              "After the first round of testing, I created a higher fidelity prototype and ran quick tests on existing features. Some major iterations includes adding a spending patterns graph for teens and a friendly system that flags overspending trends while offering guidance rather than warnings.",
+
+            ],
+            image: getAssetUrl("case_studies/Pennies/info6.png"),
+
+          },
+          {
+            heading: "3. Personalized Guidance Through A Friendly Character",
+            paragraphs: [
+              "Next, I introduced a character called Penni to make financial guidance feel more human, approachable, and engaging for teens. Instead of interacting with a generic AI chatbot, Penni offers a consistent personality and tone, helping users build trust and stay motivated. This shift transforms budgeting from something intimidating into a supportive experience, making financial learning feel less like a task and more like a conversation.",
+            ],
+            image: getAssetUrl("case_studies/Pennies/info7.png"),
+
+          },
+
+          {
+            heading: "4. Accessibility Check",
+            paragraphs: [
+              "Before finalizing the design, I audited the color palette and implemented a system to ensure all colors met WCAG accessibility standards. This review led to several key visual adjustments to improve contrast and readability."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info8.png"),
+
+          },
+          {
+            heading: "Design System",
+            paragraphs: [
+              "For the high fidelity mockup, I created a design system as guidelines for my final design with a clear branding and ensuring that all the components are consistent throughout."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info10.png"),
+
           }
         ]
       },
@@ -156,9 +236,9 @@ export const caseStudies = [
         subtitle: "05 / Reflection",
         content: [
           {
-            heading: "Results & Learnings",
+            heading: "Learnings & Future Steps",
             paragraphs: [
-              "The new design led to a 25% increase in daily active users and a 30% reduction in support tickets related to data finding."
+              "This project pushed me to design for a user group I didn't personally identify with. It taught me to validate assumptions, listen deeply, and design with empathy for both sides of a relationship."
             ]
           }
         ]
@@ -355,24 +435,24 @@ export const playWorks = [
     id: "petals-teaser",
     title: "A Petal's Worth Teaser",
     category: "Motion Graphics",
-    video: petalsTeaserVid
+    video: getAssetUrl('Play_assets/petals_teaser_vid.mp4')
   },
   {
     id: "3d-hat",
     title: "3D Hat Animation",
     category: "3D Motion Design",
-    video: hatVid
+    video: getAssetUrl('Play_assets/hatvid.mp4')
   },
   {
     id: "underwater-vr",
     title: "Underwater VR Experience",
     category: "AR/VR Design",
-    video: underwaterVR
+    video: getAssetUrl('Play_assets/underwater_VR.mov')
   },
   {
     id: "logo-animation",
     title: "Logo Motion Design",
     category: "Motion Graphics",
-    video: logoAssignment
+    video: getAssetUrl('Play_assets/Cindy_Chen_Logo_Assignment.mp4')
   }
 ];
