@@ -88,16 +88,46 @@ export const caseStudies = [
             ]
           },
           {
+            heading: "The Solution",
+            paragraphs: [
+              "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
+            ]
+          },
+          {
             heading: "Impact & Validation",
             paragraphs: [
-              "Because this is a passion project, I measured success through an evaluative usability testing with 5 parent-teen groups."
+              "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
             ]
           }
         ]
       },
       {
-        id: "problem",
-        subtitle: "02 / The Problem",
+        id: "features",
+        subtitle: "02 / Final Features",
+        content: [
+          {
+            heading: "The Challenge",
+            paragraphs: [
+              "Teens lack real-world financial literacy, but parental oversight often crosses into micro-management, causing friction and abandonment of traditional banking apps."
+            ]
+          },
+          {
+            heading: "The Solution",
+            paragraphs: [
+              "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
+            ]
+          },
+          {
+            heading: "Impact & Validation",
+            paragraphs: [
+              "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
+            ]
+          }
+        ]
+      },
+      {
+        id: "research",
+        subtitle: "03 / Research",
         content: [
           {
             heading: "Understanding the Pain Points",
@@ -109,7 +139,7 @@ export const caseStudies = [
       },
       {
         id: "process",
-        subtitle: "03 / Process",
+        subtitle: "04 / Process",
         content: [
           {
             heading: "Design Methodology",
@@ -122,8 +152,8 @@ export const caseStudies = [
         ]
       },
       {
-        id: "outcomes",
-        subtitle: "04 / Outcomes",
+        id: "reflection",
+        subtitle: "05 / Reflection",
         content: [
           {
             heading: "Results & Learnings",
