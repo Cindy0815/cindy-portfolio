@@ -102,7 +102,20 @@ export const caseStudies = [
             paragraphs: [
               "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
             ],
-            image: getAssetUrl("case_studies/Pennies/info1.png")
+            images: [
+              {
+                src: getAssetUrl("case_studies/Pennies/solution1.png"),
+                description: "1. Keep track of spendings"
+              },
+              {
+                src: getAssetUrl("case_studies/Pennies/solution2.png"),
+                description: "2. Get personalized advice and tips"
+              },
+              {
+                src: getAssetUrl("case_studies/Pennies/solution3.png"),
+                description: "3. Set tangible goals with guidance"
+              }
+            ]
           },
           {
             heading: "Impact & Validation",
@@ -121,28 +134,44 @@ export const caseStudies = [
             paragraphs: [
               "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
             ],
-            image: getAssetUrl("case_studies/Pennies/info3.png")
+            image: getAssetUrl("case_studies/Pennies/onboarding.png")
           },
           {
             heading: "Home Page",
             paragraphs: [
               "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
             ],
-            image: getAssetUrl("case_studies/Pennies/info3.png")
+            image: getAssetUrl("case_studies/Pennies/homepage.png")
           },
           {
-            heading: "Customize, Ask, And Apply",
-            paragraphs: [
-              "Teen users can customize, ask questions, and apply goals."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info2.png")
+            heading: "Ask Penni",
+
+            grid: {
+              items: [
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask1.mp4"),
+                  title: "1. Customize",
+                  description: "Customize cards, choose layout preferences, and select visual themes."
+                },
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask2.mp4"),
+                  title: "2. Ask",
+                  description: "Ask Penni financial questions and receive real-time personalized tips."
+                },
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask3.mp4"),
+                  title: "3. Apply",
+                  description: "Apply recommendations to your budget and track goals easily."
+                }
+              ]
+            }
           },
           {
             heading: "Budget",
             paragraphs: [
               "Budget tracking for teens, with parental spending controls."
             ],
-            image: getAssetUrl("case_studies/Pennies/info3.png")
+            image: getAssetUrl("case_studies/Pennies/budget.png")
           }
         ]
       },

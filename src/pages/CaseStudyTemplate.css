@@ -209,6 +209,171 @@
   text-align: center;
 }
 
+.section-images-row {
+  display: flex;
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  width: 100%;
+}
+
+.row-image-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.row-image-desc {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+  text-align: center;
+}
+
+.row-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+.cs-zoomable {
+  cursor: zoom-in;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.cs-zoomable:hover {
+  transform: scale(1.015);
+  opacity: 0.95;
+}
+
+/* Lightbox Overlay */
+.cs-lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.cs-lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+}
+
+.cs-lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.cs-lightbox-caption {
+  margin-top: 1.5rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cs-lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 3rem;
+  font-weight: 300;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s, transform 0.2s;
+  z-index: 10001;
+}
+
+.cs-lightbox-close:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Media Grid (3 Columns, 2 Rows) */
+.section-media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem 2rem;
+  margin: 3rem 0;
+  width: 100%;
+}
+
+.grid-cell {
+  width: 100%;
+}
+
+.video-cell {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface-color);
+  height: auto;
+}
+
+.grid-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.grid-item-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.grid-item-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Row 1 Positioning: Texts */
+.section-media-grid .text-cell.cell-0 { grid-column: 1; grid-row: 1; }
+.section-media-grid .text-cell.cell-1 { grid-column: 2; grid-row: 1; }
+.section-media-grid .text-cell.cell-2 { grid-column: 3; grid-row: 1; }
+
+/* Row 2 Positioning: Videos */
+.section-media-grid .video-cell.cell-0 { grid-column: 1; grid-row: 2; }
+.section-media-grid .video-cell.cell-1 { grid-column: 2; grid-row: 2; }
+.section-media-grid .video-cell.cell-2 { grid-column: 3; grid-row: 2; }
+
 @media (max-width: 768px) {
   .cs-title {
     font-size: 3.5rem;
@@ -223,4 +388,47 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+  .section-images-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .cs-lightbox-close {
+    top: 1rem;
+    right: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .section-media-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-media-grid .grid-cell {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .text-cell {
+    margin-bottom: 2rem;
+  }
+
+  #features.cs-dynamic-section {
+    padding: 2rem 1.5rem;
+    border-radius: 24px;
+    margin-bottom: 3rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
+
+#features.cs-dynamic-section {
+  background-color: var(--surface-color);
+  padding: 4rem;
+  border-radius: 32px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 4rem;
+  margin-left: -4rem;
+  margin-right: -4rem;
 }

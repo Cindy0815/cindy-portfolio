@@ -1,14 +1,33 @@
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { caseStudies } from '../data/portfolioData';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import './CaseStudyTemplate.css';
 
 const CaseStudyTemplate = () => {
   const { id } = useParams();
   const study = caseStudies.find(s => s.id === id);
   const [activeSection, setActiveSection] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setPreviewImage(null);
+      }
+    };
+    if (previewImage) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [previewImage]);
 
   useEffect(() => {
     if (!study || !study.sections) return;
@@ -121,7 +140,12 @@ const CaseStudyTemplate = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        <img src={study.headerImage || study.coverImage} alt={`${study.title} cover`} />
+        <img 
+          src={study.headerImage || study.coverImage} 
+          alt={`${study.title} cover`} 
+          className="cs-zoomable"
+          onClick={() => setPreviewImage({ src: study.headerImage || study.coverImage, alt: study.title })}
+        />
       </motion.div>
 
       {/* Content Body */}
@@ -145,7 +169,51 @@ const CaseStudyTemplate = () => {
 
                   {block.image && (
                     <div className="section-image-wrapper">
-                      <img src={block.image} alt={block.heading || `section image ${index}`} className="section-image" />
+                      <img 
+                        src={block.image} 
+                        alt={block.heading || `section image ${index}`} 
+                        className="section-image cs-zoomable" 
+                        onClick={() => setPreviewImage({ src: block.image, alt: block.heading, caption: block.heading })}
+                      />
+                    </div>
+                  )}
+
+                  {block.images && (
+                    <div className="section-images-row">
+                      {block.images.map((imgObj, i) => (
+                        <div key={i} className="row-image-container">
+                          {imgObj.description && <p className="row-image-desc">{imgObj.description}</p>}
+                          <img 
+                            src={imgObj.src} 
+                            alt={imgObj.description || `image ${i}`} 
+                            className="row-image cs-zoomable" 
+                            onClick={() => setPreviewImage({ src: imgObj.src, alt: imgObj.description, caption: imgObj.description })}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {block.grid && (
+                    <div className="section-media-grid">
+                      {block.grid.items.map((item, i) => (
+                        <Fragment key={i}>
+                          <div className={`grid-cell text-cell cell-${i}`}>
+                            <h4 className="grid-item-title">{item.title}</h4>
+                            <p className="grid-item-desc">{item.description}</p>
+                          </div>
+                          <div className={`grid-cell video-cell cell-${i}`}>
+                            <video
+                              src={item.video}
+                              autoPlay
+                              loop
+                              muted
+                              playsInline
+                              className="grid-video"
+                            />
+                          </div>
+                        </Fragment>
+                      ))}
                     </div>
                   )}
                 </div>
@@ -161,6 +229,40 @@ const CaseStudyTemplate = () => {
           View more case studies
         </Link>
       </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {previewImage && (
+          <motion.div
+            className="cs-lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setPreviewImage(null)}
+          >
+            <button 
+              className="cs-lightbox-close" 
+              onClick={() => setPreviewImage(null)}
+              aria-label="Close preview"
+            >
+              &times;
+            </button>
+            <motion.div 
+              className="cs-lightbox-content"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img src={previewImage.src} alt={previewImage.alt || "Preview"} />
+              {previewImage.caption && (
+                <div className="cs-lightbox-caption">{previewImage.caption}</div>
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.article>
   );
 };
