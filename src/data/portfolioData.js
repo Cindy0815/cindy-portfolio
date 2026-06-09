@@ -13,68 +13,6 @@ export const getAssetUrl = (path) => {
 
 export const caseStudies = [
   {
-    id: "petals-worth",
-    title: "A Petal's Worth",
-    shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
-    tags: ["Fintech", "End-to-End UX/UI", "AI Integration"],
-    role: "Lead Product Designer",
-    timeline: "12 Weeks",
-    tools: ["Figma", "FigmaMake", "Miro"],
-    coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.png"),
-    sections: [
-      {
-        id: "overview",
-        subtitle: "01 / Overview",
-        content: [
-          {
-            heading: "The Challenge",
-            paragraphs: [
-              "The existing dashboard was cluttered and difficult for users to extract meaningful insights. Our goal was to simplify the data visualization and improve the overall information architecture."
-            ]
-          }
-        ]
-      },
-      {
-        id: "problem",
-        subtitle: "02 / The Problem",
-        content: [
-          {
-            heading: "Understanding the Pain Points",
-            paragraphs: [
-              "Users were overwhelmed by data density and struggling to find key financial metrics quickly, leading to decreased engagement and increased support tickets."
-            ]
-          }
-        ]
-      },
-      {
-        id: "process",
-        subtitle: "03 / Process",
-        content: [
-          {
-            heading: "Design Methodology",
-            paragraphs: [
-              "Research: Conducted 15 user interviews with financial analysts and surveyed 200+ users to identify pain points.",
-              "Ideation & Wireframing: Explored multiple layout structures focusing on modular widgets and customizable views.",
-              "Prototyping & Testing: Tested high-fidelity prototypes with 10 users, resulting in a 40% improvement in task completion speed."
-            ]
-          }
-        ]
-      },
-      {
-        id: "outcomes",
-        subtitle: "04 / Outcomes",
-        content: [
-          {
-            heading: "Results & Learnings",
-            paragraphs: [
-              "The new design led to a 25% increase in daily active users and a 30% reduction in support tickets related to data finding."
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     id: "pennies",
     title: "Pennies: AI-Powered Budget Management",
     shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
