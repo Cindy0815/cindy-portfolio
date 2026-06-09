@@ -1,9 +1,44 @@
 import { useParams, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { caseStudies } from '../data/portfolioData';
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect, Fragment, useRef } from 'react';
 import './CaseStudyTemplate.css';
+
+const RollingNumber = ({ value }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  
+  const numericMatch = value.match(/\d+/);
+  const numericPart = numericMatch ? parseInt(numericMatch[0], 10) : 0;
+  const suffix = value.replace(/\d+/g, '');
+
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 30,
+    stiffness: 100,
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(numericPart);
+    }
+  }, [isInView, numericPart, motionValue]);
+
+  useEffect(() => {
+    return springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Math.round(latest) + suffix;
+      }
+    });
+  }, [springValue, suffix]);
+
+  return (
+    <span ref={ref}>
+      0{suffix}
+    </span>
+  );
+};
 
 const CaseStudyTemplate = () => {
   const { id } = useParams();
@@ -213,6 +248,47 @@ const CaseStudyTemplate = () => {
                             />
                           </div>
                         </Fragment>
+                      ))}
+                    </div>
+                  )}
+
+                  {block.metrics && (
+                    <div className="section-metrics">
+                      {block.metrics.map((metric, i) => (
+                        <div key={i} className="metric-card">
+                          <div className="metric-number"><RollingNumber value={metric.number} /></div>
+                          <div className="metric-content">
+                            {metric.title && <div className="metric-title">{metric.title}</div>}
+                            <div className="metric-text">{metric.text}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {block.povGrid && (
+                    <div className="section-pov-grid">
+                      {block.povGrid.map((row, i) => (
+                        <div key={i} className="pov-row">
+                          <div className="pov-card problem-card">
+                            <div className="pov-tag">
+                              <img src={row.tag} alt="POV Tag" />
+                            </div>
+                            <div className="pov-list">
+                              {row.problems.map((prob, pIndex) => (
+                                <p key={pIndex}>{prob}</p>
+                              ))}
+                            </div>
+                          </div>
+                          <div className="pov-card opportunity-card">
+                            <div className="pov-title">{row.opportunityTitle}</div>
+                            <div className="pov-list">
+                              {row.opportunities.map((opp, oIndex) => (
+                                <p key={oIndex}>{opp}</p>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
                       ))}
                     </div>
                   )}

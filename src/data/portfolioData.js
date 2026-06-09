@@ -92,7 +92,7 @@ export const caseStudies = [
           {
             heading: "The Challenge",
             paragraphs: [
-              "Teens lack real-world financial literacy, but parental oversight often crosses into micro-management, causing friction and abandonment of traditional banking apps."
+              "Teens (typically ages 13-17) lack real-world financial literacy, but parental oversight often crosses into micro-management, causing friction and abandonment of traditional banking apps."
             ],
             image: getAssetUrl("case_studies/Pennies/info1_1.png")
           },
@@ -121,6 +121,21 @@ export const caseStudies = [
             heading: "Impact & Validation",
             paragraphs: [
               "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
+            ],
+            metrics: [
+              {
+                number: "80%",
+                text: "of Tested Teens reported feeling \"coached rather than monitored\" by the Penni interface."
+              },
+              {
+                number: "100%",
+                text: "of Parents agreed that the mutual agreement dashboard would significantly reduce weekly verbal friction regarding spending rules."
+              },
+              {
+                title: "Task Success Rate",
+                number: "92%",
+                text: "of teens successfully set up a automated savings goal and interaction flow without parental intervention."
+              }
             ]
           }
         ]
@@ -180,9 +195,39 @@ export const caseStudies = [
         subtitle: "03 / Research",
         content: [
           {
-            heading: "Understanding The Problem",
+            heading: "The Core Tension",
             paragraphs: [
               "I spoke with five parent-teen pairs to understand where financial learning breaks down. What emerged was a shared sense of uncertainty:"
+            ],
+            povGrid: [
+              {
+                tag: getAssetUrl("case_studies/Pennies/parents_pov.png"),
+                problems: [
+                  "1. Unsure how to teach financial skills effectively",
+                  "2. Limited visibility into teen spending",
+                  "3. Balancing control with independence"
+                ],
+                opportunityTitle: "Opportunity #1",
+                opportunities: [
+                  "1. Provide guided, age appropriate financial education tools for parents",
+                  "2. Support gradual financial independence where teens earn autonomy step by step",
+                  "3. Reinforce good habits with feedback"
+                ]
+              },
+              {
+                tag: getAssetUrl("case_studies/Pennies/teen_pov.png"),
+                problems: [
+                  "1. Lack of financial education in school",
+                  "2. Inconsistent income which makes makes planning and saving difficult",
+                  "3. Difficulty separate needs from wants, leading to frequent impulse purchases"
+                ],
+                opportunityTitle: "Opportunity #2",
+                opportunities: [
+                  "1. Make saving feel tangible and rewarding",
+                  "2. Increase awareness around spending decisions, distinguishing needs vs. wants",
+                  "3. Support budgeting with flexible systems"
+                ]
+              }
             ]
           },
           {
@@ -265,11 +310,19 @@ export const caseStudies = [
         subtitle: "05 / Reflection",
         content: [
           {
-            heading: "Learnings & Future Steps",
+            heading: "Key Takeaways",
             paragraphs: [
-              "This project pushed me to design for a user group I didn't personally identify with. It taught me to validate assumptions, listen deeply, and design with empathy for both sides of a relationship."
+              "1. Designing for Multi-User Dynamics: This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
+              "2. AI as a Feature vs. AI as a Solution: I learned that AI shouldn't just automate tasks; it should humanize them. Integrating AI contextually made budgeting feel like a supportive partnership rather than a digital chore."
+            ]
+          },
+          {
+            heading: "Future Steps",
+            paragraphs: [
+              "If I had another 3 months on this project, I would dive deeper into the AI interaction, designing the conversational edge cases, error states, and strict safety guardrails required for an AI interacting with minors. For example, this may include designing 'system fallback' interfaces for when the AI cannot confidently answer a complex financial question, routing the user to pre-made or pre-approved educational resources instead."
             ]
           }
+
         ]
       }
     ]
