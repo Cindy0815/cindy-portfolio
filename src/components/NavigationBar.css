@@ -4,8 +4,11 @@
   align-items: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 100;
+  background-color: var(--bg-color);
+  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .logo {

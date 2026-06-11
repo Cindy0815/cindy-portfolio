@@ -68,7 +68,7 @@
 }
 
 [data-theme='dark'] .full-header-bg {
-  opacity: 0.6;
+  filter: invert(1) hue-rotate(180deg) brightness(0.7) saturate(1.2);
 }
 
 /* Shapes Layer */
