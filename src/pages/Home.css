@@ -437,6 +437,16 @@
     font-size: 3rem;
   }
 
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .view-all-link {
+    align-self: flex-start;
+  }
+
   .work-grid {
     grid-template-columns: 1fr;
   }

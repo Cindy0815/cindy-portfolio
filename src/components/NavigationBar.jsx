@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sun, Moon } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import logoImg from '../assets/logo2.png';
 import './NavigationBar.css';
@@ -10,10 +10,15 @@ const NavigationBar = () => {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('portfolio-theme') || 'light';
   });
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
@@ -33,7 +38,7 @@ const NavigationBar = () => {
       <Link to="/" className="logo">
         <img src={logoImg} alt="Cindy" className="nav-logo-img" />
       </Link>
-      <div className="nav-links">
+      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
         {navLinks.map((link) => (
           <Link
             key={link.path}
@@ -58,6 +63,15 @@ const NavigationBar = () => {
           {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </div>
+
+      <button
+        onClick={() => setMenuOpen((prev) => !prev)}
+        className="nav-menu-toggle"
+        aria-label="Toggle menu"
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
     </nav>
   );
 };
