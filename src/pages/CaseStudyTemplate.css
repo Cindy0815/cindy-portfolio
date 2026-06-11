@@ -100,8 +100,20 @@
   gap: 2rem;
   padding: 0;
   margin: 0;
+  position: relative;
   overflow-x: auto;
   scrollbar-width: none;
+}
+
+.progress-back-item {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.progress-back-link {
+  margin-bottom: 0;
 }
 
 .progress-nav-list::-webkit-scrollbar {
@@ -531,6 +543,16 @@
 }
 
 @media (max-width: 768px) {
+  .progress-nav-list {
+    justify-content: flex-start;
+  }
+
+  .progress-back-item {
+    position: static;
+    transform: none;
+    flex-shrink: 0;
+  }
+
   .cs-title {
     font-size: 3.5rem;
   }

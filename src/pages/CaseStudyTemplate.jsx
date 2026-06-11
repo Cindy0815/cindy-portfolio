@@ -121,10 +121,15 @@ const CaseStudyTemplate = () => {
         <nav className="cs-progress-bar">
           <div className="container progress-container">
             <ul className="progress-nav-list">
+              <li className="progress-back-item">
+                <Link to="/case-studies" className="back-link progress-back-link">
+                  <ArrowLeft size={16} /> Back to Work
+                </Link>
+              </li>
               {study.sections.map((section) => (
                 <li key={section.id}>
-                  <a 
-                    href={`#${section.id}`} 
+                  <a
+                    href={`#${section.id}`}
                     className={`progress-link ${activeSection === section.id ? 'active' : ''}`}
                     onClick={(e) => handleNavClick(e, section.id)}
                   >
@@ -140,9 +145,6 @@ const CaseStudyTemplate = () => {
 
       {/* Hero Section */}
       <header className="cs-hero container section">
-        <Link to="/case-studies" className="back-link">
-          <ArrowLeft size={16} /> Back to Work
-        </Link>
         <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

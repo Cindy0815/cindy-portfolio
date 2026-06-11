@@ -416,6 +416,12 @@
     gap: 1.5rem;
     /* tighten spacing on smaller screens */
   }
+
+  /* While the intro sequence plays, hide the (still invisible) final
+     content from layout so the sequence title centers in the hero */
+  .hero-content-centered.pre-reveal .hero-final-content {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

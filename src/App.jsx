@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import About from './pages/About';
 import CaseStudiesIndex from './pages/CaseStudiesIndex';
@@ -9,6 +11,7 @@ import Play from './pages/Play';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <NavigationBar />
       <main>
         <Routes>
@@ -19,6 +22,7 @@ function App() {
           <Route path="/play" element={<Play />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }

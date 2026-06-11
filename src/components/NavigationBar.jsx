@@ -33,45 +33,49 @@ const NavigationBar = () => {
     { path: '/about', label: 'About' }
   ];
 
+  const isCaseStudyPage = location.pathname.startsWith('/case-studies/');
+
   return (
-    <nav className="navbar container">
-      <Link to="/" className="logo">
-        <img src={logoImg} alt="Cindy" className="nav-logo-img" />
-      </Link>
-      <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        {navLinks.map((link) => (
-          <Link
-            key={link.path}
-            to={link.path}
-            className={`nav-item ${location.pathname === link.path ? 'active' : ''}`}
+    <nav className={`navbar ${isCaseStudyPage ? '' : 'navbar-sticky'}`}>
+      <div className="navbar-inner container">
+        <Link to="/" className="logo">
+          <img src={logoImg} alt="Cindy" className="nav-logo-img" />
+        </Link>
+        <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={`nav-item ${location.pathname === link.path ? 'active' : ''}`}
+            >
+              {link.label}
+              {location.pathname === link.path && (
+                <motion.div
+                  layoutId="nav-underline"
+                  className="nav-underline"
+                />
+              )}
+            </Link>
+          ))}
+
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle-btn"
+            aria-label="Toggle theme"
           >
-            {link.label}
-            {location.pathname === link.path && (
-              <motion.div
-                layoutId="nav-underline"
-                className="nav-underline"
-              />
-            )}
-          </Link>
-        ))}
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
 
         <button
-          onClick={toggleTheme}
-          className="theme-toggle-btn"
-          aria-label="Toggle theme"
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="nav-menu-toggle"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
-          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-
-      <button
-        onClick={() => setMenuOpen((prev) => !prev)}
-        className="nav-menu-toggle"
-        aria-label="Toggle menu"
-        aria-expanded={menuOpen}
-      >
-        {menuOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
     </nav>
   );
 };

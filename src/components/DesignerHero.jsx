@@ -381,7 +381,7 @@ const DesignerHero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="hero-content-centered">
+      <div className={`hero-content-centered ${step < 12 ? 'pre-reveal' : ''}`}>
 
         {/* Rolling Text Animation Wrapper using CSS Grid for perfect overlap */}
         <div className="title-wrapper">
