@@ -4,13 +4,13 @@ import { MousePointer2, ArrowDown, RefreshCcw } from 'lucide-react';
 import './DesignerHero.css';
 
 // Background
-import headerBg from '../assets/header_bg.png';
+import headerBg from '../assets/header_bg.jpg';
 
 // Shapes
-import shapePurple from '../assets/purple_shape.png';
-import shapeGreen from '../assets/green_shape.png';
-import shapePink from '../assets/pink_shape.png';
-import gridImg from '../assets/grid.png';
+import shapePurple from '../assets/purple_shape_opt.png';
+import shapeGreen from '../assets/green_shape_opt.png';
+import shapePink from '../assets/pink_shape_opt.png';
+import gridImg from '../assets/grid_opt.png';
 
 const imageSizeClass = "scaled-shape-img";
 

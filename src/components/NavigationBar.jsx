@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import logoImg from '../assets/logo2.png';
+import logoImg from '../assets/logo2_opt.png';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
