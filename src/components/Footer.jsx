@@ -16,41 +16,52 @@ const GithubIcon = (props) => (
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-canvas">
-          <InteractiveCanvas />
-          <div className="footer-content">
-            <div className="footer-card">
-              <h2 className="footer-title">Thanks for visiting my page!</h2>
-              <p className="footer-text">© {new Date().getFullYear()} Cindy Chen</p>
-              <div className="footer-links">
-                <a
-                  href="mailto:cindychenc9@gmail.com"
-                  className="footer-icon-link"
-                  aria-label="Email"
-                >
-                  <Mail size={20} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/cindy15/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-icon-link"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedinIcon width={20} height={20} />
-                </a>
-                <a
-                  href="https://github.com/Cindy0815"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="footer-icon-link"
-                  aria-label="GitHub"
-                >
-                  <GithubIcon width={20} height={20} />
-                </a>
-              </div>
+    <footer className="footer mt-auto">
+      <div className="footer-wave" aria-hidden="true">
+        <svg
+          viewBox="0 0 1440 100"
+          preserveAspectRatio="none"
+          width="100%"
+          style={{ display: 'block' }}
+        >
+          <path
+            className="footer-wave-fill"
+            d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z"
+          />
+        </svg>
+      </div>
+      <div className="footer-canvas">
+        <InteractiveCanvas />
+        <div className="footer-content">
+          <div className="footer-card">
+            <h2 className="footer-title">Thanks for visiting my page!</h2>
+            <p className="footer-text">© {new Date().getFullYear()} Cindy Chen</p>
+            <div className="footer-links">
+              <a
+                href="mailto:cindychenc9@gmail.com"
+                className="footer-icon-link"
+                aria-label="Email"
+              >
+                <Mail size={20} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/cindy15/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-icon-link"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon width={20} height={20} />
+              </a>
+              <a
+                href="https://github.com/Cindy0815"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-icon-link"
+                aria-label="GitHub"
+              >
+                <GithubIcon width={20} height={20} />
+              </a>
             </div>
           </div>
         </div>

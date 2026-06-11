@@ -14,17 +14,19 @@ function App() {
     <Router>
       <ScrollToTop />
       <GlobalCursor />
-      <NavigationBar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/case-studies" element={<CaseStudiesIndex />} />
-          <Route path="/case-studies/:id" element={<CaseStudyTemplate />} />
-          <Route path="/play" element={<Play />} />
-        </Routes>
-      </main>
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <NavigationBar />
+        <main className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/case-studies" element={<CaseStudiesIndex />} />
+            <Route path="/case-studies/:id" element={<CaseStudyTemplate />} />
+            <Route path="/play" element={<Play />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </Router>
   );
 }
