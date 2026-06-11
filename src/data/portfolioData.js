@@ -16,7 +16,7 @@ export const caseStudies = [
     id: "pennies",
     title: "Pennies: AI-Powered Budget Management",
     shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
-    tags: ["Fintech", "End-to-End UX/UI", "AI Integration"],
+    tags: ["Fintech", "Mobile App", "AI Integration"],
     role: "Lead Product Designer",
     timeline: "12 Weeks",
     tools: ["Figma", "FigmaMake", "Miro"],
@@ -269,18 +269,30 @@ export const caseStudies = [
     id: "expedia",
     title: "Expedia: Browsing and Booking Experience",
     shortDescription: "Improving discoverability and helping users make faster, informed flight booking decisions.",
-    tags: ["Mobile App", "Healthcare", "UX/UI"],
+    tags: ["Search Experience", "Webpage", "UX/UI Redesign"],
     role: "UX/UI Designer",
-    timeline: "12 Weeks",
-    tools: ["Figma", "After Effects", "Notion"],
-    coverImage: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=2081",
+    timeline: "4 Weeks",
+    tools: ["Figma", "Figjam"],
+    coverImage: getAssetUrl("case_studies/Expedia/header_img.png"),
     sections: [
       {
         id: "overview",
         subtitle: "01 / Overview",
         content: [
           {
-            heading: "Project Goals",
+            heading: "The Challenge",
+            paragraphs: [
+              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
+            ]
+          },
+          {
+            heading: "The Solution",
+            paragraphs: [
+              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
+            ]
+          },
+          {
+            heading: "The Results",
             paragraphs: [
               "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
             ]
@@ -288,13 +300,37 @@ export const caseStudies = [
         ]
       },
       {
-        id: "problem",
-        subtitle: "02 / The Problem",
+        id: "research",
+        subtitle: "02 / Research",
         content: [
           {
+            heading: "Understanding The Problem",
+            paragraphs: [
+              "Most health tracking apps are either too complex or too basic. Users wanted a middle ground that offered robust data without the steep learning curve."
+            ]
+          },
+            {
             heading: "User Struggles",
             paragraphs: [
               "Most health tracking apps are either too complex or too basic. Users wanted a middle ground that offered robust data without the steep learning curve."
+            ]
+          },
+          {
+            heading: "Problem Statement",
+            paragraphs: [
+              "How might we create a more intuitive flight comparison experience on Expedia, allowing users to seamlessly track and organize their travel choices without feeling overwhelmed or frustrated?"
+            ]
+          },
+          {
+            heading: "Who Are We Designing For?",
+            paragraphs: [
+              "How might we create a more intuitive flight comparison experience on Expedia, allowing users to seamlessly track and organize their travel choices without feeling overwhelmed or frustrated?"
+            ]
+          },
+          {
+            heading: "The Current User Journey",
+            paragraphs: [
+              "How might we create a more intuitive flight comparison experience on Expedia, allowing users to seamlessly track and organize their travel choices without feeling overwhelmed or frustrated?"
             ]
           }
         ]
@@ -304,26 +340,61 @@ export const caseStudies = [
         subtitle: "03 / Process",
         content: [
           {
-            heading: "Steps to Solution",
+            heading: "Steps To Solution",
             paragraphs: [
-              "Competitive Analysis: Analyzed top 5 health apps to identify feature gaps and usability issues.",
-              "Visual Design: Developed a calming, modern aesthetic using soft gradients and friendly typography to reduce anxiety around health data."
+              "From looking at different flight booking platforms, I learned that there's an increasing emphasis on seamless flight comparison, price tracking, and user-friendly interfaces without overwhelming upsells or redirection.",
+              "Therefore, top platforms like Google Flights, that can balance affordable, competitive pricing with organized, transparent flight details are well-positioned to attract and retain users."
+            ]
+          },
+          {
+            heading: "The Best Option",
+            paragraphs: [
+              "With the insights in hand, I began brainstorming solutions to improve the flight comparison process on Expedia. The key challenge was to create a feature that allowed users to evaulate flights options seamlessly without disrupting their workflow."
+
+            ]
+          },
+           {
+            heading: "Envisioning The New User Flow",
+            paragraphs: [
+              "With the insights in hand, I began brainstorming solutions to improve the flight comparison process on Expedia. The key challenge was to create a feature that allowed users to evaulate flights options seamlessly without disrupting their workflow."
+
+            ]
+          }
+        ]
+      },
+       {
+        id: "outcome",
+        subtitle: "04 / outcome",
+        content: [
+          {
+            heading: "Initial Wireframes And user Testing",
+            paragraphs: [
+              
+            ]
+          },
+          {
+            heading: "Transitioning from Mid-fi to Hi-fi",
+            paragraphs: [
+            
+
             ]
           }
         ]
       },
       {
-        id: "outcomes",
-        subtitle: "04 / Outcomes",
+        id: "reflection",
+        subtitle: "05 / reflection",
         content: [
           {
-            heading: "Final Delivery",
+            heading: "Key Takeaways",
             paragraphs: [
-              "Created a comprehensive design system and a fully interactive prototype that received overwhelming positive feedback during usability testing."
+              
             ]
           }
         ]
       }
+    
+      
     ]
   },
   {

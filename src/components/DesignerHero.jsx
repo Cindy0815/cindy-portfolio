@@ -167,7 +167,7 @@ const DesignerHero = () => {
 
   return (
     <div
-      className={`designer-hero ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
+      className={`designer-hero cursor-trail-zone ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}

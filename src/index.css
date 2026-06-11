@@ -118,3 +118,19 @@ img {
 .gap-8 {
   gap: 2rem;
 }
+
+/* Custom Cursor */
+@media (hover: hover) and (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+
+  input,
+  textarea,
+  select,
+  [contenteditable] {
+    cursor: auto !important;
+  }
+}

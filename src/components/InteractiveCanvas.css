@@ -1,0 +1,25 @@
+.interactive-canvas-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.canvas-shape-img {
+  position: absolute;
+  width: 9vw;
+  min-width: 70px;
+  max-width: 130px;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .canvas-shape-img {
+    width: 18vw;
+    min-width: 60px;
+    max-width: 110px;
+  }
+}

@@ -1,4 +1,5 @@
 import { Mail } from 'lucide-react';
+import InteractiveCanvas from './InteractiveCanvas';
 import './Footer.css';
 
 const LinkedinIcon = (props) => (
@@ -16,34 +17,42 @@ const GithubIcon = (props) => (
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container footer-inner">
-        <p className="footer-text">© {new Date().getFullYear()} Cindy Chen</p>
-        <div className="footer-links">
-          <a
-            href="mailto:cindychenc9@gmail.com"
-            className="footer-icon-link"
-            aria-label="Email"
-          >
-            <Mail size={20} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/cindy15/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-icon-link"
-            aria-label="LinkedIn"
-          >
-            <LinkedinIcon width={20} height={20} />
-          </a>
-          <a
-            href="https://github.com/Cindy0815"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-icon-link"
-            aria-label="GitHub"
-          >
-            <GithubIcon width={20} height={20} />
-          </a>
+      <div className="container">
+        <div className="footer-canvas">
+          <InteractiveCanvas />
+          <div className="footer-content">
+            <div className="footer-card">
+              <h2 className="footer-title">Thanks for visiting my page!</h2>
+              <p className="footer-text">© {new Date().getFullYear()} Cindy Chen</p>
+              <div className="footer-links">
+                <a
+                  href="mailto:cindychenc9@gmail.com"
+                  className="footer-icon-link"
+                  aria-label="Email"
+                >
+                  <Mail size={20} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/cindy15/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-icon-link"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedinIcon width={20} height={20} />
+                </a>
+                <a
+                  href="https://github.com/Cindy0815"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-icon-link"
+                  aria-label="GitHub"
+                >
+                  <GithubIcon width={20} height={20} />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

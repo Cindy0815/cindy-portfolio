@@ -1,0 +1,21 @@
+.global-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  transform-origin: top left;
+  pointer-events: none;
+  color: #18181b;
+  transition: opacity 0.15s ease;
+  will-change: transform, opacity;
+}
+
+[data-theme='dark'] .global-cursor {
+  color: #ffffff;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .global-cursor {
+    display: none;
+  }
+}
