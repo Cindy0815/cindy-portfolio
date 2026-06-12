@@ -296,21 +296,23 @@ export const caseStudies = [
           {
             heading: "The Results: ",
             paragraphs: [
-              "After."
+              "After testing the final prototype through an unmoderated session with 18 users, here are some success metrics I measured."
             ],
              metrics: [
               {
-                number: "80%",
-                text: "of Tested Teens reported feeling \"coached rather than monitored\" by the Penni interface."
+                 title: "Task Success Rate",
+                number: "90%",
+                text: "of testers performed a core action of clicking \"Save\" or \"Add to Watchlist\" from the search results page."
               },
               {
+                title: "Conversion Rate",
                 number: "100%",
-                text: "of Parents agreed that the mutual agreement dashboard would significantly reduce weekly verbal friction regarding spending rules."
+                text: "of testers booked a trip directly from the Saved Flights page, compared to users who book via the traditional search results loop."
               },
               {
-                title: "Task Success Rate",
-                number: "92%",
-                text: "of teens successfully set up a automated savings goal and interaction flow without parental intervention."
+                title: "Reduced Task Completion Time",
+                number: "40%",
+                text: "the time users spent evaluating flights dropped from about 4 minutes down to just 2.5."
               }
             ]
           }
