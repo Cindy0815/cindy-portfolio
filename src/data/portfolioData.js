@@ -273,7 +273,7 @@ export const caseStudies = [
     role: "UX/UI Designer",
     timeline: "4 Weeks",
     tools: ["Figma", "Figjam"],
-    coverImage: getAssetUrl("case_studies/Expedia/header_img.png"),
+    coverImage: getAssetUrl("case_studies/Expedia/header_img2.png"),
     sections: [
       {
         id: "overview",
