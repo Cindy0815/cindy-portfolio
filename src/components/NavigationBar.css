@@ -10,6 +10,13 @@
   z-index: 100;
 }
 
+/* While the hero intro is playing on the home page, collapse the navbar
+   entirely so the hero can cover the full viewport. */
+.navbar-hidden {
+  height: 0;
+  overflow: hidden;
+}
+
 .navbar-inner {
   display: flex;
   justify-content: space-between;

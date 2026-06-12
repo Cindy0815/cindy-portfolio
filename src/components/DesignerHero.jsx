@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { MousePointer2, ArrowDown, RefreshCcw } from 'lucide-react';
+import { useHeroIntro } from '../context/HeroIntroContext';
 import './DesignerHero.css';
 
 // Background
@@ -13,6 +14,10 @@ import shapePink from '../assets/pink_shape_opt.png';
 import gridImg from '../assets/grid_opt.png';
 
 const imageSizeClass = "scaled-shape-img";
+
+// Global speed multiplier for the intro sequence (lower = faster)
+const SPEED = 0.6;
+const t = (ms) => ms * SPEED;
 
 // Clip path animating from top-left (empty) to full bounding box
 const gridClipEmpty = "inset(18% 66% 82% 34%)";
@@ -34,7 +39,7 @@ const GridBox = ({ currentStep, triggerStep, pos }) => (
             clipPath: currentStep >= triggerStep ? gridClipFull : gridClipEmpty,
             opacity: 1
           }}
-          transition={{ duration: 0.4, ease: "easeOut" }} // Sped up from 0.6
+          transition={{ duration: t(0.4), ease: "easeOut" }}
           alt=""
         />
       </motion.div>
@@ -43,13 +48,19 @@ const GridBox = ({ currentStep, triggerStep, pos }) => (
 );
 
 const DesignerHero = () => {
-  const [step, setStep] = useState(0);
+  const { setIntroPlaying, hasPlayedIntro, setHasPlayedIntro } = useHeroIntro();
+  const [step, setStep] = useState(() => (hasPlayedIntro ? 13 : 0));
   const [refreshKey, setRefreshKey] = useState(0);
   const [offsetVw, setOffsetVw] = useState(4);
   const [isHovering, setIsHovering] = useState(false);
   const [tinyShapes, setTinyShapes] = useState([]);
   const [hasClicked, setHasClicked] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(() => !hasPlayedIntro);
   const constraintsRef = useRef(null);
+  const timeoutsRef = useRef([]);
+  // Stable for the component's lifetime: true if the intro already played
+  // earlier in this session, so entry animations should be skipped on mount.
+  const skipEntryAnimRef = useRef(hasPlayedIntro);
 
   // Mouse tracking for interactive cursor
   const mouseX = useMotionValue(-100);
@@ -94,10 +105,19 @@ const DesignerHero = () => {
 
   const handleRefresh = (e) => {
     e.stopPropagation();
+    e.currentTarget.blur();
     setStep(0);
     setTinyShapes([]);
     setHasClicked(false);
+    setIsExpanded(true);
     setRefreshKey(prev => prev + 1);
+  };
+
+  const handleSkip = (e) => {
+    e.stopPropagation();
+    e.currentTarget.blur();
+    timeoutsRef.current.forEach(clearTimeout);
+    setStep(13);
   };
 
   useEffect(() => {
@@ -112,24 +132,55 @@ const DesignerHero = () => {
   }, []);
 
   useEffect(() => {
+    // Skip the intro entirely on repeat visits to the home page within this session
+    if (skipEntryAnimRef.current && refreshKey === 0) {
+      return;
+    }
+
     // Animation sequence timeline (Sped up)
-    const sequence = [
-      setTimeout(() => setStep(1), 200),   // 1: Move to Purple TL
-      setTimeout(() => setStep(2), 700),   // 2: Drag Purple
-      setTimeout(() => setStep(3), 1100),  // 3: Purple shape pops, "Designing"
-      setTimeout(() => setStep(4), 1600),  // 4: Move to Green TL
-      setTimeout(() => setStep(5), 2100),  // 5: Green TL
-      setTimeout(() => setStep(6), 2500),  // 6: Drag Green
-      setTimeout(() => setStep(7), 2900),  // 7: Green shape pops, "Prototyping"
-      setTimeout(() => setStep(8), 3400),  // 8: Move to Pink TL
-      setTimeout(() => setStep(9), 3900),  // 9: Pink TL
-      setTimeout(() => setStep(10), 4300), // 10: Drag Pink
-      setTimeout(() => setStep(11), 4700), // 11: Pink shape pops, "Shipping"
-      setTimeout(() => setStep(12), 5600), // 12: Text rolls
-      setTimeout(() => setStep(13), 6200), // 13: Subtext
+    timeoutsRef.current = [
+      setTimeout(() => setStep(1), t(200)),   // 1: Move to Purple TL
+      setTimeout(() => setStep(2), t(700)),   // 2: Drag Purple
+      setTimeout(() => setStep(3), t(1100)),  // 3: Purple shape pops, "Designing"
+      setTimeout(() => setStep(4), t(1600)),  // 4: Move to Green TL
+      setTimeout(() => setStep(5), t(2100)),  // 5: Green TL
+      setTimeout(() => setStep(6), t(2500)),  // 6: Drag Green
+      setTimeout(() => setStep(7), t(2900)),  // 7: Green shape pops, "Prototyping"
+      setTimeout(() => setStep(8), t(3400)),  // 8: Move to Pink TL
+      setTimeout(() => setStep(9), t(3900)),  // 9: Pink TL
+      setTimeout(() => setStep(10), t(4300)), // 10: Drag Pink
+      setTimeout(() => setStep(11), t(4700)), // 11: Pink shape pops, "Shipping"
+      setTimeout(() => setStep(12), t(5600)), // 12: Text rolls
+      setTimeout(() => setStep(13), t(6200)), // 13: Subtext
     ];
-    return () => sequence.forEach(clearTimeout);
+    return () => timeoutsRef.current.forEach(clearTimeout);
   }, [refreshKey]);
+
+  // Collapse the fullscreen intro into the final hero card once the sequence completes
+  useEffect(() => {
+    if (step >= 13) {
+      setIsExpanded(false);
+      setHasPlayedIntro(true);
+    }
+  }, [step, setHasPlayedIntro]);
+
+  // Let the navbar know whether the fullscreen intro is currently covering the screen
+  useLayoutEffect(() => {
+    setIntroPlaying(isExpanded);
+    return () => setIntroPlaying(false);
+  }, [isExpanded, setIntroPlaying]);
+
+  // Desktop: pressing Enter skips the intro
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Enter' && step < 13) {
+        timeoutsRef.current.forEach(clearTimeout);
+        setStep(13);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [step]);
 
   // Exact center coordinates for the shapes
   const positions = {
@@ -143,8 +194,8 @@ const DesignerHero = () => {
   const getTL = (pos) => ({ left: `calc(${pos.cx}% + ${-offsetVw}vw)`, top: `calc(${pos.cy}% + ${-offsetVw}vw)` });
   const getBR = (pos) => ({ left: `calc(${pos.cx}% + ${offsetVw}vw)`, top: `calc(${pos.cy}% + ${offsetVw}vw)` });
 
-  const moveEase = { type: "tween", ease: "easeInOut", duration: 0.5 };
-  const dragEase = { duration: 0.4, ease: "easeOut" };
+  const moveEase = { type: "tween", ease: "easeInOut", duration: t(0.5) };
+  const dragEase = { duration: t(0.4), ease: "easeOut" };
 
   const cursorVariants = {
     0: { ...getTL(positions.purple), opacity: 0 },
@@ -166,8 +217,10 @@ const DesignerHero = () => {
 
 
   return (
-    <div
-      className={`designer-hero cursor-trail-zone ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
+    <motion.div
+      layout
+      transition={{ layout: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }}
+      className={`designer-hero cursor-trail-zone ${isExpanded ? 'hero-intro-fullscreen' : ''} ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -183,11 +236,38 @@ const DesignerHero = () => {
         <RefreshCcw size={20} />
       </motion.button>
 
+      {/* Skip Intro: button on mobile, keyboard hint on desktop */}
+      <AnimatePresence>
+        {step < 13 && (
+          <>
+            <motion.button
+              className="skip-intro-btn"
+              onClick={handleSkip}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              Skip Intro
+            </motion.button>
+            <motion.div
+              className="skip-intro-hint"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              Press <kbd>Enter</kbd> to skip
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
       {/* Background Gradients */}
       <motion.img
-        initial={{ opacity: 0 }}
+        initial={skipEntryAnimRef.current ? false : { opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: t(2) }}
         src={headerBg}
         className="full-header-bg object-cover"
         alt="Background gradient"
@@ -201,7 +281,7 @@ const DesignerHero = () => {
         <GridBox currentStep={step} triggerStep={6} pos={positions.green} />
         <GridBox currentStep={step} triggerStep={10} pos={positions.pink} />
 
-        <AnimatePresence>
+        <AnimatePresence initial={!skipEntryAnimRef.current}>
           {step >= 3 && (
             <motion.div
               className="shape-container interactive-shape"
@@ -341,10 +421,8 @@ const DesignerHero = () => {
 
         <AnimatePresence>
           {tinyShapes.map((shape) => (
-            <motion.img
+            <motion.div
               key={shape.id}
-              src={shape.img}
-              alt=""
               style={{
                 position: 'absolute',
                 left: shape.x,
@@ -357,7 +435,16 @@ const DesignerHero = () => {
               initial={{ scale: 0, rotate: shape.rotate - 60, opacity: 0, x: '-50%', y: '-50%' }}
               animate={{ scale: 1, rotate: shape.rotate, opacity: 1, x: '-50%', y: '-50%' }}
               transition={{ type: "spring", bounce: 0.6 }}
-            />
+            >
+              {/* Continuous floating drift, matching the main shapes */}
+              <motion.img
+                src={shape.img}
+                alt=""
+                style={{ display: 'block', width: '100%' }}
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+              />
+            </motion.div>
           ))}
         </AnimatePresence>
 
@@ -385,20 +472,20 @@ const DesignerHero = () => {
 
         {/* Rolling Text Animation Wrapper using CSS Grid for perfect overlap */}
         <div className="title-wrapper">
-          <AnimatePresence>
+          <AnimatePresence initial={!skipEntryAnimRef.current}>
             {step < 12 && (
               <motion.h1
                 key="sequence"
                 className="hero-sequence-title"
                 exit={{ y: -40, opacity: 0, filter: 'blur(4px)' }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                transition={{ duration: t(0.6), ease: "easeInOut" }}
               >
                 <motion.span
                   className="word"
                   style={{ color: '#5b65f0' }}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: step >= 3 ? 1 : 0, y: step >= 3 ? 0 : 10 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: t(0.4) }}
                 >
                   Designing
                 </motion.span>
@@ -407,7 +494,7 @@ const DesignerHero = () => {
                   className="arrow sequence-arrow"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: step >= 7 ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: t(0.3) }}
                 >
                   {' → '}
                 </motion.span>
@@ -417,7 +504,7 @@ const DesignerHero = () => {
                   style={{ color: '#bccb3e' }}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: step >= 7 ? 1 : 0, y: step >= 7 ? 0 : 10 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: t(0.4) }}
                 >
                   Prototyping
                 </motion.span>
@@ -426,7 +513,7 @@ const DesignerHero = () => {
                   className="arrow sequence-arrow"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: step >= 11 ? 1 : 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: t(0.3) }}
                 >
                   {' → '}
                 </motion.span>
@@ -436,7 +523,7 @@ const DesignerHero = () => {
                   style={{ color: '#e76f80' }}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: step >= 11 ? 1 : 0, y: step >= 11 ? 0 : 10 }}
-                  transition={{ duration: 0.4 }}
+                  transition={{ duration: t(0.4) }}
                 >
                   Shipping
                 </motion.span>
@@ -449,7 +536,7 @@ const DesignerHero = () => {
                 className="hero-sequence-title name-gradient"
                 initial={{ y: 40, opacity: 0, filter: 'blur(4px)' }}
                 animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-                transition={{ duration: 0.6, ease: "easeInOut" }}
+                transition={{ duration: t(0.6), ease: "easeInOut" }}
               >
                 Cindy Chen
               </motion.h1>
@@ -460,9 +547,9 @@ const DesignerHero = () => {
         {/* Final Subtext and View Work Arrow */}
         <motion.div
           className="hero-final-content"
-          initial={{ opacity: 0, y: 20 }}
+          initial={skipEntryAnimRef.current ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: step >= 13 ? 1 : 0, y: step >= 13 ? 0 : 20 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: t(0.6), ease: "easeOut" }}
         >
           <p className="hero-subtext">
             Product designer building intuitive, human-centered systems that help <br className="hidden md:block" />
@@ -481,7 +568,7 @@ const DesignerHero = () => {
       </div>
 
       {/* Scroll Indicator at the very bottom */}
-      <AnimatePresence>
+      <AnimatePresence initial={!skipEntryAnimRef.current}>
         {step >= 13 && (
           <motion.div
             className="scroll-indicator"
@@ -500,7 +587,7 @@ const DesignerHero = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 };
 

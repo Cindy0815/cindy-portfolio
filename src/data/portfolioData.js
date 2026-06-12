@@ -282,19 +282,36 @@ export const caseStudies = [
           {
             heading: "The Challenge",
             paragraphs: [
-              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
-            ]
+              "Expedia helps millions of travelers book flights every year, but the comparison experience falls short. Without a clear, intuitive way to evaluate options, users often feel overwhelmed, lose track of their selections, and ultimately miss out on the best deals."
+            ],
+             image: getAssetUrl("case_studies/Expedia/the_user.png")
           },
           {
-            heading: "The Solution",
+            heading: "The Solution: Simplifying Flight Choices",
             paragraphs: [
-              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
-            ]
+              "Therefore, by introducing a streamlined flight-saving and comparison feature, it aimed to help users track options with ease."
+            ],
+              video: getAssetUrl("case_studies/Expedia/demo_video.mp4")
           },
           {
-            heading: "The Results",
+            heading: "The Results: ",
             paragraphs: [
-              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
+              "After."
+            ],
+             metrics: [
+              {
+                number: "80%",
+                text: "of Tested Teens reported feeling \"coached rather than monitored\" by the Penni interface."
+              },
+              {
+                number: "100%",
+                text: "of Parents agreed that the mutual agreement dashboard would significantly reduce weekly verbal friction regarding spending rules."
+              },
+              {
+                title: "Task Success Rate",
+                number: "92%",
+                text: "of teens successfully set up a automated savings goal and interaction flow without parental intervention."
+              }
             ]
           }
         ]
@@ -306,13 +323,71 @@ export const caseStudies = [
           {
             heading: "Understanding The Problem",
             paragraphs: [
-              "Most health tracking apps are either too complex or too basic. Users wanted a middle ground that offered robust data without the steep learning curve."
+              "To start, in order understand the pain points and uncover opportunities for improvement, I mapped out a research plan that included user interviews and competitive analysis. I wanted to know:"
+            ],
+            insightGrid: [
+              {
+                label: "Question 1",
+                text: "How do users currently search for and compare flights across different sites?"
+              },
+              {
+                label: "Question 2",
+                text: "What challenges do users face when trying to keep track of flights they're interested in?"
+              },
+              {
+                label: "Question 3",
+                text: "What workarounds or external tools do users rely on to manage their flight search?"
+              }
             ]
           },
             {
             heading: "User Struggles",
-            paragraphs: [
-              "Most health tracking apps are either too complex or too basic. Users wanted a middle ground that offered robust data without the steep learning curve."
+            researchSplit: {
+              left: {
+                paragraphs: [
+                  "I conducted 1:1 user interviews and send out surveys to the targeted users."
+                ],
+                demographic: {
+                  title: "Demographic:",
+                  lines: [
+                    "Current users aged 19-23",
+                    "Looking for budget friendly flights"
+                  ]
+                }
+              },
+              right: {
+                title: "Research methodologies:",
+                image: getAssetUrl("case_studies/Expedia/research.png")
+              }
+            }
+          },
+              {
+            heading: "Key Findings",
+            findingsCards: [
+              {
+                title: "Multi-Tab Comparison",
+                metric: "73%",
+                description: "use multiple tabs/sites to compare flights",
+                sampleSize: "(17 out of 23 survey respondents)",
+                insightLabel: "Insight 1",
+                insightText: "Users often have multiple tabs open and switch between sites to compare prices and options."
+              },
+              {
+                title: "Losing Track of Flights",
+                metric: "81%",
+                description: "reported difficulty returning to a flight",
+                sampleSize: "(9 out of 11 interviews)",
+                insightLabel: "Insight 2",
+                insightText: "Once they find a flight they like, it can be difficult to return to that specific option after navigating away from the page."
+              },
+              {
+                title: "External Tools Usage",
+                metric: "57%",
+                description: "rely on external tools to save or compare",
+                sampleSize: "(13 out of 23 survey respondents)",
+                insightLabel: "Insight 3",
+                insightText: "Many users resort to external tools like Google Flights, notes apps, or screenshots to compare flights."
+              }
             ]
           },
           {
@@ -324,14 +399,16 @@ export const caseStudies = [
           {
             heading: "Who Are We Designing For?",
             paragraphs: [
-              "How might we create a more intuitive flight comparison experience on Expedia, allowing users to seamlessly track and organize their travel choices without feeling overwhelmed or frustrated?"
-            ]
+              "Before going into brainstorming solutions, I created a user persona to understand our target user based on insights from the initial user research. Meet Molly, a college student who is interested in quickly finding budget friendly flights that matches with her travel plans."
+            ],
+              image: getAssetUrl("case_studies/Expedia/persona.png")
           },
           {
             heading: "The Current User Journey",
             paragraphs: [
-              "How might we create a more intuitive flight comparison experience on Expedia, allowing users to seamlessly track and organize their travel choices without feeling overwhelmed or frustrated?"
-            ]
+              "In addition to a user persona, I mapped out what Molly potentially says, thinks, feels, and does during the flight search process. The key here to is identify the low points and pain points along the way."
+            ],
+              image: getAssetUrl("case_studies/Expedia/journeymap.png")
           }
         ]
       },
@@ -344,50 +421,59 @@ export const caseStudies = [
             paragraphs: [
               "From looking at different flight booking platforms, I learned that there's an increasing emphasis on seamless flight comparison, price tracking, and user-friendly interfaces without overwhelming upsells or redirection.",
               "Therefore, top platforms like Google Flights, that can balance affordable, competitive pricing with organized, transparent flight details are well-positioned to attract and retain users."
-            ]
+            ],
+              image: getAssetUrl("case_studies/Expedia/IA.png")
           },
           {
             heading: "The Best Option",
             paragraphs: [
               "With the insights in hand, I began brainstorming solutions to improve the flight comparison process on Expedia. The key challenge was to create a feature that allowed users to evaulate flights options seamlessly without disrupting their workflow."
 
-            ]
+            ],
+              image: getAssetUrl("case_studies/Expedia/chart.png")
           },
            {
             heading: "Envisioning The New User Flow",
             paragraphs: [
-              "With the insights in hand, I began brainstorming solutions to improve the flight comparison process on Expedia. The key challenge was to create a feature that allowed users to evaulate flights options seamlessly without disrupting their workflow."
+              "Then I reimagined the user flow with the new feature and how it would help minimalize the frustration of going back to the beginning of the search process."
 
-            ]
+            ],
+             image: getAssetUrl("case_studies/Expedia/full_userflow.png")
           }
         ]
       },
        {
         id: "outcome",
-        subtitle: "04 / outcome",
+        subtitle: "04 / Outcome",
         content: [
           {
-            heading: "Initial Wireframes And user Testing",
+            heading: "Initial Wireframes And User Testing",
             paragraphs: [
-              
-            ]
+              "Before moving on to digital wireframes, I quickly sketched out some low-fidelity paper wireframes that showcased how the “Pin It” feature would integrate into the flight search experience. This way I can get quickly get ideas out receive some initial feedback before building the design on Figma."
+            ],
+             image: getAssetUrl("case_studies/Expedia/testing2.png")
           },
           {
             heading: "Transitioning from Mid-fi to Hi-fi",
             paragraphs: [
-            
 
-            ]
+            ],
+            
+             image: getAssetUrl("case_studies/Expedia/final.png")
           }
         ]
       },
       {
         id: "reflection",
-        subtitle: "05 / reflection",
+        subtitle: "05 / Reflection",
         content: [
           {
             heading: "Key Takeaways",
             paragraphs: [
+              "1. Testing Early: Rapid prototyping and user feedback helped me refine the interface especially around visibility, usability, and how comparison data was displayed.",
+              "‍2. Iterating with Constraints in Mind: Working within Expedia’s existing design system taught me how to ideate creatively while respecting branding, UI consistency, and technical feasibility",
+              "‍3. Scoping for MVP: I practiced scoping features for a minimum viable product, prioritizing functions that solve the core user problem while leaving room for future enhancements."
+        
               
             ]
           }

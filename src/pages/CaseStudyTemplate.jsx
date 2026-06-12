@@ -109,8 +109,8 @@ const CaseStudyTemplate = () => {
   }
 
   return (
-    <motion.article 
-      className="case-study-template"
+    <motion.article
+      className={`case-study-template ${study.id === 'expedia' ? 'cs-theme-expedia' : ''}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -206,12 +206,87 @@ const CaseStudyTemplate = () => {
 
                   {block.image && (
                     <div className="section-image-wrapper">
-                      <img 
-                        src={block.image} 
-                        alt={block.heading || `section image ${index}`} 
-                        className="section-image cs-zoomable" 
+                      <img
+                        src={block.image}
+                        alt={block.heading || `section image ${index}`}
+                        className="section-image cs-zoomable"
                         onClick={() => setPreviewImage({ src: block.image, alt: block.heading, caption: block.heading })}
                       />
+                    </div>
+                  )}
+
+                  {block.video && (
+                    <div className="section-video-wrapper">
+                      <video
+                        src={block.video}
+                        className="section-video"
+                        autoPlay
+                        loop
+                        muted
+                        controls
+                        playsInline
+                      />
+                    </div>
+                  )}
+
+                  {block.insightGrid && (
+                    <div className="section-insight-grid">
+                      {block.insightGrid.map((item, i) => (
+                        <div key={i} className="finding-insight-card">
+                          <span className="finding-insight-label">{item.label}</span>
+                          <p className="finding-insight-text">{item.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {block.researchSplit && (
+                    <div className="research-split">
+                      <div className="research-split-left">
+                        {block.researchSplit.left.paragraphs && (
+                          <div className="section-paragraphs">
+                            {block.researchSplit.left.paragraphs.map((text, i) => (
+                              <p key={i}>{text}</p>
+                            ))}
+                          </div>
+                        )}
+                        {block.researchSplit.left.demographic && (
+                          <div className="research-demographic">
+                            <p className="research-demographic-title">
+                              {block.researchSplit.left.demographic.title}
+                            </p>
+                            {block.researchSplit.left.demographic.lines.map((line, i) => (
+                              <p key={i}>{line}</p>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                      <div className="research-split-right">
+                        <p className="research-methodology-title">{block.researchSplit.right.title}</p>
+                        <img
+                          src={block.researchSplit.right.image}
+                          alt={block.researchSplit.right.title}
+                          className="research-methodology-image cs-zoomable"
+                          onClick={() => setPreviewImage({ src: block.researchSplit.right.image, alt: block.researchSplit.right.title })}
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  {block.findingsCards && (
+                    <div className="section-findings-grid">
+                      {block.findingsCards.map((card, i) => (
+                        <div key={i} className="finding-card">
+                          <h3 className="finding-title">{card.title}</h3>
+                          <div className="finding-metric"><RollingNumber value={card.metric} /></div>
+                          <p className="finding-description">{card.description}</p>
+                          {card.sampleSize && <p className="finding-sample-size">{card.sampleSize}</p>}
+                          <div className="finding-insight-card">
+                            <span className="finding-insight-label">{card.insightLabel}</span>
+                            <p className="finding-insight-text">{card.insightText}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   )}
 

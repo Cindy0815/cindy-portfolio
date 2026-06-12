@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10000;
+  z-index: 10010;
   transform-origin: top left;
   pointer-events: none;
   color: #18181b;

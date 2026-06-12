@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import logoImg from '../assets/logo2_opt.png';
+import { useHeroIntro } from '../context/HeroIntroContext';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
   const location = useLocation();
+  const { introPlaying } = useHeroIntro();
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('portfolio-theme') || 'light';
   });
@@ -34,9 +36,17 @@ const NavigationBar = () => {
   ];
 
   const isCaseStudyPage = location.pathname.startsWith('/case-studies/');
+  const isHome = location.pathname === '/';
+  const hideForIntro = isHome && introPlaying;
 
   return (
-    <nav className={`navbar ${isCaseStudyPage ? '' : 'navbar-sticky'}`}>
+    <motion.nav
+      layout
+      className={`navbar ${isCaseStudyPage ? '' : 'navbar-sticky'} ${hideForIntro ? 'navbar-hidden' : ''}`}
+      animate={{ opacity: hideForIntro ? 0 : 1 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      style={{ pointerEvents: hideForIntro ? 'none' : 'auto' }}
+    >
       <div className="navbar-inner container">
         <Link to="/" className="logo">
           <img src={logoImg} alt="Cindy" className="nav-logo-img" />
@@ -76,7 +86,7 @@ const NavigationBar = () => {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

@@ -59,13 +59,13 @@
 .footer-title {
   color: var(--text-primary);
   font-size: clamp(1.3rem, 3vw, 1.8rem);
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .footer-text {
   color: var(--text-primary);
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .footer-links {

@@ -201,7 +201,7 @@
 
 .section-image-wrapper {
   margin: 1.5rem auto 0 auto;
-  border-radius: 16px;
+  border-radius: 0px;
   overflow: hidden;
   background: transparent;
   width: 98%;
@@ -211,6 +211,175 @@
   width: 100%;
   height: auto;
   display: block;
+}
+
+.section-video-wrapper {
+  margin: 1.5rem auto 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  background: transparent;
+  width: 98%;
+}
+
+.section-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Research Methodology Split (User Struggles) */
+.research-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.research-split-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.research-split-left .section-paragraphs p,
+.research-demographic p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.research-demographic {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.research-demographic-title {
+  font-weight: 700;
+}
+
+.research-split-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.research-methodology-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.research-methodology-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+/* Understanding The Problem - research questions grid */
+.section-insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+.section-insight-grid .finding-insight-card {
+  margin-top: 0;
+  height: 100%;
+}
+
+/* Key Findings cards */
+.section-findings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.finding-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.finding-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.finding-metric {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #f5a623;
+  line-height: 1;
+  margin: 0.25rem 0;
+}
+
+.finding-description {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.finding-sample-size {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.finding-insight-card {
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--surface-color);
+  border-radius: 16px;
+}
+
+.finding-insight-label {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--accent-color);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  box-sizing: border-box;
+}
+
+/* Expedia case study: swap the purple accent for navy */
+.cs-theme-expedia .finding-title {
+  color: rgb(18, 52, 92);
+}
+
+.cs-theme-expedia .finding-insight-label {
+  background: rgb(18, 52, 92);
+}
+
+.cs-theme-expedia .metric-card {
+  background-color: rgb(18, 52, 92);
+}
+
+.finding-insight-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  text-align: left;
 }
 
 .mt-4 {
@@ -585,6 +754,21 @@
 
   .section-metrics {
     grid-template-columns: 1fr;
+  }
+
+  .research-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-findings-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .section-insight-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .pov-row {

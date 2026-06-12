@@ -14,6 +14,16 @@
   /* Fallback */
 }
 
+/* During the intro sequence, the hero expands to cover the whole screen,
+   then collapses (via the layout animation) into the styles above. */
+.designer-hero.hero-intro-fullscreen {
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+}
+
 /* Refresh Button */
 .refresh-btn {
   position: absolute;
@@ -48,6 +58,82 @@
 
 [data-theme='light'] .refresh-btn:hover {
   background: rgba(0, 0, 0, 0.1);
+}
+
+/* Skip Intro Button (mobile only) */
+.skip-intro-btn {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  padding: 0.5rem 1.1rem;
+  border-radius: 100px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  pointer-events: auto;
+  transition: background 0.2s ease;
+}
+
+.skip-intro-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme='light'] .skip-intro-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .skip-intro-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Skip Intro hint (desktop only) */
+.skip-intro-hint {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.skip-intro-hint kbd {
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.15rem 0.5rem;
+}
+
+[data-theme='light'] .skip-intro-hint kbd {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .skip-intro-btn {
+    display: block;
+  }
+
+  .skip-intro-hint {
+    display: none;
+  }
 }
 
 /* Background Image */
