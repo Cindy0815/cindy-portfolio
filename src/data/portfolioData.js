@@ -301,18 +301,18 @@ export const caseStudies = [
              metrics: [
               {
                  title: "Task Success Rate",
-                number: "90%",
+                number: "88%",
                 text: "of testers performed a core action of clicking \"Save\" or \"Add to Watchlist\" from the search results page."
               },
               {
                 title: "Conversion Rate",
                 number: "100%",
-                text: "of testers booked a trip directly from the Saved Flights page, compared to users who book via the traditional search results loop."
+                text: "of testers who saved a flight booked a trip directly from the Saved Flights page, compared to users who book via the traditional search results loop."
               },
               {
                 title: "Reduced Task Completion Time",
                 number: "40%",
-                text: "the time users spent evaluating flights dropped from about 4 minutes down to just 2.5."
+                text: "in reduction time of users spent evaluating flights, dropping from about 4 minutes down to just 2.5."
               }
             ]
           }
