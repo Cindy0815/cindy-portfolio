@@ -296,13 +296,11 @@ const DesignerHero = () => {
               onPointerDown={(e) => e.stopPropagation()}
               onClick={(e) => e.stopPropagation()}
             >
-              <motion.div
-                animate={{ y: [0, -15, 0], scale: [1, 1.05, 1] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                style={{ position: 'absolute', width: '100%', height: '100%' }}
-              >
+              {/* CSS keyframes so the float keeps running even when Framer
+                  mount animations are suppressed on repeat visits */}
+              <div className="floating-shape" style={{ '--float-y': '-15px', '--float-scale': 1.05, '--float-duration': '4s' }}>
                 <img src={shapePurple} className={imageSizeClass} alt="Purple shape" />
-              </motion.div>
+              </div>
             </motion.div>
           )}
 
@@ -320,13 +318,9 @@ const DesignerHero = () => {
               onPointerDown={(e) => e.stopPropagation()}
               onClick={(e) => e.stopPropagation()}
             >
-              <motion.div
-                animate={{ y: [0, -12, 0], scale: [1, 1.03, 1] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                style={{ position: 'absolute', width: '100%', height: '100%' }}
-              >
+              <div className="floating-shape" style={{ '--float-y': '-12px', '--float-scale': 1.03, '--float-duration': '4.5s' }}>
                 <img src={shapeGreen} className={imageSizeClass} alt="Green shape" />
-              </motion.div>
+              </div>
             </motion.div>
           )}
 
@@ -344,77 +338,9 @@ const DesignerHero = () => {
               onPointerDown={(e) => e.stopPropagation()}
               onClick={(e) => e.stopPropagation()}
             >
-              <motion.div
-                animate={{ y: [0, -18, 0], scale: [1, 1.06, 1] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-                style={{ position: 'absolute', width: '100%', height: '100%' }}
-              >
+              <div className="floating-shape" style={{ '--float-y': '-18px', '--float-scale': 1.06, '--float-duration': '5s' }}>
                 <img src={shapePink} className={imageSizeClass} alt="Pink shape" />
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Trailing Ripple Effect Layers */}
-        <AnimatePresence>
-          {step >= 13 && isHovering && (
-            <>
-              <motion.div
-                className="mouse-ripple-trail"
-                style={{ x: rippleX1, y: rippleY1, background: '#e76f80' }} /* Pink */
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 0.5, scale: [0.8, 1, 0.8] }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" } }}
-              />
-              <motion.div
-                className="mouse-ripple-trail"
-                style={{ x: rippleX2, y: rippleY2, background: '#bccb3e' }} /* Green */
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 0.6, scale: [1, 1.2, 1] }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 } }}
-              />
-              <motion.div
-                className="mouse-ripple-trail"
-                style={{ x: rippleX3, y: rippleY3, background: '#5b65f0' }} /* Purple */
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 0.7, scale: [1.2, 1.4, 1.2] }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.4 } }}
-              />
-            </>
-          )}
-        </AnimatePresence>
-
-        {/* Interactive User Cursor (Only visible after sequence completes and user hovers) */}
-        <AnimatePresence>
-          {step >= 13 && isHovering && (
-            <motion.div
-              className="custom-cursor interactive-user-cursor"
-              style={{ x: cursorX, y: cursorY, rotate: -10, transformOrigin: 'top left', willChange: 'transform' }}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.5 }}
-              transition={{ duration: 0.15 }}
-            >
-              <AnimatePresence>
-                {!hasClicked && (
-                  <motion.div
-                    className="click-me-prompt"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: [1, 1.1, 1] }}
-                    exit={{ opacity: 0, scale: 0.5 }}
-                    transition={{ 
-                      opacity: { duration: 0.2 },
-                      scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
-                    }}
-                  >
-                    click me!
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -466,6 +392,71 @@ const DesignerHero = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Trailing Ripple Effect Layers — outside .shapes-layer so they stack
+          above the hero content (buttons) */}
+      <AnimatePresence>
+        {step >= 13 && isHovering && (
+          <>
+            <motion.div
+              className="mouse-ripple-trail"
+              style={{ x: rippleX1, y: rippleY1, background: '#e76f80' }} /* Pink */
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 0.5, scale: [0.8, 1, 0.8] }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" } }}
+            />
+            <motion.div
+              className="mouse-ripple-trail"
+              style={{ x: rippleX2, y: rippleY2, background: '#bccb3e' }} /* Green */
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 0.6, scale: [1, 1.2, 1] }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 } }}
+            />
+            <motion.div
+              className="mouse-ripple-trail"
+              style={{ x: rippleX3, y: rippleY3, background: '#5b65f0' }} /* Purple */
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 0.7, scale: [1.2, 1.4, 1.2] }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.4 } }}
+            />
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Interactive User Cursor (Only visible after sequence completes and user hovers) */}
+      <AnimatePresence>
+        {step >= 13 && isHovering && (
+          <motion.div
+            className="custom-cursor interactive-user-cursor"
+            style={{ x: cursorX, y: cursorY, rotate: -10, transformOrigin: 'top left', willChange: 'transform' }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.5 }}
+            transition={{ duration: 0.15 }}
+          >
+            <AnimatePresence>
+              {!hasClicked && (
+                <motion.div
+                  className="click-me-prompt"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  animate={{ opacity: 1, scale: [1, 1.1, 1] }}
+                  exit={{ opacity: 0, scale: 0.5 }}
+                  transition={{
+                    opacity: { duration: 0.2 },
+                    scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
+                  }}
+                >
+                  click me!
+                </motion.div>
+              )}
+            </AnimatePresence>
+            <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Main Content */}
       <div className={`hero-content-centered ${step < 12 ? 'pre-reveal' : ''}`}>
@@ -561,8 +552,20 @@ const DesignerHero = () => {
             onClick={(e) => e.stopPropagation()}
             onPointerDown={(e) => e.stopPropagation()}
           >
-            <button className="btn-primary-hero">View Work</button>
-            <button className="btn-secondary-hero">Let's Connect!</button>
+            <button
+              className="btn-primary-hero"
+              onClick={() => document.getElementById('featured-works')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              View Work
+            </button>
+            <a
+              className="btn-secondary-hero"
+              href="https://www.linkedin.com/in/cindy15/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Let's Connect!
+            </a>
           </div>
         </motion.div>
       </div>

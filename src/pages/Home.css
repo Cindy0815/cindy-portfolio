@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+/* Keep the section heading clear of the sticky navbar when the hero's
+   "View Work" button scrolls here */
+.featured-work {
+  scroll-margin-top: 80px;
+}
+
 .hero-content {
   max-width: 800px;
 }
@@ -225,6 +231,21 @@
 
 .work-card:hover .view-project-btn {
   gap: 0.75rem;
+}
+
+/* Coming Soon card variant */
+.work-card--coming-soon {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.work-card--coming-soon:hover {
+  transform: none;
+}
+
+.coming-soon-label {
+  color: var(--text-secondary);
+  font-style: italic;
 }
 
 /* Play Works */

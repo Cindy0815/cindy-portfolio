@@ -110,7 +110,7 @@ const CaseStudyTemplate = () => {
 
   return (
     <motion.article
-      className={`case-study-template ${study.id === 'expedia' ? 'cs-theme-expedia' : ''}`}
+      className={`case-study-template cs-study-${study.id} ${study.id === 'expedia' ? 'cs-theme-expedia' : ''}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

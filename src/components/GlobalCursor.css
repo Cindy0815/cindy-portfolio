@@ -2,7 +2,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10010;
+  /* Highest layer on the page — above navbar, modals, and hero overlays */
+  z-index: 2147483647;
   transform-origin: top left;
   pointer-events: none;
   color: #18181b;

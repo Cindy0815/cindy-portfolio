@@ -41,7 +41,7 @@ const Home = () => {
       <DesignerHero />
 
       {/* Featured Case Studies */}
-      <section className="featured-work container section">
+      <section id="featured-works" className="featured-work container section">
         <div className="section-header flex justify-between items-end">
           <div>
             <h2>Featured Works</h2>
@@ -58,29 +58,51 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="work-card"
-              onMouseEnter={() => setCursorText("View Project")}
+              className={`work-card${study.comingSoon ? ' work-card--coming-soon' : ''}`}
+              onMouseEnter={() => setCursorText(study.comingSoon ? "Coming Soon" : "View Project")}
               onMouseLeave={() => setCursorText("")}
             >
-              <Link to={`/case-studies/${study.id}`}>
-                <div className="card-image">
-                  <img src={study.coverImage} alt={study.title} />
-                  {study.tags && (
-                    <div className="card-tags">
-                      {study.tags.map(tag => (
-                        <span key={tag} className="tag-pill">{tag}</span>
-                      ))}
+              {study.comingSoon ? (
+                <div>
+                  <div className="card-image">
+                    <img src={study.coverImage} alt={study.title} />
+                    {study.tags && (
+                      <div className="card-tags">
+                        {study.tags.map(tag => (
+                          <span key={tag} className="tag-pill">{tag}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="card-content">
+                    <h3>{study.title}</h3>
+                    <p>{study.shortDescription}</p>
+                    <div className="card-action">
+                      <span className="view-project-btn coming-soon-label">Coming Soon</span>
                     </div>
-                  )}
-                </div>
-                <div className="card-content">
-                  <h3>{study.title}</h3>
-                  <p>{study.shortDescription}</p>
-                  <div className="card-action">
-                    <span className="view-project-btn">View Project <ArrowRight size={16} /></span>
                   </div>
                 </div>
-              </Link>
+              ) : (
+                <Link to={`/case-studies/${study.id}`}>
+                  <div className="card-image">
+                    <img src={study.coverImage} alt={study.title} />
+                    {study.tags && (
+                      <div className="card-tags">
+                        {study.tags.map(tag => (
+                          <span key={tag} className="tag-pill">{tag}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="card-content">
+                    <h3>{study.title}</h3>
+                    <p>{study.shortDescription}</p>
+                    <div className="card-action">
+                      <span className="view-project-btn">View Project <ArrowRight size={16} /></span>
+                    </div>
+                  </div>
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>

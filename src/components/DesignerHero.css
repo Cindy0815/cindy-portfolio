@@ -210,6 +210,13 @@
   cursor: none !important;
 }
 
+/* Buttons/links inside the canvas would otherwise restore the native
+   pointer; keep the custom cursor as the only one visible */
+.interactive-canvas button,
+.interactive-canvas a {
+  cursor: none;
+}
+
 .interactive-shape {
   touch-action: none;
   /* Required for dragging to work well on touch devices */
@@ -222,9 +229,34 @@
   -webkit-user-drag: none;
 }
 
+/* Continuous up/down drift for the hero shapes. Done in CSS (not Framer)
+   so it keeps running on repeat visits when mount animations are skipped. */
+.floating-shape {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: shape-float var(--float-duration, 4s) ease-in-out 0.2s infinite;
+  will-change: transform;
+}
+
+@keyframes shape-float {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(var(--float-y, -15px)) scale(var(--float-scale, 1.05));
+  }
+}
+
 .interactive-user-cursor {
   top: 0;
   left: 0;
+  /* Above everything in the hero, including the content/buttons (z 20)
+     and the refresh button (z 200) */
+  z-index: 500;
   /* Transform origin overridden by inline Framer Motion style */
 }
 
@@ -243,7 +275,7 @@
   opacity: 0.7;
   filter: blur(8px);
   pointer-events: none;
-  z-index: 99;
+  z-index: 499;
   /* Just underneath the actual cursor */
   will-change: transform;
 }

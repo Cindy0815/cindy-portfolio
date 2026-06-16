@@ -49,25 +49,37 @@ const CaseStudiesIndex = () => {
 
       <div className="work-grid">
         {caseStudies.map((study, index) => (
-          <motion.div 
+          <motion.div
             key={study.id}
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="work-card"
-            onMouseEnter={() => setCursorText("View Project")}
+            className={`work-card${study.comingSoon ? ' work-card--coming-soon' : ''}`}
+            onMouseEnter={() => setCursorText(study.comingSoon ? "Coming Soon" : "View Project")}
             onMouseLeave={() => setCursorText("")}
           >
-            <Link to={`/case-studies/${study.id}`}>
-              <div className="card-image">
-                <img src={study.coverImage} alt={study.title} />
+            {study.comingSoon ? (
+              <div>
+                <div className="card-image">
+                  <img src={study.coverImage} alt={study.title} />
+                </div>
+                <div className="card-content">
+                  <h3>{study.title}</h3>
+                  <p>{study.shortDescription}</p>
+                </div>
               </div>
-              <div className="card-content">
-                <h3>{study.title}</h3>
-                <p>{study.shortDescription}</p>
-              </div>
-            </Link>
+            ) : (
+              <Link to={`/case-studies/${study.id}`}>
+                <div className="card-image">
+                  <img src={study.coverImage} alt={study.title} />
+                </div>
+                <div className="card-content">
+                  <h3>{study.title}</h3>
+                  <p>{study.shortDescription}</p>
+                </div>
+              </Link>
+            )}
           </motion.div>
         ))}
       </div>

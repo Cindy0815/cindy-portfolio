@@ -486,14 +486,119 @@ export const caseStudies = [
     ]
   },
   {
+    id: "tiktok-shop",
+    title: "Tiktok Shop: Rewards and Loyalty",
+    shortDescription: "End-to-end design of a social commerce rewards program to boost customer loyalty and streamline the shopping experience.",
+    tags: ["Mobile App", "E-Commerce", "UX/UI"],
+    role: "UX/UI Designer",
+    timeline: "12 Weeks",
+    tools: ["Figma", "Miro", "Notion"],
+     coverImage: getAssetUrl("case_studies/Tiktok/header2.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Overview",
+        content: [
+          {
+            heading: "The Challenge: Low Engagement Despite Interest",
+            paragraphs: [
+              "Although TikTok Shop has seen success with deals and affordable pricing, only 29% of weekly users have made a purchase. Meanwhile, 26% are interested but have not made a purchase, revealing a crucial gap between interest and action.",
+              "This hesitation presents both a trust barrier and a missed opportunity for TikTok to convert engaged users into active buyers."
+            ],
+            image: getAssetUrl("case_studies/Tiktok/info1.png")
+          },
+          {
+            heading: "The Solution",
+            paragraphs: [
+              "Introducing a point‑based rewards system for TikTok Shop to boost product engagement, incentivize first‑time purchases, and encourage repeat buyers."
+            ],
+            video: getAssetUrl("case_studies/Tiktok/solution.mov")
+          },
+          {
+            heading: "Impact & Validation",
+            paragraphs: [
+              "Our approach showed positive results, as shown by the following user feedback:"
+            ],
+            metrics: [
+              {
+                number: "80%",
+                text: "of user expressed interest in interacting with the rewards system"
+              },
+              {
+                number: "70%",
+                text: "of users bought a product because of the rewards feature"
+              },
+              {
+                title: "Conversation Rate",
+                number: "100%",
+                text: "effective in encouraging users to purchase their first product"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "features",
+        subtitle: "02 / Final Features",
+        content: [
+          {
+            heading: "FYP Page: Discovery",
+            paragraphs: [
+              "Discover Tiktok Shop's new rewards system!"
+            ],
+            video: getAssetUrl("case_studies/Tiktok/final1.mp4")
+          },
+          {
+            heading: "Rewards Page: Engagement",
+            paragraphs: [
+              "‍Check out fun challenges, gain Tokens, and earn gifts for free."
+            ],
+            video: getAssetUrl("case_studies/Tiktok/final2.mp4")
+          },
+          {
+            heading: "Shop and Share: Social Trust",
+            paragraphs: [
+              "‍Buy and share products with friends to earn Tokens"
+            ],
+        video: getAssetUrl("case_studies/Tiktok/final3.mp4")
+          },
+          {
+            heading: "Redeem And Checkout: Loyalty",
+            paragraphs: [
+              "Budget tracking for teens, with parental spending controls."
+            ],
+           video: getAssetUrl("case_studies/Tiktok/final4.mp4")
+          }
+        ]
+      },
+     
+      {
+        id: "reflection",
+        subtitle: "05 / Reflection",
+        content: [
+          {
+            heading: "What I Learned",
+            paragraphs: [
+              "1. Don't follow assumptions: It is okay to pviot. I learned to question my initial assumptions and let user feedback guide the direction. Instead of focusing on earning points, insights showed users cared more about the reward redemption experience, which led us to pivot our design for greater impact.",
+              "‍2. Design with clarity: I learned that even small visual or wording changes can influence how users feel about completing tasks. For example, by simplifying reward tiers and adding clearer progress cues, we made users feel more motivated and in control of their goals. This is something I will keep in mind in my future designs."
+            ]
+          },
+         
+
+        ]
+      }
+    ]
+  },
+    {
     id: "Build-Your-Box",
+    comingSoon: true,
     title: "Hershey's: Build Your Box",
     shortDescription: "Designing a personalized and simple shopping experience.",
     tags: ["Website", "E-Commerce", "UX/UI Design Intern"],
     role: "UX/UI Designer",
     timeline: "12 Weeks",
     tools: ["Figma", "After Effects", "Notion"],
-    coverImage: "https://images.unsplash.com/photo-1616348436168-de43ad0db179?auto=format&fit=crop&q=80&w=2081",
+      coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
     sections: [
       {
         id: "overview",
@@ -542,258 +647,6 @@ export const caseStudies = [
               "Created a comprehensive design system and a fully interactive prototype that received overwhelming positive feedback during usability testing."
             ]
           }
-        ]
-      }
-    ]
-  },
-  {
-    id: "tiktok-shop",
-    title: "Tiktok Shop: Rewards and Loyalty",
-    shortDescription: "End-to-end design of a social commerce rewards program to boost customer loyalty and streamline the shopping experience.",
-    tags: ["Mobile App", "E-Commerce", "UX/UI"],
-    role: "UX/UI Designer",
-    timeline: "12 Weeks",
-    tools: ["Figma", "Miro", "Notion"],
-     coverImage: getAssetUrl("case_studies/Tiktok/header2.png"),
-    sections: [
-      {
-        id: "overview",
-        subtitle: "01 / Overview",
-        content: [
-          {
-            heading: "The Challenge: Low Engagement Despite Interest",
-            paragraphs: [
-              "Although TikTok Shop has seen success with deals and affordable pricing, only 29% of weekly users have made a purchase. Meanwhile, 26% are interested but have not made a purchase, revealing a crucial gap between interest and action.",
-              "This hesitation presents both a trust barrier and a missed opportunity for TikTok to convert engaged users into active buyers."
-            ],
-            image: getAssetUrl("case_studies/Tiktok/info1.png")
-          },
-          {
-            heading: "The Solution",
-            paragraphs: [
-              "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
-            ],
-            images: [
-              {
-                src: getAssetUrl("case_studies/Pennies/solution1.png"),
-                description: "1. Keep track of spendings"
-              },
-              {
-                src: getAssetUrl("case_studies/Pennies/solution2.png"),
-                description: "2. Get personalized advice and tips"
-              },
-              {
-                src: getAssetUrl("case_studies/Pennies/solution3.png"),
-                description: "3. Set tangible goals with guidance"
-              }
-            ]
-          },
-          {
-            heading: "Impact & Validation",
-            paragraphs: [
-              "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
-            ],
-            metrics: [
-              {
-                number: "80%",
-                text: "of Tested Teens reported feeling \"coached rather than monitored\" by the Penni interface."
-              },
-              {
-                number: "100%",
-                text: "of Parents agreed that the mutual agreement dashboard would significantly reduce weekly verbal friction regarding spending rules."
-              },
-              {
-                title: "Task Success Rate",
-                number: "92%",
-                text: "of teens successfully set up a automated savings goal and interaction flow without parental intervention."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        id: "features",
-        subtitle: "02 / Final Features",
-        content: [
-          {
-            heading: "Onboarding",
-            paragraphs: [
-              "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
-            ],
-            image: getAssetUrl("case_studies/Pennies/onboarding.png")
-          },
-          {
-            heading: "Home Page",
-            paragraphs: [
-              "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
-            ],
-            image: getAssetUrl("case_studies/Pennies/homepage.png")
-          },
-          {
-            heading: "Ask Penni",
-
-            grid: {
-              items: [
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask1.mp4"),
-                  title: "1. Customize",
-                  description: "Customize cards, choose layout preferences, and select visual themes."
-                },
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask2.mp4"),
-                  title: "2. Ask",
-                  description: "Ask Penni financial questions and receive real-time personalized tips."
-                },
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask3.mp4"),
-                  title: "3. Apply",
-                  description: "Apply recommendations to your budget and track goals easily."
-                }
-              ]
-            }
-          },
-          {
-            heading: "Budget",
-            paragraphs: [
-              "Budget tracking for teens, with parental spending controls."
-            ],
-            image: getAssetUrl("case_studies/Pennies/budget.png")
-          }
-        ]
-      },
-      {
-        id: "research",
-        subtitle: "03 / Research",
-        content: [
-          {
-            heading: "The Core Tension",
-            paragraphs: [
-              "I spoke with five parent-teen pairs to understand where financial learning breaks down. What emerged was a shared sense of uncertainty:"
-            ],
-            povGrid: [
-              {
-                tag: getAssetUrl("case_studies/Pennies/parents_pov.png"),
-                problems: [
-                  "1. Unsure how to teach financial skills effectively",
-                  "2. Limited visibility into teen spending",
-                  "3. Balancing control with independence"
-                ],
-                opportunityTitle: "Opportunity #1",
-                opportunities: [
-                  "1. Provide guided, age appropriate financial education tools for parents",
-                  "2. Support gradual financial independence where teens earn autonomy step by step",
-                  "3. Reinforce good habits with feedback"
-                ]
-              },
-              {
-                tag: getAssetUrl("case_studies/Pennies/teen_pov.png"),
-                problems: [
-                  "1. Lack of financial education in school",
-                  "2. Inconsistent income which makes makes planning and saving difficult",
-                  "3. Difficulty separate needs from wants, leading to frequent impulse purchases"
-                ],
-                opportunityTitle: "Opportunity #2",
-                opportunities: [
-                  "1. Make saving feel tangible and rewarding",
-                  "2. Increase awareness around spending decisions, distinguishing needs vs. wants",
-                  "3. Support budgeting with flexible systems"
-                ]
-              }
-            ]
-          },
-          {
-            heading: "Market Insight",
-            paragraphs: [
-              "Next, I analyzed competitors in the market to identify gaps that had not yet been addressed."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info2.png")
-          },
-          {
-            heading: "Defining The User Journey",
-            paragraphs: [
-              "Before designing screens, I mapped the ideal journey: a teen making everyday purchases, receiving gentle guidance, and gradually gaining autonomy while parents stay informed through lightweight oversight."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info3.png")
-          },
-          {
-            heading: "Secure Payment Method",
-            paragraphs: [
-              "To support this, I chose a prepaid card system. It’s widely used, secure, and gives parents the structure they need while giving teens the freedom they want."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info4.png")
-          }
-        ]
-      },
-      {
-        id: "process",
-        subtitle: "04 / Process",
-        content: [
-          {
-            heading: "1. Pivoting Toward Long Term Behavior Change",
-            paragraphs: [
-              "My first concept focused on real‑time “out of budget” alerts. Teens users ignored them. They felt punitive, not supportive.",
-              "This was a turning point. Instead of reacting to mistakes, the solution needed to guide teens users before the moment of purchase. This insight shifted the entire product toward proactive, goal‑driven learning.",
-            ],
-            image: getAssetUrl("case_studies/Pennies/info5_1.png"),
-
-          },
-          {
-            image: getAssetUrl("case_studies/Pennies/info5_2.png")
-          },
-          {
-            heading: "2. Making Financial Insights Approachable",
-            paragraphs: [
-              "After the first round of testing, I created a higher fidelity prototype and ran quick tests on existing features. Some major iterations includes adding a spending patterns graph for teens and a friendly system that flags overspending trends while offering guidance rather than warnings.",
-
-            ],
-            image: getAssetUrl("case_studies/Pennies/info6.png"),
-
-          },
-          {
-            heading: "3. Personalized Guidance Through A Friendly Character",
-            paragraphs: [
-              "Next, I introduced a character called Penni to make financial guidance feel more human, approachable, and engaging for teens. Instead of interacting with a generic AI chatbot, Penni offers a consistent personality and tone, helping users build trust and stay motivated. This shift transforms budgeting from something intimidating into a supportive experience, making financial learning feel less like a task and more like a conversation.",
-            ],
-            image: getAssetUrl("case_studies/Pennies/info7.png"),
-
-          },
-
-          {
-            heading: "4. Accessibility Check",
-            paragraphs: [
-              "Before finalizing the design, I audited the color palette and implemented a system to ensure all colors met WCAG accessibility standards. This review led to several key visual adjustments to improve contrast and readability."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info8.png"),
-
-          },
-          {
-            heading: "Design System",
-            paragraphs: [
-              "For the high fidelity mockup, I created a design system as guidelines for my final design with a clear branding and ensuring that all the components are consistent throughout."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info10.png"),
-
-          }
-        ]
-      },
-      {
-        id: "reflection",
-        subtitle: "05 / Reflection",
-        content: [
-          {
-            heading: "Key Takeaways",
-            paragraphs: [
-              "1. Designing for Multi-User Dynamics: This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
-              "2. AI as a Feature vs. AI as a Solution: I learned that AI shouldn't just automate tasks; it should humanize them. Integrating AI contextually made budgeting feel like a supportive partnership rather than a digital chore."
-            ]
-          },
-          {
-            heading: "Future Steps",
-            paragraphs: [
-              "If I had another 3 months on this project, I would dive deeper into the AI interaction, designing the conversational edge cases, error states, and strict safety guardrails required for an AI interacting with minors. For example, this may include designing 'system fallback' interfaces for when the AI cannot confidently answer a complex financial question, routing the user to pre-made or pre-approved educational resources instead."
-            ]
-          }
-
         ]
       }
     ]

@@ -227,6 +227,59 @@
   display: block;
 }
 
+/* Final Features section only: videos at half size, centered */
+#features .section-video-wrapper {
+  width: 29%;
+}
+
+/* TikTok Final Features: alternating rows — video on one side, heading +
+   paragraph vertically centered on the other, swapping sides each row */
+.cs-study-tiktok-shop #features .section-content-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.cs-study-tiktok-shop #features .content-block {
+  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Two equal rows so heading (bottom of row 1) + paragraph (top of row 2)
+     sit centered against the video spanning both rows */
+  grid-template-rows: 1fr 1fr;
+  column-gap: 4rem;
+}
+
+.cs-study-tiktok-shop #features .content-block .section-video-wrapper {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 58%;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.cs-study-tiktok-shop #features .content-block .section-heading {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+}
+
+.cs-study-tiktok-shop #features .content-block .section-paragraphs {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+}
+
+/* Even rows: text left, video right */
+.cs-study-tiktok-shop #features .content-block:nth-child(even) .section-video-wrapper {
+  grid-column: 2;
+}
+
+.cs-study-tiktok-shop #features .content-block:nth-child(even) .section-heading,
+.cs-study-tiktok-shop #features .content-block:nth-child(even) .section-paragraphs {
+  grid-column: 1;
+}
+
 /* Research Methodology Split (User Struggles) */
 .research-split {
   display: grid;
@@ -373,6 +426,11 @@
 
 .cs-theme-expedia .metric-card {
   background-color: rgb(18, 52, 92);
+}
+
+/* TikTok Shop case study: black metric cards */
+.cs-study-tiktok-shop .metric-card {
+  background-color: #000000;
 }
 
 .finding-insight-text {
@@ -769,6 +827,20 @@
   .section-insight-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .cs-study-tiktok-shop #features .section-content-blocks {
+    gap: 3rem;
+  }
+
+  /* Stack each row: heading, paragraph, then video */
+  .cs-study-tiktok-shop #features .content-block {
+    display: block;
+  }
+
+  .cs-study-tiktok-shop #features .content-block .section-video-wrapper {
+    width: 70%;
+    margin-top: 1.5rem;
   }
 
   .pov-row {
