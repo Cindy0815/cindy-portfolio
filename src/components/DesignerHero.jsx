@@ -529,7 +529,7 @@ const DesignerHero = () => {
                 animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
                 transition={{ duration: t(0.6), ease: "easeInOut" }}
               >
-                Cindy Chen
+              Hi, I'm Cindy!
               </motion.h1>
             )}
           </AnimatePresence>
@@ -543,8 +543,7 @@ const DesignerHero = () => {
           transition={{ duration: t(0.6), ease: "easeOut" }}
         >
           <p className="hero-subtext">
-            Product designer building intuitive, human-centered systems that help <br className="hidden md:block" />
-            people navigate complexity with confidence
+            A product designer who <span className="word-designs">designs</span>, <span className="word-codes">codes</span>, and <span className="word-ships">ships</span> thoughtful, <em className="italic-emphasis">human‑centered systems</em>
           </p>
 
           <div
