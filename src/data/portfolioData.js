@@ -571,7 +571,79 @@ export const caseStudies = [
           }
         ]
       },
-     
+      {
+        id: "Research",
+        subtitle: "03 / Research",
+        content: [
+          {
+            heading: "Users hesitate to shop on TikTok due to low trust, strong loyalty to existing platforms, and a lack of social proof.",
+            paragraphs: [
+              "To understand what drives user behavior, we conducted interviews with both existing TikTok users and newcomers to TikTok Shop. Our goal was to uncover pain points that prevent or disincentivize users from making purchases.",
+              "Here are some key takeaways:"
+            ],
+            insightCards: [
+              {
+                title: "✨ Existing Brand Loyalty:",
+                text: "Many users are already loyal to platforms and stores they frequently shop from."
+              },
+              {
+                title: "👥 Social Proof & Trust:",
+                text: "Users expressed hesitation due to a lack of social proof. Since they don't know anyone who uses TikTok Shop, they see no compelling reason to try it."
+              },
+              {
+                title: "👑 Membership & Perks:",
+                text: "Users would use the same platforms because they see value in loyalty programs and memberships."
+              }
+            ]
+          },
+          {
+            heading: "Defining the users",
+            paragraphs: [
+              "Then, based on interview data and behavioral trends, we identified two key personas:"
+            ],
+            image: getAssetUrl("case_studies/Tiktok/persona.png")
+          },
+          {
+            heading: "💡 Key Insight: Trust and Loyalty Are the Biggest Drivers of Conversion",
+            paragraphs: [
+              "Users are unlikely to make the switch unless TikTok Shop delivers personalized value and a sense of trust. Without recognizable benefits or confidence in the platform, there’s little motivation for users to take action."
+            ]
+          },
+          {
+            heading: "🤔 Which leads to the question...",
+            paragraphs: [
+              "How might we build trust on Tiktok shops, driving increased customer retention rates and attracting new customers?"
+            ]
+          },
+        ]
+      },
+            {
+        id: "Process",
+        subtitle: "04 / Process",
+        content: [
+          {
+            heading: "Integrating a Reward System into TikTok Shop",
+            paragraphs: [
+              "To bring our concept to life, we mapped out a user flow that demonstrates how a reward system could be seamlessly integrated into the TikTok Shop experience. The flow highlights how the system would be:",
+            ],
+              image: getAssetUrl("case_studies/Tiktok/userflow.png")
+          },
+          {
+            heading: "Low fidelity wireframes",
+            paragraphs: [
+              "To quickly explore and communicate our ideas, we created a set of low-fidelity wireframes in Figma. Key elements include: onboarding moments, incentive touchpoints, and loyalty dashboard."
+            ],
+            image: getAssetUrl("case_studies/Tiktok/wireframe1.png")
+          },
+          {
+            heading: "Working prototype",
+            paragraphs: [
+              "This interactive version allowed users to experience key features such as earning points, tracking progress, and redeeming rewards."
+            ],
+            image: getAssetUrl("case_studies/Tiktok/wireframe2.png")
+          }
+        ]
+      },
       {
         id: "reflection",
         subtitle: "05 / Reflection",

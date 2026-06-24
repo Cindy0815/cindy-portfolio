@@ -229,6 +229,17 @@ const CaseStudyTemplate = () => {
                     </div>
                   )}
 
+                  {block.insightCards && (
+                    <div className="insight-cards-row">
+                      {block.insightCards.map((card, i) => (
+                        <div key={i} className="insight-card">
+                          <h3 className="insight-card-title">{card.title}</h3>
+                          <p className="insight-card-text">{card.text}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   {block.insightGrid && (
                     <div className="section-insight-grid">
                       {block.insightGrid.map((item, i) => (

@@ -18,8 +18,8 @@
 
 [data-theme='light'] {
   --bg-color: rgb(255, 255, 255);
-  --surface-color: #f4f4f5;
-  --surface-color-hover: #e4e4e7;
+  --surface-color: #fafafa;
+  --surface-color-hover: #f4f4f5;
   --text-primary: #18181b;
   --text-secondary: #52525b;
   --accent-color: #4f46e5;
