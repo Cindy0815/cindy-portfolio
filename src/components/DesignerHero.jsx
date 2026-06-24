@@ -544,7 +544,7 @@ const DesignerHero = () => {
           transition={{ duration: t(0.6), ease: "easeOut" }}
         >
           <p className="hero-subtext">
-            A product designer who <span className="word-designs">designs</span>, <span className="word-codes">codes</span>, and <span className="word-ships">ships</span> thoughtful, <em className="italic-emphasis : name-gradient">human‑centered </em> systems
+            A product designer who <span className="word-designs">designs</span>, <span className="word-codes">codes</span>, and <span className="word-ships">ships</span> thoughtful, human‑centered systems
           </p>
 
           <div

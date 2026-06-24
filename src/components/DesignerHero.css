@@ -348,9 +348,10 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   /* Name is slightly larger */
   margin-top: 40px;
+  font-weight: 500;
 }
 
 
@@ -381,13 +382,13 @@
 }
 
 .hero-subtext {
-  font-size: clamp(2.0rem, 2.0vw, 2rem);
+  font-size: clamp(1.6rem, 1.6vw, 1.8rem);
   color: var(--text-secondary);
   letter-spacing: 0.02em;
   font-weight: 400;
   font-family: var(--font-sans);
   line-height: 1.6;
-  max-width: 800px;
+  max-width: 700px;
 }
 
 /* Creative word styles */
