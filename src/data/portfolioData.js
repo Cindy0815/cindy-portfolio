@@ -597,14 +597,14 @@ export const caseStudies = [
             ]
           },
           {
-            heading: "Defining the users",
+            heading: "Defining The Users",
             paragraphs: [
               "Then, based on interview data and behavioral trends, we identified two key personas:"
             ],
             image: getAssetUrl("case_studies/Tiktok/persona.png")
           },
           {
-            heading: "💡 Key Insight: Trust and Loyalty Are the Biggest Drivers of Conversion",
+            heading: "💡 Key Insight: Trust and loyalty are the biggest drivers of conversion",
             paragraphs: [
               "Users are unlikely to make the switch unless TikTok Shop delivers personalized value and a sense of trust. Without recognizable benefits or confidence in the platform, there’s little motivation for users to take action."
             ]
@@ -622,21 +622,21 @@ export const caseStudies = [
         subtitle: "04 / Process",
         content: [
           {
-            heading: "Integrating a Reward System into TikTok Shop",
+            heading: "Integrating A Reward System Into TikTok Shop",
             paragraphs: [
               "To bring our concept to life, we mapped out a user flow that demonstrates how a reward system could be seamlessly integrated into the TikTok Shop experience. The flow highlights how the system would be:",
             ],
               image: getAssetUrl("case_studies/Tiktok/userflow.png")
           },
           {
-            heading: "Low fidelity wireframes",
+            heading: "Low Fidelity Wireframes",
             paragraphs: [
               "To quickly explore and communicate our ideas, we created a set of low-fidelity wireframes in Figma. Key elements include: onboarding moments, incentive touchpoints, and loyalty dashboard."
             ],
             image: getAssetUrl("case_studies/Tiktok/wireframe1.png")
           },
           {
-            heading: "Working prototype",
+            heading: "Working Prototype",
             paragraphs: [
               "This interactive version allowed users to experience key features such as earning points, tracking progress, and redeeming rewards."
             ],

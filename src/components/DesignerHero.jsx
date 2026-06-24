@@ -478,7 +478,7 @@ const DesignerHero = () => {
                   animate={{ opacity: step >= 3 ? 1 : 0, y: step >= 3 ? 0 : 10 }}
                   transition={{ duration: t(0.4) }}
                 >
-                  Designing
+                  <span className="word-designs">Designing</span>
                 </motion.span>
 
                 <motion.span
@@ -497,7 +497,8 @@ const DesignerHero = () => {
                   animate={{ opacity: step >= 7 ? 1 : 0, y: step >= 7 ? 0 : 10 }}
                   transition={{ duration: t(0.4) }}
                 >
-                  Prototyping
+                  <span className="word-codes">Prototyping</span>
+                 
                 </motion.span>
 
                 <motion.span
@@ -516,7 +517,7 @@ const DesignerHero = () => {
                   animate={{ opacity: step >= 11 ? 1 : 0, y: step >= 11 ? 0 : 10 }}
                   transition={{ duration: t(0.4) }}
                 >
-                  Shipping
+                  <span className="word-ships">Shipping</span> 
                 </motion.span>
               </motion.h1>
             )}
@@ -543,7 +544,7 @@ const DesignerHero = () => {
           transition={{ duration: t(0.6), ease: "easeOut" }}
         >
           <p className="hero-subtext">
-            A product designer who <span className="word-designs">designs</span>, <span className="word-codes">codes</span>, and <span className="word-ships">ships</span> thoughtful, <em className="italic-emphasis">human‑centered systems</em>
+            A product designer who <span className="word-designs">designs</span>, <span className="word-codes">codes</span>, and <span className="word-ships">ships</span> thoughtful, <em className="italic-emphasis">human‑centered </em> systems
           </p>
 
           <div
