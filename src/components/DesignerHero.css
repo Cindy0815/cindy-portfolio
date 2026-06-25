@@ -9,7 +9,7 @@
   justify-content: center;
   overflow: hidden;
   margin: 0 auto;
-  border-radius: 2.5rem;
+  border-radius: 2.3rem;
   background-color: var(--bg-color);
   /* Fallback */
 }
@@ -348,7 +348,7 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.5rem, 3.0vw, 2.5rem);
   /* Name is slightly larger */
   margin-top: 40px;
   font-weight: 500;
@@ -382,13 +382,13 @@
 }
 
 .hero-subtext {
-  font-size: clamp(1.6rem, 1.6vw, 1.8rem);
+  font-size: clamp(1.4rem, 1.4vw, 1.6rem);
   color: var(--text-secondary);
   letter-spacing: 0.02em;
   font-weight: 400;
   font-family: var(--font-sans);
   line-height: 1.6;
-  max-width: 700px;
+  max-width: 600px;
 }
 
 /* Creative word styles */

@@ -662,9 +662,9 @@ export const caseStudies = [
     ]
   },
     {
-    id: "Build-Your-Box",
+    id: "Build-A-Box",
     comingSoon: true,
-    title: "Hershey's: Build Your Box",
+    title: "Hershey's: Build A Box",
     shortDescription: "Designing a personalized and simple shopping experience.",
     tags: ["Website", "E-Commerce", "UX/UI Design Intern"],
     role: "UX/UI Designer",

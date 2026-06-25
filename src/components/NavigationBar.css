@@ -7,7 +7,7 @@
 .navbar-sticky {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 /* While the hero intro is playing on the home page, collapse the navbar
@@ -21,8 +21,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
   position: relative;
 }
 
