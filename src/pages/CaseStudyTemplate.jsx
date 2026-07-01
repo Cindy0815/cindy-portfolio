@@ -3,12 +3,14 @@ import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from 'f
 import { ArrowLeft } from 'lucide-react';
 import { caseStudies } from '../data/portfolioData';
 import { useState, useEffect, Fragment, useRef } from 'react';
+import HighlightBox from '../components/HighlightBox';
+import CenteredText from '../components/CenteredText';
 import './CaseStudyTemplate.css';
 
 const RollingNumber = ({ value }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  
+
   const numericMatch = value.match(/\d+/);
   const numericPart = numericMatch ? parseInt(numericMatch[0], 10) : 0;
   const suffix = value.replace(/\d+/g, '');
@@ -145,7 +147,7 @@ const CaseStudyTemplate = () => {
 
       {/* Hero Section */}
       <header className="cs-hero container section">
-        <motion.h1 
+        <motion.h1
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -153,7 +155,7 @@ const CaseStudyTemplate = () => {
         >
           {study.title}
         </motion.h1>
-        
+
         <div className="cs-meta">
           <div className="meta-item">
             <span className="meta-label">Role</span>
@@ -171,15 +173,15 @@ const CaseStudyTemplate = () => {
       </header>
 
       {/* Hero Cover Image */}
-      <motion.div 
+      <motion.div
         className="cs-cover"
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
-        <img 
-          src={study.headerImage || study.coverImage} 
-          alt={`${study.title} cover`} 
+        <img
+          src={study.headerImage || study.coverImage}
+          alt={`${study.title} cover`}
           className="cs-zoomable"
           onClick={() => setPreviewImage({ src: study.headerImage || study.coverImage, alt: study.title })}
         />
@@ -190,18 +192,26 @@ const CaseStudyTemplate = () => {
         {study.sections && study.sections.map((section) => (
           <section key={section.id} id={section.id} className="cs-dynamic-section">
             <div className="section-subtitle">{section.subtitle}</div>
-            
+
             <div className="section-content-blocks">
               {section.content && section.content.map((block, index) => (
                 <div key={index} className="content-block">
                   {block.heading && <h2 className="section-heading">{block.heading}</h2>}
-                  
+
                   {block.paragraphs && block.paragraphs.length > 0 && (
                     <div className="section-paragraphs">
                       {block.paragraphs.map((text, i) => (
                         <p key={i}>{text}</p>
                       ))}
                     </div>
+                  )}
+
+                  {block.bullets && block.bullets.length > 0 && (
+                    <ul className="section-bullets">
+                      {block.bullets.map((bullet, i) => (
+                        <li key={i} dangerouslySetInnerHTML={{ __html: bullet }} />
+                      ))}
+                    </ul>
                   )}
 
                   {block.image && (
@@ -213,6 +223,19 @@ const CaseStudyTemplate = () => {
                         onClick={() => setPreviewImage({ src: block.image, alt: block.heading, caption: block.heading })}
                       />
                     </div>
+                  )}
+
+                  {block.centeredText && (
+                    <CenteredText text={block.centeredText} />
+                  )}
+
+                  {block.highlightBox && (
+                    <HighlightBox
+                      text={block.highlightBox.text}
+                      borderColor={block.highlightBox.borderColor}
+                      bgColor={block.highlightBox.bgColor}
+                      textColor={block.highlightBox.textColor}
+                    />
                   )}
 
                   {block.video && (
@@ -306,10 +329,10 @@ const CaseStudyTemplate = () => {
                       {block.images.map((imgObj, i) => (
                         <div key={i} className="row-image-container">
                           {imgObj.description && <p className="row-image-desc">{imgObj.description}</p>}
-                          <img 
-                            src={imgObj.src} 
-                            alt={imgObj.description || `image ${i}`} 
-                            className="row-image cs-zoomable" 
+                          <img
+                            src={imgObj.src}
+                            alt={imgObj.description || `image ${i}`}
+                            className="row-image cs-zoomable"
                             onClick={() => setPreviewImage({ src: imgObj.src, alt: imgObj.description, caption: imgObj.description })}
                           />
                         </div>
@@ -344,11 +367,21 @@ const CaseStudyTemplate = () => {
                     <div className="section-metrics">
                       {block.metrics.map((metric, i) => (
                         <div key={i} className="metric-card">
-                          <div className="metric-number"><RollingNumber value={metric.number} /></div>
+                          {metric.number && <div className="metric-number"><RollingNumber value={metric.number} /></div>}
                           <div className="metric-content">
                             {metric.title && <div className="metric-title">{metric.title}</div>}
-                            <div className="metric-text">{metric.text}</div>
+                            {metric.text && <div className="metric-text">{metric.text}</div>}
                           </div>
+                          {metric.image && (
+                            <div className="metric-image-wrapper">
+                              <img src={metric.image} alt={metric.title || metric.text || "metric"} className="metric-image cs-zoomable" onClick={() => setPreviewImage({ src: metric.image, alt: metric.title || metric.text })} />
+                            </div>
+                          )}
+                          {metric.video && (
+                            <div className="metric-video-wrapper">
+                              <video src={metric.video} className="metric-video" autoPlay loop muted playsInline />
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -380,6 +413,31 @@ const CaseStudyTemplate = () => {
                       ))}
                     </div>
                   )}
+
+                  {block.imagePovSplit && (
+                    <div className="image-pov-split">
+                      <div className="image-pov-split-left">
+                        <img
+                          src={block.imagePovSplit.image}
+                          alt={block.heading || "Market Insight"}
+                          className="cs-zoomable"
+                          onClick={() => setPreviewImage({ src: block.imagePovSplit.image, alt: block.heading })}
+                        />
+                      </div>
+                      <div className="image-pov-split-right">
+                        <div className="pov-card problem-card image-pov-card">
+                          <h3 className="image-pov-card-title">{block.imagePovSplit.problemCard.title}</h3>
+                          <p className="image-pov-card-text">{block.imagePovSplit.problemCard.text}</p>
+                        </div>
+                        <div className="pov-card opportunity-card image-pov-card">
+                          <h3 className="image-pov-card-title">{block.imagePovSplit.opportunityCard.title}</h3>
+                          <p className="image-pov-card-text">{block.imagePovSplit.opportunityCard.text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+
                 </div>
               ))}
             </div>
@@ -404,14 +462,14 @@ const CaseStudyTemplate = () => {
             exit={{ opacity: 0 }}
             onClick={() => setPreviewImage(null)}
           >
-            <button 
-              className="cs-lightbox-close" 
+            <button
+              className="cs-lightbox-close"
               onClick={() => setPreviewImage(null)}
               aria-label="Close preview"
             >
               &times;
             </button>
-            <motion.div 
+            <motion.div
               className="cs-lightbox-content"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

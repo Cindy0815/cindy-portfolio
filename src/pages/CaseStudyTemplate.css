@@ -64,6 +64,7 @@
   width: 100%;
   height: auto;
   display: block;
+  border-radius: 8px;
 }
 
 .cs-body {
@@ -194,14 +195,14 @@
 }
 
 .section-paragraphs p {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-primary);
 }
 
 .section-image-wrapper {
   margin: 1.5rem auto 0 auto;
-  border-radius: 0px;
+  border-radius: 8px;
   overflow: hidden;
   background: transparent;
   width: 98%;
@@ -215,7 +216,7 @@
 
 .section-video-wrapper {
   margin: 1.5rem auto 0 auto;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   background: transparent;
   width: 98%;
@@ -280,6 +281,12 @@
   grid-column: 1;
 }
 
+/* Petals Worth Final Features: full width and smaller border radius */
+.cs-study-petals-worth #features .section-video-wrapper {
+  width: 100%;
+  border-radius: 8px;
+}
+
 /* Research Methodology Split (User Struggles) */
 .research-split {
   display: grid;
@@ -329,7 +336,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 16px;
+  border-radius: 8px;
 }
 
 /* Insight Cards Row - darker background cards */
@@ -472,6 +479,21 @@
   background-color: #000000;
 }
 
+/* Petals Worth case study: light blue metric cards */
+.cs-study-petals-worth .metric-card {
+  background-color: #dae9f6;
+  color: #000000;
+}
+
+.cs-study-petals-worth .metric-number,
+.cs-study-petals-worth .metric-title {
+  color: #000000;
+}
+
+.cs-study-petals-worth .metric-text {
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .finding-insight-text {
   font-size: 1rem;
   line-height: 1.6;
@@ -512,7 +534,7 @@
 .row-image {
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: 8px;
   display: block;
 }
 
@@ -558,7 +580,7 @@
   max-width: 100%;
   max-height: 80vh;
   object-fit: contain;
-  border-radius: 16px;
+  border-radius: 8px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
@@ -609,7 +631,7 @@
 }
 
 .video-cell {
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   background: var(--surface-color);
   height: auto;
@@ -917,4 +939,191 @@
   margin-bottom: 4rem;
   margin-left: -4rem;
   margin-right: -4rem;
+}
+
+/* Metric Card Image and Video */
+.metric-image-wrapper {
+  margin-top: 1.5rem;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.metric-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.metric-video-wrapper {
+  margin-top: 1.5rem;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.metric-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Highlight Box Case Study Theme Styles */
+.cs-study-pennies {
+  --highlight-box-border: rgba(123, 97, 255, 0.5);
+  --highlight-box-bg: rgb(250, 248, 255);
+  --highlight-box-text: #000000;
+  --highlight-box-border-width: 1px;
+}
+
+/* Expedia: Navy */
+.cs-study-expedia,
+.cs-theme-expedia {
+  --highlight-box-border: rgb(18, 52, 92);
+  --highlight-box-bg: rgba(18, 52, 92, 0.05);
+}
+
+[data-theme='light'] .cs-study-expedia,
+[data-theme='light'] .cs-theme-expedia {
+  --highlight-box-bg: rgba(18, 52, 92, 0.03);
+}
+
+/* TikTok Shop: Red/Cyan or Black/White theme */
+.cs-study-tiktok-shop {
+  --highlight-box-border: #fe2c55;
+  --highlight-box-bg: rgba(254, 44, 85, 0.05);
+}
+
+[data-theme='light'] .cs-study-tiktok-shop {
+  --highlight-box-bg: rgba(254, 44, 85, 0.03);
+}
+
+/* Petals Worth: Pastel Blue */
+.cs-study-petals-worth {
+  --highlight-box-border: #4a90e2;
+  --highlight-box-bg: rgba(74, 144, 226, 0.06);
+}
+
+[data-theme='light'] .cs-study-petals-worth {
+  --highlight-box-bg: rgba(74, 144, 226, 0.03);
+}
+
+
+/* Image POV Split Layout */
+.image-pov-split {
+  display: grid;
+  grid-template-columns: 2.1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+  margin: 3.5rem 0;
+}
+
+.image-pov-split-left {
+  width: 100%;
+}
+
+.image-pov-split-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.image-pov-split-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.image-pov-split-right .pov-card {
+  padding: 2.5rem 2rem;
+  justify-content: center;
+  min-height: 180px;
+}
+
+/* Ensure the black text color on problem card persists */
+.image-pov-split-right .problem-card {
+  color: #000000;
+}
+
+.image-pov-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.problem-card .image-pov-card-title {
+  color: #000000;
+  text-align: left;
+}
+
+.opportunity-card .image-pov-card-title {
+  color: #ffffff;
+  text-align: left;
+}
+
+.image-pov-card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0;
+}
+
+.problem-card .image-pov-card-text {
+  color: #333333;
+  text-align: left;
+}
+
+.opportunity-card .image-pov-card-text {
+  color: #ffffff;
+  opacity: 0.95;
+  text-align: left;
+}
+
+@media (max-width: 992px) {
+  .image-pov-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Bullet Points styling */
+.section-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.section-bullets li {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+  position: relative;
+}
+
+
+.section-bullets li strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .section-bullets li {
+    font-size: 1.05rem;
+    padding-left: 1.5rem;
+  }
+
+  .section-bullets li::before {
+    font-size: 1.4rem;
+    left: 0.25rem;
+    top: -0.15rem;
+  }
 }

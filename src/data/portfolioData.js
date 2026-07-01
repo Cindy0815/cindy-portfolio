@@ -17,7 +17,7 @@ export const caseStudies = [
     title: "Pennies: AI-Powered Budget Management",
     shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
     tags: ["Fintech", "Mobile App", "AI Integration"],
-    role: "Lead Product Designer",
+    role: "Product Designer",
     timeline: "12 Weeks",
     tools: ["Figma", "FigmaMake", "Miro"],
     coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.png"),
@@ -28,15 +28,26 @@ export const caseStudies = [
         subtitle: "01 / Overview",
         content: [
           {
-            heading: "The Challenge",
+            heading: "Background",
+            paragraphs: [
+              "Parents want to teach their teens how to manage money, but these conversations often turn tense — too much oversight feels controlling, too little feels risky. Teens want independence, yet they’re afraid of making mistakes. I saw this tension in my own family and realized how widespread it is.",
+              "Pennies began as a UX class assignment, but quickly grew into a solo, end‑to‑end project I led from research through final design. The problem space was bigger than the prompt: parents want to guide, teens want autonomy, and neither feels equipped to bridge that gap. That tension became the foundation of the experience I designed."
+            ]
+          },
+          {
+            heading: "Why The Knowledge Gap Creates Daily Friction?",
             paragraphs: [
               "Teens (typically ages 13-17) lack real-world financial literacy, but parental oversight often crosses into micro-management, causing friction and abandonment of traditional banking apps."
             ],
-            image: getAssetUrl("case_studies/Pennies/info1_1.png")
+            image: getAssetUrl("case_studies/Pennies/info1_1.png"),
+            centeredText: "The challenge became clear...",
+            highlightBox: {
+              text: "How might we help teens learn by doing while giving parents the peace of mind that their teens are supported, not left alone?"
+            }
           },
 
           {
-            heading: "The Solution",
+            heading: "The Solution: Turning Real Spending Habits Into Guided Learning",
             paragraphs: [
               "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
             ],
@@ -56,7 +67,7 @@ export const caseStudies = [
             ]
           },
           {
-            heading: "Impact & Validation",
+            heading: "Impact That Matters",
             paragraphs: [
               "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
             ],
@@ -166,14 +177,25 @@ export const caseStudies = [
                   "3. Support budgeting with flexible systems"
                 ]
               }
-            ]
+            ],
+            centeredText: "These conversations revealed two parallel needs: parents needed tools to <em>guide without controlling</em>, and teens needed support that <em>felt empowering</em> rather than punitive. This became the foundation for the design direction."
           },
           {
             heading: "Market Insight",
             paragraphs: [
               "Next, I analyzed competitors in the market to identify gaps that had not yet been addressed."
             ],
-            image: getAssetUrl("case_studies/Pennies/info2.png")
+            imagePovSplit: {
+              image: getAssetUrl("case_studies/Pennies/info2.png"),
+              problemCard: {
+                title: "Market Gap:",
+                text: "Few offer personalized, real-time financial guidance that adapts to teens' actual spending behaviors"
+              },
+              opportunityCard: {
+                title: "Opportunity #3",
+                text: "Provide a personalized experience that gives real, actionable insights"
+              }
+            }
           },
           {
             heading: "Defining The User Journey",
@@ -284,23 +306,23 @@ export const caseStudies = [
             paragraphs: [
               "Expedia helps millions of travelers book flights every year, but the comparison experience falls short. Without a clear, intuitive way to evaluate options, users often feel overwhelmed, lose track of their selections, and ultimately miss out on the best deals."
             ],
-             image: getAssetUrl("case_studies/Expedia/the_user.png")
+            image: getAssetUrl("case_studies/Expedia/the_user.png")
           },
           {
             heading: "The Solution: Simplifying Flight Choices",
             paragraphs: [
               "Therefore, by introducing a streamlined flight-saving and comparison feature, it aimed to help users track options with ease."
             ],
-              video: getAssetUrl("case_studies/Expedia/demo_video.mp4")
+            video: getAssetUrl("case_studies/Expedia/demo_video.mp4")
           },
           {
             heading: "The Results: ",
             paragraphs: [
               "After testing the final prototype through an unmoderated session with 18 users, here are some success metrics I measured."
             ],
-             metrics: [
+            metrics: [
               {
-                 title: "Task Success Rate",
+                title: "Task Success Rate",
                 number: "88%",
                 text: "of testers performed a core action of clicking \"Save\" or \"Add to Watchlist\" from the search results page."
               },
@@ -342,7 +364,7 @@ export const caseStudies = [
               }
             ]
           },
-            {
+          {
             heading: "User Struggles",
             researchSplit: {
               left: {
@@ -363,7 +385,7 @@ export const caseStudies = [
               }
             }
           },
-              {
+          {
             heading: "Key Findings",
             findingsCards: [
               {
@@ -393,24 +415,24 @@ export const caseStudies = [
             ]
           },
           {
-            heading: "Problem Statement",
-            paragraphs: [
-              "How might we create a more intuitive flight comparison experience on Expedia, allowing users to seamlessly track and organize their travel choices without feeling overwhelmed or frustrated?"
-            ]
+            heading: "Therefore...",
+            highlightBox: {
+              text: "How might we create a more intuitive flight comparison experience on Expedia, allowing users to seamlessly track and organize their travel choices without feeling overwhelmed or frustrated?"
+            }
           },
           {
             heading: "Who Are We Designing For?",
             paragraphs: [
               "Before going into brainstorming solutions, I created a user persona to understand our target user based on insights from the initial user research. Meet Molly, a college student who is interested in quickly finding budget friendly flights that matches with her travel plans."
             ],
-              image: getAssetUrl("case_studies/Expedia/persona.png")
+            image: getAssetUrl("case_studies/Expedia/persona.png")
           },
           {
             heading: "The Current User Journey",
             paragraphs: [
               "In addition to a user persona, I mapped out what Molly potentially says, thinks, feels, and does during the flight search process. The key here to is identify the low points and pain points along the way."
             ],
-              image: getAssetUrl("case_studies/Expedia/journeymap.png")
+            image: getAssetUrl("case_studies/Expedia/journeymap.png")
           }
         ]
       },
@@ -424,7 +446,7 @@ export const caseStudies = [
               "From looking at different flight booking platforms, I learned that there's an increasing emphasis on seamless flight comparison, price tracking, and user-friendly interfaces without overwhelming upsells or redirection.",
               "Therefore, top platforms like Google Flights, that can balance affordable, competitive pricing with organized, transparent flight details are well-positioned to attract and retain users."
             ],
-              image: getAssetUrl("case_studies/Expedia/IA.png")
+            image: getAssetUrl("case_studies/Expedia/IA.png")
           },
           {
             heading: "The Best Option",
@@ -432,19 +454,19 @@ export const caseStudies = [
               "With the insights in hand, I began brainstorming solutions to improve the flight comparison process on Expedia. The key challenge was to create a feature that allowed users to evaulate flights options seamlessly without disrupting their workflow."
 
             ],
-              image: getAssetUrl("case_studies/Expedia/chart.png")
+            image: getAssetUrl("case_studies/Expedia/chart.png")
           },
-           {
+          {
             heading: "Envisioning The New User Flow",
             paragraphs: [
               "Then I reimagined the user flow with the new feature and how it would help minimalize the frustration of going back to the beginning of the search process."
 
             ],
-             image: getAssetUrl("case_studies/Expedia/full_userflow.png")
+            image: getAssetUrl("case_studies/Expedia/full_userflow.png")
           }
         ]
       },
-       {
+      {
         id: "outcome",
         subtitle: "04 / Outcome",
         content: [
@@ -453,15 +475,15 @@ export const caseStudies = [
             paragraphs: [
               "Before moving on to digital wireframes, I quickly sketched out some low-fidelity paper wireframes that showcased how the “Pin It” feature would integrate into the flight search experience. This way I can get quickly get ideas out receive some initial feedback before building the design on Figma."
             ],
-             image: getAssetUrl("case_studies/Expedia/testing2.png")
+            image: getAssetUrl("case_studies/Expedia/testing2.png")
           },
           {
             heading: "Transitioning from Mid-fi to Hi-fi",
             paragraphs: [
 
             ],
-            
-             image: getAssetUrl("case_studies/Expedia/final.png")
+
+            image: getAssetUrl("case_studies/Expedia/final.png")
           }
         ]
       },
@@ -475,14 +497,14 @@ export const caseStudies = [
               "1. Testing Early: Rapid prototyping and user feedback helped me refine the interface especially around visibility, usability, and how comparison data was displayed.",
               "‍2. Iterating with Constraints in Mind: Working within Expedia’s existing design system taught me how to ideate creatively while respecting branding, UI consistency, and technical feasibility",
               "‍3. Scoping for MVP: I practiced scoping features for a minimum viable product, prioritizing functions that solve the core user problem while leaving room for future enhancements."
-        
-              
+
+
             ]
           }
         ]
       }
-    
-      
+
+
     ]
   },
   {
@@ -493,7 +515,7 @@ export const caseStudies = [
     role: "UX/UI Designer",
     timeline: "12 Weeks",
     tools: ["Figma", "Miro", "Notion"],
-     coverImage: getAssetUrl("case_studies/Tiktok/header2.png"),
+    coverImage: getAssetUrl("case_studies/Tiktok/header2.png"),
     sections: [
       {
         id: "overview",
@@ -560,14 +582,14 @@ export const caseStudies = [
             paragraphs: [
               "‍Buy and share products with friends to earn Tokens"
             ],
-        video: getAssetUrl("case_studies/Tiktok/final3.mp4")
+            video: getAssetUrl("case_studies/Tiktok/final3.mp4")
           },
           {
             heading: "Redeem And Checkout: Loyalty",
             paragraphs: [
               "Budget tracking for teens, with parental spending controls."
             ],
-           video: getAssetUrl("case_studies/Tiktok/final4.mp4")
+            video: getAssetUrl("case_studies/Tiktok/final4.mp4")
           }
         ]
       },
@@ -611,13 +633,13 @@ export const caseStudies = [
           },
           {
             heading: "🤔 Which leads to the question...",
-            paragraphs: [
-              "How might we build trust on Tiktok shops, driving increased customer retention rates and attracting new customers?"
-            ]
+            highlightBox: {
+              text: "How might we build trust on Tiktok shops, driving increased customer retention rates and attracting new customers?"
+            },
           },
         ]
       },
-            {
+      {
         id: "Process",
         subtitle: "04 / Process",
         content: [
@@ -626,7 +648,7 @@ export const caseStudies = [
             paragraphs: [
               "To bring our concept to life, we mapped out a user flow that demonstrates how a reward system could be seamlessly integrated into the TikTok Shop experience. The flow highlights how the system would be:",
             ],
-              image: getAssetUrl("case_studies/Tiktok/userflow.png")
+            image: getAssetUrl("case_studies/Tiktok/userflow.png")
           },
           {
             heading: "Low Fidelity Wireframes",
@@ -655,13 +677,137 @@ export const caseStudies = [
               "‍2. Design with clarity: I learned that even small visual or wording changes can influence how users feel about completing tasks. For example, by simplifying reward tiers and adding clearer progress cues, we made users feel more motivated and in control of their goals. This is something I will keep in mind in my future designs."
             ]
           },
-         
+
 
         ]
       }
     ]
   },
-    {
+  {
+    id: "petals-worth",
+    comingSoon: true,
+    title: "A Petal's Worth",
+    shortDescription: "A digital garden for shared reflection, where expressive forms grow into a living, interactive landscape.",
+    tags: ["Product Design", "Full‑Stack Development", "Emotional UX"],
+    role: "Design Engineer (Full-Stack)",
+    timeline: "14 Weeks",
+    tools: ["React.js (Frontend)", " Node.js (Backend)", "Figma (Design)"],
+    coverImage: getAssetUrl("case_studies/Petal/header.png"),
+    headerImage: getAssetUrl("case_studies/Petal/header.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Overview",
+        content: [
+          {
+            heading: "Background",
+            paragraphs: [
+              "A Petal's Worth is a shared digital garden where people can pause, breathe, and make something simple together.",
+              "For my senior capstone, I had complete freedom to build anything. Instead of creating another static prototype, I challenged myself to design, build, and ship a fully functional interactive product using Gemini and Claude Code."
+            ],
+            image: getAssetUrl("case_studies/Petal/overview.png")
+          },
+          {
+            heading: "I Started With A Question",
+            paragraphs: [
+              "How do we turn a simple act of sharing into an interactive visual system that builds a sense of connection?"
+            ]
+          },
+          {
+            heading: "Why A Garden?",
+            paragraphs: [
+              "Because a garden makes sharing feel simple — something you place and let grow, not something you fill out — and it also gives room for many symbolic forms, each carrying its own meaning."
+            ]
+          },
+          {
+            heading: "Results",
+            paragraphs: [],
+            metrics: [
+              {
+                number: "50+",
+                text: "users explored the garden on launch day",
+              },
+              {
+                number: "100+",
+                text: "submissions created within the first week",
+              },
+              {
+                text: "Fully deployed, real product used by groups and communities",
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "features",
+        subtitle: "02 / Final Features",
+        content: [
+          {
+            heading: "Group Spaces",
+            paragraphs: [
+              "Users can create private gardens for friends, teams, or communities that others can easily access with a private code."
+            ],
+            video: getAssetUrl("case_studies/Petal/group.mov")
+          },
+          {
+            heading: "Daily Form Creation",
+            paragraphs: [
+              "A lightweight daily flow that begins with a single prompt. Users answer the question, then move directly into creating their form. This prompt is reset daily allowing for new entries."
+            ],
+            video: getAssetUrl("case_studies/Petal/form.mov")
+          },
+          {
+            heading: "Expressive Forms",
+            paragraphs: [
+              "Users select a symbolic form that matches their mood, then shape it using intuitive draw and paint controls. Once customized, they submit their reflection and place the finished form into the garden."
+            ],
+            video: getAssetUrl("case_studies/Petal/expressive.mp4")
+          },
+          {
+            heading: "Shared Garden View + Interaction",
+            paragraphs: [
+              "All forms appear together in an interactive garden view. Users can explore the landscape, tap into others’ forms, and watch the garden grow."
+            ],
+            video: getAssetUrl("case_studies/Petal/shared.mov")
+          },
+          {
+            heading: "Persistent Data Storage",
+            paragraphs: [
+              "All forms are saved and retrievable, allowing gardens to grow over time."
+            ],
+            video: getAssetUrl("case_studies/Petal/storage.mov")
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "03 / Process",
+        content: [
+          {
+            heading: "Coming Soon...",
+            paragraphs: [
+            ],
+          },
+        ]
+      },
+      {
+        id: "Reflection",
+        subtitle: "04 / Reflection",
+        content: [
+          {
+            heading: "What I Learned",
+            bullets: [
+              "<strong>Shipping a real product</strong> - Building a deployed system taught me to design for persistence, error states, and daily return patterns.",
+              "<strong>AI as a creative partner</strong> - Gemini and Claude Code accelerated exploration while keeping design intentional.",
+              "<strong>Simplicity builds connection</strong> - Users felt connected not because the system was complex, but because it was simple and expressive."
+            ],
+            image: getAssetUrl("case_studies/Petal/showcase.jpg")
+          },
+        ]
+      },
+    ]
+  },
+  {
     id: "Build-A-Box",
     comingSoon: true,
     title: "Hershey's: Build A Box",
@@ -670,7 +816,7 @@ export const caseStudies = [
     role: "UX/UI Designer",
     timeline: "12 Weeks",
     tools: ["Figma", "After Effects", "Notion"],
-      coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
+    coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
     sections: [
       {
         id: "overview",
