@@ -529,7 +529,7 @@ const DesignerHero = () => {
           className="hero-final-content"
           initial={skipEntryAnimRef.current ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: step >= 13 ? 1 : 0, y: step >= 13 ? 0 : 20 }}
-          transition={{ duration: t(0.6), ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="hero-subtext">
             A product designer who <span className="word-designs">designs</span>, <span className="word-codes">codes</span>, and <span className="word-ships">ships</span> thoughtful, human‑centered systems
