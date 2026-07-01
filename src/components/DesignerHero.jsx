@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
-import { MousePointer2, ArrowDown, RefreshCcw } from 'lucide-react';
+import { MousePointer2, ArrowDown } from 'lucide-react';
 import { useHeroIntro } from '../context/HeroIntroContext';
 import './DesignerHero.css';
 
@@ -103,15 +103,7 @@ const DesignerHero = () => {
     }
   };
 
-  const handleRefresh = (e) => {
-    e.stopPropagation();
-    e.currentTarget.blur();
-    setStep(0);
-    setTinyShapes([]);
-    setHasClicked(false);
-    setIsExpanded(true);
-    setRefreshKey(prev => prev + 1);
-  };
+
 
   const handleSkip = (e) => {
     e.stopPropagation();
@@ -224,15 +216,7 @@ const DesignerHero = () => {
       onMouseLeave={() => setIsHovering(false)}
       onClick={handleCanvasClick}
     >
-      {/* Refresh Button */}
-      <motion.button
-        className="refresh-btn"
-        onClick={handleRefresh}
-        whileHover={{ rotate: 180 }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
-      >
-        <RefreshCcw size={20} />
-      </motion.button>
+
 
       {/* Skip Intro: button on mobile, keyboard hint on desktop */}
       <AnimatePresence>

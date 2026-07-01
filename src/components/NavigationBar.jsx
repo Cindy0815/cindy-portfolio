@@ -61,7 +61,11 @@ const NavigationBar = () => {
         y: hideForIntro ? -100 : 0, 
         opacity: hideForIntro ? 0 : 1 
       }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ 
+        duration: 0.6, 
+        ease: [0.22, 1, 0.36, 1],
+        delay: hideForIntro ? 0 : 0.8
+      }}
       style={{ pointerEvents: hideForIntro ? 'none' : 'auto' }}
     >
       <div className="navbar-inner container">

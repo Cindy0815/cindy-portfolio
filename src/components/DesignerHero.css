@@ -14,41 +14,7 @@
   z-index: 1;
 }
 
-/* Refresh Button */
-.refresh-btn {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 200;
-  /* Above everything */
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text-primary);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  backdrop-filter: blur(4px);
-  pointer-events: auto;
-  /* Required because it is absolutely positioned on top */
-  transition: background 0.2s ease;
-}
 
-.refresh-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-[data-theme='light'] .refresh-btn {
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-[data-theme='light'] .refresh-btn:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
 
 /* Skip Intro Button (mobile only) */
 .skip-intro-btn {
