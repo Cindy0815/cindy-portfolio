@@ -10,11 +10,14 @@
   z-index: 1000;
 }
 
-/* While the hero intro is playing on the home page, collapse the navbar
-   entirely so the hero can cover the full viewport. */
-.navbar-hidden {
-  height: 0;
-  overflow: hidden;
+/* On the home page, the navbar overlaying the sticky hero is positioned fixed
+   so it doesn't cause a layout shift when sliding in from the top. */
+.navbar-home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .navbar-inner {

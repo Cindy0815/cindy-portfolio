@@ -41,9 +41,12 @@ const NavigationBar = () => {
 
   return (
     <motion.nav
-      layout
-      className={`navbar ${isCaseStudyPage ? '' : 'navbar-sticky'} ${hideForIntro ? 'navbar-hidden' : ''}`}
-      animate={{ opacity: hideForIntro ? 0 : 1 }}
+      className={`navbar ${isCaseStudyPage ? '' : 'navbar-sticky'} ${isHome ? 'navbar-home' : ''}`}
+      initial={{ y: isHome ? -100 : 0, opacity: isHome ? 0 : 1 }}
+      animate={{ 
+        y: hideForIntro ? -100 : 0, 
+        opacity: hideForIntro ? 0 : 1 
+      }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       style={{ pointerEvents: hideForIntro ? 'none' : 'auto' }}
     >

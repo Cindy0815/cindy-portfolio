@@ -1,27 +1,17 @@
 .designer-hero {
-  position: relative;
-  width: calc(100% - 4rem);
-  max-width: 1350px;
-  height: 83vh;
-  /* Decreased from 90vh */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin: 0 auto;
-  border-radius: 2.3rem;
-  background-color: var(--bg-color);
-  /* Fallback */
-}
-
-/* During the intro sequence, the hero expands to cover the whole screen,
-   then collapses (via the layout animation) into the styles above. */
-.designer-hero.hero-intro-fullscreen {
-  width: 100%;
-  max-width: none;
-  height: 100vh;
   margin: 0;
   border-radius: 0;
+  background-color: var(--bg-color);
+  z-index: 1;
 }
 
 /* Refresh Button */
@@ -526,13 +516,13 @@
   }
 
   .designer-hero {
-    height: auto;
-    min-height: 70vh;
-    /* allow the box to grow if content is taller than 70vh */
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    min-height: 100vh;
+    border-radius: 0;
+    margin: 0;
     flex-direction: column;
-    border-radius: 1.8rem;
-    width: calc(100% - 4rem);
-    /* matches container 2rem padding */
     padding-bottom: 2rem;
   }
 

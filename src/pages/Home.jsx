@@ -40,7 +40,8 @@ const Home = () => {
       </AnimatePresence>
       <DesignerHero />
 
-      {/* Featured Case Studies */}
+      <div className="home-content-wrapper">
+        {/* Featured Case Studies */}
       <section id="featured-works" className="featured-work container section">
         <div className="section-header flex justify-between items-end">
           <div>
@@ -212,6 +213,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

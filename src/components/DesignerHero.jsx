@@ -218,9 +218,7 @@ const DesignerHero = () => {
 
   return (
     <motion.div
-      layout
-      transition={{ layout: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } }}
-      className={`designer-hero cursor-trail-zone ${isExpanded ? 'hero-intro-fullscreen' : ''} ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
+      className={`designer-hero cursor-trail-zone ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -459,7 +457,13 @@ const DesignerHero = () => {
       </AnimatePresence>
 
       {/* Main Content */}
-      <div className={`hero-content-centered ${step < 12 ? 'pre-reveal' : ''}`}>
+      <motion.div
+        className={`hero-content-centered ${step < 12 ? 'pre-reveal' : ''}`}
+        animate={{
+          y: step >= 13 ? -45 : 0
+        }}
+        transition={{ duration: t(0.8), ease: [0.22, 1, 0.36, 1] }}
+      >
 
         {/* Rolling Text Animation Wrapper using CSS Grid for perfect overlap */}
         <div className="title-wrapper">
@@ -568,7 +572,7 @@ const DesignerHero = () => {
             </a>
           </div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll Indicator at the very bottom */}
       <AnimatePresence initial={!skipEntryAnimRef.current}>
