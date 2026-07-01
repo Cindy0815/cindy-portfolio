@@ -527,8 +527,8 @@ const DesignerHero = () => {
         {/* Final Subtext and View Work Arrow */}
         <motion.div
           className="hero-final-content"
-          initial={skipEntryAnimRef.current ? false : { opacity: 0 }}
-          animate={{ opacity: step >= 13 ? 1 : 0 }}
+          initial={skipEntryAnimRef.current ? false : { opacity: 0, y: 20 }}
+          animate={{ opacity: step >= 13 ? 1 : 0, y: step >= 13 ? 0 : 20 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="hero-subtext">
