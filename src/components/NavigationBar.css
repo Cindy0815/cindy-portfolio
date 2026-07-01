@@ -22,8 +22,15 @@
 }
 
 .navbar-home.navbar-scrolled {
-  background-color: var(--bg-color);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .navbar-home.navbar-scrolled {
+  background-color: rgba(10, 10, 12, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .navbar-inner {
