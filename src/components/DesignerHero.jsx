@@ -486,7 +486,7 @@ const DesignerHero = () => {
                   transition={{ duration: t(0.4) }}
                 >
                   <span className="word-codes">Prototyping</span>
-                 
+
                 </motion.span>
 
                 <motion.span
@@ -505,7 +505,7 @@ const DesignerHero = () => {
                   animate={{ opacity: step >= 11 ? 1 : 0, y: step >= 11 ? 0 : 10 }}
                   transition={{ duration: t(0.4) }}
                 >
-                  <span className="word-ships">Shipping</span> 
+                  <span className="word-ships">Shipping</span>
                 </motion.span>
               </motion.h1>
             )}
@@ -518,7 +518,7 @@ const DesignerHero = () => {
                 animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
                 transition={{ duration: t(0.6), ease: "easeInOut" }}
               >
-              Hi, I'm Cindy!
+                Hi, I'm Cindy!
               </motion.h1>
             )}
           </AnimatePresence>
@@ -527,8 +527,8 @@ const DesignerHero = () => {
         {/* Final Subtext and View Work Arrow */}
         <motion.div
           className="hero-final-content"
-          initial={skipEntryAnimRef.current ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: step >= 13 ? 1 : 0, y: step >= 13 ? 0 : 20 }}
+          initial={skipEntryAnimRef.current ? false : { opacity: 0 }}
+          animate={{ opacity: step >= 13 ? 1 : 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="hero-subtext">

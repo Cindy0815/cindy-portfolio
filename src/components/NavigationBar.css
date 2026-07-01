@@ -21,11 +21,11 @@
   background-color: transparent;
 }
 
-.navbar-home.navbar-scrolled {
-  background-color: rgba(255, 255, 255, 0.8);
+.navbar-home {
+  background-color: rgba(255, 255, 255, 0.0);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
 }
 
 [data-theme='dark'] .navbar-home.navbar-scrolled {

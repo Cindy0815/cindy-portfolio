@@ -288,7 +288,7 @@
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 0;
-  margin-top: 250px;
+  margin-top: 200px;
   /* Optically push down a few pixels to align with center */
   /* Handled by wrapper */
   display: flex;
@@ -306,7 +306,7 @@
   color: transparent;
   font-size: clamp(1.5rem, 3.0vw, 2.5rem);
   /* Name is slightly larger */
-  margin-top: 40px;
+  margin-top: 100px;
   font-weight: 500;
 }
 
