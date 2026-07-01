@@ -22,29 +22,25 @@ const NavigationBar = () => {
     setMenuOpen(false);
   }, [location.pathname]);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     localStorage.setItem('portfolio-theme', newTheme);
   };
-
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    
-    // Check initial scroll position
-    handleScroll();
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -59,7 +55,7 @@ const NavigationBar = () => {
 
   return (
     <motion.nav
-      className={`navbar ${isCaseStudyPage ? '' : 'navbar-sticky'} ${isHome ? 'navbar-home' : ''} ${isScrolled && !menuOpen ? 'navbar-pill' : ''}`}
+      className={`navbar ${isCaseStudyPage ? '' : 'navbar-sticky'} ${isHome ? 'navbar-home' : ''} ${scrolled ? 'navbar-scrolled' : ''}`}
       initial={{ y: isHome ? -100 : 0, opacity: isHome ? 0 : 1 }}
       animate={{ 
         y: hideForIntro ? -100 : 0, 
