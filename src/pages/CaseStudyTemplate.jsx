@@ -147,6 +147,16 @@ const CaseStudyTemplate = () => {
 
       {/* Hero Section */}
       <header className="cs-hero container section">
+        {study.projectCategory && (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.1 }}
+            className="cs-project-tag"
+          >
+            {study.projectCategory}
+          </motion.div>
+        )}
         <motion.h1
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -158,9 +168,17 @@ const CaseStudyTemplate = () => {
 
         <div className="cs-meta">
           <div className="meta-item">
-            <span className="meta-label">Role</span>
-            <span className="meta-value">{study.role}</span>
+            <span className="meta-label">Role/Team</span>
+            <span className="meta-value">
+              {Array.isArray(study.role) ? study.role.join("\n") : study.role}
+            </span>
           </div>
+          {study.projectType && (
+            <div className="meta-item">
+              <span className="meta-label">Project Type</span>
+              <span className="meta-value">{study.projectType}</span>
+            </div>
+          )}
           <div className="meta-item">
             <span className="meta-label">Timeline</span>
             <span className="meta-value">{study.timeline}</span>
@@ -169,6 +187,7 @@ const CaseStudyTemplate = () => {
             <span className="meta-label">Tools</span>
             <span className="meta-value">{study.tools.join(", ")}</span>
           </div>
+
         </div>
       </header>
 

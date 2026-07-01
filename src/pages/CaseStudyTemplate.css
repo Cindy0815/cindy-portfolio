@@ -21,6 +21,19 @@
   padding-bottom: 4rem;
 }
 
+.cs-project-tag {
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+}
+
 .cs-title {
   font-size: 5rem;
   margin-bottom: 4rem;
@@ -53,6 +66,7 @@
 .meta-value {
   font-size: 1.1rem;
   font-weight: 500;
+  white-space: pre-line;
 }
 
 .cs-cover {

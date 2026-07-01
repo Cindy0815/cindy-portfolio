@@ -17,7 +17,9 @@ export const caseStudies = [
     title: "Pennies: AI-Powered Budget Management",
     shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
     tags: ["Fintech", "Mobile App", "AI Integration"],
-    role: "Product Designer",
+    role: "UX/UI Designer (End-to-End)",
+    projectType: "Mobile Application",
+    projectCategory: "Personal Project",
     timeline: "12 Weeks",
     tools: ["Figma", "FigmaMake", "Miro"],
     coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.png"),
@@ -292,7 +294,9 @@ export const caseStudies = [
     title: "Expedia: Browsing and Booking Experience",
     shortDescription: "Improving discoverability and helping users make faster, informed flight booking decisions.",
     tags: ["Search Experience", "Webpage", "UX/UI Redesign"],
-    role: "UX/UI Designer",
+    role: "UX/UI Designer (End-to-End)",
+    projectType: "Web UX/UI Redesign",
+    projectCategory: "Personal Project",
     timeline: "4 Weeks",
     tools: ["Figma", "Figjam"],
     coverImage: getAssetUrl("case_studies/Expedia/header_img2.png"),
@@ -512,8 +516,13 @@ export const caseStudies = [
     title: "Tiktok Shop: Rewards and Loyalty",
     shortDescription: "End-to-end design of a social commerce rewards program to boost customer loyalty and streamline the shopping experience.",
     tags: ["Mobile App", "E-Commerce", "UX/UI"],
-    role: "UX/UI Designer",
-    timeline: "12 Weeks",
+    role: [
+      "My Role: UX/UI Designer",
+      "Collaborator: Cher W. (UX/UI Designer)"
+    ],
+    projectType: "Mobile UX/UI Design",
+    projectCategory: "Personal Project",
+    timeline: "3 Weeks",
     tools: ["Figma", "Miro", "Notion"],
     coverImage: getAssetUrl("case_studies/Tiktok/header2.png"),
     sections: [
@@ -689,7 +698,9 @@ export const caseStudies = [
     title: "A Petal's Worth",
     shortDescription: "A digital garden for shared reflection, where expressive forms grow into a living, interactive landscape.",
     tags: ["Product Design", "Full‑Stack Development", "Emotional UX"],
-    role: "Design Engineer (Full-Stack)",
+    role: "Design Engineer",
+    projectType: "Creative Development & Design",
+    projectCategory: "Personal Project",
     timeline: "14 Weeks",
     tools: ["React.js (Frontend)", " Node.js (Backend)", "Figma (Design)"],
     coverImage: getAssetUrl("case_studies/Petal/header.png"),
@@ -813,10 +824,82 @@ export const caseStudies = [
     title: "Hershey's: Build A Box",
     shortDescription: "Designing a personalized and simple shopping experience.",
     tags: ["Website", "E-Commerce", "UX/UI Design Intern"],
-    role: "UX/UI Designer",
-    timeline: "12 Weeks",
-    tools: ["Figma", "After Effects", "Notion"],
+    role: [
+      "My Role: UX/UI Design Intern",
+      "Collaborators: 1 Frontend Engineer, 1 PM, 1 Design Lead"
+    ],
+    projectType: "E-Commerce Web Design",
+    projectCategory: "Internship Project",
+    timeline: "4 Weeks",
+    tools: ["Figma"],
     coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Overview",
+        content: [
+          {
+            heading: "Project Goals",
+            paragraphs: [
+              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
+            ]
+          }
+        ]
+      },
+      {
+        id: "problem",
+        subtitle: "02 / The Problem",
+        content: [
+          {
+            heading: "User Struggles",
+            paragraphs: [
+              "Most health tracking apps are either too complex or too basic. Users wanted a middle ground that offered robust data without the steep learning curve."
+            ]
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "03 / Process",
+        content: [
+          {
+            heading: "Steps to Solution",
+            paragraphs: [
+              "Competitive Analysis: Analyzed top 5 health apps to identify feature gaps and usability issues.",
+              "Visual Design: Developed a calming, modern aesthetic using soft gradients and friendly typography to reduce anxiety around health data."
+            ]
+          }
+        ]
+      },
+      {
+        id: "outcomes",
+        subtitle: "04 / Outcomes",
+        content: [
+          {
+            heading: "Final Delivery",
+            paragraphs: [
+              "Created a comprehensive design system and a fully interactive prototype that received overwhelming positive feedback during usability testing."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "cysana",
+    comingSoon: true,
+    title: "Cysana",
+    shortDescription: "Redesigning a malware detection dashboard to allow admins to quickly access essential security data.",
+    tags: ["Dashboard Design", "UX/UI Design Intern"],
+    role: [
+      "My Role: Product Design Intern (UX/UI)",
+      "Collaborators: 2 Full Stack Engineers, 1 Data Scientist, 1 PM"
+    ],
+    projectType: "Enterprise SaaS Dashboard",
+    projectCategory: "Internship Project",
+    timeline: "10 Weeks",
+    tools: ["Figma"],
+    coverImage: getAssetUrl("case_studies/Cysana/conatix_header.png"),
     sections: [
       {
         id: "overview",
