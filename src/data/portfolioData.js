@@ -32,14 +32,14 @@ export const caseStudies = [
           {
             heading: "Background",
             paragraphs: [
-              "Parents want to teach their teens how to manage money, but these conversations often turn tense — too much oversight feels controlling, too little feels risky. Teens want independence, yet they’re afraid of making mistakes. I saw this tension in my own family and realized how widespread it is.",
-              "Pennies began as a UX class assignment, but quickly grew into a solo, end‑to‑end project I led from research through final design. The problem space was bigger than the prompt: parents want to guide, teens want autonomy, and neither feels equipped to bridge that gap. That tension became the foundation of the experience I designed."
+              "Money was always a sensitive topic in my family — not because of the actual money involved, but the tension around it. Parents try to teach teens how to manage money, yet those conversations often slip into lectures. Teens want independence, but the fear of making mistakes holds them back. That push‑and‑pull is common in many households.",
+              "Pennies began as a simple UX class assignment, but the research revealed a larger truth: parents want to guide, teens want autonomy, and both struggle to meet in the middle."
             ]
           },
           {
             heading: "Why The Knowledge Gap Creates Daily Friction?",
             paragraphs: [
-              "Teens (typically ages 13-17) lack real-world financial literacy, but parental oversight often crosses into micro-management, causing friction and abandonment of traditional banking apps."
+              "Most people open their first bank account between ages 13 and 17, a formative window where real-world financial habits begin to take shape. Yet teens in this stage often lack meaningful financial literacy, while parental oversight can easily slip into micro‑management — creating friction, confusion, and ultimately abandonment of traditional banking apps."
             ],
             image: getAssetUrl("case_studies/Pennies/info1_1.png"),
             centeredText: "The challenge became clear...",
@@ -820,7 +820,6 @@ export const caseStudies = [
   },
   {
     id: "Build-A-Box",
-    comingSoon: true,
     title: "Hershey's: Build A Box",
     shortDescription: "Designing a personalized and simple shopping experience.",
     tags: ["Website", "E-Commerce", "UX/UI Design Intern"],
@@ -836,49 +835,113 @@ export const caseStudies = [
     sections: [
       {
         id: "overview",
-        subtitle: "01 / Overview",
+        subtitle: "01 / Project Overview",
         content: [
           {
-            heading: "Project Goals",
+            heading: "Designing a Customizable Shopping Experience",
             paragraphs: [
-              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
+              "During my internship at Dentsu, I worked on a high‑visibility e‑commerce feature for Hershey’s: a dedicated “Pick Your Pack” page that let customers build their own assortment of Skinny Packs for a Back‑to‑School campaign. My role focused on shaping an intuitive customization flow that felt familiar within the existing site ecosystem while introducing new interaction patterns that supported personalization."
+            ]
+          },
+          {
+            heading: "My Role & Contributions: Leading UI While Supporting UX Strategy",
+            paragraphs: [
+              "I led the UI design and contributed to UX strategy across the page’s layout, interaction patterns, and decision logic. My work included creating high‑fidelity Figma mockups aligned with brand guidelines, conducting usability testing, and collaborating closely with the client team to refine the experience."
+            ],
+            metrics: [
+              {
+                title: "UI design",
+                text: "High‑fidelity mockups, component reuse, visual hierarchy"
+              },
+              {
+                title: "UX strategy",
+                text: "Flow mapping, decision logic, interaction patterns"
+              },
+              {
+                title: "Usability testing",
+                text: "Rapid feedback cycles with client stakeholders"
+              }
+            ]
+          },
+          {
+            heading: "Client Request: A Fast, Flexible Customization Page",
+            paragraphs: [
+              "The client needed a dedicated page that allowed customers to build a 24‑item pack with specific rules: a minimum of four bags per flavor, real‑time editing, and a clear path to checkout. The project had a tight three‑week turnaround, requiring a design that balanced speed, feasibility, and brand consistency."
             ]
           }
         ]
       },
       {
-        id: "problem",
-        subtitle: "02 / The Problem",
+        id: "final-deliverable",
+        subtitle: "02 / Final Deliverable",
         content: [
           {
-            heading: "User Struggles",
+            heading: "Final Deliverable: A Live, Shippable Experience",
             paragraphs: [
-              "Most health tracking apps are either too complex or too basic. Users wanted a middle ground that offered robust data without the steep learning curve."
-            ]
+              "The final design launched on Hershey’s site from August 2025 to May 2026. The page introduced three core features that made the customization process intuitive and error‑proof:"
+            ],
+            insightCards: [
+              {
+                title: "Progress Bar",
+                text: "Guided users toward the required 24 items"
+              },
+              {
+                title: "Live Summary Panel",
+                text: "Real‑time visibility into selections and quantities"
+              },
+              {
+                title: "Prominent CTA",
+                text: "A clear, confident path to checkout once the box was complete"
+              }
+            ],
+            image: getAssetUrl("case_studies/Hershey/1.png"),
           }
         ]
       },
       {
         id: "process",
-        subtitle: "03 / Process",
+        subtitle: "03 / The Process",
         content: [
           {
-            heading: "Steps to Solution",
+            heading: "Balancing Needs, Constraints, and Speed",
             paragraphs: [
-              "Competitive Analysis: Analyzed top 5 health apps to identify feature gaps and usability issues.",
-              "Visual Design: Developed a calming, modern aesthetic using soft gradients and friendly typography to reduce anxiety around health data."
+              "With only three weeks to deliver a final design, I began with an MVP approach that met essential client requirements while staying within developer constraints. I reused existing components where possible and introduced new ones only when they meaningfully improved clarity or usability.",
+              "I moved through three rounds of iteration, presenting directly to the client team each time. These sessions helped validate assumptions, refine layout decisions, and ensure feasibility before handing the design off to development."
+            ],
+            images: [
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration1.png"),
+                description: "Round 1 — MVP Scoping"
+              },
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration2.png"),
+                description: "Round 2 — Refined Layout"
+              },
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration3.png"),
+                description: "Round 3 — Final Handoff"
+              }
             ]
+          },
+          {
+            heading: "Translating Features to Mobile",
+            paragraphs: [
+              "Once the desktop design was finalized, I explored different approaches for the mobile layout, leading multiple iterations to refine the user flow.",
+            ],
+            image: getAssetUrl("case_studies/Hershey/mobile.png")
           }
         ]
       },
       {
-        id: "outcomes",
-        subtitle: "04 / Outcomes",
+        id: "takeaways",
+        subtitle: "04 / Key Takeaways",
         content: [
           {
-            heading: "Final Delivery",
-            paragraphs: [
-              "Created a comprehensive design system and a fully interactive prototype that received overwhelming positive feedback during usability testing."
+            heading: "What This Project Taught Me",
+            bullets: [
+              "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize ruthlessly. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
+              "<strong>Embracing Feedback</strong> — Balancing input from both the client and developers pushed me to refine how I evaluate feedback. I learned to identify what improves usability versus what introduces unnecessary complexity.",
+              "<strong>Collaborating Across Teams</strong> — Clear communication became essential. Early misalignment caused rework, but once I established a shared vocabulary with developers and the client, the process became smoother and more efficient."
             ]
           }
         ]

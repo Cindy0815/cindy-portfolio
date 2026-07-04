@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
 import { caseStudies } from '../data/portfolioData';
 import { useState, useEffect, Fragment, useRef } from 'react';
 import HighlightBox from '../components/HighlightBox';
@@ -39,6 +39,135 @@ const RollingNumber = ({ value }) => {
     <span ref={ref}>
       0{suffix}
     </span>
+  );
+};
+
+const CardSlider = ({ cards }) => {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  if (!cards || cards.length === 0) return null;
+
+  const next = () => {
+    setDirection(1);
+    setIndex((prev) => (prev + 1) % cards.length);
+  };
+
+  const prev = () => {
+    setDirection(-1);
+    setIndex((prev) => (prev - 1 + cards.length) % cards.length);
+  };
+
+  const nextIndex = (index + 1) % cards.length;
+
+  const handleDragEnd = (event, info) => {
+    const swipeThreshold = 80;
+    if (info.offset.x < -swipeThreshold) {
+      setDirection(-1);
+      setIndex((prev) => (prev + 1) % cards.length);
+    } else if (info.offset.x > swipeThreshold) {
+      setDirection(1);
+      setIndex((prev) => (prev + 1) % cards.length);
+    }
+  };
+
+  return (
+    <div className="card-slider-container">
+      <div className="card-slider-wrapper">
+        {/* Next Card in the background (Peek Preview) */}
+        <div
+          className="cs-slider-card cs-slider-card--back"
+          style={{
+            zIndex: 0,
+            transform: 'translate(0px, 12px) scale(0.94) rotate(2deg)',
+            opacity: 0.45,
+            pointerEvents: 'none'
+          }}
+        >
+          <div className="cs-slider-card-index">0{nextIndex + 1} / 0{cards.length}</div>
+          <h3 className="cs-slider-card-title">{cards[nextIndex].title}</h3>
+          <p className="cs-slider-card-desc">{cards[nextIndex].description}</p>
+        </div>
+
+        {/* Current Top Card (Interactive/Drag-to-Swipe) */}
+        <AnimatePresence initial={false} custom={direction}>
+          <motion.div
+            key={index}
+            custom={direction}
+            variants={{
+              enter: {
+                x: 0,
+                y: 12,
+                scale: 0.94,
+                rotate: 2,
+                opacity: 0.45,
+                zIndex: 0
+              },
+              center: {
+                x: 0,
+                y: 0,
+                scale: 1,
+                rotate: 0,
+                opacity: 1,
+                zIndex: 2
+              },
+              exit: (dir) => ({
+                x: dir === 0 ? 0 : dir > 0 ? 350 : -350,
+                y: dir === 0 ? 0 : 50,
+                rotate: dir === 0 ? 0 : dir > 0 ? 15 : -15,
+                opacity: 0,
+                zIndex: 3
+              })
+            }}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 25 },
+              y: { type: "spring", stiffness: 300, damping: 25 },
+              opacity: { duration: 0.2 },
+              rotate: { type: "spring", stiffness: 300, damping: 25 }
+            }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.7}
+            onDragEnd={handleDragEnd}
+            whileDrag={{ cursor: 'grabbing', scale: 1.02 }}
+            className="cs-slider-card"
+            style={{
+              cursor: 'grab',
+              transformOrigin: 'center bottom'
+            }}
+          >
+            <div className="cs-slider-card-index">0{index + 1} / 0{cards.length}</div>
+            <h3 className="cs-slider-card-title">{cards[index].title}</h3>
+            <p className="cs-slider-card-desc">{cards[index].description}</p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className="card-slider-controls">
+        <button className="slider-nav-btn" onClick={prev} aria-label="Previous card">
+          <ChevronLeft size={20} />
+        </button>
+        <div className="slider-dots">
+          {cards.map((_, i) => (
+            <button
+              key={i}
+              className={`slider-dot ${i === index ? 'active' : ''}`}
+              onClick={() => {
+                setDirection(i > index ? 1 : -1);
+                setIndex(i);
+              }}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
+        </div>
+        <button className="slider-nav-btn" onClick={next} aria-label="Next card">
+          <ChevronRight size={20} />
+        </button>
+      </div>
+    </div>
   );
 };
 
@@ -269,6 +398,10 @@ const CaseStudyTemplate = () => {
                         playsInline
                       />
                     </div>
+                  )}
+
+                  {block.cardSlider && (
+                    <CardSlider cards={block.cardSlider} />
                   )}
 
                   {block.insightCards && (

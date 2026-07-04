@@ -70,10 +70,10 @@ const About = () => {
           {/* Left Column: Text */}
           <div className="about-text">
             <p>
-              Hello! I'm Cindy, a multidisciplinary designer specializing in UX/UI design. I bridge the gap between human needs and business goals to create intuitive, delightful digital experiences.
+              Hello! I'm Cindy, a multidisciplinary designer specializing in UX/UI design. Coming from a creative technology background I bring a unique blend of technical understanding and creative vision to my work.
             </p>
             <p>
-              I'm a New York native and a designer who loves turning messy ideas into interactive and intuitive designs. I'm always figuring out how users think, whether it’s mapping out flows, testing prototypes, or asking one too many questions. From dashboards to online shops, I focus on creating experiences that balance visual appeal with functionality.
+              I'm also a New York native and a designer who loves turning messy ideas into interactive and intuitive designs. I love figuring out how users think, whether it’s mapping out flows, testing prototypes, or asking one too many questions. From dashboards to online shops, I focus on creating experiences that balance visual appeal with functionality.
 
             </p>
 
