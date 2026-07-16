@@ -557,3 +557,25 @@
 [data-theme='dark'] .grid-img-asset {
   filter: brightness(0) invert(1);
 }
+
+/* Typing animation styling */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typing-cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: cursor-blink 0.8s infinite;
+  color: var(--text-primary);
+  font-weight: 200;
+}
+
+.name-gradient .typing-cursor {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--text-primary);
+  background-clip: unset;
+  color: var(--text-primary);
+}

@@ -15,6 +15,107 @@ import gridImg from '../assets/grid_opt.png';
 
 const imageSizeClass = "scaled-shape-img";
 
+const HERO_TEXTS = ["Hi, I'm Cindy!", "Welcome to my page :)"];
+
+const Typewriter = ({
+  texts,
+  typingSpeed = 80,
+  deletingSpeed = 40,
+  delayBeforeDelete = 2000,
+  delayBeforeType = 500,
+  startDelay = 600,
+  skip = false,
+  onComplete
+}) => {
+  const [textIndex, setTextIndex] = useState(0);
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const hasCalledComplete = useRef(false);
+  const isFirstRender = useRef(true);
+  const onCompleteRef = useRef(onComplete);
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete;
+  }, [onComplete]);
+
+  useEffect(() => {
+    if (skip) {
+      const finalText = texts[texts.length - 1];
+      setDisplayText(finalText);
+      setTextIndex(texts.length - 1);
+      setIsDeleting(false);
+      if (onCompleteRef.current && !hasCalledComplete.current) {
+        hasCalledComplete.current = true;
+        onCompleteRef.current();
+      }
+      return;
+    }
+
+    let timeoutId;
+    let delayTimeoutId;
+    const currentFullText = texts[textIndex];
+
+    const runEffect = () => {
+      if (isDeleting) {
+        const tick = () => {
+          if (displayText.length > 0) {
+            setDisplayText(prev => prev.slice(0, -1));
+            timeoutId = setTimeout(tick, deletingSpeed);
+          } else {
+            setIsDeleting(false);
+            setTextIndex(prev => (prev + 1) % texts.length);
+            timeoutId = setTimeout(() => {}, delayBeforeType);
+          }
+        };
+        timeoutId = setTimeout(tick, deletingSpeed);
+      } else {
+        const tick = () => {
+          const nextText = currentFullText.slice(0, displayText.length + 1);
+          setDisplayText(nextText);
+
+          if (nextText === currentFullText) {
+            if (textIndex === 0) {
+              if (onCompleteRef.current && !hasCalledComplete.current) {
+                hasCalledComplete.current = true;
+                onCompleteRef.current();
+              }
+            }
+            if (textIndex < texts.length - 1) {
+              timeoutId = setTimeout(() => setIsDeleting(true), delayBeforeDelete);
+            }
+          } else {
+            timeoutId = setTimeout(tick, typingSpeed);
+          }
+        };
+        timeoutId = setTimeout(tick, typingSpeed);
+      }
+    };
+
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      if (!skip && startDelay > 0) {
+        delayTimeoutId = setTimeout(runEffect, startDelay);
+      } else {
+        runEffect();
+      }
+    } else {
+      runEffect();
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+      clearTimeout(delayTimeoutId);
+    };
+  }, [displayText, isDeleting, textIndex, texts, typingSpeed, deletingSpeed, delayBeforeDelete, delayBeforeType, skip, startDelay]);
+
+  return (
+    <span className="typewriter-wrapper">
+      {displayText}
+      <span className="typing-cursor">_</span>
+    </span>
+  );
+};
+
 // Global speed multiplier for the intro sequence (lower = faster)
 const SPEED = 0.6;
 const t = (ms) => ms * SPEED;
@@ -49,8 +150,13 @@ const GridBox = ({ currentStep, triggerStep, pos }) => (
 
 const DesignerHero = () => {
   const { setIntroPlaying, hasPlayedIntro, setHasPlayedIntro } = useHeroIntro();
-  const [step, setStep] = useState(() => (hasPlayedIntro ? 13 : 0));
+  const [step, setStep] = useState(() => {
+    if (hasPlayedIntro) return 13;
+    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+    return isMobile ? 12 : 0;
+  });
   const [refreshKey, setRefreshKey] = useState(0);
+  const [introSkipped, setIntroSkipped] = useState(false);
   const [offsetVw, setOffsetVw] = useState(4);
   const [isHovering, setIsHovering] = useState(false);
   const [tinyShapes, setTinyShapes] = useState([]);
@@ -109,6 +215,7 @@ const DesignerHero = () => {
     e.stopPropagation();
     e.currentTarget.blur();
     timeoutsRef.current.forEach(clearTimeout);
+    setIntroSkipped(true);
     setStep(13);
   };
 
@@ -129,6 +236,12 @@ const DesignerHero = () => {
       return;
     }
 
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      setStep(12);
+      return;
+    }
+
     // Animation sequence timeline (Sped up)
     timeoutsRef.current = [
       setTimeout(() => setStep(1), t(200)),   // 1: Move to Purple TL
@@ -143,7 +256,6 @@ const DesignerHero = () => {
       setTimeout(() => setStep(10), t(4300)), // 10: Drag Pink
       setTimeout(() => setStep(11), t(4700)), // 11: Pink shape pops, "Shipping"
       setTimeout(() => setStep(12), t(5600)), // 12: Text rolls
-      setTimeout(() => setStep(13), t(6200)), // 13: Subtext
     ];
     return () => timeoutsRef.current.forEach(clearTimeout);
   }, [refreshKey]);
@@ -167,6 +279,7 @@ const DesignerHero = () => {
     const handleKeyDown = (e) => {
       if (e.key === 'Enter' && step < 13) {
         timeoutsRef.current.forEach(clearTimeout);
+        setIntroSkipped(true);
         setStep(13);
       }
     };
@@ -174,11 +287,12 @@ const DesignerHero = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [step]);
 
-  // Exact center coordinates for the shapes
+  // Exact center coordinates for the shapes (slightly adjusted for mobile to fit better)
+  const isMobileSize = typeof window !== 'undefined' && window.innerWidth <= 768;
   const positions = {
-    purple: { cx: 15, cy: 54 },
-    green: { cx: 50, cy: 20 }, // Centered to the header text
-    pink: { cx: 80, cy: 60 }
+    purple: isMobileSize ? { cx: 20, cy: 50 } : { cx: 15, cy: 54 },
+    green: isMobileSize ? { cx: 50, cy: 25 } : { cx: 50, cy: 20 }, // Centered to the header text
+    pink: isMobileSize ? { cx: 75, cy: 55 } : { cx: 80, cy: 60 }
   };
 
   // Helper to calculate Top-Left and Bottom-Right for the cursor
@@ -206,7 +320,7 @@ const DesignerHero = () => {
     13: { ...getBR(positions.pink), opacity: 0 }
   };
 
-
+  const shouldSkipTyping = skipEntryAnimRef.current || introSkipped;
 
   return (
     <motion.div
@@ -518,7 +632,19 @@ const DesignerHero = () => {
                 animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
                 transition={{ duration: t(0.6), ease: "easeInOut" }}
               >
-                Hi, I'm Cindy!
+                <Typewriter
+                  texts={HERO_TEXTS}
+                  skip={shouldSkipTyping}
+                  startDelay={600}
+                  onComplete={() => {
+                    if (!shouldSkipTyping) {
+                      const delayTimeout = setTimeout(() => {
+                        setStep(13);
+                      }, 600);
+                      timeoutsRef.current.push(delayTimeout);
+                    }
+                  }}
+                />
               </motion.h1>
             )}
           </AnimatePresence>
@@ -529,10 +655,10 @@ const DesignerHero = () => {
           className="hero-final-content"
           initial={skipEntryAnimRef.current ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: step >= 13 ? 1 : 0, y: step >= 13 ? 0 : 20 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
         >
           <p className="hero-subtext">
-            A product designer who <span className="word-designs">designs</span>, <span className="word-codes">codes</span>, and <span className="word-ships">ships</span> thoughtful, human‑centered systems
+            A product designer creating digital experiences that are <span className="word-designs">intuitive</span>, <span className="word-codes">scalable</span>, and <span className="word-ships">delightful</span>
           </p>
 
           <div

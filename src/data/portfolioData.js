@@ -290,6 +290,139 @@ export const caseStudies = [
     ]
   },
   {
+    id: "Build-A-Box",
+    title: "Hershey's: Build A Box",
+    shortDescription: "Designing a personalized and simple shopping experience.",
+    tags: ["Website", "E-Commerce", "UX/UI Design Intern"],
+    role: [
+      "My Role: UX/UI Design Intern",
+      "Collaborators: 1 Frontend Engineer, 1 PM, 1 Design Lead"
+    ],
+    projectType: "E-Commerce Web Design",
+    projectCategory: "Internship Project",
+    timeline: "4 Weeks",
+    tools: ["Figma"],
+    coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Project Overview",
+        content: [
+          {
+            heading: "Designing a Customizable Shopping Experience",
+            paragraphs: [
+              "During my internship at Dentsu, I worked on a high‑visibility e‑commerce feature for Hershey’s: a dedicated “Pick Your Pack” page that let customers build their own assortment of Skinny Packs for a Back‑to‑School campaign. My role focused on shaping an intuitive customization flow that felt familiar within the existing site ecosystem while introducing new interaction patterns that supported personalization."
+            ]
+          },
+          {
+            heading: "My Role & Contributions: Leading UI While Supporting UX Strategy",
+            paragraphs: [
+              "I led the UI design and contributed to UX strategy across the page’s layout, interaction patterns, and decision logic. My work included creating high‑fidelity Figma mockups aligned with brand guidelines, conducting usability testing, and collaborating closely with the client team to refine the experience."
+            ],
+            metrics: [
+              {
+                title: "UI design",
+                text: "High‑fidelity mockups, component reuse, visual hierarchy"
+              },
+              {
+                title: "UX strategy",
+                text: "Flow mapping, decision logic, interaction patterns"
+              },
+              {
+                title: "Usability testing",
+                text: "Rapid feedback cycles with client stakeholders"
+              }
+            ]
+          },
+          {
+            heading: "Client Request: A Fast, Flexible Customization Page",
+            paragraphs: [
+              "The client needed a dedicated page that allowed customers to build a 24‑item pack with specific rules: a minimum of four bags per flavor, real‑time editing, and a clear path to checkout. The project had a tight three‑week turnaround, requiring a design that balanced speed, feasibility, and brand consistency."
+            ]
+          }
+        ]
+      },
+      {
+        id: "final-deliverable",
+        subtitle: "02 / Final Deliverable",
+        content: [
+          {
+            heading: "Final Deliverable: A Live, Shippable Experience",
+            paragraphs: [
+              "The final design launched on Hershey’s site from August 2025 to May 2026. The page introduced three core features that made the customization process intuitive and error‑proof:"
+            ],
+            insightCards: [
+              {
+                title: "Progress Bar",
+                text: "Guided users toward the required 24 items"
+              },
+              {
+                title: "Live Summary Panel",
+                text: "Real‑time visibility into selections and quantities"
+              },
+              {
+                title: "Prominent CTA",
+                text: "A clear, confident path to checkout once the box was complete"
+              }
+            ],
+            image: getAssetUrl("case_studies/Hershey/1.png"),
+          },
+          {
+            image: getAssetUrl("case_studies/Hershey/final_mobile.png"),
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "03 / The Process",
+        content: [
+          {
+            heading: "Balancing Needs, Constraints, and Speed",
+            paragraphs: [
+              "With only three weeks to deliver a final design, I began with an MVP approach that met essential client requirements while staying within developer constraints. I reused existing components where possible and introduced new ones only when they meaningfully improved clarity or usability.",
+              "I moved through three rounds of iteration, presenting directly to the client team each time. These sessions helped validate assumptions, refine layout decisions, and ensure feasibility before handing the design off to development."
+            ],
+            images: [
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration1.png"),
+                description: "Round 1 — MVP Scoping"
+              },
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration2.png"),
+                description: "Round 2 — Refined Layout"
+              },
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration3.png"),
+                description: "Round 3 — Final Handoff"
+              }
+            ]
+          },
+          {
+            heading: "Translating Features to Mobile",
+            paragraphs: [
+              "Once the desktop design was finalized, I explored different approaches for the mobile layout, leading multiple iterations to refine the user flow.",
+            ],
+            image: getAssetUrl("case_studies/Hershey/mobile.png")
+          }
+        ]
+      },
+      {
+        id: "takeaways",
+        subtitle: "04 / Key Takeaways",
+        content: [
+          {
+            heading: "What This Project Taught Me",
+            bullets: [
+              "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize ruthlessly. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
+              "<strong>Embracing Feedback</strong> — Balancing input from both the client and developers pushed me to refine how I evaluate feedback. I learned to identify what improves usability versus what introduces unnecessary complexity.",
+              "<strong>Collaborating Across Teams</strong> — Clear communication became essential. Early misalignment caused rework, but once I established a shared vocabulary with developers and the client, the process became smoother and more efficient."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     id: "expedia",
     title: "Expedia: Browsing and Booking Experience",
     shortDescription: "Improving discoverability and helping users make faster, informed flight booking decisions.",
@@ -816,136 +949,6 @@ export const caseStudies = [
           },
         ]
       },
-    ]
-  },
-  {
-    id: "Build-A-Box",
-    title: "Hershey's: Build A Box",
-    shortDescription: "Designing a personalized and simple shopping experience.",
-    tags: ["Website", "E-Commerce", "UX/UI Design Intern"],
-    role: [
-      "My Role: UX/UI Design Intern",
-      "Collaborators: 1 Frontend Engineer, 1 PM, 1 Design Lead"
-    ],
-    projectType: "E-Commerce Web Design",
-    projectCategory: "Internship Project",
-    timeline: "4 Weeks",
-    tools: ["Figma"],
-    coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
-    sections: [
-      {
-        id: "overview",
-        subtitle: "01 / Project Overview",
-        content: [
-          {
-            heading: "Designing a Customizable Shopping Experience",
-            paragraphs: [
-              "During my internship at Dentsu, I worked on a high‑visibility e‑commerce feature for Hershey’s: a dedicated “Pick Your Pack” page that let customers build their own assortment of Skinny Packs for a Back‑to‑School campaign. My role focused on shaping an intuitive customization flow that felt familiar within the existing site ecosystem while introducing new interaction patterns that supported personalization."
-            ]
-          },
-          {
-            heading: "My Role & Contributions: Leading UI While Supporting UX Strategy",
-            paragraphs: [
-              "I led the UI design and contributed to UX strategy across the page’s layout, interaction patterns, and decision logic. My work included creating high‑fidelity Figma mockups aligned with brand guidelines, conducting usability testing, and collaborating closely with the client team to refine the experience."
-            ],
-            metrics: [
-              {
-                title: "UI design",
-                text: "High‑fidelity mockups, component reuse, visual hierarchy"
-              },
-              {
-                title: "UX strategy",
-                text: "Flow mapping, decision logic, interaction patterns"
-              },
-              {
-                title: "Usability testing",
-                text: "Rapid feedback cycles with client stakeholders"
-              }
-            ]
-          },
-          {
-            heading: "Client Request: A Fast, Flexible Customization Page",
-            paragraphs: [
-              "The client needed a dedicated page that allowed customers to build a 24‑item pack with specific rules: a minimum of four bags per flavor, real‑time editing, and a clear path to checkout. The project had a tight three‑week turnaround, requiring a design that balanced speed, feasibility, and brand consistency."
-            ]
-          }
-        ]
-      },
-      {
-        id: "final-deliverable",
-        subtitle: "02 / Final Deliverable",
-        content: [
-          {
-            heading: "Final Deliverable: A Live, Shippable Experience",
-            paragraphs: [
-              "The final design launched on Hershey’s site from August 2025 to May 2026. The page introduced three core features that made the customization process intuitive and error‑proof:"
-            ],
-            insightCards: [
-              {
-                title: "Progress Bar",
-                text: "Guided users toward the required 24 items"
-              },
-              {
-                title: "Live Summary Panel",
-                text: "Real‑time visibility into selections and quantities"
-              },
-              {
-                title: "Prominent CTA",
-                text: "A clear, confident path to checkout once the box was complete"
-              }
-            ],
-            image: getAssetUrl("case_studies/Hershey/1.png"),
-          }
-        ]
-      },
-      {
-        id: "process",
-        subtitle: "03 / The Process",
-        content: [
-          {
-            heading: "Balancing Needs, Constraints, and Speed",
-            paragraphs: [
-              "With only three weeks to deliver a final design, I began with an MVP approach that met essential client requirements while staying within developer constraints. I reused existing components where possible and introduced new ones only when they meaningfully improved clarity or usability.",
-              "I moved through three rounds of iteration, presenting directly to the client team each time. These sessions helped validate assumptions, refine layout decisions, and ensure feasibility before handing the design off to development."
-            ],
-            images: [
-              {
-                src: getAssetUrl("case_studies/Hershey/iteration1.png"),
-                description: "Round 1 — MVP Scoping"
-              },
-              {
-                src: getAssetUrl("case_studies/Hershey/iteration2.png"),
-                description: "Round 2 — Refined Layout"
-              },
-              {
-                src: getAssetUrl("case_studies/Hershey/iteration3.png"),
-                description: "Round 3 — Final Handoff"
-              }
-            ]
-          },
-          {
-            heading: "Translating Features to Mobile",
-            paragraphs: [
-              "Once the desktop design was finalized, I explored different approaches for the mobile layout, leading multiple iterations to refine the user flow.",
-            ],
-            image: getAssetUrl("case_studies/Hershey/mobile.png")
-          }
-        ]
-      },
-      {
-        id: "takeaways",
-        subtitle: "04 / Key Takeaways",
-        content: [
-          {
-            heading: "What This Project Taught Me",
-            bullets: [
-              "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize ruthlessly. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
-              "<strong>Embracing Feedback</strong> — Balancing input from both the client and developers pushed me to refine how I evaluate feedback. I learned to identify what improves usability versus what introduces unnecessary complexity.",
-              "<strong>Collaborating Across Teams</strong> — Clear communication became essential. Early misalignment caused rework, but once I established a shared vocabulary with developers and the client, the process became smoother and more efficient."
-            ]
-          }
-        ]
-      }
     ]
   },
   {
