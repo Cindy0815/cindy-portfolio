@@ -67,16 +67,16 @@ const Home = () => {
               All Works
             </button>
             <button
-              className={`filter-btn ${filter === 'personal' ? 'active' : ''}`}
-              onClick={() => setFilter('personal')}
-            >
-              Personal Projects
-            </button>
-            <button
               className={`filter-btn ${filter === 'internship' ? 'active' : ''}`}
               onClick={() => setFilter('internship')}
             >
               Professional Projects
+            </button>
+            <button
+              className={`filter-btn ${filter === 'personal' ? 'active' : ''}`}
+              onClick={() => setFilter('personal')}
+            >
+              Personal Projects
             </button>
           </div>
 

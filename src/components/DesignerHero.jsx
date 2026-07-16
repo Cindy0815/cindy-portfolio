@@ -290,9 +290,9 @@ const DesignerHero = () => {
   // Exact center coordinates for the shapes (slightly adjusted for mobile to fit better)
   const isMobileSize = typeof window !== 'undefined' && window.innerWidth <= 768;
   const positions = {
-    purple: isMobileSize ? { cx: 20, cy: 50 } : { cx: 15, cy: 54 },
-    green: isMobileSize ? { cx: 50, cy: 25 } : { cx: 50, cy: 20 }, // Centered to the header text
-    pink: isMobileSize ? { cx: 75, cy: 55 } : { cx: 80, cy: 60 }
+    purple: isMobileSize ? { cx: 25, cy: 50 } : { cx: 15, cy: 54 },
+    green: isMobileSize ? { cx: 50, cy: 22 } : { cx: 50, cy: 20 }, // Centered to the header text
+    pink: isMobileSize ? { cx: 70, cy: 55 } : { cx: 80, cy: 60 }
   };
 
   // Helper to calculate Top-Left and Bottom-Right for the cursor
@@ -334,7 +334,7 @@ const DesignerHero = () => {
 
       {/* Skip Intro: button on mobile, keyboard hint on desktop */}
       <AnimatePresence>
-        {step < 13 && (
+        {(step < 13 && !isMobileSize) && (
           <>
             <motion.button
               className="skip-intro-btn"

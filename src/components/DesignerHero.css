@@ -83,12 +83,15 @@
 }
 
 @media (max-width: 768px) {
-  .skip-intro-btn {
-    display: block;
-  }
-
   .skip-intro-hint {
     display: none;
+  }
+
+  .full-header-bg {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
   }
 }
 
@@ -501,10 +504,9 @@
   }
 
   .scaled-shape-img {
-    width: 50vw;
-    /* larger relative percentage on mobile */
+    width: 38vw;
+    max-width: 150px;
     min-width: 0;
-    /* remove the massive 250px hard limit */
   }
 
   .hero-sequence-title {
@@ -537,7 +539,8 @@
   }
 
   .scaled-shape-img {
-    width: 60vw;
+    width: 42vw;
+    max-width: 120px;
   }
 
   .hero-buttons {
