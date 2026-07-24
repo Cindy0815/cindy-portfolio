@@ -152,8 +152,7 @@ const DesignerHero = () => {
   const { setIntroPlaying, hasPlayedIntro, setHasPlayedIntro } = useHeroIntro();
   const [step, setStep] = useState(() => {
     if (hasPlayedIntro) return 13;
-    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
-    return isMobile ? 12 : 0;
+    return 12;
   });
   const [refreshKey, setRefreshKey] = useState(0);
   const [introSkipped, setIntroSkipped] = useState(false);
@@ -209,11 +208,11 @@ const DesignerHero = () => {
     }
   };
 
-
-
   const handleSkip = (e) => {
-    e.stopPropagation();
-    e.currentTarget.blur();
+    if (e) {
+      e.stopPropagation();
+      if (e.currentTarget?.blur) e.currentTarget.blur();
+    }
     timeoutsRef.current.forEach(clearTimeout);
     setIntroSkipped(true);
     setStep(13);
@@ -236,28 +235,7 @@ const DesignerHero = () => {
       return;
     }
 
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
-      setStep(12);
-      return;
-    }
-
-    // Animation sequence timeline (Sped up)
-    timeoutsRef.current = [
-      setTimeout(() => setStep(1), t(200)),   // 1: Move to Purple TL
-      setTimeout(() => setStep(2), t(700)),   // 2: Drag Purple
-      setTimeout(() => setStep(3), t(1100)),  // 3: Purple shape pops, "Designing"
-      setTimeout(() => setStep(4), t(1600)),  // 4: Move to Green TL
-      setTimeout(() => setStep(5), t(2100)),  // 5: Green TL
-      setTimeout(() => setStep(6), t(2500)),  // 6: Drag Green
-      setTimeout(() => setStep(7), t(2900)),  // 7: Green shape pops, "Prototyping"
-      setTimeout(() => setStep(8), t(3400)),  // 8: Move to Pink TL
-      setTimeout(() => setStep(9), t(3900)),  // 9: Pink TL
-      setTimeout(() => setStep(10), t(4300)), // 10: Drag Pink
-      setTimeout(() => setStep(11), t(4700)), // 11: Pink shape pops, "Shipping"
-      setTimeout(() => setStep(12), t(5600)), // 12: Text rolls
-    ];
-    return () => timeoutsRef.current.forEach(clearTimeout);
+    setStep(12);
   }, [refreshKey]);
 
   // Collapse the fullscreen intro into the final hero card once the sequence completes
