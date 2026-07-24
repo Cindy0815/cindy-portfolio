@@ -248,13 +248,12 @@ export const caseStudies = [
             image: getAssetUrl("case_studies/Pennies/info7.png"),
 
           },
-
           {
-            heading: "4. Accessibility Check",
+            heading: "4. Unlocking Progress Through Incentives",
             paragraphs: [
-              "Before finalizing the design, I audited the color palette and implemented a system to ensure all colors met WCAG accessibility standards. This review led to several key visual adjustments to improve contrast and readability."
+              "Finally a major addition was a \"Customize\" feature, where teens can unlock fun accessories for Penni by completing tasks related to their account. This gamified approach encourages consistent engagement, turning financial management into a motivating and rewarding experience."
             ],
-            image: getAssetUrl("case_studies/Pennies/info8.png"),
+            image: getAssetUrl("case_studies/Pennies/info9.png"),
 
           },
           {
@@ -413,7 +412,7 @@ export const caseStudies = [
           {
             heading: "What This Project Taught Me",
             bullets: [
-              "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize ruthlessly. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
+              "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize tasks. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
               "<strong>Embracing Feedback</strong> — Balancing input from both the client and developers pushed me to refine how I evaluate feedback. I learned to identify what improves usability versus what introduces unnecessary complexity.",
               "<strong>Collaborating Across Teams</strong> — Clear communication became essential. Early misalignment caused rework, but once I established a shared vocabulary with developers and the client, the process became smoother and more efficient."
             ]
@@ -805,6 +804,16 @@ export const caseStudies = [
               "This interactive version allowed users to experience key features such as earning points, tracking progress, and redeeming rewards."
             ],
             image: getAssetUrl("case_studies/Tiktok/wireframe2.png")
+          },
+          {
+            heading: "Testing Results and Iterations",
+            paragraphs: [
+              "Here are some key pivots/changes we made according to the user test:"
+            ],
+            image: getAssetUrl("case_studies/Tiktok/feedback1.png")
+          },
+          {
+            image: getAssetUrl("case_studies/Tiktok/feedback2.png")
           }
         ]
       },
