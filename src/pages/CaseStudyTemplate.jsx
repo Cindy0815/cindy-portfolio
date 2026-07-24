@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from 'framer-motion';
-import { ArrowLeft, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ChevronLeft, ChevronRight, ArrowDown } from 'lucide-react';
 import { caseStudies } from '../data/portfolioData';
 import { useState, useEffect, Fragment, useRef } from 'react';
 import HighlightBox from '../components/HighlightBox';
@@ -58,8 +58,6 @@ const CardSlider = ({ cards }) => {
     setIndex((prev) => (prev - 1 + cards.length) % cards.length);
   };
 
-  const nextIndex = (index + 1) % cards.length;
-
   const handleDragEnd = (event, info) => {
     const swipeThreshold = 80;
     if (info.offset.x < -swipeThreshold) {
@@ -74,21 +72,6 @@ const CardSlider = ({ cards }) => {
   return (
     <div className="card-slider-container">
       <div className="card-slider-wrapper">
-        {/* Next Card in the background (Peek Preview) */}
-        <div
-          className="cs-slider-card cs-slider-card--back"
-          style={{
-            zIndex: 0,
-            transform: 'translate(0px, 12px) scale(0.94) rotate(2deg)',
-            opacity: 0.45,
-            pointerEvents: 'none'
-          }}
-        >
-          <div className="cs-slider-card-index">0{nextIndex + 1} / 0{cards.length}</div>
-          <h3 className="cs-slider-card-title">{cards[nextIndex].title}</h3>
-          <p className="cs-slider-card-desc">{cards[nextIndex].description}</p>
-        </div>
-
         {/* Current Top Card (Interactive/Drag-to-Swipe) */}
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
@@ -98,46 +81,34 @@ const CardSlider = ({ cards }) => {
               enter: {
                 x: 0,
                 y: 12,
-                scale: 0.94,
-                rotate: 2,
-                opacity: 0.45,
-                zIndex: 0
+                opacity: 0,
+                scale: 0.95
               },
               center: {
                 x: 0,
                 y: 0,
-                scale: 1,
-                rotate: 0,
                 opacity: 1,
-                zIndex: 2
+                scale: 1
               },
               exit: (dir) => ({
-                x: dir === 0 ? 0 : dir > 0 ? 350 : -350,
-                y: dir === 0 ? 0 : 50,
-                rotate: dir === 0 ? 0 : dir > 0 ? 15 : -15,
+                x: dir < 0 ? -300 : 300,
                 opacity: 0,
-                zIndex: 3
+                scale: 0.9,
+                rotate: dir < 0 ? -12 : 12,
+                transition: { duration: 0.3 }
               })
             }}
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 25 },
-              y: { type: "spring", stiffness: 300, damping: 25 },
-              opacity: { duration: 0.2 },
-              rotate: { type: "spring", stiffness: 300, damping: 25 }
-            }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.7}
+            dragElastic={0.6}
             onDragEnd={handleDragEnd}
-            whileDrag={{ cursor: 'grabbing', scale: 1.02 }}
             className="cs-slider-card"
-            style={{
-              cursor: 'grab',
-              transformOrigin: 'center bottom'
-            }}
+            style={{ zIndex: 1, cursor: 'grab' }}
+            whileTap={{ cursor: 'grabbing' }}
           >
             <div className="cs-slider-card-index">0{index + 1} / 0{cards.length}</div>
             <h3 className="cs-slider-card-title">{cards[index].title}</h3>
@@ -146,6 +117,7 @@ const CardSlider = ({ cards }) => {
         </AnimatePresence>
       </div>
 
+      {/* Slider Controls */}
       <div className="card-slider-controls">
         <button className="slider-nav-btn" onClick={prev} aria-label="Previous card">
           <ChevronLeft size={20} />
@@ -159,7 +131,7 @@ const CardSlider = ({ cards }) => {
                 setDirection(i > index ? 1 : -1);
                 setIndex(i);
               }}
-              aria-label={`Go to slide ${i + 1}`}
+              aria-label={`Go to card ${i + 1}`}
             />
           ))}
         </div>
@@ -176,6 +148,10 @@ const CaseStudyTemplate = () => {
   const study = caseStudies.find(s => s.id === id);
   const [activeSection, setActiveSection] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+
+  const finalFeaturesSection = study?.sections?.find(
+    s => s.id === 'features' || s.id === 'final-deliverable' || s.subtitle?.toLowerCase().includes('final')
+  );
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -349,7 +325,7 @@ const CaseStudyTemplate = () => {
                   {block.paragraphs && block.paragraphs.length > 0 && (
                     <div className="section-paragraphs">
                       {block.paragraphs.map((text, i) => (
-                        <p key={i}>{text}</p>
+                        <p key={i} dangerouslySetInnerHTML={{ __html: text }} />
                       ))}
                     </div>
                   )}
@@ -432,7 +408,7 @@ const CaseStudyTemplate = () => {
                         {block.researchSplit.left.paragraphs && (
                           <div className="section-paragraphs">
                             {block.researchSplit.left.paragraphs.map((text, i) => (
-                              <p key={i}>{text}</p>
+                              <p key={i} dangerouslySetInnerHTML={{ __html: text }} />
                             ))}
                           </div>
                         )}
@@ -542,23 +518,32 @@ const CaseStudyTemplate = () => {
                   {block.povGrid && (
                     <div className="section-pov-grid">
                       {block.povGrid.map((row, i) => (
-                        <div key={i} className="pov-row">
-                          <div className="pov-card problem-card">
-                            <div className="pov-tag">
-                              <img src={row.tag} alt="POV Tag" />
+                        <div key={i} className="pov-row-item">
+                          {row.assumptionTitle && (
+                            <h3 className="pov-assumption-title">{row.assumptionTitle}</h3>
+                          )}
+                          <div className="pov-row">
+                            <div className="pov-card problem-card">
+                              <div className="pov-tag">
+                                {row.tag && (typeof row.tag === 'string' && (row.tag.includes('/') || row.tag.endsWith('.png') || row.tag.endsWith('.jpg') || row.tag.endsWith('.svg'))) ? (
+                                  <img src={row.tag} alt="POV Tag" />
+                                ) : (
+                                  <span className="pov-text-header">{row.tag || "Research Insight"}</span>
+                                )}
+                              </div>
+                              <div className="pov-list">
+                                {row.problems.map((prob, pIndex) => (
+                                  <p key={pIndex}>{prob}</p>
+                                ))}
+                              </div>
                             </div>
-                            <div className="pov-list">
-                              {row.problems.map((prob, pIndex) => (
-                                <p key={pIndex}>{prob}</p>
-                              ))}
-                            </div>
-                          </div>
-                          <div className="pov-card opportunity-card">
-                            <div className="pov-title">{row.opportunityTitle}</div>
-                            <div className="pov-list">
-                              {row.opportunities.map((opp, oIndex) => (
-                                <p key={oIndex}>{opp}</p>
-                              ))}
+                            <div className="pov-card opportunity-card">
+                              <div className="pov-title">{row.opportunityTitle || "Design Response"}</div>
+                              <div className="pov-list">
+                                {row.opportunities.map((opp, oIndex) => (
+                                  <p key={oIndex}>{opp}</p>
+                                ))}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -593,6 +578,24 @@ const CaseStudyTemplate = () => {
                 </div>
               ))}
             </div>
+
+            {section.id === 'overview' && finalFeaturesSection && (
+              <div className="jump-to-features-container">
+                <button
+                  className="jump-to-features-btn"
+                  onClick={() => {
+                    const el = document.getElementById(finalFeaturesSection.id);
+                    if (el) {
+                      const yOffset = -100;
+                      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Jump to final screens <ArrowDown size={16} />
+                </button>
+              </div>
+            )}
           </section>
         ))}
       </div>

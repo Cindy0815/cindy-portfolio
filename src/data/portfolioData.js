@@ -67,83 +67,12 @@ export const caseStudies = [
                 description: "3. Set tangible goals with guidance"
               }
             ]
-          },
-          {
-            heading: "Impact That Matters",
-            paragraphs: [
-              "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
-            ],
-            metrics: [
-              {
-                number: "80%",
-                text: "of Tested Teens reported feeling \"coached rather than monitored\" by the Penni interface."
-              },
-              {
-                number: "100%",
-                text: "of Parents agreed that the mutual agreement dashboard would significantly reduce weekly verbal friction regarding spending rules."
-              },
-              {
-                title: "Task Success Rate",
-                number: "92%",
-                text: "of teens successfully set up a automated savings goal and interaction flow without parental intervention."
-              }
-            ]
-          }
-        ]
-      },
-      {
-        id: "features",
-        subtitle: "02 / Final Features",
-        content: [
-          {
-            heading: "Onboarding",
-            paragraphs: [
-              "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
-            ],
-            image: getAssetUrl("case_studies/Pennies/onboarding.png")
-          },
-          {
-            heading: "Home Page",
-            paragraphs: [
-              "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
-            ],
-            image: getAssetUrl("case_studies/Pennies/homepage.png")
-          },
-          {
-            heading: "Ask Penni",
-
-            grid: {
-              items: [
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask1.mp4"),
-                  title: "1. Customize",
-                  description: "Customize cards, choose layout preferences, and select visual themes."
-                },
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask2.mp4"),
-                  title: "2. Ask",
-                  description: "Ask Penni financial questions and receive real-time personalized tips."
-                },
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask3.mp4"),
-                  title: "3. Apply",
-                  description: "Apply recommendations to your budget and track goals easily."
-                }
-              ]
-            }
-          },
-          {
-            heading: "Budget",
-            paragraphs: [
-              "Budget tracking for teens, with parental spending controls."
-            ],
-            image: getAssetUrl("case_studies/Pennies/budget.png")
           }
         ]
       },
       {
         id: "research",
-        subtitle: "03 / Research",
+        subtitle: "02 / Research",
         content: [
           {
             heading: "The Core Tension",
@@ -217,7 +146,7 @@ export const caseStudies = [
       },
       {
         id: "process",
-        subtitle: "04 / Process",
+        subtitle: "03 / Process",
         content: [
           {
             heading: "1. Pivoting Toward Long Term Behavior Change",
@@ -267,6 +196,56 @@ export const caseStudies = [
         ]
       },
       {
+        id: "features",
+        subtitle: "04 / Final Features",
+        content: [
+          {
+            heading: "Onboarding",
+            paragraphs: [
+              "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
+            ],
+            image: getAssetUrl("case_studies/Pennies/onboarding.png")
+          },
+          {
+            heading: "Home Page",
+            paragraphs: [
+              "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
+            ],
+            image: getAssetUrl("case_studies/Pennies/homepage.png")
+          },
+          {
+            heading: "Ask Penni",
+
+            grid: {
+              items: [
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask1.mp4"),
+                  title: "1. Customize",
+                  description: "Customize cards, choose layout preferences, and select visual themes."
+                },
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask2.mp4"),
+                  title: "2. Ask",
+                  description: "Ask Penni financial questions and receive real-time personalized tips."
+                },
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask3.mp4"),
+                  title: "3. Apply",
+                  description: "Apply recommendations to your budget and track goals easily."
+                }
+              ]
+            }
+          },
+          {
+            heading: "Budget",
+            paragraphs: [
+              "Budget tracking for teens, with parental spending controls."
+            ],
+            image: getAssetUrl("case_studies/Pennies/budget.png")
+          }
+        ]
+      },
+      {
         id: "reflection",
         subtitle: "05 / Reflection",
         content: [
@@ -284,6 +263,221 @@ export const caseStudies = [
             ]
           }
 
+        ]
+      }
+    ]
+  },
+  {
+    id: "petals-worth",
+    title: "A Petal's Worth",
+    shortDescription: "A digital garden for shared reflection, where expressive forms grow into a living, interactive landscape.",
+    tags: ["Product Design", "Creative Technologist", "Full‑Stack Development"],
+    role: "Design Engineer (UX/UI, Front-End Development)",
+    projectType: "Creative Development & Design",
+    projectCategory: "Personal Project",
+    timeline: "14 Weeks",
+    tools: ["Figma", "React", "Tailwind CSS", "Gemini", "Claude Code"],
+    coverImage: getAssetUrl("case_studies/Petal/header.png"),
+    headerImage: getAssetUrl("case_studies/Petal/header.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Overview",
+        content: [
+          {
+            heading: "Background",
+            paragraphs: [
+              "A Petal's Worth is a shared digital garden where people can pause, breathe, and make something simple together.",
+              "For my senior capstone, I had complete freedom to build anything. Instead of creating another static prototype, I challenged myself to design, build, and ship a fully functional interactive product using Gemini and Claude Code."
+            ],
+            image: getAssetUrl("case_studies/Petal/overview.png")
+          },
+          {
+            heading: "The Problem",
+            paragraphs: [
+              "Modern digital interaction often feels noisy, performative, and overwhelming. While social platforms connect us constantly, they rarely offer spaces for quiet reflection or low-pressure, collective expression."
+            ]
+          },
+          {
+            heading: "The Goal & Question",
+            paragraphs: [
+              "How do we turn a simple act of sharing into an interactive visual system that builds a sense of connection?"
+            ]
+          },
+          {
+            heading: "Launch Impact & Validation",
+            paragraphs: [],
+            metrics: [
+              {
+                number: "50+",
+                text: "users explored the garden on demo day"
+              },
+              {
+                number: "100+",
+                text: "garden submissions in week one (~2x repeat engagement)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "research",
+        subtitle: "02 / Research",
+        content: [
+          {
+            heading: "Framing the Experience",
+            paragraphs: [
+              "To understand what makes digital spaces feel calm rather than burdensome, I looked into daily habit apps and mindfulness tools. I found three key insights that shaped the product requirements:"
+            ],
+            insightCards: [
+              {
+                title: "Lowering the Barrier to Entry",
+                text: "Users experience prompt fatigue when asked for long-form text responses. Visual and symbolic expressions feel lower-stakes and more playful."
+              },
+              {
+                title: "Shared Presence Over Likes",
+                text: "People feel connected through shared space and visual momentum, not necessarily through comments, follower counts, or performative engagement metrics."
+              },
+              {
+                title: "Ritual over Retention",
+                text: "A daily reset encourages intentional micro-moments rather than doomscrolling or prolonged screen time."
+              }
+            ]
+          },
+          {
+            heading: "User Research & Key Insights",
+            paragraphs: [
+              "User interviews confirmed that people value low-pressure, abstract expression and shared visual presence over text-heavy posts or public feeds."
+            ],
+            "povGrid": [
+              {
+                "assumptionTitle": "Finding 1: Privacy & Comfort in Expression",
+                "tag": "User Insight",
+                "problems": [
+                  "Users feel hesitant to share deeply personal text in open or public digital spaces."
+                ],
+                "opportunityTitle": "Design Response",
+                "opportunities": [
+                  "Replaced text-heavy inputs with symbolic forms (seeds, petals) as the primary medium, lowering the barrier to entry."
+                ]
+              },
+              {
+                "assumptionTitle": "Finding 2: Shared Presence Over Performance",
+                "tag": "User Insight",
+                "problems": [
+                  "Users seek quiet, reflective moments and connect better through subtle visual cues rather than performative metrics."
+                ],
+                "opportunityTitle": "Design Response",
+                "opportunities": [
+                  "Prioritized dynamic visual growth over traditional 'likes', comments, or public follower feeds."
+                ]
+              },
+              {
+                "assumptionTitle": "Finding 3: Close-Knit Spaces First",
+                "tag": "User Insight",
+                "problems": [
+                  "Meaningful digital interactions happen most naturally within trusted, smaller circles of friends or family."
+                ],
+                "opportunityTitle": "Design Response",
+                "opportunities": [
+                  "Built Private Garden Codes into the core architecture to give communities intimate, isolated spaces."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "03 / The Process",
+        content: [
+          {
+            heading: "The User Journey",
+            image: getAssetUrl("case_studies/Petal/user_flow.png")
+          },
+          {
+            heading: "01. Garden View Architecture",
+            paragraphs: [
+              "<strong>Focus: Transitioning from rigid layout to organic visual expansion.</strong>",
+              "Before: A rigid, fixed grid made the garden feel restrictive and capped visual capacity quickly as submissions grew.",
+              "After: Pivoted to an organic, free-placement model to keep the space feeling open, dynamic, and limitless."
+            ],
+            image: getAssetUrl("case_studies/Petal/iteration1.png")
+          },
+          {
+            heading: "02. Capacity & Scaling Logic",
+            paragraphs: [
+              "<strong>Focus: Managing performance and preventing visual overcrowding.</strong>",
+              "Before: Gardens had no capacity caps, risking severe visual clutter and performance drops as user submissions scaled.",
+              "After: Introduced room capacity limits and automated archive storage to seamlessly spin up fresh gardens without overcrowding active spaces."
+            ],
+            image: getAssetUrl("case_studies/Petal/iteration2.png")
+          },
+          {
+            heading: "03. Session Management & Persistence",
+            paragraphs: [
+              "<strong>Focus: Balancing user retention with privacy.</strong>",
+              "Before: Stateless rooms allowed anyone to jump into spaces anonymously, but provided zero session continuity or memory for returning users.",
+              "After (MVP): Built a lightweight password-protected account system to persist user nicknames and last-visited room sessions in a database, enabling instant re-entry while securing room access."
+            ],
+            image: getAssetUrl("case_studies/Petal/iteration3.png")
+          }
+        ]
+      },
+      {
+        id: "features",
+        subtitle: "04 / Final Features",
+        content: [
+          {
+            heading: "Group Spaces",
+            paragraphs: [
+              "Users can create private gardens for friends, teams, or communities that others can easily access with a private code."
+            ],
+            video: getAssetUrl("case_studies/Petal/group.mov")
+          },
+          {
+            heading: "Daily Form Creation",
+            paragraphs: [
+              "A lightweight daily flow that begins with a single prompt. Users answer the question, then move directly into creating their form. This prompt resets daily, allowing for new entries."
+            ],
+            video: getAssetUrl("case_studies/Petal/form.mov")
+          },
+          {
+            heading: "Expressive Forms",
+            paragraphs: [
+              "Users select a symbolic form that matches their mood, then shape it using intuitive draw and paint controls. Once customized, they submit their reflection and place the finished form into the garden."
+            ],
+            video: getAssetUrl("case_studies/Petal/expressive.mp4")
+          },
+          {
+            heading: "Shared Garden View + Interaction",
+            paragraphs: [
+              "All forms appear together in an interactive garden view. Users can explore the landscape, tap into others’ forms, and watch the garden grow."
+            ],
+            video: getAssetUrl("case_studies/Petal/shared.mov")
+          },
+          {
+            heading: "Persistent Data Storage",
+            paragraphs: [
+              "All forms are saved and retrievable, allowing gardens to grow organically over time."
+            ],
+            video: getAssetUrl("case_studies/Petal/storage.mov")
+          }
+        ]
+      },
+      {
+        id: "reflection",
+        subtitle: "05 / Reflection",
+        content: [
+          {
+            heading: "What I Learned",
+            bullets: [
+              "<strong>Shipping a real product</strong> — Building a deployed system taught me to design for persistence, error states, and real daily return patterns.",
+              "<strong>AI as a creative partner</strong> — Gemini and Claude Code accelerated technical execution while keeping design intentional and user-centered.",
+              "<strong>Simplicity builds connection</strong> — Users felt connected not because the system was complex, but because it was simple and expressive."
+            ],
+            image: getAssetUrl("case_studies/Petal/showcase.jpg")
+          }
         ]
       }
     ]
@@ -469,7 +663,7 @@ export const caseStudies = [
               },
               {
                 title: "Reduced Task Completion Time",
-                number: "40%",
+                number: "40% ↓",
                 text: "in reduction time of users spent evaluating flights, dropping from about 4 minutes down to just 2.5."
               }
             ]
@@ -701,42 +895,8 @@ export const caseStudies = [
         ]
       },
       {
-        id: "features",
-        subtitle: "02 / Final Features",
-        content: [
-          {
-            heading: "FYP Page: Discovery",
-            paragraphs: [
-              "Discover Tiktok Shop's new rewards system!"
-            ],
-            video: getAssetUrl("case_studies/Tiktok/final1.mp4")
-          },
-          {
-            heading: "Rewards Page: Engagement",
-            paragraphs: [
-              "‍Check out fun challenges, gain Tokens, and earn gifts for free."
-            ],
-            video: getAssetUrl("case_studies/Tiktok/final2.mp4")
-          },
-          {
-            heading: "Shop and Share: Social Trust",
-            paragraphs: [
-              "‍Buy and share products with friends to earn Tokens"
-            ],
-            video: getAssetUrl("case_studies/Tiktok/final3.mp4")
-          },
-          {
-            heading: "Redeem And Checkout: Loyalty",
-            paragraphs: [
-              "Budget tracking for teens, with parental spending controls."
-            ],
-            video: getAssetUrl("case_studies/Tiktok/final4.mp4")
-          }
-        ]
-      },
-      {
         id: "Research",
-        subtitle: "03 / Research",
+        subtitle: "02 / Research",
         content: [
           {
             heading: "Users hesitate to shop on TikTok due to low trust, strong loyalty to existing platforms, and a lack of social proof.",
@@ -782,7 +942,7 @@ export const caseStudies = [
       },
       {
         id: "Process",
-        subtitle: "04 / Process",
+        subtitle: "03 / Process",
         content: [
           {
             heading: "Integrating A Reward System Into TikTok Shop",
@@ -818,6 +978,40 @@ export const caseStudies = [
         ]
       },
       {
+        id: "features",
+        subtitle: "04 / Final Features",
+        content: [
+          {
+            heading: "FYP Page: Discovery",
+            paragraphs: [
+              "Discover Tiktok Shop's new rewards system!"
+            ],
+            video: getAssetUrl("case_studies/Tiktok/final1.mp4")
+          },
+          {
+            heading: "Rewards Page: Engagement",
+            paragraphs: [
+              "‍Check out fun challenges, gain Tokens, and earn gifts for free."
+            ],
+            video: getAssetUrl("case_studies/Tiktok/final2.mp4")
+          },
+          {
+            heading: "Shop and Share: Social Trust",
+            paragraphs: [
+              "‍Buy and share products with friends to earn Tokens"
+            ],
+            video: getAssetUrl("case_studies/Tiktok/final3.mp4")
+          },
+          {
+            heading: "Redeem And Checkout: Loyalty",
+            paragraphs: [
+              "Budget tracking for teens, with parental spending controls."
+            ],
+            video: getAssetUrl("case_studies/Tiktok/final4.mp4")
+          }
+        ]
+      },
+      {
         id: "reflection",
         subtitle: "05 / Reflection",
         content: [
@@ -827,137 +1021,9 @@ export const caseStudies = [
               "1. Don't follow assumptions: It is okay to pviot. I learned to question my initial assumptions and let user feedback guide the direction. Instead of focusing on earning points, insights showed users cared more about the reward redemption experience, which led us to pivot our design for greater impact.",
               "‍2. Design with clarity: I learned that even small visual or wording changes can influence how users feel about completing tasks. For example, by simplifying reward tiers and adding clearer progress cues, we made users feel more motivated and in control of their goals. This is something I will keep in mind in my future designs."
             ]
-          },
-
-
+          }
         ]
       }
-    ]
-  },
-  {
-    id: "petals-worth",
-    comingSoon: true,
-    title: "A Petal's Worth",
-    shortDescription: "A digital garden for shared reflection, where expressive forms grow into a living, interactive landscape.",
-    tags: ["Product Design", "Full‑Stack Development", "Emotional UX"],
-    role: "Design Engineer",
-    projectType: "Creative Development & Design",
-    projectCategory: "Personal Project",
-    timeline: "14 Weeks",
-    tools: ["React.js (Frontend)", " Node.js (Backend)", "Figma (Design)"],
-    coverImage: getAssetUrl("case_studies/Petal/header.png"),
-    headerImage: getAssetUrl("case_studies/Petal/header.png"),
-    sections: [
-      {
-        id: "overview",
-        subtitle: "01 / Overview",
-        content: [
-          {
-            heading: "Background",
-            paragraphs: [
-              "A Petal's Worth is a shared digital garden where people can pause, breathe, and make something simple together.",
-              "For my senior capstone, I had complete freedom to build anything. Instead of creating another static prototype, I challenged myself to design, build, and ship a fully functional interactive product using Gemini and Claude Code."
-            ],
-            image: getAssetUrl("case_studies/Petal/overview.png")
-          },
-          {
-            heading: "I Started With A Question",
-            paragraphs: [
-              "How do we turn a simple act of sharing into an interactive visual system that builds a sense of connection?"
-            ]
-          },
-          {
-            heading: "Why A Garden?",
-            paragraphs: [
-              "Because a garden makes sharing feel simple — something you place and let grow, not something you fill out — and it also gives room for many symbolic forms, each carrying its own meaning."
-            ]
-          },
-          {
-            heading: "Results",
-            paragraphs: [],
-            metrics: [
-              {
-                number: "50+",
-                text: "users explored the garden on launch day",
-              },
-              {
-                number: "100+",
-                text: "submissions created within the first week",
-              },
-              {
-                text: "Fully deployed, real product used by groups and communities",
-              }
-            ]
-          }
-        ]
-      },
-      {
-        id: "features",
-        subtitle: "02 / Final Features",
-        content: [
-          {
-            heading: "Group Spaces",
-            paragraphs: [
-              "Users can create private gardens for friends, teams, or communities that others can easily access with a private code."
-            ],
-            video: getAssetUrl("case_studies/Petal/group.mov")
-          },
-          {
-            heading: "Daily Form Creation",
-            paragraphs: [
-              "A lightweight daily flow that begins with a single prompt. Users answer the question, then move directly into creating their form. This prompt is reset daily allowing for new entries."
-            ],
-            video: getAssetUrl("case_studies/Petal/form.mov")
-          },
-          {
-            heading: "Expressive Forms",
-            paragraphs: [
-              "Users select a symbolic form that matches their mood, then shape it using intuitive draw and paint controls. Once customized, they submit their reflection and place the finished form into the garden."
-            ],
-            video: getAssetUrl("case_studies/Petal/expressive.mp4")
-          },
-          {
-            heading: "Shared Garden View + Interaction",
-            paragraphs: [
-              "All forms appear together in an interactive garden view. Users can explore the landscape, tap into others’ forms, and watch the garden grow."
-            ],
-            video: getAssetUrl("case_studies/Petal/shared.mov")
-          },
-          {
-            heading: "Persistent Data Storage",
-            paragraphs: [
-              "All forms are saved and retrievable, allowing gardens to grow over time."
-            ],
-            video: getAssetUrl("case_studies/Petal/storage.mov")
-          }
-        ]
-      },
-      {
-        id: "process",
-        subtitle: "03 / Process",
-        content: [
-          {
-            heading: "Coming Soon...",
-            paragraphs: [
-            ],
-          },
-        ]
-      },
-      {
-        id: "Reflection",
-        subtitle: "04 / Reflection",
-        content: [
-          {
-            heading: "What I Learned",
-            bullets: [
-              "<strong>Shipping a real product</strong> - Building a deployed system taught me to design for persistence, error states, and daily return patterns.",
-              "<strong>AI as a creative partner</strong> - Gemini and Claude Code accelerated exploration while keeping design intentional.",
-              "<strong>Simplicity builds connection</strong> - Users felt connected not because the system was complex, but because it was simple and expressive."
-            ],
-            image: getAssetUrl("case_studies/Petal/showcase.jpg")
-          },
-        ]
-      },
     ]
   },
   {
