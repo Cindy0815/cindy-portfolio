@@ -31,13 +31,6 @@ const InteractiveCanvas = () => {
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
-  const rippleX1 = useSpring(mouseX, { damping: 15, stiffness: 100, mass: 0.8 });
-  const rippleY1 = useSpring(mouseY, { damping: 15, stiffness: 100, mass: 0.8 });
-  const rippleX2 = useSpring(mouseX, { damping: 20, stiffness: 60, mass: 1.2 });
-  const rippleY2 = useSpring(mouseY, { damping: 20, stiffness: 60, mass: 1.2 });
-  const rippleX3 = useSpring(mouseX, { damping: 25, stiffness: 30, mass: 1.8 });
-  const rippleY3 = useSpring(mouseY, { damping: 25, stiffness: 30, mass: 1.8 });
-
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     mouseX.set(e.clientX - rect.left);
@@ -113,37 +106,7 @@ const InteractiveCanvas = () => {
           ))}
         </AnimatePresence>
 
-        {/* Trailing Ripple Effect Layers */}
-        <AnimatePresence>
-          {isHovering && (
-            <>
-              <motion.div
-                className="mouse-ripple-trail"
-                style={{ x: rippleX1, y: rippleY1, background: '#e76f80' }}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 0.5, scale: [0.8, 1, 0.8] }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 1.5, ease: 'easeInOut' } }}
-              />
-              <motion.div
-                className="mouse-ripple-trail"
-                style={{ x: rippleX2, y: rippleY2, background: '#bccb3e' }}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 0.6, scale: [1, 1.2, 1] }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2, ease: 'easeInOut', delay: 0.2 } }}
-              />
-              <motion.div
-                className="mouse-ripple-trail"
-                style={{ x: rippleX3, y: rippleY3, background: '#5b65f0' }}
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 0.7, scale: [1.2, 1.4, 1.2] }}
-                exit={{ opacity: 0, scale: 0 }}
-                transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2.5, ease: 'easeInOut', delay: 0.4 } }}
-              />
-            </>
-          )}
-        </AnimatePresence>
+
 
         {/* Interactive User Cursor */}
         <AnimatePresence>
