@@ -174,16 +174,6 @@ const DesignerHero = () => {
   const cursorX = useSpring(mouseX, springConfig);
   const cursorY = useSpring(mouseY, springConfig);
 
-  // Trailing ripple tracking (slower, softer follow to create a snake-like trail)
-  const rippleX1 = useSpring(mouseX, { damping: 15, stiffness: 100, mass: 0.8 });
-  const rippleY1 = useSpring(mouseY, { damping: 15, stiffness: 100, mass: 0.8 });
-
-  const rippleX2 = useSpring(mouseX, { damping: 20, stiffness: 60, mass: 1.2 });
-  const rippleY2 = useSpring(mouseY, { damping: 20, stiffness: 60, mass: 1.2 });
-
-  const rippleX3 = useSpring(mouseX, { damping: 25, stiffness: 30, mass: 1.8 });
-  const rippleY3 = useSpring(mouseY, { damping: 25, stiffness: 30, mass: 1.8 });
-
   const handleMouseMove = (e) => {
     if (step >= 13) {
       const rect = e.currentTarget.getBoundingClientRect();
@@ -302,6 +292,7 @@ const DesignerHero = () => {
 
   return (
     <motion.div
+      id="hero"
       className={`designer-hero cursor-trail-zone ${step >= 13 && isHovering ? 'interactive-canvas' : ''}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovering(true)}
@@ -461,51 +452,20 @@ const DesignerHero = () => {
               // Default transition applied when variant doesn't specify one
               transition={moveEase}
             >
-              <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+              <div className="cursor-circle" />
             </motion.div>
           )}
         </AnimatePresence>
       </div>
 
-      {/* Trailing Ripple Effect Layers — outside .shapes-layer so they stack
-          above the hero content (buttons) */}
-      <AnimatePresence>
-        {step >= 13 && isHovering && (
-          <>
-            <motion.div
-              className="mouse-ripple-trail"
-              style={{ x: rippleX1, y: rippleY1, background: '#e76f80' }} /* Pink */
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 0.5, scale: [0.8, 1, 0.8] }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" } }}
-            />
-            <motion.div
-              className="mouse-ripple-trail"
-              style={{ x: rippleX2, y: rippleY2, background: '#bccb3e' }} /* Green */
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 0.6, scale: [1, 1.2, 1] }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2, ease: "easeInOut", delay: 0.2 } }}
-            />
-            <motion.div
-              className="mouse-ripple-trail"
-              style={{ x: rippleX3, y: rippleY3, background: '#5b65f0' }} /* Purple */
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 0.7, scale: [1.2, 1.4, 1.2] }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{ opacity: { duration: 0.2 }, scale: { repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: 0.4 } }}
-            />
-          </>
-        )}
-      </AnimatePresence>
+
 
       {/* Interactive User Cursor (Only visible after sequence completes and user hovers) */}
       <AnimatePresence>
         {step >= 13 && isHovering && (
           <motion.div
             className="custom-cursor interactive-user-cursor"
-            style={{ x: cursorX, y: cursorY, rotate: -10, transformOrigin: 'top left', willChange: 'transform' }}
+            style={{ x: cursorX, y: cursorY, transformOrigin: 'center center', willChange: 'transform' }}
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.5 }}
@@ -527,7 +487,7 @@ const DesignerHero = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-            <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+            <div className="cursor-circle" />
           </motion.div>
         )}
       </AnimatePresence>

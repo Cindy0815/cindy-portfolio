@@ -6,9 +6,7 @@ import GlobalCursor from './components/GlobalCursor';
 import { HeroIntroProvider } from './context/HeroIntroContext';
 import Home from './pages/Home';
 import About from './pages/About';
-import CaseStudiesIndex from './pages/CaseStudiesIndex';
 import CaseStudyTemplate from './pages/CaseStudyTemplate';
-import Play from './pages/Play';
 
 function App() {
   return (
@@ -22,9 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/case-studies" element={<CaseStudiesIndex />} />
               <Route path="/case-studies/:id" element={<CaseStudyTemplate />} />
-              <Route path="/play" element={<Play />} />
             </Routes>
           </main>
           <Footer />

@@ -210,7 +210,7 @@ const CaseStudyTemplate = () => {
     return (
       <div className="container section">
         <h2>Case Study Not Found</h2>
-        <Link to="/case-studies" className="back-link">Return to all work</Link>
+        <Link to="/#featured-works" className="back-link">Return to all work</Link>
       </div>
     );
   }
@@ -229,7 +229,7 @@ const CaseStudyTemplate = () => {
           <div className="container progress-container">
             <ul className="progress-nav-list">
               <li className="progress-back-item">
-                <Link to="/case-studies" className="back-link progress-back-link">
+                <Link to="/#featured-works" className="back-link progress-back-link">
                   <ArrowLeft size={16} /> Back to Work
                 </Link>
               </li>
@@ -349,9 +349,6 @@ const CaseStudyTemplate = () => {
                     </div>
                   )}
 
-                  {block.centeredText && (
-                    <CenteredText text={block.centeredText} />
-                  )}
 
                   {block.highlightBox && (
                     <HighlightBox
@@ -574,7 +571,9 @@ const CaseStudyTemplate = () => {
                     </div>
                   )}
 
-
+                  {block.centeredText && (
+                    <CenteredText text={block.centeredText} />
+                  )}
                 </div>
               ))}
             </div>
@@ -602,7 +601,7 @@ const CaseStudyTemplate = () => {
 
       <div className="cs-footer container section text-center">
         <h2>Next Project</h2>
-        <Link to="/case-studies" className="primary-btn mt-4">
+        <Link to="/#featured-works" className="primary-btn mt-4">
           View more case studies
         </Link>
       </div>

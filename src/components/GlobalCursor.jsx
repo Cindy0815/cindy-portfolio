@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { MousePointer2 } from 'lucide-react';
 import './GlobalCursor.css';
 
 // Page-wide custom cursor. Hides itself over the hero/footer interactive
 // canvases (which render their own cursor + trails), over work/play cards
 // (which show a "View Project" / "Expand" text cursor instead), and over
 // form fields (native text cursor).
-const HIDE_SELECTOR = '.cursor-trail-zone, .work-card, input, textarea, select, [contenteditable]';
+const HIDE_SELECTOR = '.cursor-trail-zone, .work-card, .play-card, input, textarea, select, [contenteditable]';
 
 const GlobalCursor = () => {
   const [visible, setVisible] = useState(false);
+  const [isHoveringBtn, setIsHoveringBtn] = useState(false);
 
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
@@ -24,10 +24,19 @@ const GlobalCursor = () => {
       mouseY.set(e.clientY);
 
       const target = document.elementFromPoint(e.clientX, e.clientY);
-      setVisible(!target?.closest(HIDE_SELECTOR));
+      const hasCustomTextCursor = Boolean(document.querySelector('.home-custom-cursor'));
+      const isHiddenZone = Boolean(target?.closest(HIDE_SELECTOR));
+
+      setVisible(!hasCustomTextCursor && !isHiddenZone);
+
+      const isBtn = Boolean(target?.closest('button, a, [role="button"], .btn, .filter-btn, .submit-btn, .theme-toggle-btn'));
+      setIsHoveringBtn(isBtn);
     };
 
-    const handleLeaveWindow = () => setVisible(false);
+    const handleLeaveWindow = () => {
+      setVisible(false);
+      setIsHoveringBtn(false);
+    };
 
     window.addEventListener('mousemove', handleMove);
     document.documentElement.addEventListener('mouseleave', handleLeaveWindow);
@@ -40,10 +49,12 @@ const GlobalCursor = () => {
 
   return (
     <motion.div
-      className="global-cursor"
-      style={{ x: cursorX, y: cursorY, rotate: -10, opacity: visible ? 1 : 0 }}
+      className={`global-cursor ${isHoveringBtn ? 'hovering-btn' : ''}`}
+      style={{ x: cursorX, y: cursorY, opacity: visible ? 1 : 0 }}
+      animate={{ scale: isHoveringBtn ? 1.6 : 1 }}
+      transition={{ duration: 0.15 }}
     >
-      <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+      <div className="cursor-circle" />
     </motion.div>
   );
 };

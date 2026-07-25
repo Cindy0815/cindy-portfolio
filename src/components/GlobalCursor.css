@@ -4,15 +4,20 @@
   left: 0;
   /* Highest layer on the page — above navbar, modals, and hero overlays */
   z-index: 2147483647;
-  transform-origin: top left;
   pointer-events: none;
-  color: #18181b;
+  mix-blend-mode: difference;
   transition: opacity 0.15s ease;
   will-change: transform, opacity;
 }
 
-[data-theme='dark'] .global-cursor {
-  color: #ffffff;
+.global-cursor .cursor-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-radius 0.2s ease;
 }
 
 @media (hover: none), (pointer: coarse) {

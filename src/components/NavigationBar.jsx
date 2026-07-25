@@ -42,16 +42,68 @@ const NavigationBar = () => {
     localStorage.setItem('portfolio-theme', newTheme);
   };
 
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const handleScroll = () => {
+      const featuredWorksEl = document.getElementById('featured-works');
+      const playEl = document.getElementById('play');
+      const scrollPos = window.scrollY + 250;
+
+      if (playEl && scrollPos >= playEl.offsetTop) {
+        setActiveSection('play');
+      } else if (featuredWorksEl && scrollPos >= featuredWorksEl.offsetTop) {
+        setActiveSection('work');
+      } else {
+        setActiveSection('home');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
+
   const navLinks = [
-    { path: '/', label: 'Home' },
-    { path: '/case-studies', label: 'Work' },
-    { path: '/play', label: 'Play' },
-    { path: '/about', label: 'About' }
+    { key: 'work', label: 'Work', path: '/#featured-works', targetId: 'featured-works' },
+    { key: 'play', label: 'Play', path: '/#play', targetId: 'play' },
+    { key: 'about', label: 'About', path: '/about', targetId: null }
   ];
+
+  const handleNavClick = (e, link) => {
+    if (location.pathname === '/') {
+      if (link.targetId) {
+        const el = document.getElementById(link.targetId);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth' });
+          window.history.pushState(null, '', `#${link.targetId}`);
+          setActiveSection(link.key);
+        }
+      }
+    }
+  };
+
+  const handleLogoClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', '/');
+      setActiveSection('home');
+    }
+  };
 
   const isCaseStudyPage = location.pathname.startsWith('/case-studies/');
   const isHome = location.pathname === '/';
   const hideForIntro = isHome && introPlaying;
+
+  const isLinkActive = (link) => {
+    if (link.key === 'about') return location.pathname === '/about';
+    if (isHome) return activeSection === link.key;
+    return false;
+  };
 
   return (
     <motion.nav
@@ -69,25 +121,29 @@ const NavigationBar = () => {
       style={{ pointerEvents: hideForIntro ? 'none' : 'auto' }}
     >
       <div className="navbar-inner container">
-        <Link to="/" className="logo">
+        <Link to="/" onClick={handleLogoClick} className="logo">
           <img src={logoImg} alt="Cindy" className="nav-logo-img" />
         </Link>
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`nav-item ${location.pathname === link.path ? 'active' : ''}`}
-            >
-              {link.label}
-              {location.pathname === link.path && (
-                <motion.div
-                  layoutId="nav-underline"
-                  className="nav-underline"
-                />
-              )}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const active = isLinkActive(link);
+            return (
+              <Link
+                key={link.key}
+                to={link.path}
+                onClick={(e) => handleNavClick(e, link)}
+                className={`nav-item ${active ? 'active' : ''}`}
+              >
+                {link.label}
+                {active && (
+                  <motion.div
+                    layoutId="nav-underline"
+                    className="nav-underline"
+                  />
+                )}
+              </Link>
+            );
+          })}
 
           <button
             onClick={toggleTheme}

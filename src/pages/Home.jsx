@@ -9,6 +9,7 @@ import './Home.css';
 const Home = () => {
   const [cursorText, setCursorText] = useState("");
   const [filter, setFilter] = useState("all");
+  const [activeWork, setActiveWork] = useState(null);
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
   const cursorX = useSpring(mouseX, { stiffness: 400, damping: 30 });
@@ -29,6 +30,22 @@ const Home = () => {
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveWork(null);
+    };
+    if (activeWork) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [activeWork]);
 
   return (
     <div className="home-page">
@@ -142,13 +159,12 @@ const Home = () => {
         </section>
 
         {/* Play Section */}
-        <section className="play-works container section">
+        <section id="play" className="play-works container section">
           <div className="section-header flex justify-between items-end">
             <div>
               <h2>Play</h2>
               <p className="section-subtext">Here’s a peek at what I’ve been up to in 3D, AR/VR, and motion graphics!</p>
             </div>
-            <Link to="/play" className="view-all-link">View all <ArrowRight size={16} /></Link>
           </div>
 
           <div className="work-grid">
@@ -159,7 +175,10 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="play-card"
+                className="work-card play-card play-card-clickable"
+                onMouseEnter={() => setCursorText("Expand")}
+                onMouseLeave={() => setCursorText("")}
+                onClick={() => setActiveWork(work)}
               >
                 <div className="play-card-image">
                   {work.video ? (
@@ -246,6 +265,52 @@ const Home = () => {
           </div>
         </section>
       </div>
+
+      {/* Play Works Lightbox Modal */}
+      <AnimatePresence>
+        {activeWork && (
+          <motion.div
+            className="play-lightbox-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveWork(null)}
+          >
+            <button
+              className="play-lightbox-close"
+              onClick={() => setActiveWork(null)}
+              aria-label="Close preview"
+            >
+              &times;
+            </button>
+            <motion.div
+              className="play-lightbox-content"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {activeWork.video ? (
+                <video
+                  src={activeWork.video}
+                  autoPlay
+                  loop
+                  controls
+                  playsInline
+                  className="play-lightbox-media"
+                />
+              ) : (
+                <img src={activeWork.image} alt={activeWork.title} className="play-lightbox-media" />
+              )}
+              <div className="play-lightbox-caption">
+                <h3>{activeWork.title}</h3>
+                <p>{activeWork.category}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

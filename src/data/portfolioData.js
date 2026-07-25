@@ -30,19 +30,17 @@ export const caseStudies = [
         subtitle: "01 / Overview",
         content: [
           {
-            heading: "Background",
+            heading: "Context",
             paragraphs: [
-              "Money was always a sensitive topic in my family — not because of the actual money involved, but the tension around it. Parents try to teach teens how to manage money, yet those conversations often slip into lectures. Teens want independence, but the fear of making mistakes holds them back. That push‑and‑pull is common in many households.",
-              "Pennies began as a simple UX class assignment, but the research revealed a larger truth: parents want to guide, teens want autonomy, and both struggle to meet in the middle."
+              "Bank accounts are opening earlier than ever, and with the rise of banking programs and services built for younger generations, I saw a market I wanted to tap into. What started as a UX class assignment became personal when I recognized a problem in my own family: the dynamic around money — where parents want to teach financial responsibility without lecturing, while still giving their child room to learn.",
             ]
           },
           {
-            heading: "Why The Knowledge Gap Creates Daily Friction?",
+            heading: "The Problem",
             paragraphs: [
               "Most people open their first bank account between ages 13 and 17, a formative window where real-world financial habits begin to take shape. Yet teens in this stage often lack meaningful financial literacy, while parental oversight can easily slip into micro‑management — creating friction, confusion, and ultimately abandonment of traditional banking apps."
             ],
             image: getAssetUrl("case_studies/Pennies/info1_1.png"),
-            centeredText: "The challenge became clear...",
             highlightBox: {
               text: "How might we help teens learn by doing while giving parents the peace of mind that their teens are supported, not left alone?"
             }
@@ -51,7 +49,7 @@ export const caseStudies = [
           {
             heading: "The Solution: Turning Real Spending Habits Into Guided Learning",
             paragraphs: [
-              "As a result, I set out to create an experience that turns everyday transactions into learning moments. Guided by Penni, a personalized in app assistant, teen users receive spending insights and goal based suggestions, while parents can still set account rules for added oversight and management."
+              "Pennies turns everyday spending into learning moments. Penni, an in-app assistant, gives teens personalized insights and goal-based nudges, while parents retain configurable oversight — replacing surveillance with guided independence."
             ],
             images: [
               {
@@ -75,7 +73,7 @@ export const caseStudies = [
         subtitle: "02 / Research",
         content: [
           {
-            heading: "The Core Tension",
+            heading: "The Core Tension: Uncertainty on Both Sides",
             paragraphs: [
               "I spoke with five parent-teen pairs to understand where financial learning breaks down. What emerged was a shared sense of uncertainty:"
             ],
@@ -112,7 +110,7 @@ export const caseStudies = [
             centeredText: "These conversations revealed two parallel needs: parents needed tools to <em>guide without controlling</em>, and teens needed support that <em>felt empowering</em> rather than punitive. This became the foundation for the design direction."
           },
           {
-            heading: "Market Insight",
+            heading: "Where the Market Falls Short",
             paragraphs: [
               "Next, I analyzed competitors in the market to identify gaps that had not yet been addressed."
             ],
@@ -126,7 +124,9 @@ export const caseStudies = [
                 title: "Opportunity #3",
                 text: "Provide a personalized experience that gives real, actionable insights"
               }
-            }
+            },
+            centeredText: "With both the emotional and market gaps clear, the next step was translating these insights into a solution.",
+
           },
           {
             heading: "Defining The User Journey",
@@ -136,9 +136,9 @@ export const caseStudies = [
             image: getAssetUrl("case_studies/Pennies/info3.png")
           },
           {
-            heading: "Secure Payment Method",
+            heading: "Setting Up The Foundation: A Prepaid Model",
             paragraphs: [
-              "To support this, I chose a prepaid card system. It’s widely used, secure, and gives parents the structure they need while giving teens the freedom they want."
+              "To support this, I chose a prepaid card system as the foundation. Unlike a traditional debit or credit account, a prepaid model caps risk by design — teens can only spend what's been allocated, which gives parents peace of mind without requiring them to monitor every transaction. This structure became the base layer that Penni's guidance and insights could build on top of."
             ],
             image: getAssetUrl("case_studies/Pennies/info4.png")
           }
@@ -314,7 +314,7 @@ export const caseStudies = [
               },
               {
                 number: "100+",
-                text: "garden submissions in week one (~2x repeat engagement)"
+                text: "submissions in week one (~2x repeat engagement)"
               }
             ]
           }
@@ -340,7 +340,7 @@ export const caseStudies = [
               },
               {
                 title: "Ritual over Retention",
-                text: "A daily reset encourages intentional micro-moments rather than doomscrolling or prolonged screen time."
+                text: "A daily reset encourages intentional micro-moments rather than prolonged screen time."
               }
             ]
           },
@@ -380,7 +380,7 @@ export const caseStudies = [
                 ],
                 "opportunityTitle": "Design Response",
                 "opportunities": [
-                  "Built Private Garden Codes into the core architecture to give communities intimate, isolated spaces."
+                  "Built private room sessions into the core architecture to give communities intimate, isolated spaces."
                 ]
               }
             ]
@@ -431,7 +431,7 @@ export const caseStudies = [
           {
             heading: "Group Spaces",
             paragraphs: [
-              "Users can create private gardens for friends, teams, or communities that others can easily access with a private code."
+              "Users can create private rooms for friends, teams, or communities that others can easily access with a room code."
             ],
             video: getAssetUrl("case_studies/Petal/group.mov")
           },
@@ -504,13 +504,13 @@ export const caseStudies = [
           {
             heading: "Designing a Customizable Shopping Experience",
             paragraphs: [
-              "During my internship at Dentsu, I worked on a high‑visibility e‑commerce feature for Hershey’s: a dedicated “Pick Your Pack” page that let customers build their own assortment of Skinny Packs for a Back‑to‑School campaign. My role focused on shaping an intuitive customization flow that felt familiar within the existing site ecosystem while introducing new interaction patterns that supported personalization."
+              "During my internship at Dentsu, I worked on a page for Hershey’s e-commerce site that let customers build their own assortment of Skinny Packs for a Back‑to‑School campaign. My role focused on shaping an intuitive customization flow that felt familiar within the existing site ecosystem while introducing new interaction patterns that supported personalization."
             ]
           },
           {
             heading: "My Role & Contributions: Leading UI While Supporting UX Strategy",
             paragraphs: [
-              "I led the UI design and contributed to UX strategy across the page’s layout, interaction patterns, and decision logic. My work included creating high‑fidelity Figma mockups aligned with brand guidelines, conducting usability testing, and collaborating closely with the client team to refine the experience."
+              "I led the UI design and contributed to UX strategy across the page’s layout, interaction patterns, and decision logic. My work included creating high‑fidelity Figma mockups aligned with brand guidelines and collaborating closely with the client team to refine the experience."
             ],
             metrics: [
               {
@@ -540,7 +540,7 @@ export const caseStudies = [
         subtitle: "02 / Final Deliverable",
         content: [
           {
-            heading: "Final Deliverable: A Live, Shippable Experience",
+            heading: "Final Deliverable",
             paragraphs: [
               "The final design launched on Hershey’s site from August 2025 to May 2026. The page introduced three core features that made the customization process intuitive and error‑proof:"
             ],

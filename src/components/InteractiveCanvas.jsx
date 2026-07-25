@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
-import { MousePointer2, RefreshCcw } from 'lucide-react';
+import { RefreshCcw } from 'lucide-react';
 import headerBg from '../assets/header_bg.jpg';
 import shapePurple from '../assets/purple_shape_opt.png';
 import shapeGreen from '../assets/green_shape_opt.png';
@@ -150,7 +150,7 @@ const InteractiveCanvas = () => {
           {isHovering && (
             <motion.div
               className="custom-cursor interactive-user-cursor"
-              style={{ x: cursorX, y: cursorY, rotate: -10, transformOrigin: 'top left', willChange: 'transform' }}
+              style={{ x: cursorX, y: cursorY, transformOrigin: 'center center', willChange: 'transform' }}
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.5 }}
@@ -172,7 +172,7 @@ const InteractiveCanvas = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-              <MousePointer2 size={32} color="currentColor" fill="currentColor" />
+              <div className="cursor-circle" />
             </motion.div>
           )}
         </AnimatePresence>
