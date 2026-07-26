@@ -1028,10 +1028,9 @@ export const caseStudies = [
   },
   {
     id: "cysana",
-    comingSoon: true,
     title: "Cysana",
     shortDescription: "Redesigning a malware detection dashboard to allow admins to quickly access essential security data.",
-    tags: ["Dashboard Design", "UX/UI Design Intern"],
+    tags: ["Enterprise SaaS", "Dashboard Design", "UX/UI Design Intern"],
     role: [
       "My Role: Product Design Intern (UX/UI)",
       "Collaborators: 2 Full Stack Engineers, 1 Data Scientist, 1 PM"
@@ -1044,49 +1043,154 @@ export const caseStudies = [
     sections: [
       {
         id: "overview",
-        subtitle: "01 / Overview",
+        subtitle: "01 / Project Overview",
         content: [
           {
-            heading: "Project Goals",
+            heading: "Redesigning Malware Detection & Threat Monitoring",
             paragraphs: [
-              "Vitals is a conceptual app designed to make health tracking less tedious and more rewarding through gamification and intuitive logging."
+              "During my internship at Conatix, I worked on Cysana — an enterprise malware detection dashboard designed for security administrators. My role focused on shaping an intuitive monitoring experience, streamlining data visualizations, and establishing clear workflows for real-time threat response."
+            ]
+          },
+          {
+            heading: "My Role & Contributions: Leading UI & Information Architecture",
+            paragraphs: [
+              "I led the dashboard redesign across layout, data visualization, and information architecture. My work included creating high-fidelity Figma mockups, establishing color severity guidelines, and collaborating with backend engineers to ensure data accuracy."
+            ],
+            metrics: [
+              {
+                title: "Simplified the Client-Facing UI",
+                text: "Cut information overload by relocating granular data to the admin dashboard and restructuring the IA — giving client users a cleaner, faster view of what matters most."
+              },
+              {
+                title: "Improved Time-to-Decision",
+                text: "Surfaced system health, recent detections, and critical stats in a single glance, reducing the steps needed to assess and respond to threats.",
+              },
+              {
+                title: "Introduced Features That Moved Satisfaction",
+                text: "Created filters, protection statuses, and alerting — driving a 50%+ increase in user satisfaction scores in usability surveys."
+              }
+            ]
+          },
+          {
+            heading: "The Problem",
+            paragraphs: [
+              "Security admins were overwhelmed by dense data logs and fragmented views. The project required designing a unified dashboard that balanced data density, fast decision-making, and visual clarity under tight engineering constraints."
             ]
           }
         ]
       },
       {
-        id: "problem",
-        subtitle: "02 / The Problem",
+        id: "final-deliverable",
+        subtitle: "02 / Final Deliverable",
         content: [
           {
-            heading: "User Struggles",
+            heading: "The Solution",
             paragraphs: [
-              "Most health tracking apps are either too complex or too basic. Users wanted a middle ground that offered robust data without the steep learning curve."
-            ]
+              "The redesigned Cysana dashboard introduced core features that made threat detection intuitive and actionable:"
+            ],
+            image: getAssetUrl("case_studies/Cysana/solution.png")
           }
         ]
       },
       {
         id: "process",
-        subtitle: "03 / Process",
+        subtitle: "03 / The Process",
         content: [
           {
-            heading: "Steps to Solution",
+            heading: "Restructuring Information Architecture: Existing vs. New State",
             paragraphs: [
-              "Competitive Analysis: Analyzed top 5 health apps to identify feature gaps and usability issues.",
-              "Visual Design: Developed a calming, modern aesthetic using soft gradients and friendly typography to reduce anxiety around health data."
-            ]
+              "The distinct tabs are shown in blue, with their corresponding sections outlined below. After mapping out the pages, it became clear that much of the information was repetitive, and several pages could be consolidated. Additionally, there were opportunities to introduce new features to improve the user experience."
+            ],
+            image: getAssetUrl("case_studies/Cysana/before.png")
+
+          },
+          {
+            heading: "New State",
+            paragraphs: [
+              "Sections moved are outlined in light blue, and newly added sections are in purple. The final page structure allowed for streamlined information and incorporate essential features, including a filtering system and notifications."
+            ],
+            image: getAssetUrl("case_studies/Cysana/after.png")
+
+          },
+          {
+            heading: "1. Making Critical Files Impossible to Miss",
+            insightCards: [
+              {
+                title: "Pain Point",
+                text: "Lack of visual indicators made it hard to quickly scan files."
+              },
+              {
+                title: "Research & Insights",
+                text: "Users wanted to be immediately alerted to flagged files and status changes."
+              },
+              {
+                title: "Outcome",
+                text: "Introduced a color-coded alert system and a dedicated section for critical files, enabling faster detection and response."
+              }
+            ],
+            beforeAfterSlider: {
+              beforeImage: getAssetUrl("case_studies/Cysana/main_before.png"),
+              afterImage: getAssetUrl("case_studies/Cysana/main_after.png"),
+              beforeLabel: "Before",
+              afterLabel: "After"
+            }
+          },
+          {
+            heading: "2. Cutting the Clicks: A Unified File Review Experience",
+            insightCards: [
+              {
+                title: "Pain Point",
+                text: "Users had to jump between multiple pages to review files, slowing down their workflow."
+              },
+              {
+                title: "Research & Insights",
+                text: "Interviews revealed users cared more about reviewing files than the type of malware detected."
+              },
+              {
+                title: "Outcome",
+                text: "A single-page design with tabs streamlined file review and significantly improved usability."
+              }
+            ],
+            beforeAfterSlider: {
+              beforeImage: getAssetUrl("case_studies/Cysana/file_before.png"),
+              afterImage: getAssetUrl("case_studies/Cysana/file_after.png"),
+              beforeLabel: "Before",
+              afterLabel: "After"
+            }
+
+          },
+          {
+            heading: "3. Reducing Support Tickets with Self-Service Answers",
+            insightCards: [
+              {
+                title: "Pain Point",
+                text: "Users lacked a clear resource hub for troubleshooting and common questions."
+              },
+              {
+                title: "Research & Insights",
+                text: "Research showed users wanted a simple, centralized place to quickly find answers without contacting support."
+              },
+              {
+                title: "Outcome",
+                text: "Created a scalable FAQ & Support page that addressed this gap, improved self-service, and allowed easy expansion as new information emerged."
+              }
+            ],
+            image: getAssetUrl("case_studies/Cysana/faq.png")
+
+
           }
         ]
       },
       {
-        id: "outcomes",
-        subtitle: "04 / Outcomes",
+        id: "takeaways",
+        subtitle: "04 / Key Takeaways",
         content: [
           {
-            heading: "Final Delivery",
-            paragraphs: [
-              "Created a comprehensive design system and a fully interactive prototype that received overwhelming positive feedback during usability testing."
+            heading: "What This Project Taught Me",
+            bullets: [
+              "<strong>Designing for Technical Complexity</strong> — Working with security logs taught me how to distill dense technical data into clear, actionable visual hierarchy so admins can react quickly.",
+              "<strong>Cross-Disciplinary Collaboration</strong> — Partnering closely with data scientists and engineers helped align visual layouts with real-world technical capabilities.",
+              "<strong>Systems Thinking in Enterprise UI</strong> — Designing reusable dashboard modules ensured consistent interaction patterns and effortless scalability across security tools."
             ]
           }
         ]

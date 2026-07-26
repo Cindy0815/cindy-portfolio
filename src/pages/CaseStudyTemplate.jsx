@@ -5,6 +5,7 @@ import { caseStudies } from '../data/portfolioData';
 import { useState, useEffect, Fragment, useRef } from 'react';
 import HighlightBox from '../components/HighlightBox';
 import CenteredText from '../components/CenteredText';
+import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import './CaseStudyTemplate.css';
 
 const RollingNumber = ({ value }) => {
@@ -347,6 +348,15 @@ const CaseStudyTemplate = () => {
                         onClick={() => setPreviewImage({ src: block.image, alt: block.heading, caption: block.heading })}
                       />
                     </div>
+                  )}
+
+                  {block.beforeAfterSlider && (
+                    <BeforeAfterSlider
+                      beforeImage={block.beforeAfterSlider.beforeImage}
+                      afterImage={block.beforeAfterSlider.afterImage}
+                      beforeLabel={block.beforeAfterSlider.beforeLabel}
+                      afterLabel={block.beforeAfterSlider.afterLabel}
+                    />
                   )}
 
 

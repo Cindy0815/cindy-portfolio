@@ -514,6 +514,28 @@
   color: #ffffff;
 }
 
+/* Cysana case study: black metric cards that adapt to dark mode */
+.cs-study-cysana .metric-card {
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.cs-study-cysana .metric-number,
+.cs-study-cysana .metric-title {
+  color: #ffffff;
+}
+
+.cs-study-cysana .metric-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme='dark'] .cs-study-cysana .metric-card {
+  background-color: #121216;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
 .finding-insight-text {
   font-size: 1rem;
   line-height: 1.6;
