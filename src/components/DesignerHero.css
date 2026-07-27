@@ -317,7 +317,7 @@
 }
 
 .name-gradient {
-  background: linear-gradient(90deg, #5b65f0, #bccb3e, #e76f80);
+  background: linear-gradient(90deg, #5b65f0, #a3af30, #e76f80);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
