@@ -265,7 +265,7 @@ export const caseStudies = [
   {
     id: "petals-worth",
     title: "A Petal's Worth",
-    shortDescription: "Building a collaborative digital garden",
+    shortDescription: "Building a Collaborative Digital Garden",
     tags: ["Senior Thesis", "2026"],
     role: "Design Engineer (UX/UI, Front-End Development)",
     projectType: "Creative Development & Design",
@@ -613,7 +613,7 @@ export const caseStudies = [
   {
     id: "expedia",
     title: "Expedia",
-    shortDescription: "Reimagining a flight booking experience",
+    shortDescription: "Reimagining a Flight Booking Experience",
     tags: ["Personal Project", "2025"],
     role: "UX/UI Designer (End-to-End)",
     projectType: "Web UX/UI Redesign",
@@ -835,7 +835,7 @@ export const caseStudies = [
   {
     id: "tiktok-shop",
     title: "Tiktok Shop",
-    shortDescription: "Designing for customer loyalty",
+    shortDescription: "Designing for Customer Loyalty",
     tags: ["Personal Project", "2024"],
     role: [
       "My Role: UX/UI Designer",
@@ -1024,7 +1024,7 @@ export const caseStudies = [
   {
     id: "cysana",
     title: "Cysana",
-    shortDescription: "Redesigning a malware detection dashboard",
+    shortDescription: "Redesigning a Malware Detection Dashboard",
     tags: ["Conatix", "2024"],
     role: [
       "My Role: Product Design Intern (UX/UI)",
