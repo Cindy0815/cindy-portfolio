@@ -7,26 +7,22 @@ const ScrollToTop = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.addEventListener('load', () => {
-      if (window.location.hash) {
-        const el = document.querySelector(window.location.hash);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        window.scrollTo(0, 0);
-      }
-    });
-  }, []);
-
-  useEffect(() => {
     if (hash) {
-      setTimeout(() => {
+      const scrollToHashElement = () => {
         const el = document.querySelector(hash);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
+          const yOffset = -80; // Account for navbar height
+          const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+          window.scrollTo({ top: y, behavior: 'instant' });
         }
-      }, 100);
+      };
+
+      // Execute immediately and once DOM layout settles
+      scrollToHashElement();
+      const timer = setTimeout(scrollToHashElement, 50);
+      return () => clearTimeout(timer);
     } else {
-      window.scrollTo({ top: 0, behavior: 'auto' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }, [pathname, hash]);
 

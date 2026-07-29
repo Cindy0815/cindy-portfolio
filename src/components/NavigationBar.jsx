@@ -42,10 +42,22 @@ const NavigationBar = () => {
     localStorage.setItem('portfolio-theme', newTheme);
   };
 
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState(() => {
+    if (location.pathname === '/') {
+      if (location.hash === '#featured-works') return 'work';
+      if (location.hash === '#play') return 'play';
+    }
+    return 'home';
+  });
 
   useEffect(() => {
     if (location.pathname !== '/') return;
+
+    if (location.hash === '#featured-works') {
+      setActiveSection('work');
+    } else if (location.hash === '#play') {
+      setActiveSection('play');
+    }
 
     const handleScroll = () => {
       const featuredWorksEl = document.getElementById('featured-works');
@@ -64,7 +76,7 @@ const NavigationBar = () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   const navLinks = [
     { key: 'work', label: 'Work', path: '/#featured-works', targetId: 'featured-works' },
