@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { RefreshCcw } from 'lucide-react';
-import headerBg from '../assets/header_bg.jpg';
-import shapePurple from '../assets/purple_shape_opt.png';
-import shapeGreen from '../assets/green_shape_opt.png';
-import shapePink from '../assets/pink_shape_opt.png';
+import headerBg from '../assets/header_bg.webp';
+import shapePurple from '../assets/purple_shape_opt.webp';
+import shapeGreen from '../assets/green_shape_opt.webp';
+import shapePink from '../assets/pink_shape_opt.webp';
 import './DesignerHero.css';
 import './InteractiveCanvas.css';
 

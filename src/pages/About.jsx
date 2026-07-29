@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './About.css';
-import cindy1 from '../assets/cindy1.jpg';
-import cindy2 from '../assets/cindy2.JPEG';
-import cindy3 from '../assets/cindy3.JPG';
-import cindy4 from '../assets/cindy4.JPG';
+import cindy1 from '../assets/cindy1.webp';
+import cindy2 from '../assets/cindy2.webp';
+import cindy3 from '../assets/cindy3.webp';
+import cindy4 from '../assets/cindy4.webp';
 
 const About = () => {
   const images = [

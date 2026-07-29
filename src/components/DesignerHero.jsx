@@ -5,13 +5,13 @@ import { useHeroIntro } from '../context/HeroIntroContext';
 import './DesignerHero.css';
 
 // Background
-import headerBg from '../assets/header_bg.jpg';
+import headerBg from '../assets/header_bg.webp';
 
 // Shapes
-import shapePurple from '../assets/purple_shape_opt.png';
-import shapeGreen from '../assets/green_shape_opt.png';
-import shapePink from '../assets/pink_shape_opt.png';
-import gridImg from '../assets/grid_opt.png';
+import shapePurple from '../assets/purple_shape_opt.webp';
+import shapeGreen from '../assets/green_shape_opt.webp';
+import shapePink from '../assets/pink_shape_opt.webp';
+import gridImg from '../assets/grid_opt.webp';
 
 const imageSizeClass = "scaled-shape-img";
 

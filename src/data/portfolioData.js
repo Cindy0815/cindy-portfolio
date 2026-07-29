@@ -1,4 +1,4 @@
-const assetsGlob = import.meta.glob('../assets/**/*.{png,jpg,jpeg,gif,svg,mp4,mov}', { eager: true, query: '?url', import: 'default' });
+const assetsGlob = import.meta.glob('../assets/**/*.{png,jpg,jpeg,gif,svg,mp4,mov,webp}', { eager: true, query: '?url', import: 'default' });
 
 export const getAssetUrl = (path) => {
   if (!path) return '';
@@ -25,7 +25,7 @@ export const caseStudies = [
     projectCategory: "Internship Project",
     timeline: "3 Weeks",
     tools: ["Figma"],
-    coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
+    coverImage: getAssetUrl("case_studies/Hershey/hershey_header.webp"),
     sections: [
       {
         id: "overview",
@@ -79,10 +79,10 @@ export const caseStudies = [
             ],
 
 
-            image: getAssetUrl("case_studies/Hershey/1.png"),
+            image: getAssetUrl("case_studies/Hershey/1.webp"),
           },
           {
-            image: getAssetUrl("case_studies/Hershey/final_mobile.png"),
+            image: getAssetUrl("case_studies/Hershey/final_mobile.webp"),
           },
           {
             heading: "Key UX Decisions",
@@ -93,17 +93,17 @@ export const caseStudies = [
               {
                 title: "Header",
                 text: "A persistent header that displayed the running total and minimum-per-flavor constraints, giving users constant visibility into their progress.",
-                image: getAssetUrl("case_studies/Hershey/key1.png")
+                image: getAssetUrl("case_studies/Hershey/key1.webp")
               },
               {
                 title: "Mini Cart",
                 text: "A summary that updated in real time as users added or removed items, supporting an intuitive editing flow.",
-                image: getAssetUrl("case_studies/Hershey/key2.png")
+                image: getAssetUrl("case_studies/Hershey/key2.webp")
               },
               {
                 title: "Item Selector",
                 text: "A clear grid layout that let users easily adjust quantities for each flavor, enforcing the minimum-per-flavor rule through real‑time validation.",
-                image: getAssetUrl("case_studies/Hershey/key3.png")
+                image: getAssetUrl("case_studies/Hershey/key3.webp")
               }
             ]
           }
@@ -121,15 +121,15 @@ export const caseStudies = [
             ],
             images: [
               {
-                src: getAssetUrl("case_studies/Hershey/iteration1.png"),
+                src: getAssetUrl("case_studies/Hershey/iteration1.webp"),
                 description: "Round 1 — MVP Scoping"
               },
               {
-                src: getAssetUrl("case_studies/Hershey/iteration2.png"),
+                src: getAssetUrl("case_studies/Hershey/iteration2.webp"),
                 description: "Round 2 — Refined Layout"
               },
               {
-                src: getAssetUrl("case_studies/Hershey/iteration3.png"),
+                src: getAssetUrl("case_studies/Hershey/iteration3.webp"),
                 description: "Round 3 — Final Handoff"
               }
             ]
@@ -139,7 +139,7 @@ export const caseStudies = [
             paragraphs: [
               "Once the desktop design was finalized, I explored different approaches for the mobile layout, leading multiple iterations to refine the user flow.",
             ],
-            image: getAssetUrl("case_studies/Hershey/mobile.png")
+            image: getAssetUrl("case_studies/Hershey/mobile.webp")
           }
         ]
       },
@@ -172,7 +172,7 @@ export const caseStudies = [
     projectCategory: "Internship Project",
     timeline: "10 Weeks",
     tools: ["Figma"],
-    coverImage: getAssetUrl("case_studies/Cysana/conatix_header.png"),
+    coverImage: getAssetUrl("case_studies/Cysana/conatix_header.webp"),
     sections: [
       {
         id: "overview",
@@ -221,7 +221,7 @@ export const caseStudies = [
             paragraphs: [
               "The redesigned Cysana dashboard introduced core features that made threat detection intuitive and actionable:"
             ],
-            image: getAssetUrl("case_studies/Cysana/solution.png")
+            image: getAssetUrl("case_studies/Cysana/solution.webp")
           }
         ]
       },
@@ -234,7 +234,7 @@ export const caseStudies = [
             paragraphs: [
               "The distinct tabs are shown in blue, with their corresponding sections outlined below. After mapping out the pages, it became clear that much of the information was repetitive, and several pages could be consolidated. Additionally, there were opportunities to introduce new features to improve the user experience."
             ],
-            image: getAssetUrl("case_studies/Cysana/before.png")
+            image: getAssetUrl("case_studies/Cysana/before.webp")
 
           },
           {
@@ -242,7 +242,7 @@ export const caseStudies = [
             paragraphs: [
               "Sections moved are outlined in light blue, and newly added sections are in purple. The final page structure allowed for streamlined information and incorporate essential features, including a filtering system and notifications."
             ],
-            image: getAssetUrl("case_studies/Cysana/after.png")
+            image: getAssetUrl("case_studies/Cysana/after.webp")
 
           },
           {
@@ -262,8 +262,8 @@ export const caseStudies = [
               }
             ],
             beforeAfterSlider: {
-              beforeImage: getAssetUrl("case_studies/Cysana/main_before.png"),
-              afterImage: getAssetUrl("case_studies/Cysana/main_after.png"),
+              beforeImage: getAssetUrl("case_studies/Cysana/main_before.webp"),
+              afterImage: getAssetUrl("case_studies/Cysana/main_after.webp"),
               beforeLabel: "Before",
               afterLabel: "After"
             }
@@ -285,8 +285,8 @@ export const caseStudies = [
               }
             ],
             beforeAfterSlider: {
-              beforeImage: getAssetUrl("case_studies/Cysana/file_before.png"),
-              afterImage: getAssetUrl("case_studies/Cysana/file_after.png"),
+              beforeImage: getAssetUrl("case_studies/Cysana/file_before.webp"),
+              afterImage: getAssetUrl("case_studies/Cysana/file_after.webp"),
               beforeLabel: "Before",
               afterLabel: "After"
             }
@@ -308,7 +308,7 @@ export const caseStudies = [
                 text: "Created a scalable FAQ & Support page that addressed this gap, improved self-service, and allowed easy expansion as new information emerged."
               }
             ],
-            image: getAssetUrl("case_studies/Cysana/faq.png")
+            image: getAssetUrl("case_studies/Cysana/faq.webp")
 
 
           }
@@ -340,8 +340,8 @@ export const caseStudies = [
     projectCategory: "Personal Project",
     timeline: "12 Weeks",
     tools: ["Figma", "FigmaMake", "Miro"],
-    coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.png"),
-    headerImage: getAssetUrl("case_studies/Pennies/p_thumbnail2.png"),
+    coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.webp"),
+    headerImage: getAssetUrl("case_studies/Pennies/p_thumbnail2.webp"),
     sections: [
       {
         id: "overview",
@@ -358,7 +358,7 @@ export const caseStudies = [
             paragraphs: [
               "Most people open their first bank account between ages 13 and 17, a formative window where real-world financial habits begin to take shape. Yet teens in this stage often lack meaningful financial literacy, while parental oversight can easily slip into micro‑management — creating friction, confusion, and ultimately abandonment of traditional banking apps."
             ],
-            image: getAssetUrl("case_studies/Pennies/info1_1.png"),
+            image: getAssetUrl("case_studies/Pennies/info1_1.webp"),
             highlightBox: {
               text: "How might we help teens learn by doing while giving parents the peace of mind that their teens are supported, not left alone?"
             }
@@ -372,15 +372,15 @@ export const caseStudies = [
             stackedSpread: true,
             images: [
               {
-                src: getAssetUrl("case_studies/Pennies/solution1.png"),
+                src: getAssetUrl("case_studies/Pennies/solution1.webp"),
                 description: "1. Keep track of spendings"
               },
               {
-                src: getAssetUrl("case_studies/Pennies/solution2.png"),
+                src: getAssetUrl("case_studies/Pennies/solution2.webp"),
                 description: "2. Get personalized advice and tips"
               },
               {
-                src: getAssetUrl("case_studies/Pennies/solution3.png"),
+                src: getAssetUrl("case_studies/Pennies/solution3.webp"),
                 description: "3. Set tangible goals with guidance"
               }
             ]
@@ -398,7 +398,7 @@ export const caseStudies = [
             ],
             povGrid: [
               {
-                tag: getAssetUrl("case_studies/Pennies/parents_pov.png"),
+                tag: getAssetUrl("case_studies/Pennies/parents_pov.webp"),
                 problems: [
                   "1. Unsure how to teach financial skills effectively",
                   "2. Limited visibility into teen spending",
@@ -412,7 +412,7 @@ export const caseStudies = [
                 ]
               },
               {
-                tag: getAssetUrl("case_studies/Pennies/teen_pov.png"),
+                tag: getAssetUrl("case_studies/Pennies/teen_pov.webp"),
                 problems: [
                   "1. Lack of financial education in school",
                   "2. Inconsistent income which makes makes planning and saving difficult",
@@ -434,7 +434,7 @@ export const caseStudies = [
               "Next, I analyzed competitors in the market to identify gaps that had not yet been addressed."
             ],
             imagePovSplit: {
-              image: getAssetUrl("case_studies/Pennies/info2.png"),
+              image: getAssetUrl("case_studies/Pennies/info2.webp"),
               problemCard: {
                 title: "Market Gap:",
                 text: "Few offer personalized, real-time financial guidance that adapts to teens' actual spending behaviors"
@@ -452,14 +452,14 @@ export const caseStudies = [
             paragraphs: [
               "Before designing screens, I mapped the ideal journey: a teen making everyday purchases, receiving gentle guidance, and gradually gaining autonomy while parents stay informed through lightweight oversight."
             ],
-            image: getAssetUrl("case_studies/Pennies/info3.png")
+            image: getAssetUrl("case_studies/Pennies/info3.webp")
           },
           {
             heading: "Setting Up The Foundation: A Prepaid Model",
             paragraphs: [
               "To support this, I chose a prepaid card system as the foundation. Unlike a traditional debit or credit account, a prepaid model caps risk by design — teens can only spend what's been allocated, which gives parents peace of mind without requiring them to monitor every transaction. This structure became the base layer that Penni's guidance and insights could build on top of."
             ],
-            image: getAssetUrl("case_studies/Pennies/info4.png")
+            image: getAssetUrl("case_studies/Pennies/info4.webp")
           }
         ]
       },
@@ -473,11 +473,11 @@ export const caseStudies = [
               "My first concept focused on real‑time “out of budget” alerts. Teens users ignored them. They felt punitive, not supportive.",
               "This was a turning point. Instead of reacting to mistakes, the solution needed to guide teens users before the moment of purchase. This insight shifted the entire product toward proactive, goal‑driven learning.",
             ],
-            image: getAssetUrl("case_studies/Pennies/info5_1.png"),
+            image: getAssetUrl("case_studies/Pennies/info5_1.webp"),
 
           },
           {
-            image: getAssetUrl("case_studies/Pennies/info5_2.png")
+            image: getAssetUrl("case_studies/Pennies/info5_2.webp")
           },
           {
             heading: "2. Making Financial Insights Approachable",
@@ -485,7 +485,7 @@ export const caseStudies = [
               "After the first round of testing, I created a higher fidelity prototype and ran quick tests on existing features. Some major iterations includes adding a spending patterns graph for teens and a friendly system that flags overspending trends while offering guidance rather than warnings.",
 
             ],
-            image: getAssetUrl("case_studies/Pennies/info6.png"),
+            image: getAssetUrl("case_studies/Pennies/info6.webp"),
 
           },
           {
@@ -493,7 +493,7 @@ export const caseStudies = [
             paragraphs: [
               "Next, I introduced a character called Penni to make financial guidance feel more human, approachable, and engaging for teens. Instead of interacting with a generic AI chatbot, Penni offers a consistent personality and tone, helping users build trust and stay motivated. This shift transforms budgeting from something intimidating into a supportive experience, making financial learning feel less like a task and more like a conversation.",
             ],
-            image: getAssetUrl("case_studies/Pennies/info7.png"),
+            image: getAssetUrl("case_studies/Pennies/info7.webp"),
 
           },
           {
@@ -501,7 +501,7 @@ export const caseStudies = [
             paragraphs: [
               "Finally a major addition was a \"Customize\" feature, where teens can unlock fun accessories for Penni by completing tasks related to their account. This gamified approach encourages consistent engagement, turning financial management into a motivating and rewarding experience."
             ],
-            image: getAssetUrl("case_studies/Pennies/info9.png"),
+            image: getAssetUrl("case_studies/Pennies/info9.webp"),
 
           },
           {
@@ -509,7 +509,7 @@ export const caseStudies = [
             paragraphs: [
               "For the high fidelity mockup, I created a design system as guidelines for my final design with a clear branding and ensuring that all the components are consistent throughout."
             ],
-            image: getAssetUrl("case_studies/Pennies/info10.png"),
+            image: getAssetUrl("case_studies/Pennies/info10.webp"),
 
           }
         ]
@@ -523,14 +523,14 @@ export const caseStudies = [
             paragraphs: [
               "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
             ],
-            image: getAssetUrl("case_studies/Pennies/onboarding.png")
+            image: getAssetUrl("case_studies/Pennies/onboarding.webp")
           },
           {
             heading: "Home Page",
             paragraphs: [
               "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
             ],
-            image: getAssetUrl("case_studies/Pennies/homepage.png")
+            image: getAssetUrl("case_studies/Pennies/homepage.webp")
           },
           {
             heading: "Ask Penni",
@@ -560,7 +560,7 @@ export const caseStudies = [
             paragraphs: [
               "Budget tracking for teens, with parental spending controls."
             ],
-            image: getAssetUrl("case_studies/Pennies/budget.png")
+            image: getAssetUrl("case_studies/Pennies/budget.webp")
           }
         ]
       },
@@ -590,8 +590,8 @@ export const caseStudies = [
     projectCategory: "Personal Project",
     timeline: "14 Weeks",
     tools: ["Figma", "React", "Tailwind CSS", "Gemini", "Claude Code"],
-    coverImage: getAssetUrl("case_studies/Petal/header.png"),
-    headerImage: getAssetUrl("case_studies/Petal/header.png"),
+    coverImage: getAssetUrl("case_studies/Petal/header.webp"),
+    headerImage: getAssetUrl("case_studies/Petal/header.webp"),
     sections: [
       {
         id: "overview",
@@ -603,7 +603,7 @@ export const caseStudies = [
               "A Petal's Worth is a shared digital garden where people can pause, breathe, and make something simple together.",
               "For my senior capstone, I had complete freedom to build anything. Instead of creating another static prototype, I challenged myself to design, build, and ship a fully functional interactive product using Gemini and Claude Code."
             ],
-            image: getAssetUrl("case_studies/Petal/overview.png")
+            image: getAssetUrl("case_studies/Petal/overview.webp")
           },
           {
             heading: "The Problem",
@@ -706,7 +706,7 @@ export const caseStudies = [
         content: [
           {
             heading: "The User Journey",
-            image: getAssetUrl("case_studies/Petal/user_flow.png")
+            image: getAssetUrl("case_studies/Petal/user_flow.webp")
           },
           {
             heading: "01. Garden View Architecture",
@@ -715,7 +715,7 @@ export const caseStudies = [
               "Before: A rigid, fixed grid made the garden feel restrictive and capped visual capacity quickly as submissions grew.",
               "After: Pivoted to an organic, free-placement model to keep the space feeling open, dynamic, and limitless."
             ],
-            image: getAssetUrl("case_studies/Petal/iteration1.png")
+            image: getAssetUrl("case_studies/Petal/iteration1.webp")
           },
           {
             heading: "02. Capacity & Scaling Logic",
@@ -724,7 +724,7 @@ export const caseStudies = [
               "Before: Gardens had no capacity caps, risking severe visual clutter and performance drops as user submissions scaled.",
               "After: Introduced room capacity limits and automated archive storage to seamlessly spin up fresh gardens without overcrowding active spaces."
             ],
-            image: getAssetUrl("case_studies/Petal/iteration2.png")
+            image: getAssetUrl("case_studies/Petal/iteration2.webp")
           },
           {
             heading: "03. Session Management & Persistence",
@@ -733,7 +733,7 @@ export const caseStudies = [
               "Before: Stateless rooms allowed anyone to jump into spaces anonymously, but provided zero session continuity or memory for returning users.",
               "After (MVP): Built a lightweight password-protected account system to persist user nicknames and last-visited room sessions in a database, enabling instant re-entry while securing room access."
             ],
-            image: getAssetUrl("case_studies/Petal/iteration3.png")
+            image: getAssetUrl("case_studies/Petal/iteration3.webp")
           }
         ]
       },
@@ -789,7 +789,7 @@ export const caseStudies = [
               "<strong>AI as a creative partner</strong> — Gemini and Claude Code accelerated technical execution while keeping design intentional and user-centered.",
               "<strong>Simplicity builds connection</strong> — Users felt connected not because the system was complex, but because it was simple and expressive."
             ],
-            image: getAssetUrl("case_studies/Petal/showcase.jpg")
+            image: getAssetUrl("case_studies/Petal/showcase.webp")
           }
         ]
       }
@@ -805,7 +805,7 @@ export const caseStudies = [
     projectCategory: "Personal Project",
     timeline: "4 Weeks",
     tools: ["Figma", "Figjam"],
-    coverImage: getAssetUrl("case_studies/Expedia/header_img2.png"),
+    coverImage: getAssetUrl("case_studies/Expedia/header_img2.webp"),
     sections: [
       {
         id: "overview",
@@ -816,7 +816,7 @@ export const caseStudies = [
             paragraphs: [
               "Expedia helps millions of travelers book flights every year, but the comparison experience falls short. Without a clear, intuitive way to evaluate options, users often feel overwhelmed, lose track of their selections, and ultimately miss out on the best deals."
             ],
-            image: getAssetUrl("case_studies/Expedia/the_user.png")
+            image: getAssetUrl("case_studies/Expedia/the_user.webp")
           },
           {
             heading: "The Solution: Simplifying Flight Choices",
@@ -891,7 +891,7 @@ export const caseStudies = [
               },
               right: {
                 title: "Research methodologies:",
-                image: getAssetUrl("case_studies/Expedia/research.png")
+                image: getAssetUrl("case_studies/Expedia/research.webp")
               }
             }
           },
@@ -935,14 +935,14 @@ export const caseStudies = [
             paragraphs: [
               "Before going into brainstorming solutions, I created a user persona to understand our target user based on insights from the initial user research. Meet Molly, a college student who is interested in quickly finding budget friendly flights that matches with her travel plans."
             ],
-            image: getAssetUrl("case_studies/Expedia/persona.png")
+            image: getAssetUrl("case_studies/Expedia/persona.webp")
           },
           {
             heading: "The Current User Journey",
             paragraphs: [
               "In addition to a user persona, I mapped out what Molly potentially says, thinks, feels, and does during the flight search process. The key here to is identify the low points and pain points along the way."
             ],
-            image: getAssetUrl("case_studies/Expedia/journeymap.png")
+            image: getAssetUrl("case_studies/Expedia/journeymap.webp")
           }
         ]
       },
@@ -956,7 +956,7 @@ export const caseStudies = [
               "From looking at different flight booking platforms, I learned that there's an increasing emphasis on seamless flight comparison, price tracking, and user-friendly interfaces without overwhelming upsells or redirection.",
               "Therefore, top platforms like Google Flights, that can balance affordable, competitive pricing with organized, transparent flight details are well-positioned to attract and retain users."
             ],
-            image: getAssetUrl("case_studies/Expedia/IA.png")
+            image: getAssetUrl("case_studies/Expedia/IA.webp")
           },
           {
             heading: "The Best Option",
@@ -964,7 +964,7 @@ export const caseStudies = [
               "With the insights in hand, I began brainstorming solutions to improve the flight comparison process on Expedia. The key challenge was to create a feature that allowed users to evaulate flights options seamlessly without disrupting their workflow."
 
             ],
-            image: getAssetUrl("case_studies/Expedia/chart.png")
+            image: getAssetUrl("case_studies/Expedia/chart.webp")
           },
           {
             heading: "Envisioning The New User Flow",
@@ -972,7 +972,7 @@ export const caseStudies = [
               "Then I reimagined the user flow with the new feature and how it would help minimalize the frustration of going back to the beginning of the search process."
 
             ],
-            image: getAssetUrl("case_studies/Expedia/full_userflow.png")
+            image: getAssetUrl("case_studies/Expedia/full_userflow.webp")
           }
         ]
       },
@@ -985,7 +985,7 @@ export const caseStudies = [
             paragraphs: [
               "Before moving on to digital wireframes, I quickly sketched out some low-fidelity paper wireframes that showcased how the “Pin It” feature would integrate into the flight search experience. This way I can get quickly get ideas out receive some initial feedback before building the design on Figma."
             ],
-            image: getAssetUrl("case_studies/Expedia/testing2.png")
+            image: getAssetUrl("case_studies/Expedia/testing2.webp")
           },
           {
             heading: "Transitioning from Mid-fi to Hi-fi",
@@ -993,7 +993,7 @@ export const caseStudies = [
 
             ],
 
-            image: getAssetUrl("case_studies/Expedia/final.png")
+            image: getAssetUrl("case_studies/Expedia/final.webp")
           }
         ]
       },
@@ -1030,7 +1030,7 @@ export const caseStudies = [
     projectCategory: "Personal Project",
     timeline: "3 Weeks",
     tools: ["Figma", "Miro", "Notion"],
-    coverImage: getAssetUrl("case_studies/Tiktok/header2.png"),
+    coverImage: getAssetUrl("case_studies/Tiktok/header2.webp"),
     sections: [
       {
         id: "overview",
@@ -1042,7 +1042,7 @@ export const caseStudies = [
               "Although TikTok Shop has seen success with deals and affordable pricing, only 29% of weekly users have made a purchase. Meanwhile, 26% are interested but have not made a purchase, revealing a crucial gap between interest and action.",
               "This hesitation presents both a trust barrier and a missed opportunity for TikTok to convert engaged users into active buyers."
             ],
-            image: getAssetUrl("case_studies/Tiktok/info1.png")
+            image: getAssetUrl("case_studies/Tiktok/info1.webp")
           },
           {
             heading: "The Solution",
@@ -1104,7 +1104,7 @@ export const caseStudies = [
             paragraphs: [
               "Then, based on interview data and behavioral trends, we identified two key personas:"
             ],
-            image: getAssetUrl("case_studies/Tiktok/persona.png")
+            image: getAssetUrl("case_studies/Tiktok/persona.webp")
           },
           {
             heading: "💡 Key Insight: Trust and loyalty are the biggest drivers of conversion",
@@ -1129,31 +1129,31 @@ export const caseStudies = [
             paragraphs: [
               "To bring our concept to life, we mapped out a user flow that demonstrates how a reward system could be seamlessly integrated into the TikTok Shop experience. The flow highlights how the system would be:",
             ],
-            image: getAssetUrl("case_studies/Tiktok/userflow.png")
+            image: getAssetUrl("case_studies/Tiktok/userflow.webp")
           },
           {
             heading: "Low Fidelity Wireframes",
             paragraphs: [
               "To quickly explore and communicate our ideas, we created a set of low-fidelity wireframes in Figma. Key elements include: onboarding moments, incentive touchpoints, and loyalty dashboard."
             ],
-            image: getAssetUrl("case_studies/Tiktok/wireframe1.png")
+            image: getAssetUrl("case_studies/Tiktok/wireframe1.webp")
           },
           {
             heading: "Working Prototype",
             paragraphs: [
               "This interactive version allowed users to experience key features such as earning points, tracking progress, and redeeming rewards."
             ],
-            image: getAssetUrl("case_studies/Tiktok/wireframe2.png")
+            image: getAssetUrl("case_studies/Tiktok/wireframe2.webp")
           },
           {
             heading: "Testing Results and Iterations",
             paragraphs: [
               "Here are some key pivots/changes we made according to the user test:"
             ],
-            image: getAssetUrl("case_studies/Tiktok/feedback1.png")
+            image: getAssetUrl("case_studies/Tiktok/feedback1.webp")
           },
           {
-            image: getAssetUrl("case_studies/Tiktok/feedback2.png")
+            image: getAssetUrl("case_studies/Tiktok/feedback2.webp")
           }
         ]
       },
