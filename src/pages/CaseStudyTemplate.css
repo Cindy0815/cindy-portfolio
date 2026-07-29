@@ -2,6 +2,10 @@
   padding-bottom: 6rem;
 }
 
+.case-study-template video {
+  pointer-events: none;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -71,19 +75,27 @@
 
 .cs-cover {
   width: 100%;
-  margin-bottom: 6rem;
+  margin: 0 auto 0.5rem auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  will-change: transform, border-radius;
 }
 
 .cs-cover img {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
+  border-radius: inherit;
 }
 
 .cs-body.container {
   max-width: 950px;
   margin: 0 auto;
+}
+
+.cs-body p {
+  color: var(--text-secondary);
 }
 
 /* Progress Bar Navigation */
@@ -175,6 +187,7 @@
 .cs-dynamic-section {
   margin-bottom: 8rem;
   scroll-margin-top: 140px;
+
 }
 
 .section-subtitle {
@@ -190,7 +203,7 @@
   font-size: 1.8rem;
   margin-bottom: 1.25rem;
   color: var(--text-primary);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
 }
 
@@ -211,7 +224,7 @@
 .section-paragraphs p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .section-image-wrapper {
@@ -321,7 +334,7 @@
 .research-demographic p {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 .research-demographic {
@@ -1385,4 +1398,61 @@
 
 .jump-to-features-btn:hover svg {
   transform: translateY(3px);
+}
+
+/* Stacked to Spread Solution Cards */
+.stacked-spread-wrapper {
+  margin: 3rem 0;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+}
+
+.stacked-spread-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+  width: 100%;
+}
+
+.stacked-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  will-change: transform;
+}
+
+.stacked-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stacked-card img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.2);
+}
+
+.stacked-desc {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .stacked-spread-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stacked-card {
+    transform: none !important;
+  }
 }

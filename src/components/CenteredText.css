@@ -5,6 +5,7 @@
   width: 100%;
 }
 
+.cs-body .centered-text-container p,
 .centered-text-container p {
   font-size: 1.45rem; /* Bigger font size as requested */
   line-height: 1.6;

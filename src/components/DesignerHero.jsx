@@ -260,7 +260,9 @@ const DesignerHero = () => {
   const positions = {
     purple: isMobileSize ? { cx: 25, cy: 50 } : { cx: 15, cy: 54 },
     green: isMobileSize ? { cx: 50, cy: 22 } : { cx: 50, cy: 20 }, // Centered to the header text
-    pink: isMobileSize ? { cx: 70, cy: 55 } : { cx: 80, cy: 60 }
+    pink: isMobileSize ? { cx: 70, cy: 55 } : { cx: 80, cy: 60 },
+    smallGreen: isMobileSize ? { cx: 20, cy: 28 } : { cx: 28, cy: 30 },
+    smallPink: isMobileSize ? { cx: 80, cy: 30 } : { cx: 75, cy: 32 }
   };
 
   // Helper to calculate Top-Left and Bottom-Right for the cursor
@@ -405,6 +407,46 @@ const DesignerHero = () => {
             >
               <div className="floating-shape" style={{ '--float-y': '-18px', '--float-scale': 1.06, '--float-duration': '5s' }}>
                 <img src={shapePink} className={imageSizeClass} alt="Pink shape" />
+              </div>
+            </motion.div>
+          )}
+
+          {step >= 3 && (
+            <motion.div
+              className="shape-container interactive-shape"
+              style={{ left: `${positions.smallGreen.cx}%`, top: `${positions.smallGreen.cy}%` }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", bounce: 0.5 }}
+              drag={step >= 13}
+              dragConstraints={constraintsRef}
+              dragElastic={0.2}
+              whileDrag={{ scale: 1.1, zIndex: 50 }}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="floating-shape" style={{ '--float-y': '-10px', '--float-scale': 1.04, '--float-duration': '3.8s' }}>
+                <img src={shapeGreen} className="scaled-shape-img-small" alt="Small green shape" />
+              </div>
+            </motion.div>
+          )}
+
+          {step >= 7 && (
+            <motion.div
+              className="shape-container interactive-shape"
+              style={{ left: `${positions.smallPink.cx}%`, top: `${positions.smallPink.cy}%` }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ type: "spring", bounce: 0.5 }}
+              drag={step >= 13}
+              dragConstraints={constraintsRef}
+              dragElastic={0.2}
+              whileDrag={{ scale: 1.1, zIndex: 50 }}
+              onPointerDown={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="floating-shape" style={{ '--float-y': '-14px', '--float-scale': 1.05, '--float-duration': '4.8s' }}>
+                <img src={shapePink} className="scaled-shape-img-small" alt="Small pink shape" />
               </div>
             </motion.div>
           )}

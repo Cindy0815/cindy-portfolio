@@ -2,25 +2,17 @@ import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motio
 import { useState, useEffect } from 'react';
 import { caseStudies, playWorks } from '../data/portfolioData';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import DesignerHero from '../components/DesignerHero';
 import './Home.css';
 
 const Home = () => {
   const [cursorText, setCursorText] = useState("");
-  const [filter, setFilter] = useState("all");
   const [activeWork, setActiveWork] = useState(null);
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
   const cursorX = useSpring(mouseX, { stiffness: 400, damping: 30 });
   const cursorY = useSpring(mouseY, { stiffness: 400, damping: 30 });
-
-  const filteredStudies = caseStudies.filter(study => {
-    if (filter === "all") return true;
-    if (filter === "personal") return study.projectCategory === "Personal Project";
-    if (filter === "internship") return study.projectCategory === "Internship Project";
-    return true;
-  });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -76,30 +68,9 @@ const Home = () => {
 
           </div>
 
-          <div className="filter-tabs">
-            <button
-              className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
-              onClick={() => setFilter('all')}
-            >
-              All Works
-            </button>
-            <button
-              className={`filter-btn ${filter === 'internship' ? 'active' : ''}`}
-              onClick={() => setFilter('internship')}
-            >
-              Professional Projects
-            </button>
-            <button
-              className={`filter-btn ${filter === 'personal' ? 'active' : ''}`}
-              onClick={() => setFilter('personal')}
-            >
-              Personal Projects
-            </button>
-          </div>
-
           <motion.div className="work-grid" layout>
             <AnimatePresence mode="popLayout">
-              {filteredStudies.map((study) => (
+              {caseStudies.map((study) => (
                 <motion.div
                   key={study.id}
                   layout
@@ -146,9 +117,6 @@ const Home = () => {
                       <div className="card-content">
                         <h3>{study.title}</h3>
                         <p>{study.shortDescription}</p>
-                        <div className="card-action">
-                          <span className="view-project-btn">View Project <ArrowRight size={16} /></span>
-                        </div>
                       </div>
                     </Link>
                   )}

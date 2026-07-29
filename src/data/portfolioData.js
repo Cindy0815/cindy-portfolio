@@ -16,7 +16,7 @@ export const caseStudies = [
     id: "pennies",
     title: "Pennies: AI-Powered Budget Management",
     shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
-    tags: ["Fintech", "Mobile App", "AI Integration"],
+    tags: ["Personal Project", "2026"],
     role: "UX/UI Designer (End-to-End)",
     projectType: "Mobile Application",
     projectCategory: "Personal Project",
@@ -51,6 +51,7 @@ export const caseStudies = [
             paragraphs: [
               "Pennies turns everyday spending into learning moments. Penni, an in-app assistant, gives teens personalized insights and goal-based nudges, while parents retain configurable oversight — replacing surveillance with guided independence."
             ],
+            stackedSpread: true,
             images: [
               {
                 src: getAssetUrl("case_studies/Pennies/solution1.png"),
@@ -255,12 +256,6 @@ export const caseStudies = [
               "1. Designing for Multi-User Dynamics: This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
               "2. AI as a Feature vs. AI as a Solution: I learned that AI shouldn't just automate tasks; it should humanize them. Integrating AI contextually made budgeting feel like a supportive partnership rather than a digital chore."
             ]
-          },
-          {
-            heading: "Future Steps",
-            paragraphs: [
-              "If I had another 3 months on this project, I would dive deeper into the AI interaction, designing the conversational edge cases, error states, and strict safety guardrails required for an AI interacting with minors. For example, this may include designing 'system fallback' interfaces for when the AI cannot confidently answer a complex financial question, routing the user to pre-made or pre-approved educational resources instead."
-            ]
           }
 
         ]
@@ -271,7 +266,7 @@ export const caseStudies = [
     id: "petals-worth",
     title: "A Petal's Worth",
     shortDescription: "A digital garden for shared reflection, where expressive forms grow into a living, interactive landscape.",
-    tags: ["Product Design", "Creative Technologist", "Full‑Stack Development"],
+    tags: ["Senior Thesis", "2026"],
     role: "Design Engineer (UX/UI, Front-End Development)",
     projectType: "Creative Development & Design",
     projectCategory: "Personal Project",
@@ -486,7 +481,7 @@ export const caseStudies = [
     id: "Build-A-Box",
     title: "Hershey's: Build A Box",
     shortDescription: "Designing a personalized and simple shopping experience.",
-    tags: ["Website", "E-Commerce", "UX/UI Design Intern"],
+    tags: ["Dentsu", "2025"],
     role: [
       "My Role: UX/UI Design Intern",
       "Collaborators: 1 Frontend Engineer, 1 PM, 1 Design Lead"
@@ -619,7 +614,7 @@ export const caseStudies = [
     id: "expedia",
     title: "Expedia: Browsing and Booking Experience",
     shortDescription: "Improving discoverability and helping users make faster, informed flight booking decisions.",
-    tags: ["Search Experience", "Webpage", "UX/UI Redesign"],
+    tags: ["Personal Project", "2025"],
     role: "UX/UI Designer (End-to-End)",
     projectType: "Web UX/UI Redesign",
     projectCategory: "Personal Project",
@@ -841,7 +836,7 @@ export const caseStudies = [
     id: "tiktok-shop",
     title: "Tiktok Shop: Rewards and Loyalty",
     shortDescription: "End-to-end design of a social commerce rewards program to boost customer loyalty and streamline the shopping experience.",
-    tags: ["Mobile App", "E-Commerce", "UX/UI"],
+    tags: ["Personal Project", "2024"],
     role: [
       "My Role: UX/UI Designer",
       "Collaborator: Cher W. (UX/UI Designer)"
@@ -1030,7 +1025,7 @@ export const caseStudies = [
     id: "cysana",
     title: "Cysana",
     shortDescription: "Redesigning a malware detection dashboard to allow admins to quickly access essential security data.",
-    tags: ["Enterprise SaaS", "Dashboard Design", "UX/UI Design Intern"],
+    tags: ["Conatix", "2024"],
     role: [
       "My Role: Product Design Intern (UX/UI)",
       "Collaborators: 2 Full Stack Engineers, 1 Data Scientist, 1 PM"

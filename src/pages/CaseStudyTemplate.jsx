@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useInView, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, ChevronLeft, ChevronRight, ArrowDown } from 'lucide-react';
 import { caseStudies } from '../data/portfolioData';
 import { useState, useEffect, Fragment, useRef } from 'react';
@@ -144,11 +144,82 @@ const CardSlider = ({ cards }) => {
   );
 };
 
+const StackedSpreadImages = ({ images, onImageClick }) => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 85%", "center 55%"],
+  });
+
+  const x0 = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+  const rotate0 = useTransform(scrollYProgress, [0, 1], [-8, 0]);
+  const scale0 = useTransform(scrollYProgress, [0, 1], [0.94, 1]);
+
+  const x1 = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
+  const rotate1 = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const scale1 = useTransform(scrollYProgress, [0, 1], [1, 1]);
+
+  const x2 = useTransform(scrollYProgress, [0, 1], ["-100%", "0%"]);
+  const rotate2 = useTransform(scrollYProgress, [0, 1], [8, 0]);
+  const scale2 = useTransform(scrollYProgress, [0, 1], [0.94, 1]);
+
+  const captionOpacity = useTransform(scrollYProgress, [0.3, 1], [0, 1]);
+  const captionY = useTransform(scrollYProgress, [0.3, 1], [15, 0]);
+
+  const transforms = [
+    { x: x0, rotate: rotate0, scale: scale0, zIndex: 1 },
+    { x: x1, rotate: rotate1, scale: scale1, zIndex: 3 },
+    { x: x2, rotate: rotate2, scale: scale2, zIndex: 2 },
+  ];
+
+  return (
+    <div ref={containerRef} className="stacked-spread-wrapper">
+      <div className="stacked-spread-grid">
+        {images.map((imgObj, i) => {
+          const t = transforms[i] || transforms[0];
+          return (
+            <motion.div
+              key={i}
+              className={`stacked-card card-index-${i}`}
+              style={{
+                x: t.x,
+                rotate: t.rotate,
+                scale: t.scale,
+                zIndex: t.zIndex,
+              }}
+            >
+              <img
+                src={imgObj.src}
+                alt={imgObj.description || `solution ${i + 1}`}
+                className="cs-zoomable"
+                onClick={() => onImageClick({ src: imgObj.src, alt: imgObj.description, caption: imgObj.description })}
+              />
+              {imgObj.description && (
+                <motion.p
+                  className="row-image-desc stacked-desc"
+                  style={{ opacity: captionOpacity, y: captionY }}
+                >
+                  {imgObj.description}
+                </motion.p>
+              )}
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 const CaseStudyTemplate = () => {
   const { id } = useParams();
   const study = caseStudies.find(s => s.id === id);
   const [activeSection, setActiveSection] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+
+  const { scrollY } = useScroll();
+  const headerScale = useTransform(scrollY, [0, 450], [1, 0.78]);
+  const headerBorderRadius = useTransform(scrollY, [0, 450], ["8px", "24px"]);
+  const headerOpacity = useTransform(scrollY, [0, 450], [1, 0.92]);
 
   const finalFeaturesSection = study?.sections?.find(
     s => s.id === 'features' || s.id === 'final-deliverable' || s.subtitle?.toLowerCase().includes('final')
@@ -300,15 +371,19 @@ const CaseStudyTemplate = () => {
       {/* Hero Cover Image */}
       <motion.div
         className="cs-cover"
-        initial={{ scale: 0.95, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        style={{
+          scale: headerScale,
+          borderRadius: headerBorderRadius,
+          opacity: headerOpacity,
+          transformOrigin: 'center top',
+        }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4, duration: 0.8 }}
       >
         <img
           src={study.headerImage || study.coverImage}
           alt={`${study.title} cover`}
-          className="cs-zoomable"
-          onClick={() => setPreviewImage({ src: study.headerImage || study.coverImage, alt: study.title })}
         />
       </motion.div>
 
@@ -377,7 +452,6 @@ const CaseStudyTemplate = () => {
                         autoPlay
                         loop
                         muted
-                        controls
                         playsInline
                       />
                     </div>
@@ -460,19 +534,26 @@ const CaseStudyTemplate = () => {
                   )}
 
                   {block.images && (
-                    <div className="section-images-row">
-                      {block.images.map((imgObj, i) => (
-                        <div key={i} className="row-image-container">
-                          {imgObj.description && <p className="row-image-desc">{imgObj.description}</p>}
-                          <img
-                            src={imgObj.src}
-                            alt={imgObj.description || `image ${i}`}
-                            className="row-image cs-zoomable"
-                            onClick={() => setPreviewImage({ src: imgObj.src, alt: imgObj.description, caption: imgObj.description })}
-                          />
-                        </div>
-                      ))}
-                    </div>
+                    block.stackedSpread ? (
+                      <StackedSpreadImages
+                        images={block.images}
+                        onImageClick={setPreviewImage}
+                      />
+                    ) : (
+                      <div className="section-images-row">
+                        {block.images.map((imgObj, i) => (
+                          <div key={i} className="row-image-container">
+                            {imgObj.description && <p className="row-image-desc">{imgObj.description}</p>}
+                            <img
+                              src={imgObj.src}
+                              alt={imgObj.description || `image ${i}`}
+                              className="row-image cs-zoomable"
+                              onClick={() => setPreviewImage({ src: imgObj.src, alt: imgObj.description, caption: imgObj.description })}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )
                   )}
 
                   {block.grid && (
