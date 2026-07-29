@@ -95,8 +95,8 @@ const Home = () => {
                         )}
                       </div>
                       <div className="card-content">
-                        <h3>{study.title}</h3>
-                        <p>{study.shortDescription}</p>
+                        <h3>{study.shortDescription}</h3>
+                        <p>{study.title}</p>
                         <div className="card-action">
                           <span className="view-project-btn coming-soon-label">Coming Soon</span>
                         </div>
@@ -115,8 +115,8 @@ const Home = () => {
                         )}
                       </div>
                       <div className="card-content">
-                        <h3>{study.title}</h3>
-                        <p>{study.shortDescription}</p>
+                        <h3>{study.shortDescription}</h3>
+                        <p>{study.title}</p>
                       </div>
                     </Link>
                   )}

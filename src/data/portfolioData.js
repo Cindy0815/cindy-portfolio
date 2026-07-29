@@ -14,8 +14,8 @@ export const getAssetUrl = (path) => {
 export const caseStudies = [
   {
     id: "pennies",
-    title: "Pennies: AI-Powered Budget Management",
-    shortDescription: "A dual interface financial literacy app for teens and parents powered by contextual AI and gamified learning.",
+    title: "Pennies",
+    shortDescription: "A Banking App for Parents & Teens",
     tags: ["Personal Project", "2026"],
     role: "UX/UI Designer (End-to-End)",
     projectType: "Mobile Application",
@@ -265,7 +265,7 @@ export const caseStudies = [
   {
     id: "petals-worth",
     title: "A Petal's Worth",
-    shortDescription: "A digital garden for shared reflection, where expressive forms grow into a living, interactive landscape.",
+    shortDescription: "Building a collaborative digital garden",
     tags: ["Senior Thesis", "2026"],
     role: "Design Engineer (UX/UI, Front-End Development)",
     projectType: "Creative Development & Design",
@@ -480,7 +480,7 @@ export const caseStudies = [
   {
     id: "Build-A-Box",
     title: "Hershey's: Build A Box",
-    shortDescription: "Designing a personalized and simple shopping experience.",
+    shortDescription: "Designing for E-Commerce",
     tags: ["Dentsu", "2025"],
     role: [
       "My Role: UX/UI Design Intern",
@@ -612,8 +612,8 @@ export const caseStudies = [
   },
   {
     id: "expedia",
-    title: "Expedia: Browsing and Booking Experience",
-    shortDescription: "Improving discoverability and helping users make faster, informed flight booking decisions.",
+    title: "Expedia",
+    shortDescription: "Reimagining a flight booking experience",
     tags: ["Personal Project", "2025"],
     role: "UX/UI Designer (End-to-End)",
     projectType: "Web UX/UI Redesign",
@@ -834,8 +834,8 @@ export const caseStudies = [
   },
   {
     id: "tiktok-shop",
-    title: "Tiktok Shop: Rewards and Loyalty",
-    shortDescription: "End-to-end design of a social commerce rewards program to boost customer loyalty and streamline the shopping experience.",
+    title: "Tiktok Shop",
+    shortDescription: "Designing for customer loyalty",
     tags: ["Personal Project", "2024"],
     role: [
       "My Role: UX/UI Designer",
@@ -1024,7 +1024,7 @@ export const caseStudies = [
   {
     id: "cysana",
     title: "Cysana",
-    shortDescription: "Redesigning a malware detection dashboard to allow admins to quickly access essential security data.",
+    shortDescription: "Redesigning a malware detection dashboard",
     tags: ["Conatix", "2024"],
     role: [
       "My Role: Product Design Intern (UX/UI)",
