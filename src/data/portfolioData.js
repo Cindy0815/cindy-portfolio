@@ -13,6 +13,324 @@ export const getAssetUrl = (path) => {
 
 export const caseStudies = [
   {
+    id: "Build-A-Box",
+    title: "Hershey's: Build A Box",
+    shortDescription: "Designing for E-Commerce",
+    tags: ["Dentsu Internship", "2025"],
+    role: [
+      "My Role: UX/UI Design Intern",
+      "Collaborators: 1 Frontend Engineer, 1 PM, 1 Design Lead"
+    ],
+    projectType: "E-Commerce Web Design",
+    projectCategory: "Internship Project",
+    timeline: "3 Weeks",
+    tools: ["Figma"],
+    coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Project Overview",
+        content: [
+          {
+            heading: "Designing a Customizable Shopping Experience",
+            paragraphs: [
+              "During my internship at Dentsu, I worked on a page for Hershey’s e-commerce site that let customers build their own assortment of Skinny Packs for a Back‑to‑School campaign. My role focused on shaping an intuitive customization flow that felt familiar within the existing site ecosystem while introducing new interaction patterns that supported personalization."
+            ]
+          },
+          {
+            heading: "My Role & Contributions: Leading UI While Supporting UX Strategy",
+            paragraphs: [
+              "I led the UI design and contributed to UX strategy across the page’s layout, interaction patterns, and decision logic. My work included creating high‑fidelity Figma mockups aligned with brand guidelines and collaborating closely with the client team to refine the experience."
+            ],
+            metrics: [
+              {
+                title: "UI design",
+                text: "High‑fidelity mockups, component documentation, visual hierarchy"
+              },
+              {
+                title: "UX strategy",
+                text: "Flow mapping, decision logic, interaction patterns"
+              },
+              {
+                title: "Aligning with cilents",
+                text: "Rapid feedback cycles with client stakeholders"
+              }
+            ]
+          },
+          {
+            heading: "Client Request: A Fast, Flexible Customization Page",
+            paragraphs: [
+              "The  Hershey's team needed a dedicated page that allowed customers to build a 24‑item pack with specific rules: a minimum of four bags per flavor, real‑time editing, and a clear path to checkout. The project had a tight three‑week turnaround, requiring a design that balanced speed, feasibility, and brand consistency."
+            ],
+          },
+          { centeredText: "🔒 Due to NDA I can only show a highlevel overview of my work" },
+
+        ]
+      },
+
+      {
+        id: "final-deliverable",
+        subtitle: "02 / Final Deliverable",
+        content: [
+          {
+            heading: "Final Deliverable",
+            paragraphs: [
+              "The final design launched on Hershey’s online store from August 2025 to May 2026. The page introduced three core features that made the customization process intuitive and error‑proof:"
+            ],
+
+
+            image: getAssetUrl("case_studies/Hershey/1.png"),
+          },
+          {
+            image: getAssetUrl("case_studies/Hershey/final_mobile.png"),
+          },
+          {
+            heading: "Key UX Decisions",
+            paragraphs: [
+              "I designed three main components to address the client’s requirements:"
+            ],
+            insightCards: [
+              {
+                title: "Header",
+                text: "A persistent header that displayed the running total and minimum-per-flavor constraints, giving users constant visibility into their progress.",
+                image: getAssetUrl("case_studies/Hershey/key1.png")
+              },
+              {
+                title: "Mini Cart",
+                text: "A summary that updated in real time as users added or removed items, supporting an intuitive editing flow.",
+                image: getAssetUrl("case_studies/Hershey/key2.png")
+              },
+              {
+                title: "Item Selector",
+                text: "A clear grid layout that let users easily adjust quantities for each flavor, enforcing the minimum-per-flavor rule through real‑time validation.",
+                image: getAssetUrl("case_studies/Hershey/key3.png")
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "03 / The Process",
+        content: [
+          {
+            heading: "Balancing Needs, Constraints, and Speed",
+            paragraphs: [
+              "With only three weeks to deliver a final design, I began with an MVP approach that met essential client requirements while staying within developer constraints. I reused existing components where possible and introduced new ones only when they meaningfully improved clarity or usability.",
+              "I moved through three rounds of iteration, presenting directly to the client team each time. These sessions helped validate assumptions, refine layout decisions, and ensure feasibility before handing the design off to development."
+            ],
+            images: [
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration1.png"),
+                description: "Round 1 — MVP Scoping"
+              },
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration2.png"),
+                description: "Round 2 — Refined Layout"
+              },
+              {
+                src: getAssetUrl("case_studies/Hershey/iteration3.png"),
+                description: "Round 3 — Final Handoff"
+              }
+            ]
+          },
+          {
+            heading: "Translating Features to Mobile",
+            paragraphs: [
+              "Once the desktop design was finalized, I explored different approaches for the mobile layout, leading multiple iterations to refine the user flow.",
+            ],
+            image: getAssetUrl("case_studies/Hershey/mobile.png")
+          }
+        ]
+      },
+      {
+        id: "takeaways",
+        subtitle: "04 / Key Takeaways",
+        content: [
+          {
+            heading: "What This Project Taught Me",
+            bullets: [
+              "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize tasks. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
+              "<strong>Embracing Feedback</strong> — Balancing input from both the client and developers pushed me to refine how I evaluate feedback. I learned to identify what improves usability versus what introduces unnecessary complexity.",
+              "<strong>Collaborating Across Teams</strong> — Clear communication became essential. Early misalignment caused rework, but once I established a shared vocabulary with developers and the client, the process became smoother and more efficient."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "cysana",
+    title: "Cysana",
+    shortDescription: "Redesigning a Malware Detection Dashboard",
+    tags: ["Conatix", "2024"],
+    role: [
+      "My Role: Product Design Intern (UX/UI)",
+      "Collaborators: 2 Full Stack Engineers, 1 Data Scientist, 1 PM"
+    ],
+    projectType: "Enterprise SaaS Dashboard",
+    projectCategory: "Internship Project",
+    timeline: "10 Weeks",
+    tools: ["Figma"],
+    coverImage: getAssetUrl("case_studies/Cysana/conatix_header.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Project Overview",
+        content: [
+          {
+            heading: "Redesigning Malware Detection & Threat Monitoring",
+            paragraphs: [
+              "During my internship at Conatix, I worked on Cysana — an enterprise malware detection dashboard designed for security administrators. My role focused on shaping an intuitive monitoring experience, streamlining data visualizations, and establishing clear workflows for real-time threat response."
+            ]
+          },
+          {
+            heading: "My Role & Contributions: Leading UI & Information Architecture",
+            paragraphs: [
+              "I led the dashboard redesign across layout, data visualization, and information architecture. My work included creating high-fidelity Figma mockups, establishing color severity guidelines, and collaborating with backend engineers to ensure data accuracy."
+            ],
+            metrics: [
+              {
+                title: "Simplified the Client-Facing UI",
+                text: "Cut information overload by relocating granular data to the admin dashboard and restructuring the IA — giving client users a cleaner, faster view of what matters most."
+              },
+              {
+                title: "Improved Time-to-Decision",
+                text: "Surfaced system health, recent detections, and critical stats in a single glance, reducing the steps needed to assess and respond to threats.",
+              },
+              {
+                title: "Introduced Features That Moved Satisfaction",
+                text: "Created filters, protection statuses, and alerting — driving a 50%+ increase in user satisfaction scores in usability surveys."
+              }
+            ]
+          },
+          {
+            heading: "The Problem",
+            paragraphs: [
+              "Security admins were overwhelmed by dense data logs and fragmented views. The project required designing a unified dashboard that balanced data density, fast decision-making, and visual clarity under tight engineering constraints."
+            ]
+          }
+        ]
+      },
+      {
+        id: "final-deliverable",
+        subtitle: "02 / Final Deliverable",
+        content: [
+          {
+            heading: "The Solution",
+            paragraphs: [
+              "The redesigned Cysana dashboard introduced core features that made threat detection intuitive and actionable:"
+            ],
+            image: getAssetUrl("case_studies/Cysana/solution.png")
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "03 / The Process",
+        content: [
+          {
+            heading: "Restructuring Information Architecture: Existing vs. New State",
+            paragraphs: [
+              "The distinct tabs are shown in blue, with their corresponding sections outlined below. After mapping out the pages, it became clear that much of the information was repetitive, and several pages could be consolidated. Additionally, there were opportunities to introduce new features to improve the user experience."
+            ],
+            image: getAssetUrl("case_studies/Cysana/before.png")
+
+          },
+          {
+            heading: "New State",
+            paragraphs: [
+              "Sections moved are outlined in light blue, and newly added sections are in purple. The final page structure allowed for streamlined information and incorporate essential features, including a filtering system and notifications."
+            ],
+            image: getAssetUrl("case_studies/Cysana/after.png")
+
+          },
+          {
+            heading: "1. Making Critical Files Impossible to Miss",
+            insightCards: [
+              {
+                title: "Pain Point",
+                text: "Lack of visual indicators made it hard to quickly scan files."
+              },
+              {
+                title: "Research & Insights",
+                text: "Users wanted to be immediately alerted to flagged files and status changes."
+              },
+              {
+                title: "Outcome",
+                text: "Introduced a color-coded alert system and a dedicated section for critical files, enabling faster detection and response."
+              }
+            ],
+            beforeAfterSlider: {
+              beforeImage: getAssetUrl("case_studies/Cysana/main_before.png"),
+              afterImage: getAssetUrl("case_studies/Cysana/main_after.png"),
+              beforeLabel: "Before",
+              afterLabel: "After"
+            }
+          },
+          {
+            heading: "2. Cutting the Clicks: A Unified File Review Experience",
+            insightCards: [
+              {
+                title: "Pain Point",
+                text: "Users had to jump between multiple pages to review files, slowing down their workflow."
+              },
+              {
+                title: "Research & Insights",
+                text: "Interviews revealed users cared more about reviewing files than the type of malware detected."
+              },
+              {
+                title: "Outcome",
+                text: "A single-page design with tabs streamlined file review and significantly improved usability."
+              }
+            ],
+            beforeAfterSlider: {
+              beforeImage: getAssetUrl("case_studies/Cysana/file_before.png"),
+              afterImage: getAssetUrl("case_studies/Cysana/file_after.png"),
+              beforeLabel: "Before",
+              afterLabel: "After"
+            }
+
+          },
+          {
+            heading: "3. Reducing Support Tickets with Self-Service Answers",
+            insightCards: [
+              {
+                title: "Pain Point",
+                text: "Users lacked a clear resource hub for troubleshooting and common questions."
+              },
+              {
+                title: "Research & Insights",
+                text: "Research showed users wanted a simple, centralized place to quickly find answers without contacting support."
+              },
+              {
+                title: "Outcome",
+                text: "Created a scalable FAQ & Support page that addressed this gap, improved self-service, and allowed easy expansion as new information emerged."
+              }
+            ],
+            image: getAssetUrl("case_studies/Cysana/faq.png")
+
+
+          }
+        ]
+      },
+      {
+        id: "takeaways",
+        subtitle: "04 / Key Takeaways",
+        content: [
+          {
+            heading: "What This Project Taught Me",
+            bullets: [
+              "<strong>Designing for Technical Complexity</strong> — Working with security logs taught me how to distill dense technical data into clear, actionable visual hierarchy so admins can react quickly.",
+              "<strong>Cross-Disciplinary Collaboration</strong> — Partnering closely with data scientists and engineers helped align visual layouts with real-world technical capabilities.",
+              "<strong>Systems Thinking in Enterprise UI</strong> — Designing reusable dashboard modules ensured consistent interaction patterns and effortless scalability across security tools."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     id: "pennies",
     title: "Pennies",
     shortDescription: "A Banking App for Parents & Teens",
@@ -478,139 +796,6 @@ export const caseStudies = [
     ]
   },
   {
-    id: "Build-A-Box",
-    title: "Hershey's: Build A Box",
-    shortDescription: "Designing for E-Commerce",
-    tags: ["Dentsu", "2025"],
-    role: [
-      "My Role: UX/UI Design Intern",
-      "Collaborators: 1 Frontend Engineer, 1 PM, 1 Design Lead"
-    ],
-    projectType: "E-Commerce Web Design",
-    projectCategory: "Internship Project",
-    timeline: "4 Weeks",
-    tools: ["Figma"],
-    coverImage: getAssetUrl("case_studies/Hershey/hershey_header.png"),
-    sections: [
-      {
-        id: "overview",
-        subtitle: "01 / Project Overview",
-        content: [
-          {
-            heading: "Designing a Customizable Shopping Experience",
-            paragraphs: [
-              "During my internship at Dentsu, I worked on a page for Hershey’s e-commerce site that let customers build their own assortment of Skinny Packs for a Back‑to‑School campaign. My role focused on shaping an intuitive customization flow that felt familiar within the existing site ecosystem while introducing new interaction patterns that supported personalization."
-            ]
-          },
-          {
-            heading: "My Role & Contributions: Leading UI While Supporting UX Strategy",
-            paragraphs: [
-              "I led the UI design and contributed to UX strategy across the page’s layout, interaction patterns, and decision logic. My work included creating high‑fidelity Figma mockups aligned with brand guidelines and collaborating closely with the client team to refine the experience."
-            ],
-            metrics: [
-              {
-                title: "UI design",
-                text: "High‑fidelity mockups, component reuse, visual hierarchy"
-              },
-              {
-                title: "UX strategy",
-                text: "Flow mapping, decision logic, interaction patterns"
-              },
-              {
-                title: "Usability testing",
-                text: "Rapid feedback cycles with client stakeholders"
-              }
-            ]
-          },
-          {
-            heading: "Client Request: A Fast, Flexible Customization Page",
-            paragraphs: [
-              "The client needed a dedicated page that allowed customers to build a 24‑item pack with specific rules: a minimum of four bags per flavor, real‑time editing, and a clear path to checkout. The project had a tight three‑week turnaround, requiring a design that balanced speed, feasibility, and brand consistency."
-            ]
-          }
-        ]
-      },
-      {
-        id: "final-deliverable",
-        subtitle: "02 / Final Deliverable",
-        content: [
-          {
-            heading: "Final Deliverable",
-            paragraphs: [
-              "The final design launched on Hershey’s site from August 2025 to May 2026. The page introduced three core features that made the customization process intuitive and error‑proof:"
-            ],
-            insightCards: [
-              {
-                title: "Progress Bar",
-                text: "Guided users toward the required 24 items"
-              },
-              {
-                title: "Live Summary Panel",
-                text: "Real‑time visibility into selections and quantities"
-              },
-              {
-                title: "Prominent CTA",
-                text: "A clear, confident path to checkout once the box was complete"
-              }
-            ],
-            image: getAssetUrl("case_studies/Hershey/1.png"),
-          },
-          {
-            image: getAssetUrl("case_studies/Hershey/final_mobile.png"),
-          }
-        ]
-      },
-      {
-        id: "process",
-        subtitle: "03 / The Process",
-        content: [
-          {
-            heading: "Balancing Needs, Constraints, and Speed",
-            paragraphs: [
-              "With only three weeks to deliver a final design, I began with an MVP approach that met essential client requirements while staying within developer constraints. I reused existing components where possible and introduced new ones only when they meaningfully improved clarity or usability.",
-              "I moved through three rounds of iteration, presenting directly to the client team each time. These sessions helped validate assumptions, refine layout decisions, and ensure feasibility before handing the design off to development."
-            ],
-            images: [
-              {
-                src: getAssetUrl("case_studies/Hershey/iteration1.png"),
-                description: "Round 1 — MVP Scoping"
-              },
-              {
-                src: getAssetUrl("case_studies/Hershey/iteration2.png"),
-                description: "Round 2 — Refined Layout"
-              },
-              {
-                src: getAssetUrl("case_studies/Hershey/iteration3.png"),
-                description: "Round 3 — Final Handoff"
-              }
-            ]
-          },
-          {
-            heading: "Translating Features to Mobile",
-            paragraphs: [
-              "Once the desktop design was finalized, I explored different approaches for the mobile layout, leading multiple iterations to refine the user flow.",
-            ],
-            image: getAssetUrl("case_studies/Hershey/mobile.png")
-          }
-        ]
-      },
-      {
-        id: "takeaways",
-        subtitle: "04 / Key Takeaways",
-        content: [
-          {
-            heading: "What This Project Taught Me",
-            bullets: [
-              "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize tasks. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
-              "<strong>Embracing Feedback</strong> — Balancing input from both the client and developers pushed me to refine how I evaluate feedback. I learned to identify what improves usability versus what introduces unnecessary complexity.",
-              "<strong>Collaborating Across Teams</strong> — Clear communication became essential. Early misalignment caused rework, but once I established a shared vocabulary with developers and the client, the process became smoother and more efficient."
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     id: "expedia",
     title: "Expedia",
     shortDescription: "Reimagining a Flight Booking Experience",
@@ -1020,178 +1205,8 @@ export const caseStudies = [
         ]
       }
     ]
-  },
-  {
-    id: "cysana",
-    title: "Cysana",
-    shortDescription: "Redesigning a Malware Detection Dashboard",
-    tags: ["Conatix", "2024"],
-    role: [
-      "My Role: Product Design Intern (UX/UI)",
-      "Collaborators: 2 Full Stack Engineers, 1 Data Scientist, 1 PM"
-    ],
-    projectType: "Enterprise SaaS Dashboard",
-    projectCategory: "Internship Project",
-    timeline: "10 Weeks",
-    tools: ["Figma"],
-    coverImage: getAssetUrl("case_studies/Cysana/conatix_header.png"),
-    sections: [
-      {
-        id: "overview",
-        subtitle: "01 / Project Overview",
-        content: [
-          {
-            heading: "Redesigning Malware Detection & Threat Monitoring",
-            paragraphs: [
-              "During my internship at Conatix, I worked on Cysana — an enterprise malware detection dashboard designed for security administrators. My role focused on shaping an intuitive monitoring experience, streamlining data visualizations, and establishing clear workflows for real-time threat response."
-            ]
-          },
-          {
-            heading: "My Role & Contributions: Leading UI & Information Architecture",
-            paragraphs: [
-              "I led the dashboard redesign across layout, data visualization, and information architecture. My work included creating high-fidelity Figma mockups, establishing color severity guidelines, and collaborating with backend engineers to ensure data accuracy."
-            ],
-            metrics: [
-              {
-                title: "Simplified the Client-Facing UI",
-                text: "Cut information overload by relocating granular data to the admin dashboard and restructuring the IA — giving client users a cleaner, faster view of what matters most."
-              },
-              {
-                title: "Improved Time-to-Decision",
-                text: "Surfaced system health, recent detections, and critical stats in a single glance, reducing the steps needed to assess and respond to threats.",
-              },
-              {
-                title: "Introduced Features That Moved Satisfaction",
-                text: "Created filters, protection statuses, and alerting — driving a 50%+ increase in user satisfaction scores in usability surveys."
-              }
-            ]
-          },
-          {
-            heading: "The Problem",
-            paragraphs: [
-              "Security admins were overwhelmed by dense data logs and fragmented views. The project required designing a unified dashboard that balanced data density, fast decision-making, and visual clarity under tight engineering constraints."
-            ]
-          }
-        ]
-      },
-      {
-        id: "final-deliverable",
-        subtitle: "02 / Final Deliverable",
-        content: [
-          {
-            heading: "The Solution",
-            paragraphs: [
-              "The redesigned Cysana dashboard introduced core features that made threat detection intuitive and actionable:"
-            ],
-            image: getAssetUrl("case_studies/Cysana/solution.png")
-          }
-        ]
-      },
-      {
-        id: "process",
-        subtitle: "03 / The Process",
-        content: [
-          {
-            heading: "Restructuring Information Architecture: Existing vs. New State",
-            paragraphs: [
-              "The distinct tabs are shown in blue, with their corresponding sections outlined below. After mapping out the pages, it became clear that much of the information was repetitive, and several pages could be consolidated. Additionally, there were opportunities to introduce new features to improve the user experience."
-            ],
-            image: getAssetUrl("case_studies/Cysana/before.png")
-
-          },
-          {
-            heading: "New State",
-            paragraphs: [
-              "Sections moved are outlined in light blue, and newly added sections are in purple. The final page structure allowed for streamlined information and incorporate essential features, including a filtering system and notifications."
-            ],
-            image: getAssetUrl("case_studies/Cysana/after.png")
-
-          },
-          {
-            heading: "1. Making Critical Files Impossible to Miss",
-            insightCards: [
-              {
-                title: "Pain Point",
-                text: "Lack of visual indicators made it hard to quickly scan files."
-              },
-              {
-                title: "Research & Insights",
-                text: "Users wanted to be immediately alerted to flagged files and status changes."
-              },
-              {
-                title: "Outcome",
-                text: "Introduced a color-coded alert system and a dedicated section for critical files, enabling faster detection and response."
-              }
-            ],
-            beforeAfterSlider: {
-              beforeImage: getAssetUrl("case_studies/Cysana/main_before.png"),
-              afterImage: getAssetUrl("case_studies/Cysana/main_after.png"),
-              beforeLabel: "Before",
-              afterLabel: "After"
-            }
-          },
-          {
-            heading: "2. Cutting the Clicks: A Unified File Review Experience",
-            insightCards: [
-              {
-                title: "Pain Point",
-                text: "Users had to jump between multiple pages to review files, slowing down their workflow."
-              },
-              {
-                title: "Research & Insights",
-                text: "Interviews revealed users cared more about reviewing files than the type of malware detected."
-              },
-              {
-                title: "Outcome",
-                text: "A single-page design with tabs streamlined file review and significantly improved usability."
-              }
-            ],
-            beforeAfterSlider: {
-              beforeImage: getAssetUrl("case_studies/Cysana/file_before.png"),
-              afterImage: getAssetUrl("case_studies/Cysana/file_after.png"),
-              beforeLabel: "Before",
-              afterLabel: "After"
-            }
-
-          },
-          {
-            heading: "3. Reducing Support Tickets with Self-Service Answers",
-            insightCards: [
-              {
-                title: "Pain Point",
-                text: "Users lacked a clear resource hub for troubleshooting and common questions."
-              },
-              {
-                title: "Research & Insights",
-                text: "Research showed users wanted a simple, centralized place to quickly find answers without contacting support."
-              },
-              {
-                title: "Outcome",
-                text: "Created a scalable FAQ & Support page that addressed this gap, improved self-service, and allowed easy expansion as new information emerged."
-              }
-            ],
-            image: getAssetUrl("case_studies/Cysana/faq.png")
-
-
-          }
-        ]
-      },
-      {
-        id: "takeaways",
-        subtitle: "04 / Key Takeaways",
-        content: [
-          {
-            heading: "What This Project Taught Me",
-            bullets: [
-              "<strong>Designing for Technical Complexity</strong> — Working with security logs taught me how to distill dense technical data into clear, actionable visual hierarchy so admins can react quickly.",
-              "<strong>Cross-Disciplinary Collaboration</strong> — Partnering closely with data scientists and engineers helped align visual layouts with real-world technical capabilities.",
-              "<strong>Systems Thinking in Enterprise UI</strong> — Designing reusable dashboard modules ensured consistent interaction patterns and effortless scalability across security tools."
-            ]
-          }
-        ]
-      }
-    ]
   }
+
 ];
 
 export const playWorks = [

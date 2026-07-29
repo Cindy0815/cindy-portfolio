@@ -6,6 +6,7 @@ import { useState, useEffect, Fragment, useRef } from 'react';
 import HighlightBox from '../components/HighlightBox';
 import CenteredText from '../components/CenteredText';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import ScrollDrivenInsightPanel from '../components/ScrollDrivenInsightPanel';
 import './CaseStudyTemplate.css';
 
 const RollingNumber = ({ value }) => {
@@ -462,14 +463,28 @@ const CaseStudyTemplate = () => {
                   )}
 
                   {block.insightCards && (
-                    <div className="insight-cards-row">
-                      {block.insightCards.map((card, i) => (
-                        <div key={i} className="insight-card">
-                          <h3 className="insight-card-title">{card.title}</h3>
-                          <p className="insight-card-text">{card.text}</p>
-                        </div>
-                      ))}
-                    </div>
+                    block.insightCards.some(card => card.image) ? (
+                      <ScrollDrivenInsightPanel
+                        items={block.insightCards}
+                        onImageClick={setPreviewImage}
+                      />
+                    ) : (
+                      <div className="insight-cards-row">
+                        {block.insightCards.map((card, i) => (
+                          <div key={i} className="insight-card">
+                            <h3 className="insight-card-title">{card.title}</h3>
+                            <p className="insight-card-text">{card.text}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )
+                  )}
+
+                  {block.insightScrollPanel && (
+                    <ScrollDrivenInsightPanel
+                      items={block.insightScrollPanel}
+                      onImageClick={setPreviewImage}
+                    />
                   )}
 
                   {block.insightGrid && (
