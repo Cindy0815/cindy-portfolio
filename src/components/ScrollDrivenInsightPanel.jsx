@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import './ScrollDrivenInsightPanel.css';
 
-const ScrollDrivenInsightPanel = ({ items, onImageClick }) => {
+const ScrollDrivenInsightPanel = ({ items, onImageClick, minHeight }) => {
   const containerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -30,13 +30,18 @@ const ScrollDrivenInsightPanel = ({ items, onImageClick }) => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const sectionTop = rect.top + scrollTop;
       const sectionHeight = rect.height - window.innerHeight;
-      const targetScroll = sectionTop + (idx / items.length) * sectionHeight;
+      // Scroll to the midpoint of the index's scroll range
+      const targetScroll = sectionTop + ((idx + 0.5) / items.length) * sectionHeight;
       window.scrollTo({ top: targetScroll, behavior: 'smooth' });
     }
   };
 
+  const containerStyle = {
+    minHeight: minHeight || `${Math.max(340, items.length * 115)}vh`
+  };
+
   return (
-    <div ref={containerRef} className="scroll-driven-panel-container">
+    <div ref={containerRef} className="scroll-driven-panel-container" style={containerStyle}>
       <div className="scroll-driven-sticky-viewport">
         {/* Header Tabs */}
         <div className="scroll-driven-tabs-header">
@@ -59,7 +64,7 @@ const ScrollDrivenInsightPanel = ({ items, onImageClick }) => {
                   <motion.div
                     className="tab-active-indicator"
                     layoutId="activeTabIndicator"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
               </button>
@@ -78,7 +83,7 @@ const ScrollDrivenInsightPanel = ({ items, onImageClick }) => {
                   initial={{ opacity: 0, scale: 0.96, y: 12 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.97, y: -12 }}
-                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="image-motion-wrapper"
                 >
                   {activeItem.image ? (
@@ -113,7 +118,7 @@ const ScrollDrivenInsightPanel = ({ items, onImageClick }) => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="text-detail-wrapper"
               >
                 <h3 className="insight-title">{activeItem.title}</h3>
@@ -126,7 +131,7 @@ const ScrollDrivenInsightPanel = ({ items, onImageClick }) => {
               <motion.div
                 className="progress-fill"
                 animate={{ width: `${((activeIndex + 1) / items.length) * 100}%` }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               />
             </div>
           </div>

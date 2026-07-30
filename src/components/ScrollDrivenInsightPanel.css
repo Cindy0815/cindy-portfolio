@@ -2,7 +2,7 @@
 .scroll-driven-panel-container {
   position: relative;
   width: 100%;
-  min-height: 230vh;
+  min-height: 350vh;
   margin: 3rem 0;
 }
 

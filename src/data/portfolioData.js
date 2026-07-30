@@ -92,12 +92,12 @@ export const caseStudies = [
             insightCards: [
               {
                 title: "Header",
-                text: "A persistent header that displayed the running total and minimum-per-flavor constraints, giving users constant visibility into their progress.",
+                text: "A header that displayed the total amounts needed and minimum-per-flavor constraints, giving users clear context of what was required.",
                 image: getAssetUrl("case_studies/Hershey/key1.webp")
               },
               {
                 title: "Mini Cart",
-                text: "A summary that updated in real time as users added or removed items, supporting an intuitive editing flow.",
+                text: "A summary that updated in real time as users added or removed items, supporting an intuitive editing flow and giving users constant visibility into their progress.",
                 image: getAssetUrl("case_studies/Hershey/key2.webp")
               },
               {
