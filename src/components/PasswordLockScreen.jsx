@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Lock, ArrowLeft, Eye, EyeOff, AlertCircle, KeyRound, ArrowRight } from 'lucide-react';
+import { ArrowLeft, Eye, EyeOff, AlertCircle, KeyRound, ArrowRight } from 'lucide-react';
 import { unlockCaseStudies } from '../data/portfolioData';
 import './PasswordLockScreen.css';
 
@@ -59,12 +59,6 @@ const PasswordLockScreen = ({ projectTitle, onUnlock }) => {
             }
             transition={isShaking ? { duration: 0.4 } : { duration: 0.5, ease: 'easeOut' }}
           >
-            <div className="lock-icon-badge">
-              <Lock size={26} className="lock-icon-svg" />
-            </div>
-
-            <span className="lock-category-tag">Protected Case Study</span>
-
             <h1 className="lock-title">{projectTitle || 'Password Protected'}</h1>
 
             <p className="lock-subtitle">
