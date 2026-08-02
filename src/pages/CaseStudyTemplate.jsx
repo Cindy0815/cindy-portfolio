@@ -1,12 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence, useInView, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
 import { ArrowLeft, ChevronLeft, ChevronRight, ArrowDown } from 'lucide-react';
-import { caseStudies } from '../data/portfolioData';
+import { caseStudies, isCaseStudyUnlocked } from '../data/portfolioData';
 import { useState, useEffect, Fragment, useRef } from 'react';
 import HighlightBox from '../components/HighlightBox';
 import CenteredText from '../components/CenteredText';
 import BeforeAfterSlider from '../components/BeforeAfterSlider';
 import ScrollDrivenInsightPanel from '../components/ScrollDrivenInsightPanel';
+import PasswordLockScreen from '../components/PasswordLockScreen';
 import './CaseStudyTemplate.css';
 
 const RollingNumber = ({ value }) => {
@@ -216,6 +217,11 @@ const CaseStudyTemplate = () => {
   const study = caseStudies.find(s => s.id === id);
   const [activeSection, setActiveSection] = useState(null);
   const [previewImage, setPreviewImage] = useState(null);
+  const [isUnlocked, setIsUnlocked] = useState(() => isCaseStudyUnlocked());
+
+  useEffect(() => {
+    setIsUnlocked(isCaseStudyUnlocked());
+  }, [id]);
 
   const { scrollY } = useScroll();
   const headerScale = useTransform(scrollY, [0, 450], [1, 0.78]);
@@ -285,6 +291,15 @@ const CaseStudyTemplate = () => {
         <h2>Case Study Not Found</h2>
         <Link to="/#featured-works" className="back-link">Return to all work</Link>
       </div>
+    );
+  }
+
+  if (study.protected && !isUnlocked) {
+    return (
+      <PasswordLockScreen
+        projectTitle={study.title}
+        onUnlock={() => setIsUnlocked(true)}
+      />
     );
   }
 

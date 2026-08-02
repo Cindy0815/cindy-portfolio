@@ -2,7 +2,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motio
 import { useState, useEffect } from 'react';
 import { caseStudies, playWorks } from '../data/portfolioData';
 import { Link } from 'react-router-dom';
-import { Mail, Phone } from 'lucide-react';
+import { Mail, Phone, Lock } from 'lucide-react';
 import DesignerHero from '../components/DesignerHero';
 import './Home.css';
 
@@ -108,6 +108,11 @@ const Home = () => {
                         <img src={study.coverImage} alt={study.title} />
                         {study.tags && (
                           <div className="card-tags">
+                            {study.protected && (
+                              <span className="tag-pill tag-pill-protected" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                                <Lock size={11} /> Protected
+                              </span>
+                            )}
                             {study.tags.map(tag => (
                               <span key={tag} className="tag-pill">{tag}</span>
                             ))}

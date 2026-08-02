@@ -11,12 +11,30 @@ export const getAssetUrl = (path) => {
   return path;
 };
 
+export const CASE_STUDY_PASSWORD = "0325";
+
+export const isCaseStudyUnlocked = () => {
+  if (typeof window === 'undefined') return false;
+  return localStorage.getItem('portfolio_case_study_unlocked') === 'true';
+};
+
+export const unlockCaseStudies = (inputPassword) => {
+  const cleanInput = (inputPassword || '').trim();
+  const validPasswords = [CASE_STUDY_PASSWORD.toLowerCase(), '0325'];
+  if (validPasswords.includes(cleanInput.toLowerCase())) {
+    localStorage.setItem('portfolio_case_study_unlocked', 'true');
+    return true;
+  }
+  return false;
+};
+
 export const caseStudies = [
   {
     id: "Build-A-Box",
     title: "Hershey's: Build A Box",
-    shortDescription: "Designing for E-Commerce",
+    shortDescription: "E-Commerce Customization Flow",
     tags: ["Dentsu Internship", "2025"],
+    protected: true,
     role: [
       "My Role: UX/UI Design Intern",
       "Collaborators: 1 Frontend Engineer, 1 PM, 1 Design Lead"
@@ -45,15 +63,15 @@ export const caseStudies = [
             metrics: [
               {
                 title: "UI design",
-                text: "High‑fidelity mockups, component documentation, visual hierarchy"
+                text: "Over 50+ high‑fidelity mockups and UI explorations on Figma"
               },
               {
                 title: "UX strategy",
-                text: "Flow mapping, decision logic, interaction patterns"
+                text: "Planning out the user flow, page layouts, and interaction patterns directly with a UX Design Lead"
               },
               {
                 title: "Aligning with cilents",
-                text: "Rapid feedback cycles with client stakeholders"
+                text: "3 rounds of feedback cycles presenting directly to client stakeholders (the Hershey's team)"
               }
             ]
           },
@@ -162,8 +180,9 @@ export const caseStudies = [
   {
     id: "cysana",
     title: "Cysana",
-    shortDescription: "Redesigning a Malware Detection Dashboard",
+    shortDescription: "Redesigning A Malware Detection Dashboard",
     tags: ["Conatix", "2024"],
+    protected: true,
     role: [
       "My Role: Product Design Intern (UX/UI)",
       "Collaborators: 2 Full Stack Engineers, 1 Data Scientist, 1 PM"
@@ -185,7 +204,7 @@ export const caseStudies = [
             ]
           },
           {
-            heading: "My Role & Contributions: Leading UI & Information Architecture",
+            heading: "My Role & Contributions",
             paragraphs: [
               "I led the dashboard redesign across layout, data visualization, and information architecture. My work included creating high-fidelity Figma mockups, establishing color severity guidelines, and collaborating with backend engineers to ensure data accuracy."
             ],
@@ -195,7 +214,7 @@ export const caseStudies = [
                 text: "Cut information overload by relocating granular data to the admin dashboard and restructuring the IA — giving client users a cleaner, faster view of what matters most."
               },
               {
-                title: "Improved Time-to-Decision",
+                title: "Reduced task completion time by 20%",
                 text: "Surfaced system health, recent detections, and critical stats in a single glance, reducing the steps needed to assess and respond to threats.",
               },
               {
@@ -208,20 +227,20 @@ export const caseStudies = [
             heading: "The Problem",
             paragraphs: [
               "Security admins were overwhelmed by dense data logs and fragmented views. The project required designing a unified dashboard that balanced data density, fast decision-making, and visual clarity under tight engineering constraints."
-            ]
+            ],
           }
         ]
       },
       {
-        id: "final-deliverable",
-        subtitle: "02 / Final Deliverable",
+        id: "The Solution",
+        subtitle: "02 / The Solution",
         content: [
           {
             heading: "The Solution",
             paragraphs: [
               "The redesigned Cysana dashboard introduced core features that made threat detection intuitive and actionable:"
             ],
-            image: getAssetUrl("case_studies/Cysana/solution.webp")
+            image: getAssetUrl("case_studies/Cysana/solution.webp"),
           }
         ]
       },
@@ -232,7 +251,7 @@ export const caseStudies = [
           {
             heading: "Restructuring Information Architecture: Existing vs. New State",
             paragraphs: [
-              "The distinct tabs are shown in blue, with their corresponding sections outlined below. After mapping out the pages, it became clear that much of the information was repetitive, and several pages could be consolidated. Additionally, there were opportunities to introduce new features to improve the user experience."
+              "The distinct tabs are shown in blue, with their corresponding sections outlined below. After mapping out the pages and reviewing user feedback the team had gathered, it became clear that much of the information was repetitive, and several pages could be consolidated. Additionally, there were opportunities to introduce new features to improve the user experience."
             ],
             image: getAssetUrl("case_studies/Cysana/before.webp")
 
@@ -309,8 +328,6 @@ export const caseStudies = [
               }
             ],
             image: getAssetUrl("case_studies/Cysana/faq.webp")
-
-
           }
         ]
       },
@@ -333,7 +350,7 @@ export const caseStudies = [
   {
     id: "pennies",
     title: "Pennies",
-    shortDescription: "A Banking App for Parents & Teens",
+    shortDescription: "A Banking App For Parents & Teens",
     tags: ["Personal Project", "2026"],
     role: "UX/UI Designer (End-to-End)",
     projectType: "Mobile Application",
@@ -583,7 +600,7 @@ export const caseStudies = [
   {
     id: "petals-worth",
     title: "A Petal's Worth",
-    shortDescription: "Building a Collaborative Digital Garden",
+    shortDescription: "Building A Collaborative Digital Garden",
     tags: ["Senior Thesis", "2026"],
     role: "Design Engineer (UX/UI, Front-End Development)",
     projectType: "Creative Development & Design",
@@ -601,7 +618,7 @@ export const caseStudies = [
             heading: "Background",
             paragraphs: [
               "A Petal's Worth is a shared digital garden where people can pause, breathe, and make something simple together.",
-              "For my senior capstone, I had complete freedom to build anything. Instead of creating another static prototype, I challenged myself to design, build, and ship a fully functional interactive product using Gemini and Claude Code."
+              "This was my undergrad senior thesis project, and instead of creating another static prototype, I challenged myself to design, build, and ship a fully functional interactive product using Gemini and Claude Code. I ultimately wanted to create a live experience for people to enjoy and interact with, exploring ways I can promote group interactions."
             ],
             image: getAssetUrl("case_studies/Petal/overview.webp")
           },
@@ -798,7 +815,7 @@ export const caseStudies = [
   {
     id: "expedia",
     title: "Expedia",
-    shortDescription: "Reimagining a Flight Booking Experience",
+    shortDescription: "Reimagining A Flight Booking Experience",
     tags: ["Personal Project", "2025"],
     role: "UX/UI Designer (End-to-End)",
     projectType: "Web UX/UI Redesign",
@@ -1020,7 +1037,7 @@ export const caseStudies = [
   {
     id: "tiktok-shop",
     title: "Tiktok Shop",
-    shortDescription: "Designing for Customer Loyalty",
+    shortDescription: "Designing For Customer Loyalty",
     tags: ["Personal Project", "2024"],
     role: [
       "My Role: UX/UI Designer",
