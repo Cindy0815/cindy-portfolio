@@ -19,11 +19,7 @@
   box-sizing: border-box;
 }
 
-[data-theme='dark'] .scroll-driven-sticky-viewport {
-  background: transparent;
-  border-color: transparent;
-  box-shadow: none;
-}
+
 
 /* Tabs Header */
 .scroll-driven-tabs-header {
@@ -50,9 +46,7 @@
   font-size: 1.15rem;
 }
 
-[data-theme='dark'] .scroll-driven-step-counter .step-current {
-  color: #fff;
-}
+
 
 .scroll-driven-tabs {
   display: flex;
@@ -63,9 +57,7 @@
   border-radius: 12px;
 }
 
-[data-theme='dark'] .scroll-driven-tabs {
-  background: rgba(255, 255, 255, 0.06);
-}
+
 
 .scroll-driven-tab {
   position: relative;
@@ -89,9 +81,7 @@
   font-weight: 600;
 }
 
-[data-theme='dark'] .scroll-driven-tab.active {
-  color: #fff;
-}
+
 
 .tab-number {
   font-family: var(--font-mono, monospace);
@@ -108,10 +98,7 @@
   z-index: -1;
 }
 
-[data-theme='dark'] .tab-active-indicator {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-}
+
 
 /* Grid Layout */
 .scroll-driven-content-grid {
@@ -137,10 +124,7 @@
   box-shadow: none;
 }
 
-[data-theme='dark'] .image-frame {
-  background: transparent;
-  border: none;
-}
+
 
 .image-motion-wrapper {
   width: 100%;
@@ -196,10 +180,7 @@
   color: var(--accent-color, #111);
 }
 
-[data-theme='dark'] .insight-badge {
-  background: rgba(255, 255, 255, 0.1);
-  color: #eee;
-}
+
 
 .insight-title {
   font-size: 1.65rem;
@@ -209,9 +190,7 @@
   line-height: 1.25;
 }
 
-[data-theme='dark'] .insight-title {
-  color: #ffffff;
-}
+
 
 .insight-text {
   font-size: 1rem;
@@ -220,9 +199,7 @@
   margin: 0;
 }
 
-[data-theme='dark'] .insight-text {
-  color: #bbbbbb;
-}
+
 
 /* Progress Track */
 .scroll-driven-progress-track {
@@ -234,9 +211,7 @@
   margin-top: auto;
 }
 
-[data-theme='dark'] .scroll-driven-progress-track {
-  background: rgba(255, 255, 255, 0.1);
-}
+
 
 .scroll-driven-progress-track .progress-fill {
   height: 100%;
@@ -244,9 +219,7 @@
   border-radius: 4px;
 }
 
-[data-theme='dark'] .scroll-driven-progress-track .progress-fill {
-  background: #ffffff;
-}
+
 
 /* Mobile Responsiveness */
 @media (max-width: 900px) {

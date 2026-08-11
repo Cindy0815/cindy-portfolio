@@ -155,8 +155,8 @@
   left: 0;
   width: 90px;
   height: 90px;
-  background-color: var(--text-primary);
-  color: var(--bg-color);
+  background-color: #1a1a1a;
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -172,11 +172,6 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-[data-theme='light'] .home-custom-cursor {
-  background-color: #1a1a1a;
-  color: #ffffff;
 }
 
 .work-card:hover,
@@ -502,12 +497,6 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background: #111;
-  color: white;
-  border-radius: 50%;
-}
-
-[data-theme='light'] .contact-icon {
   background: #1a1a1a;
   color: white;
 }
@@ -519,10 +508,7 @@
   color: #1a1a1a;
 }
 
-[data-theme='dark'] .contact-form-col {
-  background: #2a2a35;
-  color: #ededed;
-}
+
 
 .contact-form {
   display: flex;
@@ -564,11 +550,7 @@
   outline: none;
 }
 
-[data-theme='dark'] .form-group input,
-[data-theme='dark'] .form-group textarea {
-  background: #3f3f4e;
-  color: #ededed;
-}
+
 
 .form-group textarea {
   border-radius: 20px;

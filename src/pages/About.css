@@ -49,9 +49,7 @@
   transform-style: preserve-3d;
 }
 
-[data-theme='dark'] .about-image-wrapper {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
+
 
 .carousel-caption {
   text-align: center;

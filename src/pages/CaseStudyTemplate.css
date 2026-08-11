@@ -111,12 +111,8 @@
 
 @supports (backdrop-filter: blur(10px)) {
   .cs-progress-bar {
-    background: rgba(24, 24, 27, 0.8);
-    backdrop-filter: blur(12px);
-  }
-
-  [data-theme='light'] .cs-progress-bar {
     background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
   }
 }
 
@@ -543,11 +539,7 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-[data-theme='dark'] .cs-study-cysana .metric-card {
-  background-color: #121216;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
+
 
 .finding-insight-text {
   font-size: 1rem;
@@ -1057,31 +1049,18 @@
 .cs-study-expedia,
 .cs-theme-expedia {
   --highlight-box-border: rgb(18, 52, 92);
-  --highlight-box-bg: rgba(18, 52, 92, 0.05);
-}
-
-[data-theme='light'] .cs-study-expedia,
-[data-theme='light'] .cs-theme-expedia {
   --highlight-box-bg: rgba(18, 52, 92, 0.03);
 }
 
 /* TikTok Shop: Red/Cyan or Black/White theme */
 .cs-study-tiktok-shop {
   --highlight-box-border: #fe2c55;
-  --highlight-box-bg: rgba(254, 44, 85, 0.05);
-}
-
-[data-theme='light'] .cs-study-tiktok-shop {
   --highlight-box-bg: rgba(254, 44, 85, 0.03);
 }
 
 /* Petals Worth: Pastel Blue */
 .cs-study-petals-worth {
   --highlight-box-border: #4a90e2;
-  --highlight-box-bg: rgba(74, 144, 226, 0.06);
-}
-
-[data-theme='light'] .cs-study-petals-worth {
   --highlight-box-bg: rgba(74, 144, 226, 0.03);
 }
 
@@ -1113,18 +1092,7 @@
   color: rgba(0, 0, 0, 0.85);
 }
 
-[data-theme='dark'] .cs-study-petals-worth .problem-card {
-  background-color: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(74, 144, 226, 0.4);
-}
 
-[data-theme='dark'] .cs-study-petals-worth .problem-card .pov-text-header {
-  color: #6ba4e8;
-}
-
-[data-theme='dark'] .cs-study-petals-worth .problem-card .pov-list p {
-  color: #e2e8f0;
-}
 
 
 /* Image POV Split Layout */

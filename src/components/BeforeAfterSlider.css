@@ -75,11 +75,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-[data-theme='dark'] .badge-after {
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-}
+
 
 /* Slider Divider & Handle */
 .before-after-divider {

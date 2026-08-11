@@ -37,16 +37,12 @@
   transition: background 0.2s ease;
 }
 
-.skip-intro-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-[data-theme='light'] .skip-intro-btn {
+.skip-intro-btn {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-[data-theme='light'] .skip-intro-btn:hover {
+.skip-intro-btn:hover {
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -71,15 +67,10 @@
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  padding: 0.15rem 0.5rem;
-}
-
-[data-theme='light'] .skip-intro-hint kbd {
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 0.15rem 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -112,9 +103,7 @@
   object-position: center;
 }
 
-[data-theme='dark'] .full-header-bg {
-  filter: invert(1) hue-rotate(180deg) brightness(0.7) saturate(1.2);
-}
+
 
 /* Shapes Layer */
 .shapes-layer {
@@ -265,30 +254,7 @@
   will-change: transform;
 }
 
-.click-me-prompt {
-  position: absolute;
-  top: -32px;
-  left: 16px;
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  white-space: nowrap;
-  pointer-events: none;
-  background: var(--bg-secondary);
-  padding: 4px 10px;
-  border-radius: 100px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color);
-  /* The cursor parent is rotated -10deg. We counter-rotate the prompt so it's upright. */
-  transform: rotate(10deg);
-}
 
-[data-theme='light'] .click-me-prompt {
-  background: #ffffff;
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
 
 /* Typography */
 .hero-content-centered {
@@ -349,10 +315,6 @@
 }
 
 .sequence-arrow {
-  color: #ffffff;
-}
-
-[data-theme='light'] .sequence-arrow {
   color: #9da388;
 }
 
@@ -582,10 +544,7 @@
   }
 }
 
-/* Invert grid lines color in dark mode */
-[data-theme='dark'] .grid-img-asset {
-  filter: brightness(0) invert(1);
-}
+
 
 /* Typing animation styling */
 @keyframes cursor-blink {

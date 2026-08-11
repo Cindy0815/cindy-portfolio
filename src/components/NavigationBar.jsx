@@ -1,22 +1,15 @@
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import logoImg from '../assets/logo2_opt.webp';
+import purpleShape from '../assets/purple_shape_opt.webp';
 import { useHeroIntro } from '../context/HeroIntroContext';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
   const location = useLocation();
   const { introPlaying } = useHeroIntro();
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('portfolio-theme') || 'light';
-  });
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -36,11 +29,7 @@ const NavigationBar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('portfolio-theme', newTheme);
-  };
+
 
   const [activeSection, setActiveSection] = useState(() => {
     if (location.pathname === '/') {
@@ -134,7 +123,8 @@ const NavigationBar = () => {
     >
       <div className="navbar-inner container">
         <Link to="/" onClick={handleLogoClick} className="logo">
-          <img src={logoImg} alt="Cindy" className="nav-logo-img" />
+          <img src={purpleShape} alt="Cindy Chen" className="logo-purple-graphic" />
+          <span className="logo-text">Cindy Chen</span>
         </Link>
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
           {navLinks.map((link) => {
@@ -157,13 +147,7 @@ const NavigationBar = () => {
             );
           })}
 
-          <button
-            onClick={toggleTheme}
-            className="theme-toggle-btn"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
+
         </div>
 
         <button

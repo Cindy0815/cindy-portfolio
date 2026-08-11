@@ -1,22 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root {
-  --bg-color: #0a0a0c;
-  --surface-color: #16161a;
-  --surface-color-hover: #222228;
-  --text-primary: #ededed;
-  --text-secondary: #a1a1aa;
-  --accent-color: #6366f1;
-  /* Indigo */
-  --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-  --border-color: rgba(255, 255, 255, 0.1);
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Inter', sans-serif;
-  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-theme='light'] {
   --bg-color: rgb(255, 255, 255);
   --surface-color: #fafafa;
   --surface-color-hover: #f4f4f5;
@@ -25,6 +9,10 @@
   --accent-color: #4f46e5;
   --accent-gradient: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
   --border-color: rgba(0, 0, 0, 0.1);
+  --font-sans: 'Nunito Sans', sans-serif;
+  --font-display: 'Nunito Sans', sans-serif;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {

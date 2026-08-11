@@ -29,7 +29,7 @@ const GlobalCursor = () => {
 
       setVisible(!hasCustomTextCursor && !isHiddenZone);
 
-      const isBtn = Boolean(target?.closest('button, a, [role="button"], .btn, .filter-btn, .submit-btn, .theme-toggle-btn'));
+      const isBtn = Boolean(target?.closest('button, a, [role="button"], .btn, .filter-btn, .submit-btn'));
       setIsHoveringBtn(isBtn);
     };
 

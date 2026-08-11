@@ -159,7 +159,7 @@ const DesignerHero = () => {
   const [offsetVw, setOffsetVw] = useState(4);
   const [isHovering, setIsHovering] = useState(false);
   const [tinyShapes, setTinyShapes] = useState([]);
-  const [hasClicked, setHasClicked] = useState(false);
+  const lastSpawnRef = useRef({ x: -999, y: -999 });
   const [isExpanded, setIsExpanded] = useState(() => !hasPlayedIntro);
   const constraintsRef = useRef(null);
   const timeoutsRef = useRef([]);
@@ -177,24 +177,54 @@ const DesignerHero = () => {
   const handleMouseMove = (e) => {
     if (step >= 13) {
       const rect = e.currentTarget.getBoundingClientRect();
-      mouseX.set(e.clientX - rect.left);
-      mouseY.set(e.clientY - rect.top);
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      mouseX.set(x);
+      mouseY.set(y);
+
+      const dx = x - lastSpawnRef.current.x;
+      const dy = y - lastSpawnRef.current.y;
+      const dist = Math.hypot(dx, dy);
+
+      if (dist > 30) {
+        lastSpawnRef.current = { x, y };
+        const shapeTypes = [shapePurple, shapeGreen, shapePink];
+        const randomShape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+        const randomRotate = Math.random() * 360 - 180;
+        const randomSize = Math.floor(Math.random() * (120 - 35 + 1)) + 35;
+        const randomDriftY = -(Math.random() * 20 + 10);
+
+        setTinyShapes(prev => [
+          ...prev.slice(-25),
+          { id: Date.now() + Math.random(), x, y, img: randomShape, rotate: randomRotate, size: randomSize, driftY: randomDriftY }
+        ]);
+      }
     }
   };
 
   const handleCanvasClick = (e) => {
     if (step >= 13) {
-      if (!hasClicked) setHasClicked(true);
-
       const rect = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
       const shapeTypes = [shapePurple, shapeGreen, shapePink];
-      const randomShape = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
-      const randomRotate = Math.random() * 360;
 
-      setTinyShapes(prev => [...prev, { id: Date.now() + Math.random(), x, y, img: randomShape, rotate: randomRotate }]);
+      const burst = Array.from({ length: 4 }).map((_, i) => {
+        const offsetX = (Math.random() - 0.5) * 40;
+        const offsetY = (Math.random() - 0.5) * 40;
+        return {
+          id: Date.now() + Math.random() + i,
+          x: clickX + offsetX,
+          y: clickY + offsetY,
+          img: shapeTypes[Math.floor(Math.random() * shapeTypes.length)],
+          rotate: Math.random() * 360,
+          size: Math.floor(Math.random() * (130 - 40 + 1)) + 40,
+          driftY: -(Math.random() * 25 + 15)
+        };
+      });
+
+      setTinyShapes(prev => [...prev.slice(-20), ...burst]);
     }
   };
 
@@ -460,22 +490,27 @@ const DesignerHero = () => {
                 position: 'absolute',
                 left: shape.x,
                 top: shape.y,
-                width: '120px', /* Makes the physical inner shape ~35px due to image padding */
-                pointerEvents: 'none', /* Don't block future clicks */
+                width: `${shape.size}px`,
+                pointerEvents: 'none',
                 zIndex: 15,
                 transformOrigin: 'center center'
               }}
-              initial={{ scale: 0, rotate: shape.rotate - 60, opacity: 0, x: '-50%', y: '-50%' }}
-              animate={{ scale: 1, rotate: shape.rotate, opacity: 1, x: '-50%', y: '-50%' }}
-              transition={{ type: "spring", bounce: 0.6 }}
+              initial={{ scale: 0, rotate: shape.rotate - 45, opacity: 0, x: '-50%', y: '-50%' }}
+              animate={{ scale: 1, rotate: shape.rotate, opacity: [0, 0.45, 0.45, 0], y: ['-50%', `calc(-50% + ${shape.driftY}px)`], x: '-50%' }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{
+                duration: 1.6,
+                ease: "easeOut",
+                times: [0, 0.2, 0.7, 1]
+              }}
+              onAnimationComplete={() => {
+                setTinyShapes((prev) => prev.filter((item) => item.id !== shape.id));
+              }}
             >
-              {/* Continuous floating drift, matching the main shapes */}
-              <motion.img
+              <img
                 src={shape.img}
                 alt=""
-                style={{ display: 'block', width: '100%' }}
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                style={{ display: 'block', width: '100%', height: 'auto' }}
               />
             </motion.div>
           ))}
@@ -513,22 +548,6 @@ const DesignerHero = () => {
             exit={{ opacity: 0, scale: 0.5 }}
             transition={{ duration: 0.15 }}
           >
-            <AnimatePresence>
-              {!hasClicked && (
-                <motion.div
-                  className="click-me-prompt"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: [1, 1.1, 1] }}
-                  exit={{ opacity: 0, scale: 0.5 }}
-                  transition={{
-                    opacity: { duration: 0.2 },
-                    scale: { repeat: Infinity, duration: 1.5, ease: "easeInOut" }
-                  }}
-                >
-                  click me!
-                </motion.div>
-              )}
-            </AnimatePresence>
             <div className="cursor-circle" />
           </motion.div>
         )}
