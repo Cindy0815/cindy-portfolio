@@ -129,7 +129,7 @@ export const caseStudies = [
       },
       {
         id: "process",
-        subtitle: "03 / The Process",
+        subtitle: "03 / Process",
         content: [
           {
             heading: "Balancing Needs, Constraints, and Speed",
@@ -233,10 +233,10 @@ export const caseStudies = [
       },
       {
         id: "The Solution",
-        subtitle: "02 / The Solution",
+        subtitle: "02 / Solution",
         content: [
           {
-            heading: "The Solution",
+            heading: "Key Features",
             paragraphs: [
               "The redesigned Cysana dashboard introduced core features that made threat detection intuitive and actionable:"
             ],
@@ -246,7 +246,7 @@ export const caseStudies = [
       },
       {
         id: "process",
-        subtitle: "03 / The Process",
+        subtitle: "03 / Process",
         content: [
           {
             heading: "Restructuring Information Architecture: Existing vs. New State",
@@ -719,7 +719,7 @@ export const caseStudies = [
       },
       {
         id: "process",
-        subtitle: "03 / The Process",
+        subtitle: "03 / Process",
         content: [
           {
             heading: "The User Journey",
