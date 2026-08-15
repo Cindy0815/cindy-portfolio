@@ -407,12 +407,6 @@ export const caseStudies = [
                 description: "3. Set tangible goals with guidance"
               }
             ]
-          },
-          {
-            heading: "Impact & Validation",
-            paragraphs: [
-              "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
-            ]
           }
         ]
       },
