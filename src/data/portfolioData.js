@@ -93,7 +93,7 @@ export const caseStudies = [
           {
             heading: "Final Deliverable",
             paragraphs: [
-              "The final design launched on Hershey’s online store from August 2025 to May 2026. The page introduced three core features that made the customization process intuitive and error‑proof:"
+              "The final design launched on Hershey’s online store from August 2025 to May 2026."
             ],
 
 
