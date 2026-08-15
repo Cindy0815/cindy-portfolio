@@ -63,11 +63,11 @@ export const caseStudies = [
             metrics: [
               {
                 title: "UI design",
-                text: "Over 50+ high‑fidelity mockups and UI explorations on Figma"
+                text: "Designed around 50 high‑fidelity screens and UI explorations on Figma"
               },
               {
                 title: "UX strategy",
-                text: "Planning out the user flow, page layouts, and interaction patterns directly with a UX Design Lead"
+                text: "Mapped out the user flow, page layouts, and interaction patterns directly with a UX Design Lead"
               },
               {
                 title: "Aligning with cilents",
@@ -207,20 +207,6 @@ export const caseStudies = [
             heading: "My Role & Contributions",
             paragraphs: [
               "I led the dashboard redesign across layout, data visualization, and information architecture. My work included creating high-fidelity Figma mockups, establishing color severity guidelines, and collaborating with backend engineers to ensure data accuracy."
-            ],
-            metrics: [
-              {
-                title: "Simplified the Client-Facing UI",
-                text: "Cut information overload by relocating granular data to the admin dashboard and restructuring the IA — giving client users a cleaner, faster view of what matters most."
-              },
-              {
-                title: "Reduced task completion time by 20%",
-                text: "Surfaced system health, recent detections, and critical stats in a single glance, reducing the steps needed to assess and respond to threats.",
-              },
-              {
-                title: "Introduced Features That Moved Satisfaction",
-                text: "Created filters, protection statuses, and alerting — driving a 50%+ increase in user satisfaction scores in usability surveys."
-              }
             ]
           },
           {
@@ -328,6 +314,26 @@ export const caseStudies = [
               }
             ],
             image: getAssetUrl("case_studies/Cysana/faq.webp")
+          },
+          {
+            heading: "Impact & Validation",
+            paragraphs: [
+              "By restructuring the information architecture and refining key user workflows, the redesign achieved measurable improvements across core metrics:"
+            ],
+            metrics: [
+              {
+                title: "Simplified the Client-Facing UI",
+                text: "Cut information overload by relocating granular data to the admin dashboard and restructuring the IA — giving client users a cleaner, faster view of what matters most."
+              },
+              {
+                title: "Reduced task completion time by 20%",
+                text: "Surfaced system health, recent detections, and critical stats in a single glance, reducing the steps needed to assess and respond to threats."
+              },
+              {
+                title: "Introduced Features That Moved Satisfaction",
+                text: "Created filters, protection statuses, and alerting — driving a 50%+ increase in user satisfaction scores in usability surveys."
+              }
+            ]
           }
         ]
       },
@@ -400,6 +406,12 @@ export const caseStudies = [
                 src: getAssetUrl("case_studies/Pennies/solution3.webp"),
                 description: "3. Set tangible goals with guidance"
               }
+            ]
+          },
+          {
+            heading: "Impact & Validation",
+            paragraphs: [
+              "In the end, I measured success through an evaluative usability testing with 5 parent-teen groups. Here are the results:"
             ]
           }
         ]
@@ -578,6 +590,35 @@ export const caseStudies = [
               "Budget tracking for teens, with parental spending controls."
             ],
             image: getAssetUrl("case_studies/Pennies/budget.webp")
+          },
+          {
+            heading: "What success looks like",
+            metrics: [
+              {
+                title: "For Teens",
+                bullets: [
+                  "<strong>2×</strong> increase in checking weekly spending",
+                  "<strong>>50%</strong> reach at least one savings goal",
+                  "Rewards engagement",
+                  "Higher confidence in understanding where their money goes"
+                ]
+              },
+              {
+                title: "For Parents",
+                bullets: [
+                  "Fewer tense money conversations reported",
+                  "Clearer visibility into spending patterns",
+                  "More collaborative goal-setting moments outside of the app"
+                ]
+              },
+              {
+                title: "For Pennie",
+                bullets: [
+                  "Increased engagement with contextual tips",
+                  "Consistent use of budgeting and goal-tracking features"
+                ]
+              }
+            ]
           }
         ]
       },

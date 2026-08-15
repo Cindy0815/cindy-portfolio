@@ -615,8 +615,15 @@ const CaseStudyTemplate = () => {
                         <div key={i} className="metric-card">
                           {metric.number && <div className="metric-number"><RollingNumber value={metric.number} /></div>}
                           <div className="metric-content">
-                            {metric.title && <div className="metric-title">{metric.title}</div>}
-                            {metric.text && <div className="metric-text">{metric.text}</div>}
+                            {metric.title && <div className="metric-title" dangerouslySetInnerHTML={{ __html: metric.title }} />}
+                            {metric.text && <div className="metric-text" dangerouslySetInnerHTML={{ __html: metric.text }} />}
+                            {metric.bullets && metric.bullets.length > 0 && (
+                              <ul className="metric-bullets">
+                                {metric.bullets.map((bullet, bIdx) => (
+                                  <li key={bIdx} dangerouslySetInnerHTML={{ __html: bullet }} />
+                                ))}
+                              </ul>
+                            )}
                           </div>
                           {metric.image && (
                             <div className="metric-image-wrapper">
