@@ -606,7 +606,7 @@ export const caseStudies = [
                 ]
               },
               {
-                title: "For Pennie",
+                title: "For Pennies",
                 bullets: [
                   "Increased engagement with contextual tips",
                   "Consistent use of budgeting and goal-tracking features"
