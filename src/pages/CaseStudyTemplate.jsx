@@ -478,21 +478,22 @@ const CaseStudyTemplate = () => {
                   )}
 
                   {block.insightCards && (
-                    block.insightCards.some(card => card.image) ? (
-                      <ScrollDrivenInsightPanel
-                        items={block.insightCards}
-                        onImageClick={setPreviewImage}
-                      />
-                    ) : (
-                      <div className="insight-cards-row">
-                        {block.insightCards.map((card, i) => (
-                          <div key={i} className="insight-card">
-                            <h3 className="insight-card-title">{card.title}</h3>
-                            <p className="insight-card-text">{card.text}</p>
-                          </div>
-                        ))}
-                      </div>
-                    )
+                    <div className="insight-cards-row">
+                      {block.insightCards.map((card, i) => (
+                        <div key={i} className="insight-card">
+                          {card.title && <h3 className="insight-card-title">{card.title}</h3>}
+                          {card.text && <p className="insight-card-text" dangerouslySetInnerHTML={{ __html: card.text }} />}
+                          {card.image && (
+                            <img
+                              src={card.image}
+                              alt={card.title || `Insight card ${i + 1}`}
+                              className="insight-card-image cs-zoomable"
+                              onClick={() => setPreviewImage({ src: card.image, alt: card.title, caption: card.title })}
+                            />
+                          )}
+                        </div>
+                      ))}
+                    </div>
                   )}
 
                   {block.insightScrollPanel && (
@@ -584,6 +585,49 @@ const CaseStudyTemplate = () => {
                         ))}
                       </div>
                     )
+                  )}
+
+                  {block.featureRows && (
+                    <div className="feature-rows-container">
+                      {block.featureRows.map((row, i) => (
+                        <div
+                          key={i}
+                          className={`feature-row ${row.video || row.image ? (i % 2 === 1 ? 'feature-row--reverse' : '') : 'feature-row--no-media'}`}
+                        >
+                          {(row.video || row.image) && (
+                            <div className="feature-row-media">
+                              {row.image && (
+                                <img
+                                  src={row.image}
+                                  alt={row.title || `Feature ${i + 1}`}
+                                  className="feature-row-image cs-zoomable"
+                                  onClick={() => setPreviewImage({ src: row.image, alt: row.title, caption: row.title })}
+                                />
+                              )}
+                              {row.video && (
+                                <video
+                                  src={row.video}
+                                  autoPlay
+                                  loop
+                                  muted
+                                  playsInline
+                                  className="feature-row-video"
+                                />
+                              )}
+                            </div>
+                          )}
+                          <div className="feature-row-text">
+                            {row.title && <h3 className="feature-row-title">{row.title}</h3>}
+                            {row.description && (
+                              <div
+                                className="feature-row-desc"
+                                dangerouslySetInnerHTML={{ __html: row.description }}
+                              />
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   )}
 
                   {block.grid && (

@@ -70,7 +70,7 @@ const Home = () => {
 
           <motion.div className="work-grid" layout>
             <AnimatePresence mode="popLayout">
-              {caseStudies.map((study) => (
+              {caseStudies.filter(study => study.featured !== false).map((study) => (
                 <motion.div
                   key={study.id}
                   layout
@@ -149,28 +149,55 @@ const Home = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="work-card play-card play-card-clickable"
-                onMouseEnter={() => setCursorText("Expand")}
+                onMouseEnter={() => setCursorText(work.link ? "View Case Study" : "Expand")}
                 onMouseLeave={() => setCursorText("")}
-                onClick={() => setActiveWork(work)}
+                onClick={() => {
+                  if (!work.link) {
+                    setActiveWork(work);
+                  }
+                }}
               >
-                <div className="play-card-image">
-                  {work.video ? (
-                    <video
-                      src={work.video}
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                    />
-                  ) : (
-                    <img src={work.image} alt={work.title} />
-                  )}
-                  <div className="play-card-overlay">
-                    <h3>{work.title}</h3>
-                    <p>{work.category}</p>
+                {work.link ? (
+                  <Link to={work.link} style={{ display: 'block', width: '100%', height: '100%', textDecoration: 'none', color: 'inherit' }}>
+                    <div className="play-card-image">
+                      {work.video ? (
+                        <video
+                          src={work.video}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        />
+                      ) : (
+                        <img src={work.image} alt={work.title} />
+                      )}
+                      <div className="play-card-overlay">
+                        <h3>{work.title}</h3>
+                        <p>{work.category}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="play-card-image">
+                    {work.video ? (
+                      <video
+                        src={work.video}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      />
+                    ) : (
+                      <img src={work.image} alt={work.title} />
+                    )}
+                    <div className="play-card-overlay">
+                      <h3>{work.title}</h3>
+                      <p>{work.category}</p>
+                    </div>
                   </div>
-                </div>
+                )}
               </motion.div>
             ))}
           </div>

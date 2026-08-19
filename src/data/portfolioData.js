@@ -30,6 +30,262 @@ export const unlockCaseStudies = (inputPassword) => {
 
 export const caseStudies = [
   {
+    id: "prelight",
+    title: "Prelight.ai",
+    shortDescription: "Brand Asset Management & AI Layer",
+    tags: ["Prelight Internship", "2026"],
+    role: [
+      "My Role: Design Engineer Intern (UX/UI & Frontend)",
+      "Collaborators: 1 PM, 1 Backend Engineer"
+    ],
+    projectType: "AI & DAM",
+    projectCategory: "Internship Project",
+    timeline: "10 Weeks",
+    tools: ["Figma", "Vue.js", "TypeScript", "Tailwind CSS", "Claude Code", "Figma Make"],
+    coverImage: getAssetUrl("case_studies/Prelight/Prelight.png"),
+    headerImage: getAssetUrl("case_studies/Prelight/Prelight.png"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Overview",
+        content: [
+          {
+            heading: "Redesigning Brand Asset Management for AI",
+            paragraphs: [
+              "Prelight is a private MCP layer that makes brand knowledge machine-readable — giving IP-rich enterprises full control over their brand identity in an AI-native world.",
+              "As a Design Engineer Intern, I ran UX/UI audits, identified friction points, and redesigned key parts of the interface, shipping my work on the front end while partnering closely with a backend engineer to bring each feature to production."
+            ]
+          },
+          {
+            heading: "My Focus: Atlas — The Central Branding Hub",
+            paragraphs: [
+              "My primary work over the summer was on Atlas, an AI-powered digital asset management (DAM) tool within the Prelight.ai webapp."
+            ],
+            image: getAssetUrl("case_studies/Prelight/atlas.png")
+          },
+          {
+            heading: "What is Atlas?",
+            paragraphs: [
+              "Atlas is where users upload files that make up a brand's identity — assets, guidelines, and rules — and it gets automatically categorized and has key information extracted from each file. That structured brand context can then flow into other tools via MCP connectors (like Claude or Lovable) or directly into Stage, Prelight's video creation section, to ground generated storyboards and cinematic videos in the brand's identity."
+            ],
+            image: getAssetUrl("case_studies/Prelight/atlas_diagram.png")
+          },
+          {
+            heading: "I worked across two sections of Atlas",
+            image: getAssetUrl("case_studies/Prelight/3.png")
+          }
+        ]
+      },
+      {
+        id: "projects-list",
+        subtitle: "02 / Project 1",
+        content: [
+          {
+            heading: "Challenge 1: Fixing the Core UX Gaps in Atlas’s Brand Management Entry Point",
+            paragraphs: [
+              "As users' first touchpoint in Atlas, this page sets the tone for the product — but it was built as a simple display layer that hadn't scaled with how organizations actually use it."
+            ]
+          },
+          {
+            heading: "What I Found",
+            paragraphs: [
+              "Through user feedback and a heuristic evaluation, I identified four core gaps:"
+            ],
+            image: getAssetUrl("case_studies/Prelight/list_problem.png")
+          },
+          {
+            heading: "What I Shipped",
+            featureRows: [
+              {
+                title: "Brand Card & Creation Flow Redesign",
+                description: "Redesigned brand cards to surface thumbnails for faster visual identification. Rebuilt the 'Add Brand' modal to support thumbnail uploads with a modernized UI. The pattern I established here was later adopted platform-wide across other creation flows.",
+                video: getAssetUrl("case_studies/Prelight/creation_flow.mov")
+              },
+              {
+                title: "Scalability Infrastructure",
+                description: "Introduced pagination and a card-display limit (2 rows per page), plus filtering — giving the brand grid a predictable structure that holds up as organizations' libraries grow.",
+                video: getAssetUrl("case_studies/Prelight/sort_workflow.mov")
+              },
+              {
+                title: "Edit/Delete System",
+                description: "Designed and implemented an end-to-end edit/delete workflow, including a 'Recently Deleted' recovery page and confirmation modals to prevent accidental data loss.",
+                video: getAssetUrl("case_studies/Prelight/delete_workflow.mov")
+              }
+            ]
+          },
+          {
+            heading: "Role-Based Access Control: Admin vs. Regular Member View",
+            paragraphs: [
+              "To prevent unauthorized modifications while keeping brand assets accessible across teams, I designed differentiated views for Admins and Regular Members:"
+            ],
+            insightCards: [
+              {
+                title: "Admin Users",
+                text: "Brand managers and platform admins who need full governance — brand creation, editing, archiving, and deletion."
+              },
+              {
+                title: "Regular Users",
+                text: "Creatives and other day-to-day contributors — a streamlined experience focused on finding and using assets, without administrative clutter or risk of accidental data loss."
+              }
+            ],
+            images: [
+              {
+                src: getAssetUrl("case_studies/Prelight/admin_view.png"),
+                description: "Admin View — Full management controls, brand creation, and edit/delete permissions."
+              },
+              {
+                src: getAssetUrl("case_studies/Prelight/regular_full.png"),
+                description: "Regular Member View — Read-only catalog browsing with management actions safely hidden."
+              }
+            ]
+          },
+          {
+            heading: "Outcome & Impact",
+            insightCards: [
+              {
+                title: "Faster Brand Identification",
+                text: "Thumbnail‑forward brand cards cut visual scanning time and made brand selection immediate."
+              },
+              {
+                title: "Scalable Brand Libraries",
+                text: "Pagination, filtering, and structured card limits ensured the grid stays usable as organizations grow."
+              },
+              {
+                title: "Safer, Role‑Appropriate Governance",
+                text: "A full edit/delete system plus differentiated Admin vs. Member views reduced accidental data loss and prevented unauthorized changes."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "catalog-page",
+        subtitle: "03 / Project 2",
+        content: [
+          {
+            heading: "Challenge 2: Revealing Atlas’s Hidden Intelligence to Build a Searchable, Explainable Asset Catalog",
+            paragraphs: [
+              "Atlas’s catalog page currently acts mostly as a system storage. Assets are uploaded, automatically categorized by AI, and made available to other MCP tools — but users see almost none of the intelligence happening behind the scenes. "
+            ]
+          },
+          {
+            heading: "What Was Missing",
+            paragraphs: [
+              "Although the backend extracted rich metadata — mood, tone, visual style, usage context, brand elements — the UI only surfaced basic file attributes and an underutilized semantic search bar. In addition, users could see which assets required review, but the workflow made it unintuitive to understand how assets were interpreted or why they were categorized a certain way."
+            ],
+            image: getAssetUrl("case_studies/Prelight/catalog_problems.png")
+          },
+          { centeredText: "Atlas needed to evolve from a hidden AI engine into a transparent, descriptive, brand‑ready knowledge base that actually improves user workflows." },
+
+          {
+            heading: "Why This Matters",
+            paragraphs: [
+              "Atlas's AI engine already does the work — but if brand teams can't see or trust its reasoning, they fall back to manual workarounds, support tickets pile up, and the product's core value never lands. Surfacing that intelligence transforms Atlas from an unseen process into a trusted, brand-ready system teams actually rely on."
+            ]
+          },
+
+          {
+            heading: "How I Approached It",
+            highlightBox: {
+              text: "How might we surface Atlas’s rich backend metadata in a way that helps brand teams understand, trust, and meaningfully use their assets?",
+              borderColor: "#26afff",
+              bgColor: "rgba(38, 175, 255, 0.08)"
+            }
+          },
+          {
+            heading: "What I Shipped",
+            featureRows: [
+              {
+                title: "1. Faster Asset Discovery",
+                description: "<p><strong>Before:</strong> Users were limited to digging through folders and filenames, with an underpowered search bar labeled “search documents” that didn’t reflect the system’s actual capabilities.</p><p><strong>Now:</strong> Users search semantically — by mood, tone, usage, brand elements, scenes.</p><p><strong>Workflow impact:</strong></p><ul><li>Creative teams find “calm lifestyle shots” or “blue‑toned product images” instantly</li><li>No more guessing filenames</li><li>Search time drops significantly</li></ul>",
+                video: getAssetUrl("case_studies/Prelight/search.mov")
+              },
+              {
+                title: "2. Clearer Understanding of Each Asset",
+                description: "<p><strong>Before:</strong> Users had to rely on external MCP tools like Claude to interpret an asset — the web app itself offered no way to view meaningful file information.</p><p><strong>Now:</strong> Atlas surfaces mood, tone, visual style, usage context, brand elements, and more.</p><p><strong>Workflow impact:</strong></p><ul><li>Designers quickly validate emotional fit</li><li>Marketers confirm brand consistency</li><li>Editors understand usage context without moving or downloading files</li></ul>",
+                video: getAssetUrl("case_studies/Prelight/metadata.mov")
+              },
+              {
+                title: "3. Trustworthy AI Decisions (Provenance)",
+                description: "<p><strong>Before:</strong> The Decision Trail lived on a separate page, making AI classification feel hidden with no clear signal of which assets needed attention.</p><p><strong>Now:</strong> The redesign introduces provenance details and status tags like 'auto‑approved' / 'needs review' directly in the catalog list, creating an immediate pathway to the Decision Trail.</p><p><strong>Workflow impact:</strong></p><ul><li>Users verify why an asset was tagged</li><li>Compliance teams audit decisions easily</li><li>Brand teams trust the system</li></ul>",
+                image: getAssetUrl("case_studies/Prelight/file_tag.png"),
+                video: getAssetUrl("case_studies/Prelight/human_approved.mov")
+              }
+            ]
+          },
+          {
+            heading: "Outcome & Impact",
+            insightCards: [
+              {
+                title: "Semantic Discovery Unlocked",
+                text: "Search shifted from filename‑guessing to meaning‑based queries, dramatically reducing time to find the right asset."
+              },
+              {
+                title: "Instant Asset Comprehension",
+                text: "Rich metadata surfaced directly in the UI, enabling designers, marketers, and editors to understand an asset without external tools or downloads."
+              },
+              {
+                title: "Visible, Trustworthy AI Decisions",
+                text: "Provenance details and status tags made AI classification explainable, improving confidence, reducing support tickets, and strengthening brand governance."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "04 / My Process",
+        content: [
+          {
+            heading: "End-to-End Design & Engineering Workflow",
+            paragraphs: [
+              "Bridging user research, fast prototyping, and frontend code delivery:"
+            ]
+          },
+          {
+            insightCards: [
+              {
+                title: "1. Audit",
+                text: "Competitive analysis and journey mapping together gave me a clear picture of where Atlas lagged behind industry standards and how users actually moved through the experience, revealing the friction points that shaped the redesign.",
+                image: getAssetUrl("case_studies/Prelight/audit.png")
+              }
+            ]
+          },
+          {
+            insightCards: [
+              {
+                title: "2. Validating & Planning",
+                text: "Aligned with my manager and the backend engineer to scope what was feasible and worth prioritizing."
+              },
+              {
+                title: "3. Design & Iteration",
+                text: "Built mockups, ran lightweight A/B testing, and gathered feedback wherever possible (internal stakeholders, connections working in agencies/creative fields). Used Figma Make to generate feature explorations faster."
+              },
+              {
+                title: "4. Code & Handoff",
+                text: "Connected the Figma MCP to Claude Code to help implement features directly from design files into the frontend application."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "reflection",
+        subtitle: "05 / Reflections & Takeaways",
+        content: [
+          {
+            heading: "Challenges & Key Takeaways",
+            bullets: [
+              "<strong>Finding the Quick Wins</strong> — Working at a startup means limited time and resources — there's no room to design and build everything. A big part of the work was figuring out which problems were worth solving first and which fixes would deliver the most value for the least lift.",
+              "<strong>Building a Design to Code Workflow</strong> — Coming in as one of the first UX/UI hires, there were no design files — the design system lived only in the codebase. To speed up the entire workflow, I extracted the existing tokens and component patterns and used Figma Make and Claude to rebuild them as a working Figma library. It wasn't perfect, but it gave me a solid starting point for quick prototyping and ideation.",
+              "<strong>Using AI Intentionally to Elevate UX</strong> — I learned to use AI meaningfully by understanding its actual capabilities, identifying where it could genuinely improve workflows, and leveraging existing backend intelligence — like metadata extraction and auto‑tagging — to enhance the user experience."
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     id: "Build-A-Box",
     title: "Hershey's: Build A Box",
     shortDescription: "E-Commerce Customization Flow",
