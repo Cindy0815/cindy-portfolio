@@ -83,7 +83,7 @@ export const caseStudies = [
           {
             heading: "Challenge 1: Fixing the Core UX Gaps in Atlas’s Brand Management Entry Point",
             paragraphs: [
-              "As users' first touchpoint in Atlas, this page sets the tone for the product — but it was built as a simple display layer that hadn't scaled with how organizations actually use it."
+              "As users' first touchpoint in Atlas, this page sets the tone for the product — but it was built as a simple display layer that has not scaled with how organizations actually use it."
             ]
           },
           {
@@ -171,7 +171,7 @@ export const caseStudies = [
           {
             heading: "What Was Missing",
             paragraphs: [
-              "Although the backend extracted rich metadata — mood, tone, visual style, usage context, brand elements — the UI only surfaced basic file attributes and an underutilized semantic search bar. In addition, users could see which assets required review, but the workflow made it unintuitive to understand how assets were interpreted or why they were categorized a certain way."
+              "Atlas’s AI intelligence remained largely invisible in the UI, leaving brand teams without the context they needed to understand, trust, or act on how their assets were interpreted and categorized."
             ],
             image: getAssetUrl("case_studies/Prelight/catalog_problems.png")
           },
@@ -187,7 +187,7 @@ export const caseStudies = [
           {
             heading: "How I Approached It",
             highlightBox: {
-              text: "How might we surface Atlas’s rich backend metadata in a way that helps brand teams understand, trust, and meaningfully use their assets?",
+              text: "How might we reveal Atlas’s AI intelligence in a way that helps teams confidently find, interpret, and rely on their assets?",
               borderColor: "#26afff",
               bgColor: "rgba(38, 175, 255, 0.08)"
             }
@@ -403,18 +403,53 @@ export const caseStudies = [
 
           },
           {
+            heading: "AI Inspiration: Turning Spending Into Guided Learning",
+            paragraphs: [
+              "Financial apps already use AI for transaction intelligence, risk detection, and predictive modeling. Tools from Capital One, Revolut, Amex, and Bank of America’s Erica categorize spending and surface contextual insights."
+            ],
+            insightCards: [
+              {
+                title: "Transaction Intelligence",
+                text: "Auto‑categorizes purchases and identifies spending patterns — the same AI used by Capital One and Revolut.<br/><br/><strong>Application in Pennies:</strong> Translate raw purchase logs into simple, teen‑friendly insights and visual categories."
+              },
+              {
+                title: "Risk & Anomaly Detection",
+                text: "Models used by American Express and Chase flag unusual behavior.<br/><br/><strong>Application in Pennies:</strong> Highlight overspending trends before budget limits are breached."
+              },
+              {
+                title: "Personalized Coaching",
+                text: "Apps like Erica and Cleo already deliver behavior‑based nudges.<br/><br/><strong>Application in Pennies:</strong> Deliver goal‑aligned guidance tied to the account's prepaid spending."
+              },
+              {
+                title: "Conversational Assistance",
+                text: "LLM‑powered assistants help users understand their finances.<br/><br/><strong>Application in Pennies:</strong> Introduce financial guidance through supportive conversations."
+              },
+              {
+                title: "Predictive Modeling",
+                text: "Financial institutions use ML to forecast spending and detect risky patterns.<br/><br/><strong>Application in Pennies:</strong> Anticipate moments where users may overspend."
+              }
+            ]
+          },
+          {
+            heading: "Setting Up The Foundation: A Prepaid Model",
+            paragraphs: [
+              "A prepaid card model mirrors how leading youth‑banking apps like Greenlight, GoHenry, BusyKid, and FamZoo operate — giving teens a safe, capped spending environment while giving parents flexible oversight. It’s the industry‑proven foundation that Penni’s AI guidance can build on."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info4.webp")
+          },
+          {
+            heading: "AI‑Powered Guidance: Research That Supports Penni",
+            paragraphs: [
+              "Penni builds on research showing that personalized, behavior‑based nudges significantly improve teen financial habits, and studies on character‑driven conversational AI demonstrate higher engagement and learning. Layered onto a prepaid model, AI turns everyday purchases into safe, contextual learning moments that help teens build confidence while giving parents peace of mind."
+            ],
+            image: getAssetUrl("case_studies/Pennies/penni_ai.png")
+          },
+          {
             heading: "Defining The User Journey",
             paragraphs: [
               "Before designing screens, I mapped the ideal journey: a teen making everyday purchases, receiving gentle guidance, and gradually gaining autonomy while parents stay informed through lightweight oversight."
             ],
             image: getAssetUrl("case_studies/Pennies/info3.webp")
-          },
-          {
-            heading: "Setting Up The Foundation: A Prepaid Model",
-            paragraphs: [
-              "To support this, I chose a prepaid card system as the foundation. Unlike a traditional debit or credit account, a prepaid model caps risk by design — teens can only spend what's been allocated, which gives parents peace of mind without requiring them to monitor every transaction. This structure became the base layer that Penni's guidance and insights could build on top of."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info4.webp")
           }
         ]
       },
@@ -425,7 +460,7 @@ export const caseStudies = [
           {
             heading: "1. Pivoting Toward Long Term Behavior Change",
             paragraphs: [
-              "My first concept focused on real‑time “out of budget” alerts. Teens users ignored them. They felt punitive, not supportive.",
+              "My first concept focused on real‑time “out of budget” alerts. Teens users ignored them. They felt restrictive instead of helpful.",
               "This was a turning point. Instead of reacting to mistakes, the solution needed to guide teens users before the moment of purchase. This insight shifted the entire product toward proactive, goal‑driven learning.",
             ],
             image: getAssetUrl("case_studies/Pennies/info5_1.webp"),
@@ -555,8 +590,8 @@ export const caseStudies = [
           {
             heading: "Key Takeaways",
             paragraphs: [
-              "1. Designing for Multi-User Dynamics: This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
-              "2. AI as a Feature vs. AI as a Solution: I learned that AI shouldn't just automate tasks; it should humanize them. Integrating AI contextually made budgeting feel like a supportive partnership rather than a digital chore."
+              "<strong>Designing for Multi-User Dynamics</strong> - This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
+              "<strong>AI as a Feature vs. AI as a Solution</strong> - I learned that AI shouldn’t just automate budgeting — it should support it. By integrating AI contextually, the experience shifted from a tedious digital task into a more human, guided partnership."
             ]
           }
 

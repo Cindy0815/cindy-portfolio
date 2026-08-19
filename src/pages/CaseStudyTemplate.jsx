@@ -464,11 +464,12 @@ const CaseStudyTemplate = () => {
                     <div className="section-video-wrapper">
                       <video
                         src={block.video}
-                        className="section-video"
+                        className="section-video cs-zoomable"
                         autoPlay
                         loop
                         muted
                         playsInline
+                        onClick={() => setPreviewImage({ src: block.video, alt: block.heading, caption: block.heading, isVideo: true })}
                       />
                     </div>
                   )}
@@ -611,7 +612,8 @@ const CaseStudyTemplate = () => {
                                   loop
                                   muted
                                   playsInline
-                                  className="feature-row-video"
+                                  className="feature-row-video cs-zoomable"
+                                  onClick={() => setPreviewImage({ src: row.video, alt: row.title, caption: row.title, isVideo: true })}
                                 />
                               )}
                             </div>
@@ -803,7 +805,19 @@ const CaseStudyTemplate = () => {
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               onClick={(e) => e.stopPropagation()}
             >
-              <img src={previewImage.src} alt={previewImage.alt || "Preview"} />
+              {previewImage.isVideo || (typeof previewImage.src === 'string' && (previewImage.src.endsWith('.mov') || previewImage.src.endsWith('.mp4') || previewImage.src.includes('.mov?') || previewImage.src.includes('.mp4?'))) ? (
+                <video
+                  src={previewImage.src}
+                  autoPlay
+                  loop
+                  muted
+                  controls
+                  playsInline
+                  style={{ maxWidth: '100%', maxHeight: '80vh', borderRadius: '12px', display: 'block' }}
+                />
+              ) : (
+                <img src={previewImage.src} alt={previewImage.alt || "Preview"} />
+              )}
               {previewImage.caption && (
                 <div className="cs-lightbox-caption">{previewImage.caption}</div>
               )}

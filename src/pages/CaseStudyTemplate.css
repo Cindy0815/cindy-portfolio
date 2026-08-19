@@ -1503,6 +1503,15 @@
   gap: 1rem;
 }
 
+/* Prelight Case Study: Larger feature row videos */
+.cs-study-prelight .feature-row-media {
+  flex: 1.8;
+}
+
+.cs-study-prelight .feature-row-text {
+  flex: 1;
+}
+
 .feature-row-title {
   font-size: 1.6rem;
   font-weight: 600;
