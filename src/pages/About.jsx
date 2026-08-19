@@ -78,7 +78,7 @@ const About = () => {
             <div className="skills-section">
               <h2 className="skills-heading">Skills</h2>
               <ul className="skills-list">
-                {['UX Design', 'UI Design', 'Prototyping', 'User Research', 'Design Systems', 'Framer', 'Webflow'].map(skill => (
+                {['UX/UI Design', 'User Research', 'Design Systems', 'AI Workflows'].map(skill => (
                   <li key={skill} className="skill-pill">
                     {skill}
                   </li>
@@ -95,7 +95,7 @@ const About = () => {
                       <span className="education-date">August 2026 - Present</span>
                     </div>
                     <div className="education-info">
-                      <h3 className="education-degree">MS in Information Science</h3>
+                      <h3 className="education-degree">MS in Information Systems (HCI)</h3>
                       <p className="education-school">Cornell University</p>
                     </div>
                   </div>
@@ -140,7 +140,7 @@ const About = () => {
                       <span className="experience-date">2024</span>
                     </div>
                     <div className="experience-info">
-                      <h3 className="experience-role">Product Designer Intern</h3>
+                      <h3 className="experience-role">UX Design Intern</h3>
                       <p className="experience-company">Conatix</p>
                     </div>
                   </div>
