@@ -281,7 +281,7 @@ export const caseStudies = [
             bullets: [
               "<strong>Finding the Quick Wins</strong> — Working at a startup means limited time and resources — there's no room to design and build everything. A big part of the work was figuring out which problems were worth solving first and which fixes would deliver the most value for the least lift.",
               "<strong>Building a Design to Code Workflow</strong> — Coming in as one of the first UX/UI hires, there were no design files — the design system lived only in the codebase. To speed up the entire workflow, I extracted the existing tokens and component patterns and used Figma Make and Claude to rebuild them as a working Figma library. It wasn't perfect, but it gave me a solid starting point for quick prototyping and ideation.",
-              "<strong>Using AI Intentionally to Elevate UX</strong> — I learned to use AI meaningfully by understanding its actual capabilities, identifying where it could genuinely improve workflows, and leveraging existing backend intelligence — like metadata extraction and auto‑tagging — to enhance the user experience."
+              "<strong>Using AI Intentionally to Elevate UX</strong> — I learned to use AI meaningfully by understanding its actual capabilities, identifying where it could genuinely improve workflows, and leveraging the intelligence — like metadata extraction and auto‑tagging — to enhance the user experience."
             ]
           }
         ]
