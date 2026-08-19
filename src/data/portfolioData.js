@@ -426,7 +426,7 @@ export const caseStudies = [
             bullets: [
               "<strong>Designing Within Constraints</strong> — Working under tight timelines taught me how to prioritize tasks. I learned to distinguish between “nice‑to‑have” ideas and the core interactions that truly shaped the user experience.",
               "<strong>Embracing Feedback</strong> — Balancing input from both the client and developers pushed me to refine how I evaluate feedback. I learned to identify what improves usability versus what introduces unnecessary complexity.",
-              "<strong>Collaborating Across Teams</strong> — Clear communication became essential. Early misalignment caused rework, but once I established a shared vocabulary with developers and the client, the process became smoother and more efficient."
+              "<strong>Future Scoping</strong> — Even while shipping fast, I learned the value of presenting thoughtful future‑state concepts; showing how the experience could evolve often helped clients see the long‑term potential and green‑light improvements beyond the MVP."
             ]
           }
         ]
@@ -600,9 +600,8 @@ export const caseStudies = [
           {
             heading: "What This Project Taught Me",
             bullets: [
-              "<strong>Designing for Technical Complexity</strong> — Working with security logs taught me how to distill dense technical data into clear, actionable visual hierarchy so admins can react quickly.",
-              "<strong>Cross-Disciplinary Collaboration</strong> — Partnering closely with data scientists and engineers helped align visual layouts with real-world technical capabilities.",
-              "<strong>Systems Thinking in Enterprise UI</strong> — Designing reusable dashboard modules ensured consistent interaction patterns and effortless scalability across security tools."
+              "<strong>Prioritizing User Feedback as a Driver for IA Changes</strong> — User interviews revealed what truly mattered (fast file review, clear alerts, self‑service answers), guiding the consolidation of pages and the introduction of features like unified review tabs and a scalable FAQ hub.",
+              "<strong>Not to be Afraid to Ask Questions</strong> — Especially when I didn’t fully understand how the data was being extracted or how analysts worked. It was important to speak up since that curiosity was essential for designing a system that actually fit real security workflows."
             ]
           }
         ]
