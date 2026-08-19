@@ -363,20 +363,20 @@ export const caseStudies = [
             paragraphs: [
               "I designed three main components to address the client’s requirements:"
             ],
-            insightCards: [
+            featureRows: [
               {
                 title: "Header",
-                text: "A header that displayed the total amounts needed and minimum-per-flavor constraints, giving users clear context of what was required.",
+                description: "A header that displayed the total amounts needed and minimum-per-flavor constraints, giving users clear context of what was required.",
                 image: getAssetUrl("case_studies/Hershey/key1.webp")
               },
               {
                 title: "Mini Cart",
-                text: "A summary that updated in real time as users added or removed items, supporting an intuitive editing flow and giving users constant visibility into their progress.",
+                description: "A summary that updated in real time as users added or removed items, supporting an intuitive editing flow and giving users constant visibility into their progress.",
                 image: getAssetUrl("case_studies/Hershey/key2.webp")
               },
               {
                 title: "Item Selector",
-                text: "A clear grid layout that let users easily adjust quantities for each flavor, enforcing the minimum-per-flavor rule through real‑time validation.",
+                description: "A clear grid layout that let users easily adjust quantities for each flavor, enforcing the minimum-per-flavor rule through real‑time validation.",
                 image: getAssetUrl("case_studies/Hershey/key3.webp")
               }
             ]
@@ -892,6 +892,7 @@ export const caseStudies = [
     id: "petals-worth",
     title: "A Petal's Worth",
     shortDescription: "Building A Collaborative Digital Garden",
+    featured: false,
     tags: ["Senior Thesis", "2026"],
     role: "Design Engineer (UX/UI, Front-End Development)",
     projectType: "Creative Development & Design",
@@ -1519,10 +1520,11 @@ export const caseStudies = [
 
 export const playWorks = [
   {
-    id: "petals-teaser",
-    title: "A Petal's Worth Teaser",
-    category: "Motion Graphics",
-    video: getAssetUrl('Play_assets/petals_teaser_vid.mp4')
+    id: "petals-worth",
+    title: "A Petal's Worth",
+    category: "Interactive Design & Case Study",
+    video: getAssetUrl('Play_assets/petals_teaser_vid.mp4'),
+    link: "/case-studies/petals-worth"
   },
   {
     id: "3d-hat",
