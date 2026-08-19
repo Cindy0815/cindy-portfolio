@@ -247,7 +247,10 @@ export const caseStudies = [
               {
                 title: "1. Audit",
                 text: "Competitive analysis and journey mapping together gave me a clear picture of where Atlas lagged behind industry standards and how users actually moved through the experience, revealing the friction points that shaped the redesign.",
-                image: getAssetUrl("case_studies/Prelight/audit.png")
+                images: [
+                  getAssetUrl("case_studies/Prelight/analysis.png"),
+                  getAssetUrl("case_studies/Prelight/audit.png")
+                ]
               }
             ]
           },

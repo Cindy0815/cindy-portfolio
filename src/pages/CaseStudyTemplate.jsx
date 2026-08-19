@@ -484,13 +484,30 @@ const CaseStudyTemplate = () => {
                         <div key={i} className="insight-card">
                           {card.title && <h3 className="insight-card-title">{card.title}</h3>}
                           {card.text && <p className="insight-card-text" dangerouslySetInnerHTML={{ __html: card.text }} />}
-                          {card.image && (
+                          {card.image && !card.images && (
                             <img
                               src={card.image}
                               alt={card.title || `Insight card ${i + 1}`}
                               className="insight-card-image cs-zoomable"
                               onClick={() => setPreviewImage({ src: card.image, alt: card.title, caption: card.title })}
                             />
+                          )}
+                          {card.images && card.images.length > 0 && (
+                            <div className="insight-card-images-grid">
+                              {card.images.map((imgItem, imgIdx) => {
+                                const imgSrc = typeof imgItem === 'string' ? imgItem : imgItem.src;
+                                const imgCap = typeof imgItem === 'string' ? card.title : (imgItem.description || card.title);
+                                return (
+                                  <img
+                                    key={imgIdx}
+                                    src={imgSrc}
+                                    alt={imgCap || `Insight card image ${imgIdx + 1}`}
+                                    className="insight-card-image cs-zoomable"
+                                    onClick={() => setPreviewImage({ src: imgSrc, alt: imgCap, caption: imgCap })}
+                                  />
+                                );
+                              })}
+                            </div>
                           )}
                         </div>
                       ))}
