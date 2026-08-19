@@ -286,6 +286,285 @@ export const caseStudies = [
     ]
   },
   {
+    id: "pennies",
+    title: "Pennies",
+    shortDescription: "A Banking App For Parents & Teens",
+    tags: ["Personal Project", "2026"],
+    role: "UX/UI Designer (End-to-End)",
+    projectType: "Mobile Application",
+    projectCategory: "Personal Project",
+    timeline: "12 Weeks",
+    tools: ["Figma", "FigmaMake", "Miro"],
+    coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.webp"),
+    headerImage: getAssetUrl("case_studies/Pennies/p_thumbnail2.webp"),
+    sections: [
+      {
+        id: "overview",
+        subtitle: "01 / Overview",
+        content: [
+          {
+            heading: "Context",
+            paragraphs: [
+              "Bank accounts are opening earlier than ever, and with the rise of banking programs and services built for younger generations, I saw a market I wanted to tap into. What started as a UX class assignment became personal when I recognized a problem in my own family: the dynamic around money — where parents want to teach financial responsibility without lecturing, while still giving their child room to learn.",
+            ]
+          },
+          {
+            heading: "The Problem",
+            paragraphs: [
+              "Most people open their first bank account between ages 13 and 17, a formative window where real-world financial habits begin to take shape. Yet teens in this stage often lack meaningful financial literacy, while parental oversight can easily slip into micro‑management — creating friction, confusion, and ultimately abandonment of traditional banking apps."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info1_1.webp"),
+            highlightBox: {
+              text: "How might we help teens learn by doing while giving parents the peace of mind that their teens are supported, not left alone?"
+            }
+          },
+
+          {
+            heading: "The Solution: Turning Real Spending Habits Into Guided Learning",
+            paragraphs: [
+              "Pennies turns everyday spending into learning moments. Penni, an in-app assistant, gives teens personalized insights and goal-based nudges, while parents retain configurable oversight — replacing surveillance with guided independence."
+            ],
+            stackedSpread: true,
+            images: [
+              {
+                src: getAssetUrl("case_studies/Pennies/solution1.webp"),
+                description: "1. Keep track of spendings"
+              },
+              {
+                src: getAssetUrl("case_studies/Pennies/solution2.webp"),
+                description: "2. Get personalized advice and tips"
+              },
+              {
+                src: getAssetUrl("case_studies/Pennies/solution3.webp"),
+                description: "3. Set tangible goals with guidance"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "research",
+        subtitle: "02 / Research",
+        content: [
+          {
+            heading: "The Core Tension: Uncertainty on Both Sides",
+            paragraphs: [
+              "I spoke with five parent-teen pairs to understand where financial learning breaks down. What emerged was a shared sense of uncertainty:"
+            ],
+            povGrid: [
+              {
+                tag: getAssetUrl("case_studies/Pennies/parents_pov.webp"),
+                problems: [
+                  "1. Unsure how to teach financial skills effectively",
+                  "2. Limited visibility into teen spending",
+                  "3. Balancing control with independence"
+                ],
+                opportunityTitle: "Opportunity #1",
+                opportunities: [
+                  "1. Provide guided, age appropriate financial education tools for parents",
+                  "2. Support gradual financial independence where teens earn autonomy step by step",
+                  "3. Reinforce good habits with feedback"
+                ]
+              },
+              {
+                tag: getAssetUrl("case_studies/Pennies/teen_pov.webp"),
+                problems: [
+                  "1. Lack of financial education in school",
+                  "2. Inconsistent income which makes makes planning and saving difficult",
+                  "3. Difficulty separate needs from wants, leading to frequent impulse purchases"
+                ],
+                opportunityTitle: "Opportunity #2",
+                opportunities: [
+                  "1. Make saving feel tangible and rewarding",
+                  "2. Increase awareness around spending decisions, distinguishing needs vs. wants",
+                  "3. Support budgeting with flexible systems"
+                ]
+              }
+            ],
+            centeredText: "These conversations revealed two parallel needs: parents needed tools to <em>guide without controlling</em>, and teens needed support that <em>felt empowering</em> rather than punitive. This became the foundation for the design direction."
+          },
+          {
+            heading: "Where the Market Falls Short",
+            paragraphs: [
+              "Next, I analyzed competitors in the market to identify gaps that had not yet been addressed."
+            ],
+            imagePovSplit: {
+              image: getAssetUrl("case_studies/Pennies/info2.webp"),
+              problemCard: {
+                title: "Market Gap:",
+                text: "Few offer personalized, real-time financial guidance that adapts to teens' actual spending behaviors"
+              },
+              opportunityCard: {
+                title: "Opportunity #3",
+                text: "Provide a personalized experience that gives real, actionable insights"
+              }
+            },
+            centeredText: "With both the emotional and market gaps clear, the next step was translating these insights into a solution.",
+
+          },
+          {
+            heading: "Defining The User Journey",
+            paragraphs: [
+              "Before designing screens, I mapped the ideal journey: a teen making everyday purchases, receiving gentle guidance, and gradually gaining autonomy while parents stay informed through lightweight oversight."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info3.webp")
+          },
+          {
+            heading: "Setting Up The Foundation: A Prepaid Model",
+            paragraphs: [
+              "To support this, I chose a prepaid card system as the foundation. Unlike a traditional debit or credit account, a prepaid model caps risk by design — teens can only spend what's been allocated, which gives parents peace of mind without requiring them to monitor every transaction. This structure became the base layer that Penni's guidance and insights could build on top of."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info4.webp")
+          }
+        ]
+      },
+      {
+        id: "process",
+        subtitle: "03 / Process",
+        content: [
+          {
+            heading: "1. Pivoting Toward Long Term Behavior Change",
+            paragraphs: [
+              "My first concept focused on real‑time “out of budget” alerts. Teens users ignored them. They felt punitive, not supportive.",
+              "This was a turning point. Instead of reacting to mistakes, the solution needed to guide teens users before the moment of purchase. This insight shifted the entire product toward proactive, goal‑driven learning.",
+            ],
+            image: getAssetUrl("case_studies/Pennies/info5_1.webp"),
+
+          },
+          {
+            image: getAssetUrl("case_studies/Pennies/info5_2.webp")
+          },
+          {
+            heading: "2. Making Financial Insights Approachable",
+            paragraphs: [
+              "After the first round of testing, I created a higher fidelity prototype and ran quick tests on existing features. Some major iterations includes adding a spending patterns graph for teens and a friendly system that flags overspending trends while offering guidance rather than warnings.",
+
+            ],
+            image: getAssetUrl("case_studies/Pennies/info6.webp"),
+
+          },
+          {
+            heading: "3. Personalized Guidance Through A Friendly Character",
+            paragraphs: [
+              "Next, I introduced a character called Penni to make financial guidance feel more human, approachable, and engaging for teens. Instead of interacting with a generic AI chatbot, Penni offers a consistent personality and tone, helping users build trust and stay motivated. This shift transforms budgeting from something intimidating into a supportive experience, making financial learning feel less like a task and more like a conversation.",
+            ],
+            image: getAssetUrl("case_studies/Pennies/info7.webp"),
+
+          },
+          {
+            heading: "4. Unlocking Progress Through Incentives",
+            paragraphs: [
+              "Finally a major addition was a \"Customize\" feature, where teens can unlock fun accessories for Penni by completing tasks related to their account. This gamified approach encourages consistent engagement, turning financial management into a motivating and rewarding experience."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info9.webp"),
+
+          },
+          {
+            heading: "Design System",
+            paragraphs: [
+              "For the high fidelity mockup, I created a design system as guidelines for my final design with a clear branding and ensuring that all the components are consistent throughout."
+            ],
+            image: getAssetUrl("case_studies/Pennies/info10.webp"),
+
+          }
+        ]
+      },
+      {
+        id: "features",
+        subtitle: "04 / Final Features",
+        content: [
+          {
+            heading: "Onboarding",
+            paragraphs: [
+              "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
+            ],
+            image: getAssetUrl("case_studies/Pennies/onboarding.webp")
+          },
+          {
+            heading: "Home Page",
+            paragraphs: [
+              "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
+            ],
+            image: getAssetUrl("case_studies/Pennies/homepage.webp")
+          },
+          {
+            heading: "Ask Penni",
+
+            grid: {
+              items: [
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask1.mp4"),
+                  title: "1. Customize",
+                  description: "Customize cards, choose layout preferences, and select visual themes."
+                },
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask2.mp4"),
+                  title: "2. Ask",
+                  description: "Ask Penni financial questions and receive real-time personalized tips."
+                },
+                {
+                  video: getAssetUrl("case_studies/Pennies/ask3.mp4"),
+                  title: "3. Apply",
+                  description: "Apply recommendations to your budget and track goals easily."
+                }
+              ]
+            }
+          },
+          {
+            heading: "Budget",
+            paragraphs: [
+              "Budget tracking for teens, with parental spending controls."
+            ],
+            image: getAssetUrl("case_studies/Pennies/budget.webp")
+          },
+          {
+            heading: "What success looks like",
+            metrics: [
+              {
+                title: "For Teens",
+                bullets: [
+                  "<strong>2×</strong> increase in checking weekly spending",
+                  "<strong>>50%</strong> reach at least one savings goal",
+                  "Rewards engagement",
+                  "Higher confidence in understanding where their money goes"
+                ]
+              },
+              {
+                title: "For Parents",
+                bullets: [
+                  "Fewer tense money conversations reported",
+                  "Clearer visibility into spending patterns",
+                  "More collaborative goal-setting moments outside of the app"
+                ]
+              },
+              {
+                title: "For Pennies",
+                bullets: [
+                  "Increased engagement with contextual tips",
+                  "Consistent use of budgeting and goal-tracking features"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        id: "reflection",
+        subtitle: "05 / Reflection",
+        content: [
+          {
+            heading: "Key Takeaways",
+            paragraphs: [
+              "1. Designing for Multi-User Dynamics: This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
+              "2. AI as a Feature vs. AI as a Solution: I learned that AI shouldn't just automate tasks; it should humanize them. Integrating AI contextually made budgeting feel like a supportive partnership rather than a digital chore."
+            ]
+          }
+
+        ]
+      }
+    ]
+  },
+  {
     id: "Build-A-Box",
     title: "Hershey's: Build A Box",
     shortDescription: "E-Commerce Customization Flow",
@@ -604,285 +883,6 @@ export const caseStudies = [
               "<strong>Not to be Afraid to Ask Questions</strong> — Especially when I didn’t fully understand how the data was being extracted or how analysts worked. It was important to speak up since that curiosity was essential for designing a system that actually fit real security workflows."
             ]
           }
-        ]
-      }
-    ]
-  },
-  {
-    id: "pennies",
-    title: "Pennies",
-    shortDescription: "A Banking App For Parents & Teens",
-    tags: ["Personal Project", "2026"],
-    role: "UX/UI Designer (End-to-End)",
-    projectType: "Mobile Application",
-    projectCategory: "Personal Project",
-    timeline: "12 Weeks",
-    tools: ["Figma", "FigmaMake", "Miro"],
-    coverImage: getAssetUrl("case_studies/Pennies/pennies_thumbnail.webp"),
-    headerImage: getAssetUrl("case_studies/Pennies/p_thumbnail2.webp"),
-    sections: [
-      {
-        id: "overview",
-        subtitle: "01 / Overview",
-        content: [
-          {
-            heading: "Context",
-            paragraphs: [
-              "Bank accounts are opening earlier than ever, and with the rise of banking programs and services built for younger generations, I saw a market I wanted to tap into. What started as a UX class assignment became personal when I recognized a problem in my own family: the dynamic around money — where parents want to teach financial responsibility without lecturing, while still giving their child room to learn.",
-            ]
-          },
-          {
-            heading: "The Problem",
-            paragraphs: [
-              "Most people open their first bank account between ages 13 and 17, a formative window where real-world financial habits begin to take shape. Yet teens in this stage often lack meaningful financial literacy, while parental oversight can easily slip into micro‑management — creating friction, confusion, and ultimately abandonment of traditional banking apps."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info1_1.webp"),
-            highlightBox: {
-              text: "How might we help teens learn by doing while giving parents the peace of mind that their teens are supported, not left alone?"
-            }
-          },
-
-          {
-            heading: "The Solution: Turning Real Spending Habits Into Guided Learning",
-            paragraphs: [
-              "Pennies turns everyday spending into learning moments. Penni, an in-app assistant, gives teens personalized insights and goal-based nudges, while parents retain configurable oversight — replacing surveillance with guided independence."
-            ],
-            stackedSpread: true,
-            images: [
-              {
-                src: getAssetUrl("case_studies/Pennies/solution1.webp"),
-                description: "1. Keep track of spendings"
-              },
-              {
-                src: getAssetUrl("case_studies/Pennies/solution2.webp"),
-                description: "2. Get personalized advice and tips"
-              },
-              {
-                src: getAssetUrl("case_studies/Pennies/solution3.webp"),
-                description: "3. Set tangible goals with guidance"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        id: "research",
-        subtitle: "02 / Research",
-        content: [
-          {
-            heading: "The Core Tension: Uncertainty on Both Sides",
-            paragraphs: [
-              "I spoke with five parent-teen pairs to understand where financial learning breaks down. What emerged was a shared sense of uncertainty:"
-            ],
-            povGrid: [
-              {
-                tag: getAssetUrl("case_studies/Pennies/parents_pov.webp"),
-                problems: [
-                  "1. Unsure how to teach financial skills effectively",
-                  "2. Limited visibility into teen spending",
-                  "3. Balancing control with independence"
-                ],
-                opportunityTitle: "Opportunity #1",
-                opportunities: [
-                  "1. Provide guided, age appropriate financial education tools for parents",
-                  "2. Support gradual financial independence where teens earn autonomy step by step",
-                  "3. Reinforce good habits with feedback"
-                ]
-              },
-              {
-                tag: getAssetUrl("case_studies/Pennies/teen_pov.webp"),
-                problems: [
-                  "1. Lack of financial education in school",
-                  "2. Inconsistent income which makes makes planning and saving difficult",
-                  "3. Difficulty separate needs from wants, leading to frequent impulse purchases"
-                ],
-                opportunityTitle: "Opportunity #2",
-                opportunities: [
-                  "1. Make saving feel tangible and rewarding",
-                  "2. Increase awareness around spending decisions, distinguishing needs vs. wants",
-                  "3. Support budgeting with flexible systems"
-                ]
-              }
-            ],
-            centeredText: "These conversations revealed two parallel needs: parents needed tools to <em>guide without controlling</em>, and teens needed support that <em>felt empowering</em> rather than punitive. This became the foundation for the design direction."
-          },
-          {
-            heading: "Where the Market Falls Short",
-            paragraphs: [
-              "Next, I analyzed competitors in the market to identify gaps that had not yet been addressed."
-            ],
-            imagePovSplit: {
-              image: getAssetUrl("case_studies/Pennies/info2.webp"),
-              problemCard: {
-                title: "Market Gap:",
-                text: "Few offer personalized, real-time financial guidance that adapts to teens' actual spending behaviors"
-              },
-              opportunityCard: {
-                title: "Opportunity #3",
-                text: "Provide a personalized experience that gives real, actionable insights"
-              }
-            },
-            centeredText: "With both the emotional and market gaps clear, the next step was translating these insights into a solution.",
-
-          },
-          {
-            heading: "Defining The User Journey",
-            paragraphs: [
-              "Before designing screens, I mapped the ideal journey: a teen making everyday purchases, receiving gentle guidance, and gradually gaining autonomy while parents stay informed through lightweight oversight."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info3.webp")
-          },
-          {
-            heading: "Setting Up The Foundation: A Prepaid Model",
-            paragraphs: [
-              "To support this, I chose a prepaid card system as the foundation. Unlike a traditional debit or credit account, a prepaid model caps risk by design — teens can only spend what's been allocated, which gives parents peace of mind without requiring them to monitor every transaction. This structure became the base layer that Penni's guidance and insights could build on top of."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info4.webp")
-          }
-        ]
-      },
-      {
-        id: "process",
-        subtitle: "03 / Process",
-        content: [
-          {
-            heading: "1. Pivoting Toward Long Term Behavior Change",
-            paragraphs: [
-              "My first concept focused on real‑time “out of budget” alerts. Teens users ignored them. They felt punitive, not supportive.",
-              "This was a turning point. Instead of reacting to mistakes, the solution needed to guide teens users before the moment of purchase. This insight shifted the entire product toward proactive, goal‑driven learning.",
-            ],
-            image: getAssetUrl("case_studies/Pennies/info5_1.webp"),
-
-          },
-          {
-            image: getAssetUrl("case_studies/Pennies/info5_2.webp")
-          },
-          {
-            heading: "2. Making Financial Insights Approachable",
-            paragraphs: [
-              "After the first round of testing, I created a higher fidelity prototype and ran quick tests on existing features. Some major iterations includes adding a spending patterns graph for teens and a friendly system that flags overspending trends while offering guidance rather than warnings.",
-
-            ],
-            image: getAssetUrl("case_studies/Pennies/info6.webp"),
-
-          },
-          {
-            heading: "3. Personalized Guidance Through A Friendly Character",
-            paragraphs: [
-              "Next, I introduced a character called Penni to make financial guidance feel more human, approachable, and engaging for teens. Instead of interacting with a generic AI chatbot, Penni offers a consistent personality and tone, helping users build trust and stay motivated. This shift transforms budgeting from something intimidating into a supportive experience, making financial learning feel less like a task and more like a conversation.",
-            ],
-            image: getAssetUrl("case_studies/Pennies/info7.webp"),
-
-          },
-          {
-            heading: "4. Unlocking Progress Through Incentives",
-            paragraphs: [
-              "Finally a major addition was a \"Customize\" feature, where teens can unlock fun accessories for Penni by completing tasks related to their account. This gamified approach encourages consistent engagement, turning financial management into a motivating and rewarding experience."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info9.webp"),
-
-          },
-          {
-            heading: "Design System",
-            paragraphs: [
-              "For the high fidelity mockup, I created a design system as guidelines for my final design with a clear branding and ensuring that all the components are consistent throughout."
-            ],
-            image: getAssetUrl("case_studies/Pennies/info10.webp"),
-
-          }
-        ]
-      },
-      {
-        id: "features",
-        subtitle: "04 / Final Features",
-        content: [
-          {
-            heading: "Onboarding",
-            paragraphs: [
-              "A simple sign up flow where both users get to discuss rules and restrictions together, signing a parent-teen agreement at the end."
-            ],
-            image: getAssetUrl("case_studies/Pennies/onboarding.webp")
-          },
-          {
-            heading: "Home Page",
-            paragraphs: [
-              "The homepage provides transaction overviews for both teens and parents, plus savings progress and tips for parent"
-            ],
-            image: getAssetUrl("case_studies/Pennies/homepage.webp")
-          },
-          {
-            heading: "Ask Penni",
-
-            grid: {
-              items: [
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask1.mp4"),
-                  title: "1. Customize",
-                  description: "Customize cards, choose layout preferences, and select visual themes."
-                },
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask2.mp4"),
-                  title: "2. Ask",
-                  description: "Ask Penni financial questions and receive real-time personalized tips."
-                },
-                {
-                  video: getAssetUrl("case_studies/Pennies/ask3.mp4"),
-                  title: "3. Apply",
-                  description: "Apply recommendations to your budget and track goals easily."
-                }
-              ]
-            }
-          },
-          {
-            heading: "Budget",
-            paragraphs: [
-              "Budget tracking for teens, with parental spending controls."
-            ],
-            image: getAssetUrl("case_studies/Pennies/budget.webp")
-          },
-          {
-            heading: "What success looks like",
-            metrics: [
-              {
-                title: "For Teens",
-                bullets: [
-                  "<strong>2×</strong> increase in checking weekly spending",
-                  "<strong>>50%</strong> reach at least one savings goal",
-                  "Rewards engagement",
-                  "Higher confidence in understanding where their money goes"
-                ]
-              },
-              {
-                title: "For Parents",
-                bullets: [
-                  "Fewer tense money conversations reported",
-                  "Clearer visibility into spending patterns",
-                  "More collaborative goal-setting moments outside of the app"
-                ]
-              },
-              {
-                title: "For Pennies",
-                bullets: [
-                  "Increased engagement with contextual tips",
-                  "Consistent use of budgeting and goal-tracking features"
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        id: "reflection",
-        subtitle: "05 / Reflection",
-        content: [
-          {
-            heading: "Key Takeaways",
-            paragraphs: [
-              "1. Designing for Multi-User Dynamics: This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
-              "2. AI as a Feature vs. AI as a Solution: I learned that AI shouldn't just automate tasks; it should humanize them. Integrating AI contextually made budgeting feel like a supportive partnership rather than a digital chore."
-            ]
-          }
-
         ]
       }
     ]
