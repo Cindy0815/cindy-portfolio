@@ -2,16 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './About.css';
-import cindy1 from '../assets/cindy1.webp';
 import cindy2 from '../assets/cindy2.webp';
 import cindy3 from '../assets/cindy3.webp';
 import cindy4 from '../assets/cindy4.webp';
 
 const About = () => {
   const images = [
-    { src: cindy1, description: "I love traveling and exploring new places." },
-    { src: cindy2, description: "Showcasing my project A Petal's Worth." },
     { src: cindy3, description: "Graduating with my bachelor's from NYU." },
+    { src: cindy2, description: "Showcasing my project A Petal's Worth." },
     { src: cindy4, description: "Participating in hackathons." }
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
