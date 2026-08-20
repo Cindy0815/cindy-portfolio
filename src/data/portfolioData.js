@@ -269,6 +269,14 @@ export const caseStudies = [
                 text: "Connected the Figma MCP to Claude Code to help implement features directly from design files into the frontend application."
               }
             ]
+          },
+          {
+            heading: "Starting A Component Library On Figma",
+            paragraphs: [
+              "I documented the components I created in Figma with clear variants, building a lightweight component library that serves as both visual documentation and structured context for Claude, improving the design‑to‑code workflow. Below are some examples:"
+            ],
+            video: getAssetUrl("case_studies/Prelight/component.mov"),
+            image: getAssetUrl("case_studies/Prelight/component2.png")
           }
         ]
       },
@@ -279,9 +287,9 @@ export const caseStudies = [
           {
             heading: "Challenges & Key Takeaways",
             bullets: [
-              "<strong>Finding the Quick Wins</strong> — Working at a startup means limited time and resources — there's no room to design and build everything. A big part of the work was figuring out which problems were worth solving first and which fixes would deliver the most value for the least lift.",
-              "<strong>Building a Design to Code Workflow</strong> — Coming in as one of the first UX/UI hires, there were no design files — the design system lived only in the codebase. To speed up the entire workflow, I extracted the existing tokens and component patterns and used Figma Make and Claude to rebuild them as a working Figma library. It wasn't perfect, but it gave me a solid starting point for quick prototyping and ideation.",
-              "<strong>Using AI Intentionally to Elevate UX</strong> — I learned to use AI meaningfully by understanding its actual capabilities, identifying where it could genuinely improve workflows, and leveraging the intelligence — like metadata extraction and auto‑tagging — to enhance the user experience."
+              "<strong>Finding the Quick Wins</strong> — Working at a startup means limited time and resources. There's no room to design and build everything. A big part of the work was figuring out which problems were worth solving first and which fixes would deliver the most value for the least lift.",
+              "<strong>Building a Design to Code Workflow</strong> — Coming in as one of the first UX/UI hires, there were no design files. The design system lived only in the codebase. To speed up the entire workflow, I extracted the existing tokens and component patterns and used Figma Make and Claude to rebuild them as a working Figma library. It wasn't perfect, but it gave me a solid starting point for quick prototyping and ideation.",
+              "<strong>Using AI Intentionally to Elevate UX</strong> — I learned to use AI meaningfully by understanding its actual capabilities, identifying where it could genuinely improve workflows, and leveraging the intelligence  (like metadata extraction and auto‑tagging) to enhance the user experience."
             ]
           }
         ]
