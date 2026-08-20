@@ -52,7 +52,7 @@ export const caseStudies = [
           {
             heading: "Redesigning Brand Asset Management for AI",
             paragraphs: [
-              "Prelight is a private MCP layer that makes brand knowledge machine-readable — giving IP-rich enterprises full control over their brand identity in an AI-native world.",
+              "Prelight is a private MCP layer that makes brand knowledge machine-readable, giving IP-rich enterprises full control over their brand identity in an AI-native world.",
               "As a Design Engineer Intern, I ran UX/UI audits, identified friction points, and redesigned key parts of the interface, shipping my work on the front end while partnering closely with a backend engineer to bring each feature to production."
             ]
           },
@@ -66,7 +66,7 @@ export const caseStudies = [
           {
             heading: "What is Atlas?",
             paragraphs: [
-              "Atlas is where users upload files that make up a brand's identity — assets, guidelines, and rules — and it gets automatically categorized and has key information extracted from each file. That structured brand context can then flow into other tools via MCP connectors (like Claude or Lovable) or directly into Stage, Prelight's video creation section, to ground generated storyboards and cinematic videos in the brand's identity."
+              "Atlas is where users upload files that make up a brand's identity (assets, guidelines, and rules) and it gets automatically categorized with key information extracted from each file. That structured brand context can then flow into other tools via MCP connectors (like Claude or Lovable) or directly into Stage, Prelight's video creation section, to ground generated storyboards and cinematic videos in the brand's identity."
             ],
             image: getAssetUrl("case_studies/Prelight/atlas_diagram.png")
           },
@@ -83,7 +83,7 @@ export const caseStudies = [
           {
             heading: "Challenge 1: Fixing the Core UX Gaps in Atlas’s Brand Management Entry Point",
             paragraphs: [
-              "As users' first touchpoint in Atlas, this page sets the tone for the product — but it was built as a simple display layer that has not scaled with how organizations actually use it."
+              "As users' first touchpoint in Atlas, this page sets the tone for the product, but it was built as a simple display layer that has not scaled with how organizations actually use it."
             ]
           },
           {
@@ -103,7 +103,7 @@ export const caseStudies = [
               },
               {
                 title: "Scalability Infrastructure",
-                description: "Introduced pagination and a card-display limit (2 rows per page), plus filtering — giving the brand grid a predictable structure that holds up as organizations' libraries grow.",
+                description: "Introduced pagination and a card-display limit (2 rows per page) + filtering, giving the brand grid a predictable structure that holds up as organizations' libraries grow.",
                 video: getAssetUrl("case_studies/Prelight/sort_workflow.mov")
               },
               {
@@ -165,7 +165,7 @@ export const caseStudies = [
           {
             heading: "Challenge 2: Revealing Atlas’s Hidden Intelligence to Build a Searchable, Explainable Asset Catalog",
             paragraphs: [
-              "Atlas’s catalog page currently acts mostly as a system storage. Assets are uploaded, automatically categorized by AI, and made available to other MCP tools — but users see almost none of the intelligence happening behind the scenes. "
+              "Atlas’s catalog page currently acts mostly as a system storage. Assets are uploaded, automatically categorized by AI, and made available to other MCP tools, but users see almost none of the intelligence happening behind the scenes. "
             ]
           },
           {
@@ -180,7 +180,7 @@ export const caseStudies = [
           {
             heading: "Why This Matters",
             paragraphs: [
-              "Atlas's AI engine already does the work — but if brand teams can't see or trust its reasoning, they fall back to manual workarounds, support tickets pile up, and the product's core value never lands. Surfacing that intelligence transforms Atlas from an unseen process into a trusted, brand-ready system teams actually rely on."
+              "Atlas's AI engine already does the work, but if brand teams can't see or trust its reasoning, they fall back to manual workarounds, support tickets pile up, and the product's core value never lands. Surfacing that intelligence transforms Atlas from an unseen process into a trusted, brand-ready system teams actually rely on."
             ]
           },
 
@@ -197,12 +197,12 @@ export const caseStudies = [
             featureRows: [
               {
                 title: "1. Faster Asset Discovery",
-                description: "<p><strong>Before:</strong> Users were limited to digging through folders and filenames, with an underpowered search bar labeled “search documents” that didn’t reflect the system’s actual capabilities.</p><p><strong>Now:</strong> Users search semantically — by mood, tone, usage, brand elements, scenes.</p><p><strong>Workflow impact:</strong></p><ul><li>Creative teams find “calm lifestyle shots” or “blue‑toned product images” instantly</li><li>No more guessing filenames</li><li>Search time drops significantly</li></ul>",
+                description: "<p><strong>Before:</strong> Users were limited to digging through folders and filenames, with an underpowered search bar labeled “search documents” that didn’t reflect the system’s actual capabilities.</p><p><strong>Now:</strong> Users search semantically by mood, tone, usage, brand elements, scenes.</p><p><strong>Workflow impact:</strong></p><ul><li>Creative teams find “calm lifestyle shots” or “blue‑toned product images” instantly</li><li>No more guessing filenames</li><li>Search time drops significantly</li></ul>",
                 video: getAssetUrl("case_studies/Prelight/search.mov")
               },
               {
                 title: "2. Clearer Understanding of Each Asset",
-                description: "<p><strong>Before:</strong> Users had to rely on external MCP tools like Claude to interpret an asset — the web app itself offered no way to view meaningful file information.</p><p><strong>Now:</strong> Atlas surfaces mood, tone, visual style, usage context, brand elements, and more.</p><p><strong>Workflow impact:</strong></p><ul><li>Designers quickly validate emotional fit</li><li>Marketers confirm brand consistency</li><li>Editors understand usage context without moving or downloading files</li></ul>",
+                description: "<p><strong>Before:</strong> Users had to rely on external MCP tools like Claude to interpret an asset. The web app itself offered no way to view meaningful file information.</p><p><strong>Now:</strong> Atlas surfaces mood, tone, visual style, usage context, brand elements, and more.</p><p><strong>Workflow impact:</strong></p><ul><li>Designers quickly validate emotional fit</li><li>Marketers confirm brand consistency</li><li>Editors understand usage context without moving or downloading files</li></ul>",
                 video: getAssetUrl("case_studies/Prelight/metadata.mov")
               },
               {
@@ -316,13 +316,13 @@ export const caseStudies = [
           {
             heading: "Context",
             paragraphs: [
-              "Bank accounts are opening earlier than ever, and with the rise of banking programs and services built for younger generations, I saw a market I wanted to tap into. What started as a UX class assignment became personal when I recognized a problem in my own family: the dynamic around money — where parents want to teach financial responsibility without lecturing, while still giving their child room to learn.",
+              "Bank accounts are opening earlier than ever, and with the rise of banking programs and services built for younger generations, I saw a market I wanted to tap into. What started as a UX class assignment became personal when I recognized a problem in my own family: where parents want to teach financial responsibility without lecturing, while still giving their child room to learn.",
             ]
           },
           {
             heading: "The Problem",
             paragraphs: [
-              "Most people open their first bank account between ages 13 and 17, a formative window where real-world financial habits begin to take shape. Yet teens in this stage often lack meaningful financial literacy, while parental oversight can easily slip into micro‑management — creating friction, confusion, and ultimately abandonment of traditional banking apps."
+              "Most people open their first bank account between ages 13 and 17, a formative window where real-world financial habits begin to take shape. Yet teens in this stage often lack meaningful financial literacy, while parental oversight can easily slip into micro‑management, thus creating friction, confusion, and ultimately abandonment of traditional banking apps."
             ],
             image: getAssetUrl("case_studies/Pennies/info1_1.webp"),
             highlightBox: {
@@ -333,7 +333,7 @@ export const caseStudies = [
           {
             heading: "The Solution: Turning Real Spending Habits Into Guided Learning",
             paragraphs: [
-              "Pennies turns everyday spending into learning moments. Penni, an in-app assistant, gives teens personalized insights and goal-based nudges, while parents retain configurable oversight — replacing surveillance with guided independence."
+              "Pennies turns everyday spending into learning moments. Penni, an in-app assistant, gives teens personalized insights and goal-based nudges, while parents retain configurable oversight."
             ],
             stackedSpread: true,
             images: [
@@ -421,7 +421,7 @@ export const caseStudies = [
             insightCards: [
               {
                 title: "Transaction Intelligence",
-                text: "Auto‑categorizes purchases and identifies spending patterns — the same AI used by Capital One and Revolut.<br/><br/><strong>Application in Pennies:</strong> Translate raw purchase logs into simple, teen‑friendly insights and visual categories."
+                text: "Auto‑categorizes purchases and identifies spending patterns which is the same AI used by Capital One and Revolut.<br/><br/><strong>Application in Pennies:</strong> Translate raw purchase logs into simple, teen‑friendly insights and visual categories."
               },
               {
                 title: "Risk & Anomaly Detection",
@@ -444,7 +444,7 @@ export const caseStudies = [
           {
             heading: "Setting Up The Foundation: A Prepaid Model",
             paragraphs: [
-              "A prepaid card model mirrors how leading youth‑banking apps like Greenlight, GoHenry, BusyKid, and FamZoo operate — giving teens a safe, capped spending environment while giving parents flexible oversight. It’s the industry‑proven foundation that Penni’s AI guidance can build on."
+              "A prepaid card model mirrors how leading youth‑banking apps like Greenlight, GoHenry, BusyKid, and FamZoo operate. It gives teens a safe, capped spending environment while giving parents flexible oversight. It’s the industry‑proven foundation that Penni’s AI guidance can build on."
             ],
             image: getAssetUrl("case_studies/Pennies/info4.webp")
           },
@@ -602,7 +602,7 @@ export const caseStudies = [
             heading: "Key Takeaways",
             paragraphs: [
               "<strong>Designing for Multi-User Dynamics</strong> - This project taught me how to balance a delicate ecosystem where two users have conflicting goals. Designing for trust requires transparency on both sides of the interface.",
-              "<strong>AI as a Feature vs. AI as a Solution</strong> - I learned that AI shouldn’t just automate budgeting — it should support it. By integrating AI contextually, the experience shifted from a tedious digital task into a more human, guided partnership."
+              "<strong>AI as a Feature vs. AI as a Solution</strong> - I learned that AI shouldn’t just automate budgeting, it should support it. By integrating AI contextually, the experience shifted from a tedious digital task into a more human, guided partnership."
             ]
           }
 
