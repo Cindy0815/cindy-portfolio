@@ -64,13 +64,6 @@ export const caseStudies = [
             image: getAssetUrl("case_studies/Prelight/atlas.png")
           },
           {
-            heading: "What is Atlas?",
-            paragraphs: [
-              "Atlas is where users upload files that make up a brand's identity (assets, guidelines, and rules) and it gets automatically categorized with key information extracted from each file. That structured brand context can then flow into other tools via MCP connectors (like Claude or Lovable) or directly into Stage, Prelight's video creation section, to ground generated storyboards and cinematic videos in the brand's identity."
-            ],
-            image: getAssetUrl("case_studies/Prelight/atlas_diagram.png")
-          },
-          {
             heading: "I worked across two sections of Atlas",
             image: getAssetUrl("case_studies/Prelight/3.png")
           }
@@ -196,18 +189,18 @@ export const caseStudies = [
             heading: "What I Shipped",
             featureRows: [
               {
-                title: "1. Faster Asset Discovery",
-                description: "<p><strong>Before:</strong> Users were limited to digging through folders and filenames, with an underpowered search bar labeled “search documents” that didn’t reflect the system’s actual capabilities.</p><p><strong>Now:</strong> Users search semantically by mood, tone, usage, brand elements, scenes.</p><p><strong>Workflow impact:</strong></p><ul><li>Creative teams find “calm lifestyle shots” or “blue‑toned product images” instantly</li><li>No more guessing filenames</li><li>Search time drops significantly</li></ul>",
+                title: "1. File Discovery",
+                description: "<p><strong>Before:</strong> Search already existed, but it was easy to miss: the bar just read “Search documents,” underselling how capable it actually was, and users had to dig through files by opening and closing modals.</p><p><strong>Now:</strong> Restructured the page hierarchy to surface the search bar. Introduced section filters and replaced modals with side panel views for easier file browsing.</p>",
                 video: getAssetUrl("case_studies/Prelight/search.mov")
               },
               {
-                title: "2. Clearer Understanding of Each Asset",
-                description: "<p><strong>Before:</strong> Users had to rely on external MCP tools like Claude to interpret an asset. The web app itself offered no way to view meaningful file information.</p><p><strong>Now:</strong> Atlas surfaces mood, tone, visual style, usage context, brand elements, and more.</p><p><strong>Workflow impact:</strong></p><ul><li>Designers quickly validate emotional fit</li><li>Marketers confirm brand consistency</li><li>Editors understand usage context without moving or downloading files</li></ul>",
+                title: "2. Asset Intelligence",
+                description: "<p><strong>Before:</strong> Users had to rely on external MCP tools like Claude to interpret an asset. The web app itself offered no way to view meaningful file information.</p><p><strong>Now:</strong> Atlas surfaces mood, tone, visual style, usage context, brand elements, and more.</p>",
                 video: getAssetUrl("case_studies/Prelight/metadata.mov")
               },
               {
-                title: "3. Trustworthy AI Decisions (Provenance)",
-                description: "<p><strong>Before:</strong> The Decision Trail lived on a separate page, making AI classification feel hidden with no clear signal of which assets needed attention.</p><p><strong>Now:</strong> The redesign introduces provenance details and status tags like 'auto‑approved' / 'needs review' directly in the catalog list, creating an immediate pathway to the Decision Trail.</p><p><strong>Workflow impact:</strong></p><ul><li>Users verify why an asset was tagged</li><li>Compliance teams audit decisions easily</li><li>Brand teams trust the system</li></ul>",
+                title: "3. Path To Provenance",
+                description: "<p><strong>Before:</strong> The Decision Trail lived on a separate page, making AI classification feel hidden with no clear signal of which assets needed attention.</p><p><strong>Now:</strong> Introduced provenance details and status tags like 'auto‑approved' / 'needs review' directly in the catalog list, creating an immediate pathway to the Decision Trail.</p>",
                 image: getAssetUrl("case_studies/Prelight/file_tag.png"),
                 video: getAssetUrl("case_studies/Prelight/human_approved.mov")
               }
@@ -217,8 +210,8 @@ export const caseStudies = [
             heading: "Outcome & Impact",
             insightCards: [
               {
-                title: "Semantic Discovery Unlocked",
-                text: "Search shifted from filename‑guessing to meaning‑based queries, dramatically reducing time to find the right asset."
+                title: "Faster Asset Discovery",
+                text: "A restructured hierarchy and side-panel browsing put search front and center, helping teams find the right asset in half the time."
               },
               {
                 title: "Instant Asset Comprehension",
