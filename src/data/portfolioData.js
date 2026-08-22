@@ -43,7 +43,7 @@ export const caseStudies = [
     timeline: "10 Weeks",
     tools: ["Figma", "Vue.js", "TypeScript", "Tailwind CSS", "Claude Code", "Figma Make"],
     coverImage: getAssetUrl("case_studies/Prelight/Prelight.png"),
-    headerImage: getAssetUrl("case_studies/Prelight/Prelight.png"),
+    headerImage: getAssetUrl("case_studies/Prelight/Prelight2.png"),
     sections: [
       {
         id: "overview",
